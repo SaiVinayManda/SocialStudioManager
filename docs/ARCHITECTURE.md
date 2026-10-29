@@ -21,6 +21,8 @@ flowchart TD
 
 The controller starts paused on every open. Task and grant snapshots are immutable in memory; task/policy/test/runner digests must match before enqueue and again before dispatch. A one-use grant is consumed by queueing. Telegram cannot mint grants, choose an executable/path/model/flags or expand a task. State is journaled/fsynced before dispatch; an interrupted launch never auto-resumes.
 
+A-03 now adds a read-only pinned disk authority store, disjoint registered roots/project baselines and a persisted deployment binding. It revalidates the snapshot at ingress, dispatch and final validation; grant revocation/consumption survives restart. Its code and fixture evidence are complete for this local slice, but actual operator-controlled bootstrap/ACL deployment is pending. See [the authority-store review](AUTHORITY_STORE.md); the example contains no task or grant and cannot activate dispatch.
+
 Queue/audit uses a bounded append-only JSONL journal with sequence/hash validation, a single-controller lock and retained failure evidence. This detects corruption but is not protection against a local administrator. Actual deployed authority/state must be outside worker-writable storage under independently verified OS controls; the local development directories do not establish those controls.
 
 The fixture worker is fixed reviewed Node code, runs with a minimal environment and Node filesystem permissions, and cannot spawn descendants through Node's permission model. This is adequate to exercise local lifecycle code, not evidence of general Windows process-tree, network, memory or identity isolation for arbitrary Codex/media tools. No live runner can be enabled through `enableLocalFixtures()`.

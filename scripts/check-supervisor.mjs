@@ -10,9 +10,10 @@ const run = path.join(root, '.runtime', 'checks', randomUUID());
 const temp = path.join(run, 'temp'); fs.mkdirSync(temp, { recursive: true });
 const env = { SystemRoot: 'C:\\Windows', PATH: 'C:\\Windows\\System32;' + path.dirname(process.execPath), TEMP: temp, TMP: temp };
 const checks = [
-  ['tests', ['--test', '--test-concurrency=1', 'test/supervisor.test.mjs']],
+  ['tests', ['--test', '--test-concurrency=1', 'test/supervisor.test.mjs', 'test/authority-store.test.mjs', 'test/auth-metadata.test.mjs']],
   ['demo', ['src/supervisor/cli.mjs', 'demo']],
   ['status', ['src/supervisor/cli.mjs', 'status']],
+  ['metadata-plan', ['scripts/inspect-auth-metadata.mjs', '--plan']],
 ];
 const receipts = [];
 for (const [name, args] of checks) {

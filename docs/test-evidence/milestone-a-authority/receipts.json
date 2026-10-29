@@ -1,0 +1,73 @@
+[
+  {
+    "name": "tests",
+    "executable": "C:\\Program Files\\nodejs\\node.exe",
+    "args": [
+      "--test",
+      "--test-concurrency=1",
+      "test/supervisor.test.mjs",
+      "test/authority-store.test.mjs",
+      "test/auth-metadata.test.mjs"
+    ],
+    "cwd": "C:\\Projects\\Manas_Flow\\SocialStudio",
+    "started_utc": "2026-10-29T20:07:11.293Z",
+    "finished_utc": "2026-10-29T20:07:14.426Z",
+    "exit_code": 0,
+    "signal": null,
+    "error_code": null,
+    "environment": "SystemRoot, fixed PATH and workspace TEMP/TMP only",
+    "stdout_file": "tests.stdout",
+    "stderr_file": "tests.stderr"
+  },
+  {
+    "name": "demo",
+    "executable": "C:\\Program Files\\nodejs\\node.exe",
+    "args": [
+      "src/supervisor/cli.mjs",
+      "demo"
+    ],
+    "cwd": "C:\\Projects\\Manas_Flow\\SocialStudio",
+    "started_utc": "2026-10-29T20:07:14.429Z",
+    "finished_utc": "2026-10-29T20:07:14.618Z",
+    "exit_code": 0,
+    "signal": null,
+    "error_code": null,
+    "environment": "SystemRoot, fixed PATH and workspace TEMP/TMP only",
+    "stdout_file": "demo.stdout",
+    "stderr_file": "demo.stderr"
+  },
+  {
+    "name": "status",
+    "executable": "C:\\Program Files\\nodejs\\node.exe",
+    "args": [
+      "src/supervisor/cli.mjs",
+      "status"
+    ],
+    "cwd": "C:\\Projects\\Manas_Flow\\SocialStudio",
+    "started_utc": "2026-10-29T20:07:14.619Z",
+    "finished_utc": "2026-10-29T20:07:14.692Z",
+    "exit_code": 0,
+    "signal": null,
+    "error_code": null,
+    "environment": "SystemRoot, fixed PATH and workspace TEMP/TMP only",
+    "stdout_file": "status.stdout",
+    "stderr_file": "status.stderr"
+  },
+  {
+    "name": "metadata-plan",
+    "executable": "C:\\Program Files\\nodejs\\node.exe",
+    "args": [
+      "scripts/inspect-auth-metadata.mjs",
+      "--plan"
+    ],
+    "cwd": "C:\\Projects\\Manas_Flow\\SocialStudio",
+    "started_utc": "2026-10-29T20:07:14.693Z",
+    "finished_utc": "2026-10-29T20:07:14.761Z",
+    "exit_code": 0,
+    "signal": null,
+    "error_code": null,
+    "environment": "SystemRoot, fixed PATH and workspace TEMP/TMP only",
+    "stdout_file": "metadata-plan.stdout",
+    "stderr_file": "metadata-plan.stderr"
+  }
+]

@@ -1,6 +1,8 @@
 # Restricted remote development design
 
-Status: **proposed design, not implemented or enabled**. Reviewed against official documentation on 2026-10-28. Foundation approval is required before implementation; separate operational grants are listed in [HUMAN_ACTIONS.md](HUMAN_ACTIONS.md).
+Current status, 2026-10-29: the owner authorized Milestone A local coding/tests/documentation/checkpoints. The local supervisor and pinned disk-authority slice now pass 77 checks; **live dispatch and protected deployment remain disabled/unaccepted**. Use [the active plan](IMPLEMENTATION_PLAN.md), [A-03 review](AUTHORITY_STORE.md), [actual results](TEST_RESULTS.md) and [human actions](HUMAN_ACTIONS.md) for current scope and remaining gates.
+
+The design below was reviewed against official documentation on 2026-10-28 and is preserved as a proposal. Its historical milestone labels/runtime options are not new install, credential, model-budget or activation grants; OpenMontage follows current Milestone A acceptance.
 
 ## 1. Architecture and trust boundaries
 

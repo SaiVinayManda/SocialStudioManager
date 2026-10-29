@@ -1,0 +1,26 @@
+{
+  "format_version": 1,
+  "deployment_id": "UNAPPROVED-EXAMPLE",
+  "revision": 1,
+  "expires_at": "REQUIRES_OWNER_APPROVED_UTC_EXPIRY",
+  "directories": {
+    "authority": "C:\\ProgramData\\SocialStudio\\authority",
+    "state": "C:\\ProgramData\\SocialStudio\\state",
+    "workspaces": "C:\\ProgramData\\SocialStudio\\workspaces",
+    "baselines": "C:\\ProgramData\\SocialStudio\\baselines"
+  },
+  "approved_projects": [],
+  "authority": {
+    "policy": {
+      "version": 1,
+      "telegram": { "owner_user_id": null, "private_chat_id": null, "max_age_seconds": 300 },
+      "max_journal_bytes": 1048576,
+      "max_jobs": 50
+    },
+    "projects": [],
+    "tasks": [],
+    "grants": [],
+    "runner_profiles": [],
+    "test_profiles": []
+  }
+}

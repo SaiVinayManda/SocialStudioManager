@@ -3,7 +3,9 @@ import path from 'node:path';
 import { randomUUID } from 'node:crypto';
 import { Journal } from './journal.mjs';
 import { telegramCommand } from './telegram.mjs';
-import { Denied, requireThat, exact, id, integer, text, digest, clone, freeze, validatePolicy, validateTask, inspectWorkspace, checkedDirectory } from './contracts.mjs';
+import { Denied, requireThat, exact, id, integer, text, digest, clone, inspectWorkspace, checkedDirectory } from './contracts.mjs';
+import { validateAuthority } from './authority.mjs';
+import { PinnedAuthorityStore, existingLocalDirectory, sameDirectory } from './authority-store.mjs';
 
 const edges = {
   queued: ['preparing', 'cancelled', 'needs_approval'],
@@ -14,41 +16,33 @@ const edges = {
 };
 const activeStates = new Set(['preparing', 'running', 'testing', 'cancel_requested']);
 
-function validateAuthority(a) {
-  exact(a, ['policy', 'projects', 'tasks', 'grants', 'runner_profiles', 'test_profiles']);
-  validatePolicy(a.policy);
-  for (const key of ['projects', 'tasks', 'grants', 'runner_profiles', 'test_profiles']) {
-    requireThat(Array.isArray(a[key]) && a[key].length <= 1000, 'INVALID_AUTHORITY');
-  }
-  a.tasks.forEach(validateTask);
-  requireThat(new Set(a.tasks.map(t => t.id + ':' + t.revision)).size === a.tasks.length, 'DUPLICATE_TASK');
-  for (const p of a.projects) { exact(p, ['id', 'baseline_sha']); id(p.id); requireThat(/^[a-f0-9]{40,64}$/.test(p.baseline_sha), 'INVALID_BASELINE'); }
-  for (const p of a.runner_profiles) { exact(p, ['id', 'mode']); id(p.id); text(p.mode, 50); }
-  for (const p of a.test_profiles) { exact(p, ['id', 'path', 'expected_text']); id(p.id); text(p.expected_text, 1000); }
-  for (const g of a.grants) {
-    exact(g, ['id', 'task_digest', 'policy_digest', 'runner_profile_digest', 'test_profile_digest', 'expires_at', 'max_starts']);
-    id(g.id); integer(g.max_starts, 1, 1);
-    for (const field of ['task_digest', 'policy_digest', 'runner_profile_digest', 'test_profile_digest']) requireThat(/^[a-f0-9]{64}$/.test(g[field]), 'INVALID_GRANT_DIGEST');
-    requireThat(Number.isFinite(Date.parse(g.expires_at)), 'INVALID_EXPIRY');
-  }
-  for (const key of ['projects', 'grants', 'runner_profiles', 'test_profiles']) requireThat(new Set(a[key].map(x => x.id)).size === a[key].length, 'DUPLICATE_AUTHORITY_ID');
-  return freeze(clone(a));
-}
-
 /** Local development controller. Live dispatch intentionally cannot be enabled. */
 export class Supervisor {
-  constructor({ authority, stateDirectory, workspaceDirectory, runner, clock = () => Date.now() }) {
-    this.authority = validateAuthority(authority); this.runner = runner; this.clock = clock;
+  constructor({ authority, authorityStore, stateDirectory, workspaceDirectory, runner, clock = () => Date.now() }) {
+    requireThat((authority !== undefined) !== (authorityStore !== undefined), 'AUTHORITY_SOURCE_REQUIRED');
+    requireThat(authorityStore === undefined || authorityStore instanceof PinnedAuthorityStore, 'AUTHORITY_STORE_TYPE');
+    this.authorityStore = authorityStore;
+    const snapshot = authorityStore?.load();
+    // Reject wrong configured roots before checkedDirectory could create anything.
+    if (snapshot) {
+      requireThat(sameDirectory(existingLocalDirectory(stateDirectory), snapshot.directories.state) && sameDirectory(existingLocalDirectory(workspaceDirectory), snapshot.directories.workspaces), 'AUTHORITY_RUNTIME_DIRECTORY');
+    }
+    this.authority = validateAuthority(snapshot?.authority ?? authority); this.runner = runner; this.clock = clock;
     this.workspaces = checkedDirectory(workspaceDirectory);
     const state = checkedDirectory(stateDirectory);
     const compare = p => process.platform === 'win32' ? p.toLowerCase() : p;
     const stateKey = compare(state), workspaceKey = compare(this.workspaces);
     requireThat(stateKey !== workspaceKey && !stateKey.startsWith(workspaceKey + path.sep) && !workspaceKey.startsWith(stateKey + path.sep), 'STATE_WORKSPACE_OVERLAP');
     this.jobs = new Map(); this.revoked = new Set(); this.notices = new Map(); this.requests = new Set();
-    this.highestUpdate = -1; this.enabled = false; this.active = null; this.recoveryRequired = false;
+    this.highestUpdate = -1; this.enabled = false; this.active = null; this.recoveryRequired = false; this.authorityBinding = null;
     this.journal = new Journal(state, this.authority.policy.max_journal_bytes);
     try {
       for (const event of this.journal.events) this.apply(event);
+      if (this.authorityBinding) requireThat(snapshot && digest(this.authorityBinding) === digest(snapshot.binding), 'AUTHORITY_REDEPLOYMENT_REVIEW_REQUIRED');
+      else if (snapshot) {
+        requireThat(this.journal.events.length === 0, 'AUTHORITY_STATE_MIGRATION_REQUIRED');
+        this.record('authority.bound', snapshot.binding);
+      }
       for (const job of this.jobs.values()) if (activeStates.has(job.state)) this.transition(job.id, 'interrupted', { error: 'RESTART_RECONCILIATION_REQUIRED' });
       this.recoveryRequired = [...this.jobs.values()].some(j => j.state === 'interrupted');
       this.record('controller.started', {});
@@ -63,6 +57,10 @@ export class Supervisor {
     const d = event.data;
     switch (event.type) {
       case 'controller.started': case 'controller.enabled': case 'controller.paused': exact(d, []); break;
+      case 'authority.bound':
+        exact(d, ['deployment_id', 'revision', 'digest']); id(d.deployment_id); integer(d.revision, 1, 100000);
+        requireThat(this.authorityBinding === null && this.journal.events[0]?.type === 'authority.bound' && /^[a-f0-9]{64}$/.test(d.digest), 'AUTHORITY_BINDING');
+        this.authorityBinding = clone(d); break;
       case 'telegram.received':
         exact(d, ['update_id']); integer(d.update_id, 0, Number.MAX_SAFE_INTEGER);
         requireThat(d.update_id > this.highestUpdate, 'AUDIT_REPLAY'); this.highestUpdate = d.update_id; break;
@@ -87,6 +85,14 @@ export class Supervisor {
     }
   }
   transition(jobId, state, facts = {}) { this.record('job.transition', { id: jobId, state, facts }); }
+  refreshAuthority() {
+    if (!this.authorityStore) return;
+    try {
+      const snapshot = this.authorityStore.load();
+      requireThat(digest(snapshot.binding) === digest(this.authorityBinding), 'AUTHORITY_BINDING');
+      requireThat(sameDirectory(this.workspaces, snapshot.directories.workspaces) && sameDirectory(this.journal.directory, snapshot.directories.state), 'AUTHORITY_RUNTIME_DIRECTORY');
+    } catch (error) { this.enabled = false; throw error; }
+  }
   findTask(taskId, revision) {
     const task = this.authority.tasks.find(t => t.id === taskId && t.revision === revision);
     requireThat(task, 'TASK_NOT_REGISTERED'); return task;
@@ -105,6 +111,7 @@ export class Supervisor {
     return { grant, profile, testProfile };
   }
   enqueue(taskId, revision) {
+    this.refreshAuthority();
     requireThat(this.jobs.size < this.authority.policy.max_jobs, 'QUEUE_LIMIT');
     const task = this.findTask(taskId, revision), { grant } = this.authorization(task);
     const jobId = randomUUID();
@@ -113,6 +120,7 @@ export class Supervisor {
   }
   async handleTelegram(update) {
     try {
+      this.refreshAuthority();
       const command = telegramCommand(update, this.authority.policy.telegram, this.clock());
       requireThat(command.update_id > this.highestUpdate, 'REPLAYED_UPDATE');
       this.record('telegram.received', { update_id: command.update_id });
@@ -135,6 +143,7 @@ export class Supervisor {
     }
   }
   enableLocalFixtures() {
+    this.refreshAuthority();
     requireThat(this.runner.kind === 'fixed-fixture-process', 'LIVE_RUNTIME_NOT_ACCEPTED');
     requireThat(!this.recoveryRequired && !this.journal.poisoned, 'RECOVERY_REQUIRED');
     this.record('controller.enabled', {}); this.enabled = true;
@@ -171,6 +180,7 @@ export class Supervisor {
     const job = [...this.jobs.values()].find(j => j.state === 'queued'); if (!job) return null;
     let auth, task;
     try {
+      this.refreshAuthority();
       task = this.findTask(job.task_id, job.revision);
       requireThat(job.manifest_digest === digest(task), 'TASK_DIGEST_CHANGED');
       auth = this.authorization(task, job.grant_id, true);
@@ -194,6 +204,7 @@ export class Supervisor {
         requireThat(result.termination_verified, 'TERMINATION_UNCONFIRMED'); this.transition(job.id, 'timed_out', { ...facts, error: 'TIME_LIMIT' }); this.pause();
       } else {
         requireThat(result.exit_code === 0 && !result.output_limit, result.output_limit ? 'OUTPUT_LIMIT' : 'RUNNER_EXIT_FAILED');
+        this.refreshAuthority();
         requireThat(!this.revoked.has(job.grant_id) && Date.parse(auth.grant.expires_at) > this.clock(), 'APPROVAL_EXPIRED_OR_REVOKED');
         this.transition(job.id, 'testing', facts);
         const artifacts = inspectWorkspace(workspace, task.allowed_paths, task.limits.max_output_bytes);

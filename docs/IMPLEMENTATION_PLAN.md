@@ -13,7 +13,7 @@ The repository was inspected before changes. Existing evaluation and wheel-stagi
 | Codex CLI | Existing npm package and executable: codex-cli 0.165.0; exec help inspected | CLI version/interface works; saved authentication and model access are user-reported, not exercised |
 | Codex config | Whitelisted nonsecret field: windows.sandbox = elevated | Configuration observation only; worker identity/filesystem/network/process limits not accepted |
 | Hermes | Existing native install/source/config; source HEAD bf0203a794a07aac3ff764972ab9087baa4e4f4e; recorded gateway PID 10392 exists | Process presence does not prove bot connectivity, owner restriction or secure Codex control |
-| Local supervisor | 51/51 tests and a separate fixed-process fixture canary passed | Local core implemented; actual Telegram/Codex integration NOT RUN |
+| Local supervisor | Expanded suite 77/77 and a fresh fixed-process fixture canary passed; earlier 51-test evidence preserved | Core plus pinned disk authority implemented locally; protected deployment and actual Telegram/Codex integration NOT RUN |
 | OpenMontage | Existing unmodified no-checkout clone at 195eab24478dc9363326aec437aefc3701635ddf; prior source audit retained | Candidate selected; runtime, rendering and resource usage unvalidated |
 | n8n/PostgreSQL | No executable found on inherited PATH; no listeners on standard ports 5678/5432 in this inspection | Not operationally verified; do not infer absence or install replacements |
 | FFmpeg/ffprobe | Not found on inherited PATH | Not validated; locate/review before any approved install |
@@ -44,18 +44,18 @@ Estimates below are remaining engineering effort, not grants, measured runtime o
 | --- | --- | --- | --- |
 | A-01 | Inspect history/tooling/evaluations; preserve initial baseline | Done; facts above and Git checkpoint | 0 |
 | A-02 | Local strict controller/queue/audit, digest approvals, replay/commands, one-at-a-time lifecycle, fixture cancellation/recovery and independent checks | Implemented; 51/51 local checks and fixture canary; protected deployment unaccepted | Review 2-4 |
-| A-03 | Protected operator authority/store and deployment, canonical paths, finite backlog/grant/revocation handling; review patches before activation | Local in-memory authority validation exists; actual protected operator deployment pending | 8-16 |
+| A-03 | Protected operator authority/store and deployment, canonical paths, finite backlog/grant/revocation handling; review patches before activation | Pinned disk reader, directory registry, persisted deployment binding/revocation and adversarial fixture tests implemented; actual identity/ACL/bootstrap deployment and anti-rollback review pending; see [authority review](AUTHORITY_STORE.md) | 6-12 |
 | A-04 | Existing Hermes deterministic admission integration, original metadata/signing, owner/private-chat enrollment, safe notifications; no second poller | Bridge contract/source hook review exists; installed integration not configured/tested | 8-16 |
 | A-05 | Accepted native least-privilege runtime/launcher, broker and effective Codex config; real descendant termination and filesystem/network/resource probes | CLI vector/parser exists, live runner intentionally disabled; operator/runtime approvals needed | 12-24 |
 | A-06 | One exact harmless live Codex task from owner's Telegram; actual process result, independent check, artifact/test/diff hashes, usage and result message | NOT RUN; identity/credential/model-budget/runtime gates pending | 4-8 |
 | A-07 | Real unauthorized identity, replay/injection, stop/timeout, expired/revoked grant, crash/orphan, outage/duplicate and boundary tests | Local fixtures cover core logic; deployed negative tests NOT RUN | 8-16 |
 | A-08 | Operator instructions, evidence review, accepted baseline and explicit Milestone A sign-off | Pending; remain paused/disabled until accepted | 2-4 |
 
-Remaining A estimate: **44-88 hours** including review and real runtime/integration hardening. External approval time is excluded. Reduce/refine using actual deployed evidence; do not report fixture coverage as those live hours completed.
+Remaining A estimate: **42-84 hours** including review and real runtime/integration hardening. External approval time is excluded. This revision reflects the completed local A-03 store slice; do not report fixture coverage as deployed acceptance.
 
 ## Immediate next actions
 
-1. Review this local checkpoint and [TEST_RESULTS.md](TEST_RESULTS.md).
+1. Review this local checkpoint, [TEST_RESULTS.md](TEST_RESULTS.md) and [A-03 authority/deployment design](AUTHORITY_STORE.md). Local implementation does not grant protection or acceptance to its own deployment.
 2. Enroll/confirm the numeric Telegram owner and private-chat IDs; a request has been issued, no identity invented.
 3. Complete the bounded existing-authentication metadata inspection in [LIVE_SUPERVISOR_REVIEW.md](LIVE_SUPERVISOR_REVIEW.md) only if approved, then prepare exact credential-use/budget and native runtime deployment packets.
 4. Review/deploy protected A changes through the authorized operator; do not patch/restart the installed Hermes runtime silently.

@@ -4,7 +4,7 @@
 
 The owner's latest implementation request supersedes the earlier documentation-only phase for **ordinary Milestone A coding, local tests, documentation and local Git checkpoints**. It selects OpenMontage as primary and excludes MoneyPrinterTurbo/Postiz integration. This records the owner's instruction; it does not grant installations, credentials, paid usage, system changes, protected live deployment or public publishing.
 
-The existing evaluation was preserved in local baseline commit d691604. The local supervisor has 51/51 checks plus a separate process-based fixture canary; [actual evidence](TEST_RESULTS.md) explicitly keeps Milestone A unaccepted. No authenticated Codex/Telegram call was made. Existing installed tools are not to be reinstalled merely because PATH lookup failed.
+The existing evaluation was preserved in local baseline commit d691604. The local supervisor now has 77/77 checks plus a separate process-based fixture canary; [actual evidence](TEST_RESULTS.md) preserves the earlier 51-test checkpoint and explicitly keeps Milestone A unaccepted. No authenticated Codex/Telegram call was made. Existing installed tools are not to be reinstalled merely because PATH lookup failed.
 
 | Current action | State / exact next intervention |
 | --- | --- |
@@ -12,10 +12,13 @@ The existing evaluation was preserved in local baseline commit d691604. The loca
 | OpenMontage selection | Owner decision recorded; do not integrate MoneyPrinterTurbo or Postiz; keep prior staging evidence/cache intact |
 | Telegram enrollment | Actual numeric owner and private-chat IDs requested; none invented or enrolled |
 | A-AUTH-METADATA-01 | **PENDING:** bounded read-only existing credential-method/presence inspection in [LIVE_SUPERVISOR_REVIEW.md](LIVE_SUPERVISOR_REVIEW.md); zero network/use/modification and no secret-value output |
-| Native runtime and protected deployment | Exact identity/ACL/filesystem/network/process/resource/credential-broker proposal must be prepared and approved before configuration changes; no broad administrator grant requested |
+| A-03 authority store | Local pinned reader, directory registry, deployment binding and persisted revocation tests implemented. Review [AUTHORITY_STORE.md](AUTHORITY_STORE.md); the example has no grants/enrollment and cannot activate anything |
+| Native runtime and protected deployment | Controller/worker/operator identities and native isolation mechanism must be selected, then exact SID-based account/ACL/bootstrap commands and rollback reviewed before configuration changes. No directories/accounts/ACLs have been deployed; no broad administrator grant requested |
 | Existing credential use and live canary | Requires separate provider/model/data-flow/limits/budget/expiry grant after readiness is understood; no saved CLI authentication or bot token has been reused |
 | Actual Milestone A acceptance | Real owner Telegram launch, approved Codex task, independent checks, actual result delivery and deployed negative/recovery tests; **NOT RUN** |
 | OpenMontage Horror pilot and later milestones | Gated until A is accepted; software/model/provider/renderer/rights grants remain separate |
+
+Concrete pending metadata command: `node scripts/inspect-auth-metadata.mjs --inspect-approved=A-AUTH-METADATA-01`. The prepared [review packet](LIVE_SUPERVISOR_REVIEW.md) contains its content digest, three exact read targets, 1 MiB/file cap, 15-minute session, zero network/cost, expiry and read-only effects. Only `--plan` has run. The owner has been asked for this bounded approval; no reply is recorded as granted.
 
 Earlier FND/DEV/GIT/VE/VA requests below are historical planning records where superseded by this current section. Their pending rows are not permission to activate a remote queue or install any engine. Completed owner-approved MoneyPrinterTurbo staging remains a historical completed action, not current integration authority.
 

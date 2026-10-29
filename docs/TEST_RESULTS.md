@@ -1,6 +1,18 @@
 # Actual verification results
 
-Latest local check: **2026-10-29**, existing Node **v22.19.0**, Windows. Source and command receipts are retained in [the evidence summary](test-evidence/milestone-a-local/summary.json) and [receipts](test-evidence/milestone-a-local/receipts.json).
+Latest local check: **2026-10-29**, existing Node **v22.19.0**, Windows. **77/77 tests passed**, zero failures/skips; suite duration **3065.2682 ms**. Source and command receipts are retained in [the A-03 evidence summary](test-evidence/milestone-a-authority/summary.json), [receipts](test-evidence/milestone-a-authority/receipts.json) and [raw TAP](test-evidence/milestone-a-authority/tests.stdout). The previous 51-test evidence below is preserved.
+
+## A-03 local continuation
+
+Actual command: `node scripts/check-supervisor.mjs`. All four child commands exited 0: the 77-test suite, fixed-process demo, disabled live status and metadata `--plan`. Child environments contain only SystemRoot, fixed PATH and workspace TEMP/TMP. No package manager, install, credential-read branch or network/model call ran.
+
+The expanded suite includes the existing 51 checks plus 21 pinned-store checks and five synthetic metadata-parser checks. Store tests run a real fixed Node child through disk-backed authority, reopen queue/state paused, preserve one-use grants/replays/revocations, reject changed deployment pins/raw fallback/migrations, deny modified/expired documents and unsafe roots/baselines/projects/grants, and reject missing/malformed/oversized/hard-linked files and junctions. Tampering during execution prevents accepting otherwise valid fixture output. Metadata tests use fictional strings; no real credential file was loaded.
+
+The separately executed demo was still a **simulation**, with actual Node subprocess exit 0, duration **61 ms**, and independently verified 30-byte `canary.txt`, SHA-256 `fe5e08c8ef37a99a04e5c65d83d7bb15718f0308e418080d528aa31772acd351`. Job ID: `142e944c-7077-443e-9c4c-dc73de0eba6f`. [Demo output](test-evidence/milestone-a-authority/demo.stdout), [status](test-evidence/milestone-a-authority/status.stdout) and [metadata plan](test-evidence/milestone-a-authority/metadata-plan.stdout) are retained. Actual Telegram/Codex requests: **0**. Model spend: **USD 0**. Protected operator deployment and Milestone A acceptance: **false**.
+
+The local code does not establish actual operator/worker ACLs or a protected anti-rollback anchor. It does not test live Hermes ingress, unrestricted descendant termination or credential/broker compatibility. A-03 deployment and A-04 through A-08 remain open. See [AUTHORITY_STORE.md](AUTHORITY_STORE.md).
+
+## Preserved first core checkpoint
 
 | Check actually run | Outcome | Scope |
 | --- | --- | --- |

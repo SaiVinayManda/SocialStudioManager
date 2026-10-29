@@ -1,0 +1,11 @@
+﻿{
+    "verified_at_utc":  "2026-10-29T20:12:14.5174585Z",
+    "source_hashes_verified":  23,
+    "markdown_files_checked":  19,
+    "local_links_checked":  103,
+    "source_hash_check_exit_code":  0,
+    "local_link_check_exit_code":  0,
+    "git_diff_check_exit_code":  0,
+    "test_evidence_directory":  "docs/test-evidence/milestone-a-authority",
+    "note":  "Actual local hash/link/diff checks; not a live integration or deployment acceptance."
+}

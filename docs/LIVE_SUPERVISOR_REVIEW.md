@@ -8,15 +8,22 @@ Purpose: determine the existing supported authentication/configuration route so 
 
 | Field | Exact proposed scope |
 | --- | --- |
-| Read targets | Existing C:\Users\Vinay\.codex\auth.json, C:\Users\Vinay\AppData\Local\hermes\auth.json and C:\Users\Vinay\AppData\Local\hermes\.env, only if present; related selected nonsecret config fields in the already located config.toml/config.yaml |
+| Read targets | Existing C:\Users\Vinay\.codex\auth.json, C:\Users\Vinay\AppData\Local\hermes\auth.json and C:\Users\Vinay\AppData\Local\hermes\.env, only if present; this prepared command does not read config.toml/config.yaml or any other credential target |
 | Permitted results | Authentication method/provider names, credential-field presence booleans, explicit nonsecret expiry metadata if present without decoding tokens, and normalized numeric Telegram owner/chat allowlist settings |
 | Secret handling | Local parsing only. No token/API-key/password/cookie values printed, sent to a model/provider/Telegram, copied into the repo or preserved in logs. Do not decode JWTs, export sessions or inspect unrelated credential stores. |
 | Changes/use | No login, refresh, credential creation/import/reuse, account connection, credential modification, config rewrite, process/service restart or model/bot request |
 | Limits | One read-only inspection session, maximum 15 minutes, zero network requests and USD 0 charges |
 | Expiry | 2026-10-31T00:00:00Z; if the scope or date changes, prepare a new request |
 | Evidence | A sanitized field-presence/auth-method summary and next required operator actions; no raw file copy |
+| Exact command, from project root | `node scripts/inspect-auth-metadata.mjs --inspect-approved=A-AUTH-METADATA-01` |
+| Prepared entry point SHA-256 | `18e0b1d6870d2cf722a1ac25162957c34380f8d2a8fd429e3796aef9fb1f8100` |
+| Reversibility | Read-only: no persistent account/system changes to undo. Access already performed cannot be undone; no raw values are retained or sent. |
 
 This request remains **PENDING**. A generic "continue" does not approve credential access. The restriction comes from the owner's current approval rule, "Accessing or configuring credentials", and [AGENTS.md](../AGENTS.md)'s credential boundary. No fixture grant or repository checkbox can authorize it.
+
+The concrete [inspection helper](../scripts/inspect-auth-metadata.mjs) and [pure parsers](../src/supervisor/auth-metadata.mjs) are prepared. `node scripts/inspect-auth-metadata.mjs --plan` prints targets/limits without opening any credential file; only that plan branch has been run. Synthetic parser tests verify that method/provider allowlists, presence booleans and explicit UTC expiry fields do not echo fictional secret values. Unknown formats are reported without raw content. Configured numeric IDs are candidates only: they do not verify Telegram ownership or enroll a user. The CLI flag is not an approval mechanism; actual owner authorization remains external.
+
+The current source/dependency hashes and executed checks are retained in [A-03 evidence](test-evidence/milestone-a-authority/summary.json). No new install is needed. This packet narrows the earlier metadata proposal; it does not add credential use or integration activation.
 
 ## Decisions still needed after that inspection
 
