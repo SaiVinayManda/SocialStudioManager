@@ -1,0 +1,10 @@
+.runtime/
+node_modules/
+.venv/
+.env
+.env.*
+!.env.example
+*.secret.json
+*.secret.toml
+coverage/
+outputs/

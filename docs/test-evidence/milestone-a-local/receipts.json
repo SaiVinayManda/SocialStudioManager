@@ -1,0 +1,54 @@
+[
+  {
+    "name": "tests",
+    "executable": "C:\\Program Files\\nodejs\\node.exe",
+    "args": [
+      "--test",
+      "--test-concurrency=1",
+      "test/supervisor.test.mjs"
+    ],
+    "cwd": "C:\\Projects\\Manas_Flow\\SocialStudio",
+    "started_utc": "2026-10-29T17:47:59.007Z",
+    "finished_utc": "2026-10-29T17:48:01.357Z",
+    "exit_code": 0,
+    "signal": null,
+    "error_code": null,
+    "environment": "SystemRoot, fixed PATH and workspace TEMP/TMP only",
+    "stdout_file": "tests.stdout",
+    "stderr_file": "tests.stderr"
+  },
+  {
+    "name": "demo",
+    "executable": "C:\\Program Files\\nodejs\\node.exe",
+    "args": [
+      "src/supervisor/cli.mjs",
+      "demo"
+    ],
+    "cwd": "C:\\Projects\\Manas_Flow\\SocialStudio",
+    "started_utc": "2026-10-29T17:48:01.359Z",
+    "finished_utc": "2026-10-29T17:48:01.540Z",
+    "exit_code": 0,
+    "signal": null,
+    "error_code": null,
+    "environment": "SystemRoot, fixed PATH and workspace TEMP/TMP only",
+    "stdout_file": "demo.stdout",
+    "stderr_file": "demo.stderr"
+  },
+  {
+    "name": "status",
+    "executable": "C:\\Program Files\\nodejs\\node.exe",
+    "args": [
+      "src/supervisor/cli.mjs",
+      "status"
+    ],
+    "cwd": "C:\\Projects\\Manas_Flow\\SocialStudio",
+    "started_utc": "2026-10-29T17:48:01.541Z",
+    "finished_utc": "2026-10-29T17:48:01.608Z",
+    "exit_code": 0,
+    "signal": null,
+    "error_code": null,
+    "environment": "SystemRoot, fixed PATH and workspace TEMP/TMP only",
+    "stdout_file": "status.stdout",
+    "stderr_file": "status.stderr"
+  }
+]

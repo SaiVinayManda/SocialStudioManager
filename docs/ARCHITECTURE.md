@@ -1,0 +1,44 @@
+# Social Studio architecture
+
+Current scope: Milestone A local supervisor core. OpenMontage is the selected primary engine; MoneyPrinterTurbo/Postiz are excluded. Existing installations are preserved. No application deployment, new service, credential connection or publishing workflow has been enabled.
+
+```mermaid
+flowchart TD
+    Owner[Owner private Telegram chat] --> Hermes[Existing Hermes gateway]
+    Hermes -. reviewed deterministic ingress, not connected .-> Bridge[Signed original-update bridge]
+    Bridge --> Core[Strict supervisor controller]
+    Local[Local operator: grants and emergency stop] --> Core
+    Core --> State[Protected task authority, queue and audit]
+    Core -. live runtime acceptance pending .-> Codex[Isolated Codex runner]
+    Core --> Fixture[Fixed local fixture runner: development only]
+    Codex --> Checks[Independent tests and quarantined artifacts]
+    Checks --> Core
+    Core --> Outbox[Sanitized persistent notifications]
+    Outbox -. existing transport, not connected .-> Hermes
+```
+
+`src/supervisor/` currently implements the controller, strict contracts, journal, Telegram parsing, signed bridge boundary, fixed fixture process runner, safe Codex invocation construction and bounded Codex JSONL telemetry parsing. No network listener or Telegram poller is started. The bridge is an IPC contract proposal, not a deployed Hermes plugin. `CodexRunner.start()` fails closed because live runtime/credential/isolation acceptance is not provisioned.
+
+The controller starts paused on every open. Task and grant snapshots are immutable in memory; task/policy/test/runner digests must match before enqueue and again before dispatch. A one-use grant is consumed by queueing. Telegram cannot mint grants, choose an executable/path/model/flags or expand a task. State is journaled/fsynced before dispatch; an interrupted launch never auto-resumes.
+
+Queue/audit uses a bounded append-only JSONL journal with sequence/hash validation, a single-controller lock and retained failure evidence. This detects corruption but is not protection against a local administrator. Actual deployed authority/state must be outside worker-writable storage under independently verified OS controls; the local development directories do not establish those controls.
+
+The fixture worker is fixed reviewed Node code, runs with a minimal environment and Node filesystem permissions, and cannot spawn descendants through Node's permission model. This is adequate to exercise local lifecycle code, not evidence of general Windows process-tree, network, memory or identity isolation for arbitrary Codex/media tools. No live runner can be enabled through `enableLocalFixtures()`.
+
+Future production flow, gated until A passes:
+
+```mermaid
+flowchart LR
+    Intake[Registered local folders and OAuth Drive intake] --> Jobs[Brand-aware durable jobs]
+    Jobs --> N8N[n8n orchestration with PostgreSQL]
+    N8N --> Adapter[Social Studio OpenMontage adapter]
+    Adapter --> OM[Reviewed OpenMontage pipeline and tools]
+    N8N --> FF[Independent approved FFmpeg reels route]
+    OM --> QC[Independent media and rights checks]
+    FF --> QC
+    QC --> Review[Human preview, revision and approval]
+    Review --> N8N
+    N8N --> Official[Official YouTube and Meta APIs, per destination]
+```
+
+Keep OpenMontage stage-director/pipeline/approval flow intact. All scheduling/publishing belongs to n8n; no engine receives social credentials or silently runs a publish stage. Brand/destination mappings and final artifact hashes bind approvals. The requested seven-operation production API, brands, ingestion, database and platform integrations are planned, not implemented.

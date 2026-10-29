@@ -1,0 +1,105 @@
+{
+    "captured_at_utc":  "2026-10-29T17:48:46.8829114Z",
+    "scope":  "local supervisor fixture checks only",
+    "tests":  51,
+    "passed":  51,
+    "failed":  0,
+    "skipped":  0,
+    "command_exit_codes":  [
+                               0,
+                               0,
+                               0
+                           ],
+    "fixture_job_id":  "cc1f3f40-569d-4f33-b8a1-ffc1544f2043",
+    "fixture_exit_code":  0,
+    "fixture_duration_ms":  60,
+    "fixture_artifacts":  [
+                              {
+                                  "bytes":  30,
+                                  "path":  "canary.txt",
+                                  "sha256":  "fe5e08c8ef37a99a04e5c65d83d7bb15718f0308e418080d528aa31772acd351"
+                              }
+                          ],
+    "real_telegram_requests":  0,
+    "real_codex_requests":  0,
+    "model_spend_usd":  0,
+    "milestone_a_accepted":  false,
+    "standard_local_service_listeners":  [
+
+                                         ],
+    "recorded_gateway_pid":  10392,
+    "recorded_pid_is_running":  true,
+    "gateway_connectivity_verified":  false,
+    "source_files":  [
+                         {
+                             "path":  "AGENTS.md",
+                             "sha256":  "c559748031c8024150214815f85b7522ea2115f7c7dd9516fc552c5c0c83d6d6"
+                         },
+                         {
+                             "path":  "package.json",
+                             "sha256":  "e2561eb6fa85b692a9ca31754939541ee28dca8fa1f66569e1754f96b131c392"
+                         },
+                         {
+                             "path":  "scripts/check-supervisor.mjs",
+                             "sha256":  "3e711ff743051948c30d2a6dbd2c1f2ecd23faa664091a981cec193aa02a0aa6"
+                         },
+                         {
+                             "path":  "test\\supervisor.test.mjs",
+                             "sha256":  "0770a53f58b3fe627db2539bb3f4fcfd1376c281562b139036775798ffe9a790"
+                         },
+                         {
+                             "path":  "config\\supervisor.example.json",
+                             "sha256":  "7aa73f65a7a94ff2c4b477eeb6dd2804806323e0d2eae2cafb7afa59ecd6a817"
+                         },
+                         {
+                             "path":  "src\\supervisor\\telegram.mjs",
+                             "sha256":  "fef25e08f7fa65631e7bebd8de9472c42ed27e0794c14afe176b1b7791f5258b"
+                         },
+                         {
+                             "path":  "src\\supervisor\\journal.mjs",
+                             "sha256":  "e4ab2f7469a84d44a4285943a3297c938ee8b7b416915daf5abd36017ddbd4bc"
+                         },
+                         {
+                             "path":  "src\\supervisor\\fixtures\\worker.mjs",
+                             "sha256":  "cd9f93a1fe0ebb707c987fa279aa77debb0869b6f2ac54c382a068523151ad0a"
+                         },
+                         {
+                             "path":  "src\\supervisor\\fixtures\\authority.mjs",
+                             "sha256":  "7e5f9aa326606eaabe5b45321f3907758149eddb05a3de7ca04a782fa653bf2b"
+                         },
+                         {
+                             "path":  "src\\supervisor\\fixture-runner.mjs",
+                             "sha256":  "2db85f109de40317c834e212eb81c99e0ff66a0bd5671ef24857a5fc6b3f82b2"
+                         },
+                         {
+                             "path":  "src\\supervisor\\controller.mjs",
+                             "sha256":  "ab550d271740b23689909e9590955d657202a6556b4cd583e0c98b70355be20d"
+                         },
+                         {
+                             "path":  "src\\supervisor\\contracts.mjs",
+                             "sha256":  "e60b73b206ce42891ea4efb295dd00d8cc7be98ba3db2f7fdacd7ce1a692346b"
+                         },
+                         {
+                             "path":  "src\\supervisor\\codex.mjs",
+                             "sha256":  "c96d8cc952def97f68addd6ab457e76dcb1208149ee4dc0c434e62b85e2cf9d4"
+                         },
+                         {
+                             "path":  "src\\supervisor\\codex-events.mjs",
+                             "sha256":  "c5c3eff3a355c4fba4fad9e596ee5c8cb8a7bbbd4501314c4cb43fa12625c467"
+                         },
+                         {
+                             "path":  "src\\supervisor\\cli.mjs",
+                             "sha256":  "109c674e4660476f9896d31882ec14401a65be50b6f7027b3c04d0cf86bcd173"
+                         },
+                         {
+                             "path":  "src\\supervisor\\bridge.mjs",
+                             "sha256":  "25e3d5b490b04f8c9e605376c7175ddc47a0cdbe8bb3abfc9d23bc36940cd968"
+                         }
+                     ],
+    "limitations":  [
+                        "Fixture sender/chat IDs and grants are fictional.",
+                        "The actual Telegram/Codex integration was not run.",
+                        "Node fixture filesystem/process checks do not prove full Windows production isolation.",
+                        "No listener on a standard port does not prove software is absent or not configured on a different port."
+                    ]
+}

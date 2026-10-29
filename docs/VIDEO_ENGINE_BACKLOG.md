@@ -1,5 +1,7 @@
 # Video engine implementation backlog
 
+**Historical two-engine estimate.** The current owner direction selects OpenMontage and excludes MoneyPrinterTurbo/Postiz integration. Use [IMPLEMENTATION_PLAN.md](IMPLEMENTATION_PLAN.md)'s A-H sequence and active A backlog; do not activate this earlier candidate backlog.
+
 Status: **proposal only; not an approved execution queue**. Estimates are engineering hours for one experienced engineer, excluding provider/app review wait times, licences, content approval, downloads and the separate M0-M4 remote-development milestone. They are not measured model runtimes or promises. Allow approximately 25% contingency for Windows/provider surprises; do not spend that allowance without a grant.
 
 The latest instruction authorizes read-only Phase A source audit and these documents. No production code has been implemented. Existing VE-01 through VE-05 remain the high-level gates; the tasks below refine the two-engine proof of concept and later production integration without silently activating either backlog.

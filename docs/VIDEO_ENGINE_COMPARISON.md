@@ -1,5 +1,7 @@
 # Video engine comparison — Phase A
 
+**Owner decision update:** OpenMontage is now selected as primary. The comparison/recommendation below is historical audit evidence; the current [implementation plan](IMPLEMENTATION_PLAN.md) excludes MoneyPrinterTurbo/Postiz integration and gates video work until the secure supervisor passes.
+
 Audit date: 2026-10-29. Status: **read-only source audit complete with limitations; all video benchmarks NOT RUN**. This is an architecture recommendation for the proof of concept, not a production acceptance decision.
 
 Continued audit: the [setup packet](VIDEO_ENGINE_SETUP_PACKET.md) now includes an offline lock review and exact proposed dependency-staging manifest. Existing Python 3.11.9 and 3.14.9 were located outside PATH and used only for standard-library metadata inspection; no engine execution or new software installation occurred. Original PATH findings below remain observations from the initial audit.

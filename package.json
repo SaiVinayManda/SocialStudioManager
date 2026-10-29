@@ -1,0 +1,13 @@
+{
+  "name": "social-studio-supervisor",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=22.19.0" },
+  "scripts": {
+    "check": "node scripts/check-supervisor.mjs",
+    "test": "node --test --test-concurrency=1 test/supervisor.test.mjs",
+    "supervisor:status": "node src/supervisor/cli.mjs status",
+    "supervisor:demo": "node src/supervisor/cli.mjs demo"
+  }
+}

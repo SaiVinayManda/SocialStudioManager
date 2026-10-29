@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "telegram": {
+    "owner_user_id": null,
+    "private_chat_id": null,
+    "max_age_seconds": 300
+  },
+  "max_journal_bytes": 16777216,
+  "max_jobs": 1000
+}

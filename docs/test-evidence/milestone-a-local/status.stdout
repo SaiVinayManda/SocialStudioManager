@@ -1,0 +1,7 @@
+{
+  "milestone": "A",
+  "live_dispatch_enabled": false,
+  "telegram_integration_verified": false,
+  "codex_authentication_used": false,
+  "description": "Local supervisor development; live runtime acceptance pending."
+}

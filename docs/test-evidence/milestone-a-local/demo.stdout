@@ -1,0 +1,44 @@
+{
+  "simulation": true,
+  "real_telegram_requests": 0,
+  "real_codex_requests": 0,
+  "real_model_spend_usd": 0,
+  "process_launches": 1,
+  "job": {
+    "baseline_sha": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "created_at": "2026-10-29T17:48:01.450Z",
+    "facts": {
+      "artifacts": [
+        {
+          "bytes": 30,
+          "path": "canary.txt",
+          "sha256": "fe5e08c8ef37a99a04e5c65d83d7bb15718f0308e418080d528aa31772acd351"
+        }
+      ],
+      "checks": [
+        {
+          "name": "reviewed-file-content",
+          "passed": true
+        }
+      ],
+      "duration_ms": 60,
+      "exit_code": 0,
+      "pid": 32800
+    },
+    "id": "cc1f3f40-569d-4f33-b8a1-ffc1544f2043",
+    "manifest_digest": "3a0532fd1816c22bc0d4616a3d59841601ed72eac1a61ca619004302a67a69d0",
+    "revision": 1,
+    "state": "succeeded",
+    "task_id": "LOCAL-CANARY",
+    "updated_at": "2026-10-29T17:48:01.522Z"
+  },
+  "notifications": [
+    {
+      "id": "7d36ee03-a37c-4a6f-abac-72e627ad54ab",
+      "job_id": "cc1f3f40-569d-4f33-b8a1-ffc1544f2043",
+      "state": "succeeded"
+    }
+  ],
+  "milestone_a_accepted": false,
+  "evidence_directory": "C:\\Projects\\Manas_Flow\\SocialStudio\\.runtime\\demos\\8ad88540-8915-4d09-b99c-4bf018401b10"
+}

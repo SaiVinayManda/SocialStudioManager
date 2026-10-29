@@ -4,7 +4,7 @@
 
 Build a self-hosted AI Social Media Studio. The first milestone is secure remote development with Hermes Agent, Telegram, a restricted task supervisor, and Codex CLI. Complete and accept that milestone before building Social Studio product features.
 
-The current authorization is **inspection and foundation documentation only**. Do not install Hermes, install or upgrade other software, authenticate services, start remote execution, or change system settings. The owner must explicitly approve this foundation before implementation begins. Creating these instructions does not grant further authorization.
+The owner's latest instruction authorizes **Milestone A local coding, local tests, documentation and local Git checkpoints** in this workspace. Preserve the installed Hermes and Codex setup and prior evaluation. Installation, credentials, paid usage, system changes, destructive actions, public endpoints and publishing still require specific owner approval. No live credential use, model budget or runtime provisioning is inferred from an installed/authenticated tool. Start remote dispatch disabled.
 
 Read these documents before implementation:
 
@@ -12,14 +12,15 @@ Read these documents before implementation:
 - [Human actions](docs/HUMAN_ACTIONS.md): approvals and owner-operated steps.
 - [Remote development](docs/REMOTE_DEVELOPMENT.md): supervisor security and integration design.
 - [MoneyPrinterTurbo evaluation](docs/MONEYPRINTERTURBO_EVALUATION.md): candidate engine findings, evaluation gates, adapter contract, and required human actions.
+- [Current architecture](docs/ARCHITECTURE.md), [security](docs/SECURITY.md), [test evidence](docs/TEST_RESULTS.md), and [progress](docs/PROGRESS.md): current implementation and remaining gates.
 
 ## Video engine and workflow requirements
 
-After owner acceptance of the Hermes + Telegram remote-development gate (M4), evaluate `https://github.com/harry0703/MoneyPrinterTurbo` in an isolated evaluation workspace. Inspect its licence, dependencies, configuration, API/CLI and maintenance; run an approved topic-to-video sample and measure quality, subtitles, voiceovers, footage, music and resource usage on the target RTX 4060 8 GB / 16 GB RAM machine. Prepare findings and human actions before any production integration.
+The owner selected `https://github.com/SaiVinayManda/OpenMontage` as the primary engine. Do not integrate MoneyPrinterTurbo or Postiz at this stage. Preserve their historical evaluation/staging evidence without repeating downloads, installing them or deleting the cache. Reuse the existing pinned OpenMontage evaluation clone.
 
-MoneyPrinterTurbo is a candidate generation engine behind a reusable Social Studio adapter, not the application architecture. The adapter accepts a structured job and returns video artifacts, metadata, logs and errors. Preserve a separate FFmpeg workflow for converting existing long-form videos into reels. All publishing and scheduling belong to n8n; disable and isolate MoneyPrinterTurbo publishing paths, and keep platform credentials out of generation workers.
+Complete and accept Milestone A (secure remote supervisor) before any OpenMontage runtime/production work. The first Milestone B deliverable is an actually rendered Horror pilot with independently verified media, rights and resource evidence. Keep OpenMontage independently maintainable behind a Social Studio adapter; preserve a separate FFmpeg long-form-to-reels route. All publishing and scheduling belong to n8n. Generation workers receive no publishing credentials and cannot execute publishing stages.
 
-This requirement authorizes foundation documentation now, not an early clone or execution. After M4, bind evaluation work to a reviewed revision, isolated destination and bounded task grant. Dependency installation, model downloads, external integrations, credential use, paid APIs and publishing retain their separate approval requirements.
+The local supervisor fixture/demo is a zero-network development test with fictional identities/grants and a fixed Node child process. It is not a live Telegram/Codex integration, owner enrollment, production isolation proof or accepted milestone. Do not deploy protected changes or enable live execution from a passing fixture result.
 
 ## Approval rules
 
