@@ -1,0 +1,319 @@
+{
+  "captured_at_utc": "2026-10-29T00:02:04.1336679Z",
+  "audit_root": "C:\\Users\\Vinay\\AppData\\Local\\Temp\\SocialStudio-VideoEngineAudit-20261029",
+  "repositories": [
+    {
+      "name": "OpenMontage",
+      "requested_url": "https://github.com/SaiVinayManda/OpenMontage.git",
+      "local_path": "C:\\Users\\Vinay\\AppData\\Local\\Temp\\SocialStudio-VideoEngineAudit-20261029\\OpenMontage",
+      "head": "195eab24478dc9363326aec437aefc3701635ddf",
+      "head_metadata": "2026-10-28T14:45:26-07:00 Merge pull request #867 from calesthio/fix/subtitle-style-security-test",
+      "history_scope": "shallow clone, depth 40 requested",
+      "checkout_created": false,
+      "upstream_code_executed": false,
+      "files": [
+        {
+          "path": "README.md",
+          "git_blob_oid": "79a227ecc3a16a5e440402526f0c3c8e543dbe53",
+          "scope": "full file or selected source excerpts; not an execution test"
+        },
+        {
+          "path": "LICENSE",
+          "git_blob_oid": "be3f7b28e564e7dd05eaf59d64adba1a4065ac0e",
+          "scope": "full file or selected source excerpts; not an execution test"
+        },
+        {
+          "path": "requirements.txt",
+          "git_blob_oid": "59d451bd43e94cd34bdbdaa35fe43a971300c1a7",
+          "scope": "full file or selected source excerpts; not an execution test"
+        },
+        {
+          "path": "requirements-gpu.txt",
+          "git_blob_oid": "d188f6543955d24713d64809dabb3a35bf2f083d",
+          "scope": "full file or selected source excerpts; not an execution test"
+        },
+        {
+          "path": "setup.py",
+          "git_blob_oid": "38de3eb82fed9a79102d52b5d35e00dcad5addfe",
+          "scope": "full file or selected source excerpts; not an execution test"
+        },
+        {
+          "path": "config.yaml",
+          "git_blob_oid": "f930a43eec6360fa2a50d0379672ecb6b6b9352f",
+          "scope": "full file or selected source excerpts; not an execution test"
+        },
+        {
+          "path": "Makefile",
+          "git_blob_oid": "aeb48600572d78117d39dde186b5a20cb6e5a998",
+          "scope": "full file or selected source excerpts; not an execution test"
+        },
+        {
+          "path": "docs/ARCHITECTURE.md",
+          "git_blob_oid": "90337ed2affc2f485b340df2885c103bf9ff8e0b",
+          "scope": "full file or selected source excerpts; not an execution test"
+        },
+        {
+          "path": "CODEX.md",
+          "git_blob_oid": "47e2e7d5b2c090a96e14a5c139805527a7682b36",
+          "scope": "full file or selected source excerpts; not an execution test"
+        },
+        {
+          "path": "pipeline_defs/documentary-montage.yaml",
+          "git_blob_oid": "2b7ef65c9aaf71783cd12c086da978ce29ffea03",
+          "scope": "full file or selected source excerpts; not an execution test"
+        },
+        {
+          "path": "pipeline_defs/clip-factory.yaml",
+          "git_blob_oid": "8f4e1345b8ef35284547857e7fffd418a1248080",
+          "scope": "full file or selected source excerpts; not an execution test"
+        },
+        {
+          "path": "pipeline_defs/animated-explainer.yaml",
+          "git_blob_oid": "bd17a1975214077c74b6ebc8fb68ad18eaf331ed",
+          "scope": "full file or selected source excerpts; not an execution test"
+        },
+        {
+          "path": "lib/checkpoint.py",
+          "git_blob_oid": "3951d35ce1a822147234901c9d802409d3a31a2d",
+          "scope": "full file or selected source excerpts; not an execution test"
+        },
+        {
+          "path": "lib/clip_embedder.py",
+          "git_blob_oid": "82f0e1cd44822908d182548917b58728ce15211c",
+          "scope": "full file or selected source excerpts; not an execution test"
+        },
+        {
+          "path": "tools/base_tool.py",
+          "git_blob_oid": "3627d7cef1bf6ca6d902bf4cf972b0ac9d172ea5",
+          "scope": "full file or selected source excerpts; not an execution test"
+        },
+        {
+          "path": "tools/tool_registry.py",
+          "git_blob_oid": "7dcf0d32c74e0d8dda2f79b45c643199e806eb57",
+          "scope": "full file or selected source excerpts; not an execution test"
+        },
+        {
+          "path": "tools/cost_tracker.py",
+          "git_blob_oid": "be0355e357829e10f1d8dab953411c54214d824c",
+          "scope": "full file or selected source excerpts; not an execution test"
+        },
+        {
+          "path": "tools/provider_jobs.py",
+          "git_blob_oid": "5067ac30092df7cad98ebed368a23ba54488d9cc",
+          "scope": "full file or selected source excerpts; not an execution test"
+        },
+        {
+          "path": "tools/analysis/transcriber.py",
+          "git_blob_oid": "8e384152d05f6e5acdec5e9c035ad795111990f0",
+          "scope": "full file or selected source excerpts; not an execution test"
+        },
+        {
+          "path": "tools/audio/piper_tts.py",
+          "git_blob_oid": "cd44d255f8272f8d7aea676ec9d16dd9c9ae71fc",
+          "scope": "full file or selected source excerpts; not an execution test"
+        },
+        {
+          "path": "tools/graphics/math_animate.py",
+          "git_blob_oid": "f7c55b1bf4761c8ca8557fc2190b6e238b1bcdc8",
+          "scope": "full file or selected source excerpts; not an execution test"
+        },
+        {
+          "path": "tools/video/hyperframes_compose.py",
+          "git_blob_oid": "351529d1313320cccda0f2bcf5b641784fca2cac",
+          "scope": "full file or selected source excerpts; not an execution test"
+        },
+        {
+          "path": "tools/video/video_compose.py",
+          "git_blob_oid": "6a3b25a683c0164736d87f09a5cd145d6d24a6d4",
+          "scope": "full file or selected source excerpts; not an execution test"
+        },
+        {
+          "path": "tools/video/video_trimmer.py",
+          "git_blob_oid": "582bd570b12fd30b91d26f1913fb3beb506b3d0e",
+          "scope": "full file or selected source excerpts; not an execution test"
+        },
+        {
+          "path": "tools/video/direct_clip_search.py",
+          "git_blob_oid": "45b9a7823b20f5439f34338bd06abe219999b142",
+          "scope": "full file or selected source excerpts; not an execution test"
+        },
+        {
+          "path": "backlot/server.py",
+          "git_blob_oid": "2fa2e8955d8a1558d2198def00d06565ae97b881",
+          "scope": "full file or selected source excerpts; not an execution test"
+        },
+        {
+          "path": "backlot/__main__.py",
+          "git_blob_oid": "6004ef3da6920270e4fe5b87957d07f9052e718a",
+          "scope": "full file or selected source excerpts; not an execution test"
+        },
+        {
+          "path": "remotion-composer/package.json",
+          "git_blob_oid": "47dbca8d2e0931ac11f3525450f874ab5e5ed45d",
+          "scope": "full file or selected source excerpts; not an execution test"
+        },
+        {
+          "path": "remotion-composer/package-lock.json",
+          "git_blob_oid": "d090ec0b291640e2952a79af1267e306c7b86f68",
+          "scope": "existence and Git blob identity only; complete transitive dependency audit pending"
+        },
+        {
+          "path": "remotion-composer/src/Explainer.tsx",
+          "git_blob_oid": "707e6db35194393d1bc47d5b067b2195b20ecb26",
+          "scope": "full file or selected source excerpts; not an execution test"
+        },
+        {
+          "path": ".github/workflows/ci.yml",
+          "git_blob_oid": "c91c812cfbce988997f9a2890d51c0be09504de5",
+          "scope": "full file or selected source excerpts; not an execution test"
+        }
+      ]
+    },
+    {
+      "name": "MoneyPrinterTurbo",
+      "requested_url": "https://github.com/harry0703/MoneyPrinterTurbo.git",
+      "local_path": "C:\\Users\\Vinay\\AppData\\Local\\Temp\\SocialStudio-VideoEngineAudit-20261029\\MoneyPrinterTurbo",
+      "head": "fd5127e81721f36f0a85aee21b298cc5f4452f42",
+      "head_metadata": "2026-10-28T17:13:04+05:30 fix(tts): report Gemini empty-audio completion reasons",
+      "history_scope": "shallow clone, depth 40 requested",
+      "checkout_created": false,
+      "upstream_code_executed": false,
+      "files": [
+        {
+          "path": "README-en.md",
+          "git_blob_oid": "45bcfce89a9fa486989c14053f9171dc169762fa",
+          "scope": "full file or selected source excerpts; not an execution test"
+        },
+        {
+          "path": "LICENSE",
+          "git_blob_oid": "3b409c921f64304a971ca0a0e595c5bb459ac903",
+          "scope": "full file or selected source excerpts; not an execution test"
+        },
+        {
+          "path": "pyproject.toml",
+          "git_blob_oid": "e1d12368e7187b8506982fd994529cf55adfd997",
+          "scope": "full file or selected source excerpts; not an execution test"
+        },
+        {
+          "path": "requirements.txt",
+          "git_blob_oid": "14c92fa66b50e68b85cc5675245df22e3e8b55ab",
+          "scope": "full file or selected source excerpts; not an execution test"
+        },
+        {
+          "path": "uv.lock",
+          "git_blob_oid": "1fe5bc7848d59636b25b9117cfa00128ee60457a",
+          "scope": "existence and Git blob identity only; complete transitive dependency audit pending"
+        },
+        {
+          "path": "main.py",
+          "git_blob_oid": "af7de2cc7c23a37effdd5b4912e5edab984a42b4",
+          "scope": "full file or selected source excerpts; not an execution test"
+        },
+        {
+          "path": "cli.py",
+          "git_blob_oid": "1a7398f2bc3d467588cd507900d54f4026e902c5",
+          "scope": "full file or selected source excerpts; not an execution test"
+        },
+        {
+          "path": "config.example.toml",
+          "git_blob_oid": "d59972d5052a742dc2e1c5827f1ea3d640a92172",
+          "scope": "full file or selected source excerpts; not an execution test"
+        },
+        {
+          "path": "app/controllers/v1/video.py",
+          "git_blob_oid": "4d510d57fad0ca8226bdf29f907b120380cfaafe",
+          "scope": "full file or selected source excerpts; not an execution test"
+        },
+        {
+          "path": "app/controllers/manager/base_manager.py",
+          "git_blob_oid": "a2187df45da78267742fa860a418d7ca7aa48d21",
+          "scope": "full file or selected source excerpts; not an execution test"
+        },
+        {
+          "path": "app/controllers/manager/memory_manager.py",
+          "git_blob_oid": "4a2612bdf33d9db77800330ff25bfbc4a1cb60ab",
+          "scope": "full file or selected source excerpts; not an execution test"
+        },
+        {
+          "path": "app/services/task.py",
+          "git_blob_oid": "46b7854fbbd9aa280e3d81d3857030fa19442c62",
+          "scope": "full file or selected source excerpts; not an execution test"
+        },
+        {
+          "path": "app/services/video.py",
+          "git_blob_oid": "13e042c5d0e5447ad531d980db55a0d97dbc13ab",
+          "scope": "full file or selected source excerpts; not an execution test"
+        },
+        {
+          "path": "app/services/llm.py",
+          "git_blob_oid": "7c4d670aea553f7cd06d8161282c01d60ec491e3",
+          "scope": "full file or selected source excerpts; not an execution test"
+        },
+        {
+          "path": "app/services/codex_oauth.py",
+          "git_blob_oid": "546390bf17944841c5f2090ab54f8f6792a23a6e",
+          "scope": "full file or selected source excerpts; not an execution test"
+        },
+        {
+          "path": ".github/workflows/ci.yml",
+          "git_blob_oid": "60de09fb8c0a6ca718a408f033e4a05e5618df6a",
+          "scope": "full file or selected source excerpts; not an execution test"
+        }
+      ]
+    }
+  ],
+  "audit_status": "read-only selected-source audit; no engine execution",
+  "execution_validated": {
+    "hardware_query": {
+      "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+      "vram_total_mib": 8188,
+      "driver_version": "591.91"
+    },
+    "node_version": "v22.19.0",
+    "video_benchmarks_run": 0,
+    "finished_video_outputs": 0
+  },
+  "observed_commands": [
+    {
+      "operation": "anonymous git clone --no-checkout --depth 40 --no-recurse-submodules",
+      "outcome": "Initial sandbox network attempt failed (exit 128); explicit network retry completed both clones (exit 0). Credential helpers/prompts, system/global Git config and LFS smudge disabled."
+    },
+    {
+      "operation": "git log / ls-tree / show / grep",
+      "outcome": "Read commit metadata and selected files. Initial identity ownership check failed; exact newly cloned paths trusted per invocation only. No persistent config change. Searches with no matches returned Git exit 1, not an executed test failure."
+    },
+    {
+      "operation": "Get-Command existing tools",
+      "outcome": "git, rg, node, npm, uv, nvidia-smi and hermes resolved; python/python3/py, ffmpeg, ffprobe and codex did not resolve on session PATH. No installer or upstream executable launched."
+    },
+    {
+      "operation": "nvidia-smi --query-gpu=name,memory.total,driver_version --format=csv,noheader",
+      "outcome": "Exit 0; inventory above. No rendering telemetry."
+    },
+    {
+      "operation": "node --version",
+      "outcome": "Exit 0; v22.19.0."
+    }
+  ],
+  "limitations": [
+    "No upstream checkout, dependency restore, source imports or engine tests.",
+    "OpenMontage requested fork web/issue pages unavailable; upstream issue reports used as context only.",
+    "History is shallow; complete dependency/security/licence and maintenance reviews remain pending.",
+    "Meta publishing documentation retrieval returned HTTP 429; no exact current Meta permission claim.",
+    "Google headless support verified in documentation only; no local authentication or paid API use.",
+    "Long-form source asset not supplied with the original request."
+  ],
+  "documentation_validation": {
+    "markdown_files": 9,
+    "relative_links_checked": 48,
+    "encoding_and_code_fences": "passed",
+    "fixture_json_parsed": true,
+    "distinct_jobs": 8,
+    "required_output_files_if_all_scenarios_supported": 12,
+    "all_jobs_blocked": true,
+    "all_publishing_denied": true,
+    "source_heads_unchanged": true,
+    "no_upstream_working_tree_created": true,
+    "notes": "An initial PowerShell aggregate read collection Count rather than nested output counts; explicit per-job summation verified 12. These checks validate documentation only, not an engine."
+  }
+}

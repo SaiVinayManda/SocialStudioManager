@@ -1,0 +1,214 @@
+mpt v1.3.9
+├── av v17.0.0
+├── azure-cognitiveservices-speech v1.41.1
+├── dashscope v1.20.14
+│   ├── aiohttp v3.14.0
+│   │   ├── aiohappyeyeballs v2.6.1
+│   │   ├── aiosignal v1.4.0
+│   │   │   ├── frozenlist v1.8.0
+│   │   │   └── typing-extensions v4.15.0
+│   │   ├── attrs v26.1.0
+│   │   ├── frozenlist v1.8.0
+│   │   ├── multidict v6.7.1
+│   │   ├── propcache v0.4.1
+│   │   ├── typing-extensions v4.15.0
+│   │   └── yarl v1.23.0
+│   │       ├── idna v3.17
+│   │       ├── multidict v6.7.1
+│   │       └── propcache v0.4.1
+│   ├── requests v2.33.1
+│   │   ├── certifi v2026.2.25
+│   │   ├── charset-normalizer v3.4.7
+│   │   ├── idna v3.17
+│   │   └── urllib3 v2.7.0
+│   └── websocket-client v1.9.0
+├── edge-tts v7.3.1
+│   ├── aiohttp v3.14.0 (*)
+│   ├── certifi v2026.2.25
+│   ├── tabulate v0.10.0
+│   └── typing-extensions v4.15.0
+├── fastapi v0.136.3
+│   ├── annotated-doc v0.0.4
+│   ├── pydantic v2.12.5
+│   │   ├── annotated-types v0.7.0
+│   │   ├── pydantic-core v2.41.5
+│   │   │   └── typing-extensions v4.15.0
+│   │   ├── typing-extensions v4.15.0
+│   │   └── typing-inspection v0.4.2
+│   │       └── typing-extensions v4.15.0
+│   ├── starlette v1.2.1
+│   │   ├── anyio v4.13.0
+│   │   │   ├── idna v3.17
+│   │   │   └── typing-extensions v4.15.0
+│   │   └── typing-extensions v4.15.0
+│   ├── typing-extensions v4.15.0
+│   └── typing-inspection v0.4.2 (*)
+├── faster-whisper v1.1.0
+│   ├── av v17.0.0
+│   ├── ctranslate2 v4.7.1
+│   │   ├── numpy v2.4.4
+│   │   ├── pyyaml v6.0.3
+│   │   └── setuptools v82.0.1
+│   ├── huggingface-hub v1.8.0
+│   │   ├── filelock v3.25.2
+│   │   ├── fsspec v2026.3.0
+│   │   ├── hf-xet v1.4.3
+│   │   ├── httpx v0.28.1
+│   │   │   ├── anyio v4.13.0 (*)
+│   │   │   ├── certifi v2026.2.25
+│   │   │   ├── httpcore v1.0.9
+│   │   │   │   ├── certifi v2026.2.25
+│   │   │   │   └── h11 v0.16.0
+│   │   │   └── idna v3.17
+│   │   ├── packaging v24.2
+│   │   ├── pyyaml v6.0.3
+│   │   ├── tqdm v4.67.3
+│   │   │   └── colorama v0.4.6
+│   │   ├── typer v0.26.5
+│   │   │   ├── annotated-doc v0.0.4
+│   │   │   ├── colorama v0.4.6
+│   │   │   ├── rich v14.3.3
+│   │   │   │   ├── markdown-it-py v4.0.0
+│   │   │   │   │   └── mdurl v0.1.2
+│   │   │   │   └── pygments v2.20.0
+│   │   │   └── shellingham v1.5.4
+│   │   └── typing-extensions v4.15.0
+│   ├── onnxruntime v1.24.4
+│   │   ├── flatbuffers v25.12.19
+│   │   ├── numpy v2.4.4
+│   │   ├── packaging v24.2
+│   │   ├── protobuf v5.29.6
+│   │   └── sympy v1.14.0
+│   │       └── mpmath v1.3.0
+│   ├── tokenizers v0.22.2
+│   │   └── huggingface-hub v1.8.0 (*)
+│   └── tqdm v4.67.3 (*)
+├── filelock v3.25.2
+├── google-genai v2.11.0
+│   ├── anyio v4.13.0 (*)
+│   ├── distro v1.9.0
+│   ├── google-auth[requests] v2.55.2
+│   │   ├── cryptography v49.0.0
+│   │   │   └── cffi v2.1.0
+│   │   │       └── pycparser v3.0
+│   │   ├── pyasn1-modules v0.4.2
+│   │   │   └── pyasn1 v0.6.4
+│   │   └── requests v2.33.1 (extra: requests) (*)
+│   ├── httpx v0.28.1 (*)
+│   ├── pydantic v2.12.5 (*)
+│   ├── requests v2.33.1 (*)
+│   ├── sniffio v1.3.1
+│   ├── tenacity v9.1.4
+│   ├── typing-extensions v4.15.0
+│   └── websockets v16.0
+├── imageio-ffmpeg v0.6.0
+├── litellm v1.86.2
+│   ├── aiohttp v3.14.0 (*)
+│   ├── click v8.1.8
+│   │   └── colorama v0.4.6
+│   ├── fastuuid v0.14.0
+│   ├── httpx v0.28.1 (*)
+│   ├── importlib-metadata v8.5.0
+│   │   └── zipp v3.23.1
+│   ├── jinja2 v3.1.6
+│   │   └── markupsafe v3.0.3
+│   ├── jsonschema v4.23.0
+│   │   ├── attrs v26.1.0
+│   │   ├── jsonschema-specifications v2025.9.1
+│   │   │   └── referencing v0.37.0
+│   │   │       ├── attrs v26.1.0
+│   │   │       ├── rpds-py v0.30.0
+│   │   │       └── typing-extensions v4.15.0
+│   │   ├── referencing v0.37.0 (*)
+│   │   └── rpds-py v0.30.0
+│   ├── openai v2.24.0
+│   │   ├── anyio v4.13.0 (*)
+│   │   ├── distro v1.9.0
+│   │   ├── httpx v0.28.1 (*)
+│   │   ├── jiter v0.13.0
+│   │   ├── pydantic v2.12.5 (*)
+│   │   ├── sniffio v1.3.1
+│   │   ├── tqdm v4.67.3 (*)
+│   │   └── typing-extensions v4.15.0
+│   ├── pydantic v2.12.5 (*)
+│   ├── python-dotenv v1.2.2
+│   ├── tiktoken v0.12.0
+│   │   ├── regex v2026.4.4
+│   │   └── requests v2.33.1 (*)
+│   └── tokenizers v0.22.2 (*)
+├── loguru v0.7.3
+│   ├── colorama v0.4.6
+│   └── win32-setctime v1.2.0
+├── moviepy v2.2.1
+│   ├── decorator v5.2.1
+│   ├── imageio v2.37.3
+│   │   ├── numpy v2.4.4
+│   │   └── pillow v11.3.0
+│   ├── imageio-ffmpeg v0.6.0
+│   ├── numpy v2.4.4
+│   ├── pillow v11.3.0
+│   ├── proglog v0.1.12
+│   │   └── tqdm v4.67.3 (*)
+│   └── python-dotenv v1.2.2
+├── openai v2.24.0 (*)
+├── packaging v24.2
+├── pydub v0.25.1
+├── pyjwt[crypto] v2.15.1
+│   └── cryptography v49.0.0 (extra: crypto) (*)
+├── python-multipart v0.0.27
+├── pyyaml v6.0.3
+├── redis v5.2.0
+├── requests v2.33.1 (*)
+├── socksio v1.0.0
+├── starlette v1.2.1 (*)
+├── streamlit v1.59.1
+│   ├── altair v5.5.0
+│   │   ├── jinja2 v3.1.6 (*)
+│   │   ├── jsonschema v4.23.0 (*)
+│   │   ├── narwhals v2.18.1
+│   │   ├── packaging v24.2
+│   │   └── typing-extensions v4.15.0
+│   ├── anyio v4.13.0 (*)
+│   ├── blinker v1.9.0
+│   ├── cachetools v5.5.2
+│   ├── click v8.1.8 (*)
+│   ├── gitpython v3.1.50
+│   │   └── gitdb v4.0.12
+│   │       └── smmap v5.0.3
+│   ├── httptools v0.8.0
+│   ├── itsdangerous v2.2.0
+│   ├── numpy v2.4.4
+│   ├── packaging v24.2
+│   ├── pandas v2.3.3
+│   │   ├── numpy v2.4.4
+│   │   ├── python-dateutil v2.9.0.post0
+│   │   │   └── six v1.17.0
+│   │   ├── pytz v2026.1.post1
+│   │   └── tzdata v2025.3
+│   ├── pillow v11.3.0
+│   ├── protobuf v5.29.6
+│   ├── pyarrow v23.0.1
+│   ├── pydeck v0.9.1
+│   │   ├── jinja2 v3.1.6 (*)
+│   │   └── numpy v2.4.4
+│   ├── python-multipart v0.0.27
+│   ├── requests v2.33.1 (*)
+│   ├── starlette v1.2.1 (*)
+│   ├── tenacity v9.1.4
+│   ├── toml v0.10.2
+│   ├── typing-extensions v4.15.0
+│   ├── uvicorn v0.32.1
+│   │   ├── click v8.1.8 (*)
+│   │   └── h11 v0.16.0
+│   ├── watchdog v6.0.0
+│   └── websockets v16.0
+├── streamlit-tour v1.1.0
+│   └── streamlit v1.59.1 (*)
+├── toml v0.10.2
+├── uvicorn v0.32.1 (*)
+└── twelvelabs v1.2.8 (extra: twelvelabs)
+    ├── httpx v0.28.1 (*)
+    ├── pydantic v2.12.5 (*)
+    ├── pydantic-core v2.41.5 (*)
+    └── typing-extensions v4.15.0
+(*) Package tree already displayed

@@ -1,0 +1,582 @@
+{
+  "fixture_revision": "draft-20261029-1",
+  "executable": false,
+  "authorization": "none; design fixtures only",
+  "source_commits": {
+    "OpenMontage": "195eab24478dc9363326aec437aefc3701635ddf",
+    "MoneyPrinterTurbo": "fd5127e81721f36f0a85aee21b298cc5f4452f42"
+  },
+  "repeat_runs_authorized": 0,
+  "jobs": [
+    {
+      "schema_version": "video-job/0.1",
+      "job_id": "a71ef8c4-e53b-4de5-8cb0-000000000001",
+      "idempotency_key": "audit-20261029-H01-openmontage-r1",
+      "scenario_id": "H01",
+      "channel_id": "eval-horror",
+      "brand_settings": {
+        "brand_id": "studio-eval",
+        "version": "draft-1",
+        "palette": [
+          "#121018",
+          "#F0E8D8",
+          "#A42B38"
+        ],
+        "font_asset_id": null,
+        "logo_asset_id": null,
+        "voice_profile_id": null,
+        "language": "en",
+        "subtitle_safe_area_profile_id": "draft-vertical-safe-area"
+      },
+      "source_inputs": {
+        "brief": "Create a non-graphic lighthouse horror story. A keeper hears his own voice from a locked radio, discovers the warning comes from the next night, and must choose whether to answer. Hook within 2 seconds, escalation and payoff. Real moving stock footage, English narration, tense cleared music and subtitles.",
+        "asset_manifest_id": null
+      },
+      "output_requirements": {
+        "operation": "topic_to_video",
+        "count": 1,
+        "duration_seconds": 60,
+        "duration_tolerance_seconds": 2,
+        "width": 1080,
+        "height": 1920,
+        "fps": 30,
+        "container": "mp4",
+        "video_codec": "h264",
+        "audio_codec": "aac",
+        "subtitles": true,
+        "subtitle_sidecar": true,
+        "narration": true,
+        "preserve_source_audio": false,
+        "music": true,
+        "real_moving_footage": true,
+        "required_graphics": [
+          "opening_hook",
+          "brand_end_card"
+        ]
+      },
+      "approval_rules": {
+        "policy_profile_id": "draft-eval-no-publish",
+        "require_preflight": true,
+        "require_content_review": true,
+        "publishing_allowed": false
+      },
+      "engine_profile_id": "openmontage-pinned-evaluation",
+      "provider_profile_id": null,
+      "limits_profile_id": null,
+      "evaluation_state": "BLOCKED",
+      "approval_id": null,
+      "blockers": [
+        "exact dependency/runtime and asset hashes pending",
+        "owner run/provider/install grants pending"
+      ]
+    },
+    {
+      "schema_version": "video-job/0.1",
+      "job_id": "a71ef8c4-e53b-4de5-8cb0-000000000002",
+      "idempotency_key": "audit-20261029-H01-moneyprinterturbo-r1",
+      "scenario_id": "H01",
+      "channel_id": "eval-horror",
+      "brand_settings": {
+        "brand_id": "studio-eval",
+        "version": "draft-1",
+        "palette": [
+          "#121018",
+          "#F0E8D8",
+          "#A42B38"
+        ],
+        "font_asset_id": null,
+        "logo_asset_id": null,
+        "voice_profile_id": null,
+        "language": "en",
+        "subtitle_safe_area_profile_id": "draft-vertical-safe-area"
+      },
+      "source_inputs": {
+        "brief": "Create a non-graphic lighthouse horror story. A keeper hears his own voice from a locked radio, discovers the warning comes from the next night, and must choose whether to answer. Hook within 2 seconds, escalation and payoff. Real moving stock footage, English narration, tense cleared music and subtitles.",
+        "asset_manifest_id": null
+      },
+      "output_requirements": {
+        "operation": "topic_to_video",
+        "count": 1,
+        "duration_seconds": 60,
+        "duration_tolerance_seconds": 2,
+        "width": 1080,
+        "height": 1920,
+        "fps": 30,
+        "container": "mp4",
+        "video_codec": "h264",
+        "audio_codec": "aac",
+        "subtitles": true,
+        "subtitle_sidecar": true,
+        "narration": true,
+        "preserve_source_audio": false,
+        "music": true,
+        "real_moving_footage": true,
+        "required_graphics": [
+          "opening_hook",
+          "brand_end_card"
+        ]
+      },
+      "approval_rules": {
+        "policy_profile_id": "draft-eval-no-publish",
+        "require_preflight": true,
+        "require_content_review": true,
+        "publishing_allowed": false
+      },
+      "engine_profile_id": "moneyprinterturbo-pinned-evaluation",
+      "provider_profile_id": null,
+      "limits_profile_id": null,
+      "evaluation_state": "BLOCKED",
+      "approval_id": null,
+      "blockers": [
+        "exact dependency/runtime and asset hashes pending",
+        "owner run/provider/install grants pending"
+      ]
+    },
+    {
+      "schema_version": "video-job/0.1",
+      "job_id": "a71ef8c4-e53b-4de5-8cb0-000000000003",
+      "idempotency_key": "audit-20261029-T01-openmontage-r1",
+      "scenario_id": "T01",
+      "channel_id": "eval-travel",
+      "brand_settings": {
+        "brand_id": "studio-eval",
+        "version": "draft-1",
+        "palette": [
+          "#13263A",
+          "#F5F1E8",
+          "#D89A32"
+        ],
+        "font_asset_id": null,
+        "logo_asset_id": null,
+        "voice_profile_id": null,
+        "language": "en",
+        "subtitle_safe_area_profile_id": "draft-vertical-safe-area"
+      },
+      "source_inputs": {
+        "brief": "Create a 60-second Lisbon mini-documentary linking riverside, street/tram and tiled-building footage. Location-accurate real moving stock, English narration, music, subtitles and animated location/title graphics. Do not label generic footage as Lisbon.",
+        "asset_manifest_id": null
+      },
+      "output_requirements": {
+        "operation": "topic_to_video",
+        "count": 1,
+        "duration_seconds": 60,
+        "duration_tolerance_seconds": 2,
+        "width": 1080,
+        "height": 1920,
+        "fps": 30,
+        "container": "mp4",
+        "video_codec": "h264",
+        "audio_codec": "aac",
+        "subtitles": true,
+        "subtitle_sidecar": true,
+        "narration": true,
+        "preserve_source_audio": false,
+        "music": true,
+        "real_moving_footage": true,
+        "required_graphics": [
+          "animated_title",
+          "location_labels"
+        ]
+      },
+      "approval_rules": {
+        "policy_profile_id": "draft-eval-no-publish",
+        "require_preflight": true,
+        "require_content_review": true,
+        "publishing_allowed": false
+      },
+      "engine_profile_id": "openmontage-pinned-evaluation",
+      "provider_profile_id": null,
+      "limits_profile_id": null,
+      "evaluation_state": "BLOCKED",
+      "approval_id": null,
+      "blockers": [
+        "exact dependency/runtime and asset hashes pending",
+        "owner run/provider/install grants pending"
+      ]
+    },
+    {
+      "schema_version": "video-job/0.1",
+      "job_id": "a71ef8c4-e53b-4de5-8cb0-000000000004",
+      "idempotency_key": "audit-20261029-T01-moneyprinterturbo-r1",
+      "scenario_id": "T01",
+      "channel_id": "eval-travel",
+      "brand_settings": {
+        "brand_id": "studio-eval",
+        "version": "draft-1",
+        "palette": [
+          "#13263A",
+          "#F5F1E8",
+          "#D89A32"
+        ],
+        "font_asset_id": null,
+        "logo_asset_id": null,
+        "voice_profile_id": null,
+        "language": "en",
+        "subtitle_safe_area_profile_id": "draft-vertical-safe-area"
+      },
+      "source_inputs": {
+        "brief": "Create a 60-second Lisbon mini-documentary linking riverside, street/tram and tiled-building footage. Location-accurate real moving stock, English narration, music, subtitles and animated location/title graphics. Do not label generic footage as Lisbon.",
+        "asset_manifest_id": null
+      },
+      "output_requirements": {
+        "operation": "topic_to_video",
+        "count": 1,
+        "duration_seconds": 60,
+        "duration_tolerance_seconds": 2,
+        "width": 1080,
+        "height": 1920,
+        "fps": 30,
+        "container": "mp4",
+        "video_codec": "h264",
+        "audio_codec": "aac",
+        "subtitles": true,
+        "subtitle_sidecar": true,
+        "narration": true,
+        "preserve_source_audio": false,
+        "music": true,
+        "real_moving_footage": true,
+        "required_graphics": [
+          "animated_title",
+          "location_labels"
+        ]
+      },
+      "approval_rules": {
+        "policy_profile_id": "draft-eval-no-publish",
+        "require_preflight": true,
+        "require_content_review": true,
+        "publishing_allowed": false
+      },
+      "engine_profile_id": "moneyprinterturbo-pinned-evaluation",
+      "provider_profile_id": null,
+      "limits_profile_id": null,
+      "evaluation_state": "BLOCKED",
+      "approval_id": null,
+      "blockers": [
+        "exact dependency/runtime and asset hashes pending",
+        "owner run/provider/install grants pending"
+      ]
+    },
+    {
+      "schema_version": "video-job/0.1",
+      "job_id": "a71ef8c4-e53b-4de5-8cb0-000000000005",
+      "idempotency_key": "audit-20261029-B01-openmontage-r1",
+      "scenario_id": "B01",
+      "channel_id": "eval-business",
+      "brand_settings": {
+        "brand_id": "studio-eval",
+        "version": "draft-1",
+        "palette": [
+          "#13263A",
+          "#F5F1E8",
+          "#D89A32"
+        ],
+        "font_asset_id": null,
+        "logo_asset_id": null,
+        "voice_profile_id": null,
+        "language": "en",
+        "subtitle_safe_area_profile_id": "draft-vertical-safe-area"
+      },
+      "source_inputs": {
+        "brief": "Explain why revenue growth can outpace profit, using only the supplied fictional business dataset. Include two accurate animated charts, structured section headings, brand animation, English narration and subtitles. Label data as fictional; no real-company claims.",
+        "asset_manifest_id": null,
+        "chart_data": {
+          "label": "Fictional evaluation dataset",
+          "currency": "USD",
+          "unit": "thousands",
+          "quarters": [
+            "Q1",
+            "Q2",
+            "Q3",
+            "Q4"
+          ],
+          "revenue": [
+            100,
+            120,
+            150,
+            180
+          ],
+          "costs": [
+            80,
+            102,
+            132,
+            165
+          ],
+          "profit": [
+            20,
+            18,
+            18,
+            15
+          ]
+        }
+      },
+      "output_requirements": {
+        "operation": "structured_explainer",
+        "count": 1,
+        "duration_seconds": 60,
+        "duration_tolerance_seconds": 2,
+        "width": 1080,
+        "height": 1920,
+        "fps": 30,
+        "container": "mp4",
+        "video_codec": "h264",
+        "audio_codec": "aac",
+        "subtitles": true,
+        "subtitle_sidecar": true,
+        "narration": true,
+        "preserve_source_audio": false,
+        "music": true,
+        "real_moving_footage": false,
+        "required_graphics": [
+          "revenue_cost_chart",
+          "profit_chart",
+          "section_headings",
+          "branded_animation"
+        ]
+      },
+      "approval_rules": {
+        "policy_profile_id": "draft-eval-no-publish",
+        "require_preflight": true,
+        "require_content_review": true,
+        "publishing_allowed": false
+      },
+      "engine_profile_id": "openmontage-pinned-evaluation",
+      "provider_profile_id": null,
+      "limits_profile_id": null,
+      "evaluation_state": "BLOCKED",
+      "approval_id": null,
+      "blockers": [
+        "exact dependency/runtime and asset hashes pending",
+        "owner run/provider/install grants pending"
+      ]
+    },
+    {
+      "schema_version": "video-job/0.1",
+      "job_id": "a71ef8c4-e53b-4de5-8cb0-000000000006",
+      "idempotency_key": "audit-20261029-B01-moneyprinterturbo-r1",
+      "scenario_id": "B01",
+      "channel_id": "eval-business",
+      "brand_settings": {
+        "brand_id": "studio-eval",
+        "version": "draft-1",
+        "palette": [
+          "#13263A",
+          "#F5F1E8",
+          "#D89A32"
+        ],
+        "font_asset_id": null,
+        "logo_asset_id": null,
+        "voice_profile_id": null,
+        "language": "en",
+        "subtitle_safe_area_profile_id": "draft-vertical-safe-area"
+      },
+      "source_inputs": {
+        "brief": "Explain why revenue growth can outpace profit, using only the supplied fictional business dataset. Include two accurate animated charts, structured section headings, brand animation, English narration and subtitles. Label data as fictional; no real-company claims.",
+        "asset_manifest_id": null,
+        "chart_data": {
+          "label": "Fictional evaluation dataset",
+          "currency": "USD",
+          "unit": "thousands",
+          "quarters": [
+            "Q1",
+            "Q2",
+            "Q3",
+            "Q4"
+          ],
+          "revenue": [
+            100,
+            120,
+            150,
+            180
+          ],
+          "costs": [
+            80,
+            102,
+            132,
+            165
+          ],
+          "profit": [
+            20,
+            18,
+            18,
+            15
+          ]
+        }
+      },
+      "output_requirements": {
+        "operation": "structured_explainer",
+        "count": 1,
+        "duration_seconds": 60,
+        "duration_tolerance_seconds": 2,
+        "width": 1080,
+        "height": 1920,
+        "fps": 30,
+        "container": "mp4",
+        "video_codec": "h264",
+        "audio_codec": "aac",
+        "subtitles": true,
+        "subtitle_sidecar": true,
+        "narration": true,
+        "preserve_source_audio": false,
+        "music": true,
+        "real_moving_footage": false,
+        "required_graphics": [
+          "revenue_cost_chart",
+          "profit_chart",
+          "section_headings",
+          "branded_animation"
+        ]
+      },
+      "approval_rules": {
+        "policy_profile_id": "draft-eval-no-publish",
+        "require_preflight": true,
+        "require_content_review": true,
+        "publishing_allowed": false
+      },
+      "engine_profile_id": "moneyprinterturbo-pinned-evaluation",
+      "provider_profile_id": null,
+      "limits_profile_id": null,
+      "evaluation_state": "BLOCKED",
+      "approval_id": null,
+      "blockers": [
+        "exact dependency/runtime and asset hashes pending",
+        "owner run/provider/install grants pending",
+        "native capability unestablished; external extension requires separate scope and attribution"
+      ]
+    },
+    {
+      "schema_version": "video-job/0.1",
+      "job_id": "a71ef8c4-e53b-4de5-8cb0-000000000007",
+      "idempotency_key": "audit-20261029-L01-openmontage-r1",
+      "scenario_id": "L01",
+      "channel_id": "eval-clips",
+      "brand_settings": {
+        "brand_id": "studio-eval",
+        "version": "draft-1",
+        "palette": [
+          "#13263A",
+          "#F5F1E8",
+          "#D89A32"
+        ],
+        "font_asset_id": null,
+        "logo_asset_id": null,
+        "voice_profile_id": null,
+        "language": "en",
+        "subtitle_safe_area_profile_id": "draft-vertical-safe-area"
+      },
+      "source_inputs": {
+        "brief": "Select three distinct 30-60-second highlights from the same owner-supplied long-form video. Rank candidates by hook, coherence, value, energy and crop viability. Preserve source audio and context; add subtitles and branded hooks. Record source in/out times, rationale and rejected candidates.",
+        "asset_manifest_id": null,
+        "long_form_asset_id": null
+      },
+      "output_requirements": {
+        "operation": "long_video_to_reels",
+        "count": 3,
+        "duration_seconds": null,
+        "duration_tolerance_seconds": null,
+        "clip_duration_range_seconds": [
+          30,
+          60
+        ],
+        "width": 1080,
+        "height": 1920,
+        "fps": 30,
+        "container": "mp4",
+        "video_codec": "h264",
+        "audio_codec": "aac",
+        "subtitles": true,
+        "subtitle_sidecar": true,
+        "narration": false,
+        "preserve_source_audio": true,
+        "music": false,
+        "real_moving_footage": true,
+        "required_graphics": [
+          "branded_hook_title"
+        ]
+      },
+      "approval_rules": {
+        "policy_profile_id": "draft-eval-no-publish",
+        "require_preflight": true,
+        "require_content_review": true,
+        "publishing_allowed": false
+      },
+      "engine_profile_id": "openmontage-pinned-evaluation",
+      "provider_profile_id": null,
+      "limits_profile_id": null,
+      "evaluation_state": "BLOCKED",
+      "approval_id": null,
+      "blockers": [
+        "exact dependency/runtime and asset hashes pending",
+        "owner run/provider/install grants pending",
+        "owner long-form asset and rights pending"
+      ]
+    },
+    {
+      "schema_version": "video-job/0.1",
+      "job_id": "a71ef8c4-e53b-4de5-8cb0-000000000008",
+      "idempotency_key": "audit-20261029-L01-moneyprinterturbo-r1",
+      "scenario_id": "L01",
+      "channel_id": "eval-clips",
+      "brand_settings": {
+        "brand_id": "studio-eval",
+        "version": "draft-1",
+        "palette": [
+          "#13263A",
+          "#F5F1E8",
+          "#D89A32"
+        ],
+        "font_asset_id": null,
+        "logo_asset_id": null,
+        "voice_profile_id": null,
+        "language": "en",
+        "subtitle_safe_area_profile_id": "draft-vertical-safe-area"
+      },
+      "source_inputs": {
+        "brief": "Select three distinct 30-60-second highlights from the same owner-supplied long-form video. Rank candidates by hook, coherence, value, energy and crop viability. Preserve source audio and context; add subtitles and branded hooks. Record source in/out times, rationale and rejected candidates.",
+        "asset_manifest_id": null,
+        "long_form_asset_id": null
+      },
+      "output_requirements": {
+        "operation": "long_video_to_reels",
+        "count": 3,
+        "duration_seconds": null,
+        "duration_tolerance_seconds": null,
+        "clip_duration_range_seconds": [
+          30,
+          60
+        ],
+        "width": 1080,
+        "height": 1920,
+        "fps": 30,
+        "container": "mp4",
+        "video_codec": "h264",
+        "audio_codec": "aac",
+        "subtitles": true,
+        "subtitle_sidecar": true,
+        "narration": false,
+        "preserve_source_audio": true,
+        "music": false,
+        "real_moving_footage": true,
+        "required_graphics": [
+          "branded_hook_title"
+        ]
+      },
+      "approval_rules": {
+        "policy_profile_id": "draft-eval-no-publish",
+        "require_preflight": true,
+        "require_content_review": true,
+        "publishing_allowed": false
+      },
+      "engine_profile_id": "moneyprinterturbo-pinned-evaluation",
+      "provider_profile_id": null,
+      "limits_profile_id": null,
+      "evaluation_state": "BLOCKED",
+      "approval_id": null,
+      "blockers": [
+        "exact dependency/runtime and asset hashes pending",
+        "owner run/provider/install grants pending",
+        "owner long-form asset and rights pending",
+        "native capability unestablished; external extension requires separate scope and attribution"
+      ]
+    }
+  ]
+}
