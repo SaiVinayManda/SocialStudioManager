@@ -1,5 +1,31 @@
 # Actual verification results
 
+## Current local pilot inspection: 2026-10-29
+
+Advanced Milestone A hardening is deferred by the owner; its 77-test evidence below is preserved and does not imply A acceptance. No supervisor code changed in the pilot preparation.
+
+| Actual inspection | Result / limitation |
+| --- | --- |
+| Existing Git source | Clone HEAD 195eab24478dc9363326aec437aefc3701635ddf; only `.git` present, no working checkout. Objects read with per-command `safe.directory`, no persistent Git configuration change |
+| Node/npm/uv | node --version: v22.19.0; npm.cmd --version: 10.9.3; uv --version: 0.9.6 |
+| Python package metadata | Existing Store Python 3.11.9, isolated standard-library importlib.metadata query; no engine or installed third-party package imported. pip 26.2.1, NumPy 1.26.0, Pillow 9.5.0, requests 2.32.5 found. PyYAML/pydantic/jsonschema/dotenv/Google/OpenAI/Backlot/WebSockets/Piper/ONNX runtime missing in inspected locations; Pillow below upstream minimum |
+| Existing GPU inventory | nvidia-smi: RTX 4060 Laptop, 8,188 MiB, driver 591.91. No production load/peak usage measured |
+| FFmpeg/Piper discovery | No ffmpeg/ffprobe/piper on inherited PATH; no claim of exhaustive host absence |
+| Existing Chrome/Edge | Standard installed executable paths present; not launched, no browser profile/credential access |
+| Pilot proposal/preparation checks | JSON target/zero-spend/no-publish/proposal status validated; installation-input SHA-256 matched; six generated paths ignored and job config retained; 21 Markdown files / 123 local links checked; git diff --check exit 0 |
+| Preservation regression | Unchanged supervisor suite rerun with existing check harness: 77 passed, zero failed/skipped, 3436.9182 ms. Separate Node fixture canary exit 0, 71 ms. This is not OpenMontage execution; raw receipts/TAP retained in `.runtime/checks/419c9af8-7ef2-4eb7-8dee-7e2a900bf60f` |
+| Approved authentication metadata command | Exact helper SHA-256 matched, clock 2026-10-29 20:31:58 UTC before 2026-10-31 expiry, exit 0, wall 0.9887893s. No secret values retained, network/auth/config changes; [sanitized receipt](research/auth-metadata-A-AUTH-METADATA-01.json) |
+
+Initial clone Git reads hit an ownership guard; using a one-command exception for the explicitly selected owner clone allowed read-only object inspection. The Python installed-app directory was denied inside the sandbox; the explicit read-only executable-discovery/standard-library metadata retries succeeded through tool escalation. No permission, execution policy, ownership, PATH or installation was changed.
+
+OpenMontage imports/registry preflight/voice/stock/music/render/MP4 QA/resource benchmark: **NOT RUN**, pending setup approval. The creative/config files are proposals, not canonical completed stage artifacts. No installation or render success is claimed.
+
+Preparation evidence: [summary](test-evidence/openmontage-preparation/summary.json), [preservation regression receipts](test-evidence/openmontage-preparation/supervisor-regression-receipts.json) and [actual regression TAP](test-evidence/openmontage-preparation/supervisor-regression.stdout). The pinned Git tree contains 2,209 entries, 89,488,419 blob bytes and zero symlinks/submodules; only object metadata was read, no working tree was extracted.
+
+Initial Git staging exposed the older global `outputs/` rule hiding the new empty brand-output placeholder. Added a narrow parent-directory exception, then verified all six synthetic generated-media paths remain ignored and all five intended config/placeholders are unignored. No force-add or generated media inclusion was used.
+
+## Preserved Milestone A baseline evidence
+
 Latest local check: **2026-10-29**, existing Node **v22.19.0**, Windows. **77/77 tests passed**, zero failures/skips; suite duration **3065.2682 ms**. Source and command receipts are retained in [the A-03 evidence summary](test-evidence/milestone-a-authority/summary.json), [receipts](test-evidence/milestone-a-authority/receipts.json) and [raw TAP](test-evidence/milestone-a-authority/tests.stdout). The previous 51-test evidence below is preserved.
 
 ## A-03 local continuation

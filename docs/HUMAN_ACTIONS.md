@@ -2,7 +2,15 @@
 
 ## Current implementation authorization and next actions
 
-The owner's latest implementation request supersedes the earlier documentation-only phase for **ordinary Milestone A coding, local tests, documentation and local Git checkpoints**. It selects OpenMontage as primary and excludes MoneyPrinterTurbo/Postiz integration. This records the owner's instruction; it does not grant installations, credentials, paid usage, system changes, protected live deployment or public publishing.
+**Latest priority change:** the owner explicitly deferred advanced A hardening and authorized the local OpenMontage Horror pilot before A acceptance. A-03 protected deployment is deferred, not requested now. Supervisor code/tests/history remain preserved and live dispatch disabled. This replaces the A-first sequencing below only for the local pilot.
+
+Immediate request: **B-PILOT-SETUP-01**, [exact actions/commands/versions/paths/limits/risks](OPENMONTAGE_INSTALL_APPROVAL.md). Approve isolated binary-only upstream core + Piper 1.8.0, portable FFmpeg/ffprobe 9.0.2 and the single 63.5 MB pinned voice. At most 100 wheels / 750 MiB setup payload / 3 GiB storage / 60 minutes / USD 0 API charges; expiry 2026-11-02T00:00:00Z. No global PATH, Windows setting, credential, paid API, service, container or GPU-model installation. **PENDING**; an approval question was issued, no grant is inferred.
+
+The preceding **A-AUTH-METADATA-01 is completed**, not pending: the owner explicitly approved its exact existing packet, expiry and helper/dependency hashes matched, and the command exited 0. The [sanitized result](research/auth-metadata-A-AUTH-METADATA-01.json) retains no secret values. It is a consumed one-inspection grant, not permission to access credentials again. Authentication validity and Telegram ownership remain unverified.
+
+The rows and A deployment requests below are preserved history; current B actions above take precedence.
+
+The previous implementation request authorized ordinary Milestone A coding/tests/docs/checkpoints; the latest request adds the bounded local B pilot described above and defers advanced A work. OpenMontage remains primary and MoneyPrinterTurbo/Postiz excluded. This records owner instructions, not installations, credentials, paid usage, system changes, protected deployment or publishing grants.
 
 The existing evaluation was preserved in local baseline commit d691604. The local supervisor now has 77/77 checks plus a separate process-based fixture canary; [actual evidence](TEST_RESULTS.md) preserves the earlier 51-test checkpoint and explicitly keeps Milestone A unaccepted. No authenticated Codex/Telegram call was made. Existing installed tools are not to be reinstalled merely because PATH lookup failed.
 
@@ -10,15 +18,15 @@ The existing evaluation was preserved in local baseline commit d691604. The loca
 | --- | --- |
 | Local A coding/tests/checkpoint commits | Authorized by the owner's current development workflow; implemented local core and evidence ready for review |
 | OpenMontage selection | Owner decision recorded; do not integrate MoneyPrinterTurbo or Postiz; keep prior staging evidence/cache intact |
-| Telegram enrollment | Actual numeric owner and private-chat IDs requested; none invented or enrolled |
-| A-AUTH-METADATA-01 | **PENDING:** bounded read-only existing credential-method/presence inspection in [LIVE_SUPERVISOR_REVIEW.md](LIVE_SUPERVISOR_REVIEW.md); zero network/use/modification and no secret-value output |
+| Telegram enrollment | Configured user/home-chat candidates found in the approved inspection; actual ownership is not verified and no enrollment change was made |
+| A-AUTH-METADATA-01 | **COMPLETED under explicit owner approval**, exact helper unchanged; [sanitized receipt](research/auth-metadata-A-AUTH-METADATA-01.json). No authentication use or renewal granted |
 | A-03 authority store | Local pinned reader, directory registry, deployment binding and persisted revocation tests implemented. Review [AUTHORITY_STORE.md](AUTHORITY_STORE.md); the example has no grants/enrollment and cannot activate anything |
-| Native runtime and protected deployment | Controller/worker/operator identities and native isolation mechanism must be selected, then exact SID-based account/ACL/bootstrap commands and rollback reviewed before configuration changes. No directories/accounts/ACLs have been deployed; no broad administrator grant requested |
+| Native runtime and protected deployment | **DEFERRED by owner**; no directories/accounts/ACLs deployed. Do not continue this advanced supervisor task now |
 | Existing credential use and live canary | Requires separate provider/model/data-flow/limits/budget/expiry grant after readiness is understood; no saved CLI authentication or bot token has been reused |
 | Actual Milestone A acceptance | Real owner Telegram launch, approved Codex task, independent checks, actual result delivery and deployed negative/recovery tests; **NOT RUN** |
-| OpenMontage Horror pilot and later milestones | Gated until A is accepted; software/model/provider/renderer/rights grants remain separate |
+| OpenMontage Horror pilot and later milestones | Local pilot explicitly authorized before A acceptance; setup/models still need B-PILOT-SETUP-01. Other product/infrastructure/publishing milestones remain out of scope |
 
-Concrete pending metadata command: `node scripts/inspect-auth-metadata.mjs --inspect-approved=A-AUTH-METADATA-01`. The prepared [review packet](LIVE_SUPERVISOR_REVIEW.md) contains its content digest, three exact read targets, 1 MiB/file cap, 15-minute session, zero network/cost, expiry and read-only effects. Only `--plan` has run. The owner has been asked for this bounded approval; no reply is recorded as granted.
+Completed metadata command: `node scripts/inspect-auth-metadata.mjs --inspect-approved=A-AUTH-METADATA-01`. The original [review packet](LIVE_SUPERVISOR_REVIEW.md) and sanitized receipt preserve its approved limits and observed result. Do not rerun from its old pending label or infer credential-use permission.
 
 Earlier FND/DEV/GIT/VE/VA requests below are historical planning records where superseded by this current section. Their pending rows are not permission to activate a remote queue or install any engine. Completed owner-approved MoneyPrinterTurbo staging remains a historical completed action, not current integration authority.
 

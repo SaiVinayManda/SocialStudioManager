@@ -1,6 +1,26 @@
 # Social Studio implementation plan
 
-Current owner direction: **OpenMontage primary; Milestone A first**. Local code, tests, documentation and local commits are authorized by the latest implementation request. Installation, credentials, spend, system changes, destructive actions, public endpoints and publishing retain their separate gates.
+Current owner direction: **Milestone B local OpenMontage Horror pilot first; advanced Milestone A hardening DEFERRED, NOT ACCEPTED.** The owner's explicit 2026-10-29 priority change authorizes local B inspection, coding, templates, existing tools, tests and commits before A acceptance. Preserve all supervisor code/tests/history and keep remote dispatch disabled. Installation, credentials, models, charges, Windows changes, destructive actions and publishing retain their gates. Stop preparing the A-03 deployment request.
+
+## Active local pilot backlog
+
+Success means one real playable original Horror story about a 3 AM phone call: roughly 60 seconds, 1080x1920 MP4, English narration, moving footage, cleared score/effects, burned subtitles and independent quality/resource evidence. No Docker/WSL/n8n/PostgreSQL/publishing/router work for this pilot.
+
+| Task | Status and acceptance |
+| --- | --- |
+| B-01 Existing source/host inspection | Clone 195eab24478dc9363326aec437aefc3701635ddf confirmed; cinematic pipeline and tools inspected. Node/npm/Python/GPU inventory verified; no engine import or generation |
+| B-02 Minimum setup | **PENDING B-PILOT-SETUP-01**: isolated upstream core/Piper environment, portable FFmpeg/ffprobe 9.0.2, one 63.5 MB voice. [Exact packet](OPENMONTAGE_INSTALL_APPROVAL.md). No Remotion/HyperFrames/CUDA/Torch/video-model stack |
+| B-03 Actual capability preflight | After setup: upstream registry/provider summary in a secret-free environment; FFmpeg/Piper/voice/sample encoding checks. Actual provider counts NOT RUN |
+| B-04 Cinematic production | Research/proposal/script/scene/assets/edit/compose directors and checkpoints. [Draft](HORROR_PILOT_PROPOSAL.md) and [job input](../brands/horror/config/pilot.json) prepared, no stage marked complete. Verified-license stock motion and original local score/effects; no paid APIs |
+| B-05 Render/QA | Actual 57-63s vertical MP4, probe/full decode, audio/caption/black/freeze checks plus manual review, rights manifest, measured timing and sampled RAM/GPU/VRAM. NOT RUN |
+| B-06 Review/reproducibility | Actual local output path/preview, versioned commands, retained artifacts/errors and manual review; no publishing |
+| B-07 Reusable entry point | After the first successful video only: parameterized brand/topic/script/duration/aspect/voice/style/subtitles/output job creation around the existing pipeline |
+
+The one-session A-AUTH-METADATA-01 inspection completed under explicit owner approval: [sanitized receipt](research/auth-metadata-A-AUTH-METADATA-01.json). It did not verify/use authentication; the priority change does not renew its read grant.
+
+## Preserved previous milestone plan
+
+The A-first sequence and A remaining-hour estimate below are historical/deferred. They no longer block the expressly authorized local B pilot. They do not grant remote activation or other product milestones.
 
 The repository was inspected before changes. Existing evaluation and wheel-staging evidence was preserved in initial commit `d691604`. Nothing was reinstalled, reset, deleted, published or pushed. The earlier M0-M8/VE backlog was a proposal, not a deployed system; its historical version remains in Git and its detailed remote security design remains in [REMOTE_DEVELOPMENT.md](REMOTE_DEVELOPMENT.md).
 

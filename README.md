@@ -1,6 +1,6 @@
 # Social Studio
 
-Self-hosted multi-brand video production and publishing, with OpenMontage selected as the primary engine. The current implementation is the **local Milestone A supervisor core**. Live Hermes/Telegram/Codex dispatch is disabled; no Horror production video has been rendered.
+Self-hosted multi-brand video production and publishing, with OpenMontage selected as the primary engine. Current priority: **one local OpenMontage Horror video**, with the [minimum setup request](docs/OPENMONTAGE_INSTALL_APPROVAL.md) pending approval. Advanced Milestone A hardening is deferred; its code and 77-test evidence are preserved. Live remote dispatch stays disabled; no Horror video has rendered.
 
 Use the existing Node runtime; there are no new npm dependencies or installation steps:
 

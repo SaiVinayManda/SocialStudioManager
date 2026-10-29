@@ -8,3 +8,13 @@ node_modules/
 *.secret.toml
 coverage/
 outputs/
+/openmontage/
+!/brands/*/outputs/
+/brands/*/inputs/*
+/brands/*/projects/*
+/brands/*/outputs/*
+/brands/*/assets/*
+!/brands/*/inputs/.gitkeep
+!/brands/*/projects/.gitkeep
+!/brands/*/outputs/.gitkeep
+!/brands/*/assets/.gitkeep

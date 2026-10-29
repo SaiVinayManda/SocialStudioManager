@@ -1,6 +1,6 @@
 # Live supervisor readiness review
 
-Status: the local Milestone A core and fixture evidence are ready for review. Live dispatch remains disabled. No existing credential was read or used. This packet does not request broad administrator or installation access.
+Status update: advanced Milestone A hardening/deployment is **DEFERRED** by the owner's later OpenMontage priority change. Live dispatch remains disabled. A-AUTH-METADATA-01 was explicitly approved and executed once with matching scope/digest/expiry; [sanitized receipt](research/auth-metadata-A-AUTH-METADATA-01.json). No secret value was retained, authentication used, network request made or configuration changed. This is not approval for A-03 deployment; do not continue that request now.
 
 ## Concrete next request: A-AUTH-METADATA-01
 
@@ -19,9 +19,9 @@ Purpose: determine the existing supported authentication/configuration route so 
 | Prepared entry point SHA-256 | `18e0b1d6870d2cf722a1ac25162957c34380f8d2a8fd429e3796aef9fb1f8100` |
 | Reversibility | Read-only: no persistent account/system changes to undo. Access already performed cannot be undone; no raw values are retained or sent. |
 
-This request remains **PENDING**. A generic "continue" does not approve credential access. The restriction comes from the owner's current approval rule, "Accessing or configuring credentials", and [AGENTS.md](../AGENTS.md)'s credential boundary. No fixture grant or repository checkbox can authorize it.
+This request is **COMPLETED for the one explicitly owner-approved inspection**. Its original scope table is preserved above. It does not authorize repeated reads or authentication use. Credential grants still require explicit owner approval under [AGENTS.md](../AGENTS.md); a fixture grant or repository checkbox cannot authorize them.
 
-The concrete [inspection helper](../scripts/inspect-auth-metadata.mjs) and [pure parsers](../src/supervisor/auth-metadata.mjs) are prepared. `node scripts/inspect-auth-metadata.mjs --plan` prints targets/limits without opening any credential file; only that plan branch has been run. Synthetic parser tests verify that method/provider allowlists, presence booleans and explicit UTC expiry fields do not echo fictional secret values. Unknown formats are reported without raw content. Configured numeric IDs are candidates only: they do not verify Telegram ownership or enroll a user. The CLI flag is not an approval mechanism; actual owner authorization remains external.
+The concrete [inspection helper](../scripts/inspect-auth-metadata.mjs) and [pure parsers](../src/supervisor/auth-metadata.mjs) are unchanged at the approved content digests. Its plan and later explicitly approved inspection branches have run. Synthetic parser tests verify that allowlisted results do not echo fictional secret values. Unknown formats are reported without raw content. Configured numeric IDs remain candidates, not verified Telegram ownership. The CLI flag is not an approval mechanism; the actual owner grant was external.
 
 The current source/dependency hashes and executed checks are retained in [A-03 evidence](test-evidence/milestone-a-authority/summary.json). No new install is needed. This packet narrows the earlier metadata proposal; it does not add credential use or integration activation.
 

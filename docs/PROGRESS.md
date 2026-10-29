@@ -1,6 +1,17 @@
 # Current progress
 
-Active milestone: **A — secure Hermes-to-Codex supervisor**. OpenMontage is selected; MoneyPrinterTurbo and Postiz are excluded from current integration. Product milestones B-H are gated.
+Active milestone: **B: local OpenMontage Horror pilot**, by the owner's explicit 2026-10-29 priority change. Advanced Milestone A hardening is **DEFERRED, NOT ACCEPTED**. Preserve code/tests/history; remote dispatch stays disabled. MoneyPrinterTurbo/Postiz, n8n and publishing infrastructure remain out of scope.
+
+Latest pilot preparation:
+
+- Reused the pinned no-checkout clone for source inspection. No second clone, upstream change or package installation. Reviewed the operating/context contract, cinematic/documentary manifests, relevant directors, registry, dependencies, FFmpeg compose/stitch and Piper implementation.
+- Verified Node 22.19.0, npm 10.9.3, Python 3.11.9, uv 0.9.6 and RTX 4060 Laptop 8,188 MiB. Required Python packages/Piper are missing; FFmpeg/ffprobe/Piper are absent from PATH. Do not infer their absence from every host directory.
+- Prepared [setup approval](OPENMONTAGE_INSTALL_APPROVAL.md), [Horror job](../brands/horror/config/pilot.json), brand directories and [creative draft](HORROR_PILOT_PROPOSAL.md). Proposed existing cinematic FFmpeg route preserves moving footage without unnecessary renderer/model installations.
+- Completed the owner-approved A-AUTH-METADATA-01 inspection before the priority change: exact scope/digest/expiry checked, exit 0, sanitized metadata only, no network/authentication/configuration operation. [Receipt](research/auth-metadata-A-AUTH-METADATA-01.json). Configured Telegram identity candidates remain unverified.
+
+**No OpenMontage runtime preflight, narration, footage download, music generation, render or media benchmark has run. No MP4 exists or is claimed.** Next gate: B-PILOT-SETUP-01. Build the reusable production entry point only after the first render succeeds.
+
+## Preserved Milestone A checkpoint
 
 Completed in this implementation checkpoint:
 
@@ -26,4 +37,4 @@ Still unverified/blocked:
 
 No live model calls, Telegram messages, credentials, software/model downloads, service/power/firewall changes or public publishing were performed in this coding checkpoint. No Horror video path is claimed. Complete the exact live prerequisites in [HUMAN_ACTIONS.md](HUMAN_ACTIONS.md), then validate A before proceeding.
 
-First unfinished task remains **A-03 protected operator deployment**. Local store logic is implemented; actual identity/ACL/bootstrap protection, emergency stop and anti-rollback/recovery verification are not. Estimated remaining A work is **42-84 engineering hours**, excluding approval waits. A-04/A-05 need credential metadata/identity review before exact live integration/configuration packets can be finalized.
+At that preserved A checkpoint, the first unfinished task was A-03 protected deployment, with an estimated 42-84 hours for remaining A work. Those tasks are now **deferred**. The active next action is the bounded B-PILOT-SETUP-01 approval above; do not spend that A estimate before making the pilot video.

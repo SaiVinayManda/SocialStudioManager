@@ -1,0 +1,23 @@
+{
+  "approval_id": "A-AUTH-METADATA-01",
+  "authorization_source": "Owner explicitly approved the exact three-file metadata packet in the conversation before execution",
+  "state": "completed_single_inspection_no_reuse_grant",
+  "preflight_clock_utc": "2026-10-29 20:31:58 UTC",
+  "approval_expiry_utc": "2026-10-31T00:00:00Z",
+  "entry_point_sha256_verified": "18e0b1d6870d2cf722a1ac25162957c34380f8d2a8fd429e3796aef9fb1f8100",
+  "command": "node scripts/inspect-auth-metadata.mjs --inspect-approved=A-AUTH-METADATA-01",
+  "exit_code": 0,
+  "execution_wall_seconds": 0.9887893,
+  "results": {
+    "codex": { "file_present": true, "allowlisted_auth_methods": ["chatgpt"], "saved_token_fields_present": true, "explicit_expiry_exposed": false },
+    "hermes": { "file_present": true, "allowlisted_auth_methods": ["openai-codex", "chatgpt"], "allowlisted_providers": ["openai-codex"], "explicit_expiry_exposed": false },
+    "hermes_environment": { "file_present": true, "telegram_bot_token_field_present": true, "configured_allowed_user_id": "9231108361", "configured_home_chat_id": "9231108361", "selected_field_duplicates": false }
+  },
+  "telegram_identity_verified": false,
+  "authentication_validity_verified": false,
+  "authentication_used": false,
+  "network_requests_by_helper": 0,
+  "configuration_changes": false,
+  "secret_values_retained": false,
+  "limitations": ["Presence metadata does not verify credentials, expiry, Telegram ownership or unattended broker compatibility.", "Unrecognized/nested credential fields were not enumerated or interpreted.", "No credential refresh, login, model or Telegram request was performed."]
+}

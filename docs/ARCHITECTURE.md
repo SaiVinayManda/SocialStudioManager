@@ -1,6 +1,6 @@
 # Social Studio architecture
 
-Current scope: Milestone A local supervisor core. OpenMontage is the selected primary engine; MoneyPrinterTurbo/Postiz are excluded. Existing installations are preserved. No application deployment, new service, credential connection or publishing workflow has been enabled.
+Current priority: the owner's bounded local OpenMontage Horror pilot before A acceptance. Advanced A hardening is deferred; the tested local supervisor below remains preserved and live-disabled. Existing installations are preserved; no engine runtime, service, credential connection or publishing workflow has been enabled. The local pilot follows OpenMontage's cinematic FFmpeg route after [setup approval](OPENMONTAGE_INSTALL_APPROVAL.md); it does not need n8n or a remote supervisor.
 
 ```mermaid
 flowchart TD
@@ -27,7 +27,7 @@ Queue/audit uses a bounded append-only JSONL journal with sequence/hash validati
 
 The fixture worker is fixed reviewed Node code, runs with a minimal environment and Node filesystem permissions, and cannot spawn descendants through Node's permission model. This is adequate to exercise local lifecycle code, not evidence of general Windows process-tree, network, memory or identity isolation for arbitrary Codex/media tools. No live runner can be enabled through `enableLocalFixtures()`.
 
-Future production flow, gated until A passes:
+Future production architecture (outside the expressly authorized local pilot):
 
 ```mermaid
 flowchart LR

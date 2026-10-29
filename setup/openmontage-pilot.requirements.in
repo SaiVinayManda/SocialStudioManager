@@ -1,0 +1,19 @@
+# Proposed installation input; NOT installed or approved by this file.
+# OpenMontage 195eab24478dc9363326aec437aefc3701635ddf requirements.txt,
+# plus the selected CPU Piper version. Resolve binary Windows wheels only;
+# freeze versions/hashes before installation. No GPU extras or source builds.
+pyyaml>=6.0
+pydantic>=2.0
+jsonschema>=4.20
+python-dotenv>=1.0
+Pillow>=10.0
+numpy>=1.24
+requests>=2.31
+google-auth>=2.0
+google-genai>=1.0.0
+openai>=2.44.0
+fastapi>=0.110
+uvicorn>=0.29
+watchfiles>=0.21
+websockets>=14.0
+piper-tts==1.8.0

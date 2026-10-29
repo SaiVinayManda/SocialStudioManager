@@ -2,7 +2,7 @@
 
 ## Purpose and current authorization
 
-Build a self-hosted AI Social Media Studio. The first milestone is secure remote development with Hermes Agent, Telegram, a restricted task supervisor, and Codex CLI. Complete and accept that milestone before building Social Studio product features.
+Build a self-hosted AI Social Media Studio. Secure remote development remains incomplete and advanced hardening is deferred. The owner's current priority is the explicitly authorized local OpenMontage Horror pilot described below; do not resume advanced supervisor work to block it.
 
 The owner's latest instruction authorizes **Milestone A local coding, local tests, documentation and local Git checkpoints** in this workspace. Preserve the installed Hermes and Codex setup and prior evaluation. Installation, credentials, paid usage, system changes, destructive actions, public endpoints and publishing still require specific owner approval. No live credential use, model budget or runtime provisioning is inferred from an installed/authenticated tool. Start remote dispatch disabled.
 
@@ -18,7 +18,9 @@ Read these documents before implementation:
 
 The owner selected `https://github.com/SaiVinayManda/OpenMontage` as the primary engine. Do not integrate MoneyPrinterTurbo or Postiz at this stage. Preserve their historical evaluation/staging evidence without repeating downloads, installing them or deleting the cache. Reuse the existing pinned OpenMontage evaluation clone.
 
-Complete and accept Milestone A (secure remote supervisor) before any OpenMontage runtime/production work. The first Milestone B deliverable is an actually rendered Horror pilot with independently verified media, rights and resource evidence. Keep OpenMontage independently maintainable behind a Social Studio adapter; preserve a separate FFmpeg long-form-to-reels route. All publishing and scheduling belong to n8n. Generation workers receive no publishing credentials and cannot execute publishing stages.
+Owner priority change, 2026-10-29: **defer advanced Milestone A hardening and prioritize a bounded local Milestone B OpenMontage Horror pilot now**. Preserve all supervisor code, tests and history; A is not accepted or complete. The owner explicitly permits local B inspection, coding, secret-free templates, existing tools, tests and local commits before A acceptance. Installation, model downloads, credentials, charges, Windows changes, destructive actions and publishing retain their approval gates. Do not continue the A-03 deployment proposal unless the owner resumes that task.
+
+The first Milestone B deliverable is an actually rendered Horror pilot with independently verified media, rights and resource evidence. Keep OpenMontage independently maintainable behind a Social Studio adapter; preserve a separate FFmpeg long-form-to-reels route. Future publishing and scheduling belong to n8n; do not build or start that infrastructure for this pilot. Generation workers receive no publishing credentials and cannot execute publishing stages.
 
 The local supervisor fixture/demo is a zero-network development test with fictional identities/grants and a fixed Node child process. It is not a live Telegram/Codex integration, owner enrollment, production isolation proof or accepted milestone. Do not deploy protected changes or enable live execution from a passing fixture result.
 
@@ -68,4 +70,4 @@ On Windows, use PowerShell end to end for file operations. Before any approved r
 
 The supervisor may continue only through an explicitly preapproved, immutable backlog revision with approved dependencies and budgets. One job at a time. Start disabled; no backlog item is approved by inclusion in the plan. Respect pause, cancellation, revocation, retry, time, and spend limits. Human review remains required before integrating protected changes or publishing anything.
 
-Do not begin Social Studio application work until the remote-development acceptance gate in the implementation plan has been signed off by the owner.
+The owner's current local OpenMontage pilot exception supersedes the earlier A-before-B sequence for that scope only. It does not accept Milestone A, enable remote dispatch or authorize other product/infrastructure milestones.
