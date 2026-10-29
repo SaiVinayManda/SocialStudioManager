@@ -1,0 +1,2 @@
+# Preserve the exact native encoder progress log, including carriage returns.
+docs/test-evidence/openmontage-setup-01/encode.stderr -text -diff
