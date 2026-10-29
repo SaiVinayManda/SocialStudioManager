@@ -1,0 +1,112 @@
+{
+  "verified_at_utc": "2026-10-29T22:14:08.671Z",
+  "scope": "Read-only local continuation check; no install/network/credential access",
+  "setup_approval": "B-PILOT-SETUP-01 explicitly approved, partial execution",
+  "resolver_correction_approval": "NOT RECORDED",
+  "setup_deadline_utc": "2026-10-29T22:17:56Z",
+  "ffmpeg_version": "ffmpeg version 9.0.2-essentials_build-www.gyan.dev Copyright (c) 2000-2026 the FFmpeg developers",
+  "cached_hashes": [
+    {
+      "file": "downloads/ffmpeg-9.0.2-essentials_build.zip",
+      "sha256": "60f467265b1e312373dbcd92200c2618a74850f98d3d078e94296bb3fa2047ba",
+      "matched": true
+    },
+    {
+      "file": "voices/en_US-ljspeech-medium.onnx",
+      "sha256": "6f52a751e2349abe7a76735eb09dc1875298c77ea2342ffd2fef79ff81b87f22",
+      "matched": true
+    }
+  ],
+  "probe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 1080,
+        "height": 1920
+      },
+      {
+        "codec_name": "aac",
+        "codec_type": "audio"
+      }
+    ],
+    "format": {
+      "duration": "2.000000"
+    }
+  },
+  "full_decode_exit_code": 0,
+  "packages": {
+    "PyYAML": null,
+    "pydantic": null,
+    "jsonschema": null,
+    "python-dotenv": null,
+    "Pillow": null,
+    "numpy": null,
+    "requests": null,
+    "google-auth": null,
+    "google-genai": null,
+    "openai": null,
+    "fastapi": null,
+    "uvicorn": null,
+    "watchfiles": null,
+    "websockets": null,
+    "piper-tts": null,
+    "onnxruntime": null
+  },
+  "piper_executable_present": false,
+  "dependency_lock_present": false,
+  "piper_test": "NOT RUN",
+  "horror_video_present": false,
+  "commands": [
+    {
+      "executable": "C:\\Projects\\Manas_Flow\\SocialStudio\\.runtime\\openmontage-pilot\\ffmpeg\\ffmpeg-9.0.2-essentials_build\\bin\\ffmpeg.exe",
+      "args": [
+        "-version"
+      ],
+      "exit_code": 0,
+      "error_code": null
+    },
+    {
+      "executable": "C:\\Projects\\Manas_Flow\\SocialStudio\\.runtime\\openmontage-pilot\\ffmpeg\\ffmpeg-9.0.2-essentials_build\\bin\\ffprobe.exe",
+      "args": [
+        "-v",
+        "error",
+        "-show_entries",
+        "format=duration:stream=codec_name,codec_type,width,height",
+        "-of",
+        "json",
+        "C:\\Projects\\Manas_Flow\\SocialStudio\\.runtime\\openmontage-pilot\\smoke\\encoding-smoke.mp4"
+      ],
+      "exit_code": 0,
+      "error_code": null
+    },
+    {
+      "executable": "C:\\Projects\\Manas_Flow\\SocialStudio\\.runtime\\openmontage-pilot\\ffmpeg\\ffmpeg-9.0.2-essentials_build\\bin\\ffmpeg.exe",
+      "args": [
+        "-hide_banner",
+        "-v",
+        "error",
+        "-nostdin",
+        "-i",
+        "C:\\Projects\\Manas_Flow\\SocialStudio\\.runtime\\openmontage-pilot\\smoke\\encoding-smoke.mp4",
+        "-f",
+        "null",
+        "-"
+      ],
+      "exit_code": 0,
+      "error_code": null
+    },
+    {
+      "executable": "C:\\Projects\\Manas_Flow\\SocialStudio\\.runtime\\openmontage-pilot\\venv\\Scripts\\python.exe",
+      "args": [
+        "-I",
+        "-c",
+        "import json,importlib.metadata as m; names=['PyYAML','pydantic','jsonschema','python-dotenv','Pillow','numpy','requests','google-auth','google-genai','openai','fastapi','uvicorn','watchfiles','websockets','piper-tts','onnxruntime']; installed={d.metadata['Name'].lower():d.version for d in m.distributions()}; print(json.dumps({n:installed.get(n.lower()) for n in names}))"
+      ],
+      "exit_code": 0,
+      "error_code": null
+    }
+  ]
+}

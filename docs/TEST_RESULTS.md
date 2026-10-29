@@ -1,5 +1,15 @@
 # Actual verification results
 
+## Latest continuation check: 2026-10-29T22:14:08Z
+
+**Setup approval exists, installation is incomplete.** Checked owner approval/history and current files; the latest generic continuation did not approve B-PILOT-UV-FIX-01. No changed resolver command, installation, download, credential access or external service call ran.
+
+Actual command `node scripts/verify-openmontage-local.mjs` rehashed the cached FFmpeg archive and voice model (both match), confirmed FFmpeg 9.0.2, reprobed and fully decoded the existing two-second 1080x1920 H.264/AAC MP4 (all exits 0), and queried project-venv package metadata with isolated Python. All 16 queried engine/Piper distributions were absent; no dependency lock, Piper executable/narration result or final Horror MP4 exists. This is a **new read-only verification**, not a new encoding/render or narration pass. [Actual receipt](test-evidence/openmontage-continuation-20261029/receipt.json).
+
+An initial inline command failed shell quoting before checks ran. The file-based sandbox launch then failed; the identical read-only retry through tool escalation completed successfully with a cleared environment. No permissions/settings were changed. The completed supervisor's 77 local tests below remain **historical supervisor evidence**, not OpenMontage production tests.
+
+Blocker: [B-PILOT-CONTINUE-01](OPENMONTAGE_CONTINUATION_APPROVAL.md) requests the one-flag correction and a bounded additional 20-minute setup window, preserving all cumulative download/storage/software constraints. The original setup window ends 22:17:56 UTC. No further setup execution is inferred from "continue". Real narration, OpenMontage registry preflight, 60-second production/quality/resource checks remain **NOT RUN**. No final production time or GPU/VRAM peak is claimed. Additional motion footage remains a separate permission/input prerequisite.
+
 ## Approved setup execution: 2026-10-29
 
 Owner explicitly approved B-PILOT-SETUP-01. The frozen packet SHA-256 `eff54d5d35aa8515df023e5a7a84eac4564136117107fbc20056d73ce4209dbe` and requirement-input SHA-256 matched. Fresh destinations were absent. Setup window: **21:17:56-22:17:56 UTC**, maximum 750 MiB downloads / 3 GiB new storage / zero paid API calls. No credential, global PATH, Windows setting, service or publishing operation occurred. Advanced A work remains deferred.

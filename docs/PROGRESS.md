@@ -2,6 +2,10 @@
 
 Active milestone: **B: local OpenMontage Horror pilot**, by the owner's explicit 2026-10-29 priority change. Advanced Milestone A hardening is **DEFERRED, NOT ACCEPTED**. Preserve code/tests/history; remote dispatch stays disabled. MoneyPrinterTurbo/Postiz, n8n and publishing infrastructure remain out of scope.
 
+Latest continuation verification (22:14:08 UTC): B-PILOT-SETUP-01 approval is recorded, but installation is incomplete. Cached hashes and existing MP4 probe/full decode pass. All 16 queried project-venv engine/Piper packages are absent; no Piper executable, lock, narration result or Horror video exists. No new install/download/external call was made. Old supervisor tests are historical and do not validate video production.
+
+Next owner action: [B-PILOT-CONTINUE-01](OPENMONTAGE_CONTINUATION_APPROVAL.md), combining the still-unapproved one-flag resolver correction with a maximum additional 20-minute window after the original 22:17:56 UTC cutoff. Cumulative 750 MiB/3 GiB limits, sources and approved software stay unchanged. Completed components will be reused, not reinstalled. Approved/supplied moving footage is also still required separately. The current "continue" message is not treated as any of those grants.
+
 Current setup execution: the owner approved B-PILOT-SETUP-01. Source materialization, fresh venv and portable FFmpeg/voice verification completed. **Real FFmpeg encoding, ffprobe, full decode and caption-frame checks passed**; the two-second test pattern is not a Horror render. Verified payload 170.04 MiB, measured source/runtime storage 680.43 MiB; zero paid API calls or credential access.
 
 Blocked: the exact approved uv command exits 2 because `--only-binary :all:` conflicts with `--no-build`. [B-PILOT-UV-FIX-01](OPENMONTAGE_SETUP_ERRATA.md) requests only removal of the redundant flag; no altered command was run. Core/Piper dependencies are not installed, so the narration test/registry preflight and production remain unrun. Additional footage/service access needs separate approval. All receipts/files are preserved; no deletion, global settings or publishing. See [actual results](TEST_RESULTS.md).
