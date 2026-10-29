@@ -1,0 +1,12 @@
+{
+  "executable": "C:\\Program Files\\nodejs\\node.exe",
+  "args": [
+    "C:\\Projects\\Manas_Flow\\SocialStudio\\scripts\\openmontage-download-portable.mjs"
+  ],
+  "started_utc": "2026-10-29T21:42:57.547Z",
+  "finished_utc": "2026-10-29T21:43:03.681Z",
+  "exit_code": 0,
+  "error_code": null,
+  "environment": "explicit allowlist only; controlled HOME, TEMP, caches; no owner credentials",
+  "inherited_environment": false
+}

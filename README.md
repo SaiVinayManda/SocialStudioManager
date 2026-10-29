@@ -1,6 +1,6 @@
 # Social Studio
 
-Self-hosted multi-brand video production and publishing, with OpenMontage selected as the primary engine. Current priority: **one local OpenMontage Horror video**, with the [minimum setup request](docs/OPENMONTAGE_INSTALL_APPROVAL.md) pending approval. Advanced Milestone A hardening is deferred; its code and 77-test evidence are preserved. Live remote dispatch stays disabled; no Horror video has rendered.
+Self-hosted multi-brand video production and publishing, with OpenMontage primary. Current priority: **one local Horror video**. The owner-approved setup is partial: source/venv/portable FFmpeg/voice are ready and a real encoding test passed; Python/Piper installation awaits a [one-flag resolver correction](docs/OPENMONTAGE_SETUP_ERRATA.md). Advanced Milestone A hardening is deferred; code and 77-test evidence are preserved. No Horror video has rendered or published.
 
 Use the existing Node runtime; there are no new npm dependencies or installation steps:
 

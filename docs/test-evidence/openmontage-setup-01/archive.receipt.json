@@ -1,0 +1,21 @@
+{
+  "executable": "C:\\Program Files\\Git\\cmd\\git.exe",
+  "args": [
+    "-c",
+    "safe.directory=C:/Users/Vinay/AppData/Local/Temp/SocialStudio-VideoEngineAudit-20261029/OpenMontage",
+    "-c",
+    "core.hooksPath=NUL",
+    "-C",
+    "C:\\Users\\Vinay\\AppData\\Local\\Temp\\SocialStudio-VideoEngineAudit-20261029\\OpenMontage",
+    "archive",
+    "--format=tar",
+    "--output=C:\\Projects\\Manas_Flow\\SocialStudio\\.runtime\\openmontage-pilot\\downloads\\source.tar",
+    "195eab24478dc9363326aec437aefc3701635ddf"
+  ],
+  "started_utc": "2026-10-29T21:20:41.365Z",
+  "finished_utc": "2026-10-29T21:20:41.878Z",
+  "exit_code": 0,
+  "error_code": null,
+  "environment": "explicit allowlist only; controlled HOME, TEMP, caches; no owner credentials",
+  "inherited_environment": false
+}

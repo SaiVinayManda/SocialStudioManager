@@ -1,0 +1,15 @@
+{
+  "executable": "C:\\Windows\\System32\\tar.exe",
+  "args": [
+    "-xf",
+    "C:\\Projects\\Manas_Flow\\SocialStudio\\.runtime\\openmontage-pilot\\downloads\\source.tar",
+    "-C",
+    "C:\\Projects\\Manas_Flow\\SocialStudio\\openmontage"
+  ],
+  "started_utc": "2026-10-29T21:20:42.044Z",
+  "finished_utc": "2026-10-29T21:20:43.571Z",
+  "exit_code": 0,
+  "error_code": null,
+  "environment": "explicit allowlist only; controlled HOME, TEMP, caches; no owner credentials",
+  "inherited_environment": false
+}

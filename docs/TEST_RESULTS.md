@@ -1,5 +1,28 @@
 # Actual verification results
 
+## Approved setup execution: 2026-10-29
+
+Owner explicitly approved B-PILOT-SETUP-01. The frozen packet SHA-256 `eff54d5d35aa8515df023e5a7a84eac4564136117107fbc20056d73ce4209dbe` and requirement-input SHA-256 matched. Fresh destinations were absent. Setup window: **21:17:56-22:17:56 UTC**, maximum 750 MiB downloads / 3 GiB new storage / zero paid API calls. No credential, global PATH, Windows setting, service or publishing operation occurred. Advanced A work remains deferred.
+
+| Actually executed | Outcome |
+| --- | --- |
+| Local archive/extraction | Existing pinned source materialized into `openmontage`; no clone/fetch/submodules/LFS or upstream modification |
+| Python 3.11.9 venv creation | Exit 0, fresh `.runtime/openmontage-pilot/venv`; owner/global packages untouched. No OpenMontage/Piper dependencies installed yet |
+| Exact approved uv compile command | **Exit 2 before dependency resolution**: uv 0.9.6 rejects `--only-binary :all:` together with `--no-build`. Original logs retained. Requested removing only the redundant `--no-build` in [B-PILOT-UV-FIX-01](OPENMONTAGE_SETUP_ERRATA.md); corrected command NOT RUN, pending owner approval |
+| Portable FFmpeg archive | 114,768,076 bytes, approved SHA-256 matched during transfer and independent disk hash pass; entries inspected before project-local extraction; FFmpeg/ffprobe version output confirms **9.0.2** |
+| Piper voice/config/card | All downloaded from the pinned revision. Model 63,531,379 bytes, approved SHA-256 matched in transfer and independent disk pass; config 4,972 bytes and card 517 bytes match pinned-content checks, their observed SHA-256 retained |
+| Voice redirect check | Initial narrow host guard stopped before model bytes. Metadata-only check identified `us.aws.cdn.hf.co`, within the already approved Hugging Face public-CDN clause. Same URL/revision/hash resumed; FFmpeg was hash-checked/skipped, not re-downloaded |
+| Real FFmpeg encoding | **PASS**: 2.000s MP4, 1080x1920, 30fps, H.264 yuv420p + AAC mono 48kHz, 1,219,656 bytes; tone audio and burned SRT caption. Encode subprocess elapsed **2961.5802ms**, FFmpeg benchmark rtime 2.870s; reported maxrss **296,008 KiB** (FFmpeg process only) |
+| Independent ffprobe/full decode/frame | Both exit 0; resolution/codecs/audio/duration checks passed. Extracted 0.7s PNG inspected: burned caption visible. This is a synthetic moving test pattern, **not the Horror video** |
+| Piper narration test | **NOT RUN / BLOCKED**: voice files ready, Piper package/dependencies not installed because exact compile command failed. Prepared test helper is syntax-checked only; no narration WAV claimed |
+| Helper syntax | All six setup/download/metadata/smoke helper files passed `node --check`; not a substitute for unrun runtime tests |
+
+Actual smoke output: `C:\Projects\Manas_Flow\SocialStudio\.runtime\openmontage-pilot\smoke\encoding-smoke.mp4`. Preview: open that local file; frame at `smoke/encoding-preview.png`. Full receipts, probe JSON, encoder logs and hashes are retained under `.runtime/openmontage-pilot`; report copies are in [setup evidence](test-evidence/openmontage-setup-01/summary.json).
+
+Verified downloaded file payload totals **178,304,944 bytes (170.04 MiB)**. This is file payload, not a claim of exact TLS/header traffic. Resolver failed before network resolution; the only additional inspection was the small approved voice redirect. Current measured source/runtime storage: **713,485,763 bytes (680.43 MiB)**, below 3 GiB. Both figures are timestamped observations, not a future allowance expansion.
+
+**Setup is partial, not complete.** No actual registry preflight, naturalness/listening acceptance, Horror production render or production RAM/GPU benchmark has passed. Additional footage/music or external-service access requires separate approval under the owner's latest instruction. No public publishing.
+
 ## Current local pilot inspection: 2026-10-29
 
 Advanced Milestone A hardening is deferred by the owner; its 77-test evidence below is preserved and does not imply A acceptance. No supervisor code changed in the pilot preparation.

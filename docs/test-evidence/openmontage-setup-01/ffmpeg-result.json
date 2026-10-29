@@ -1,0 +1,28 @@
+{
+  "test": "real_ffmpeg_encoding_and_probe",
+  "passed": true,
+  "version": "9.0.2",
+  "output_path": "C:\\Projects\\Manas_Flow\\SocialStudio\\.runtime\\openmontage-pilot\\smoke\\encoding-smoke.mp4",
+  "bytes": 1219656,
+  "video": {
+    "codec_name": "h264",
+    "codec_type": "video",
+    "width": 1080,
+    "height": 1920,
+    "r_frame_rate": "30/1"
+  },
+  "audio": {
+    "codec_name": "aac",
+    "codec_type": "audio",
+    "sample_rate": "48000",
+    "channels": 1,
+    "r_frame_rate": "0/0"
+  },
+  "duration_seconds": 2,
+  "encoding_duration_ms": 2961.5802000000003,
+  "full_decode_exit_code": 0,
+  "captions": "SRT burned by libass; preview frame retained",
+  "synthetic_test_pattern": true,
+  "horror_video": false,
+  "api_calls": 0
+}

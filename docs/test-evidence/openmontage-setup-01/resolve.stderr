@@ -1,0 +1,5 @@
+error: the argument '--only-binary <ONLY_BINARY>' cannot be used with '--no-build'
+
+Usage: uv.exe pip compile --python-version <PYTHON_VERSION> --python-platform <PYTHON_PLATFORM> --only-binary <ONLY_BINARY> --generate-hashes --output-file <OUTPUT_FILE> --default-index <DEFAULT_INDEX> --keyring-provider <KEYRING_PROVIDER> --cache-dir <CACHE_DIR> <SRC_FILE|--group <GROUP>>
+
+For more information, try '--help'.

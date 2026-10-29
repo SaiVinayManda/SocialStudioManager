@@ -1,0 +1,58 @@
+﻿{
+    "captured_at_utc":  "2026-10-29T21:51:29.2914876Z",
+    "approval":  "B-PILOT-SETUP-01 explicit owner grant",
+    "packet_sha256":  "eff54d5d35aa8515df023e5a7a84eac4564136117107fbc20056d73ce4209dbe",
+    "requirement_input_sha256":  "decee478ec624073e22d8061190b3adddff8b132f8103d43e190476bc8e2a284",
+    "setup_deadline_utc":  "2026-10-29T22:17:56Z",
+    "source_archive_exit_code":  0,
+    "source_extract_exit_code":  0,
+    "venv_creation_exit_code":  0,
+    "approved_resolver_exit_code":  2,
+    "resolver_error":  "Mutually exclusive --only-binary and --no-build; no corrected command run",
+    "core_and_piper_dependencies_installed":  false,
+    "voice_model_hash_verified":  true,
+    "ffmpeg_archive_hash_verified":  true,
+    "downloaded_file_payload_bytes":  178304944,
+    "measured_source_runtime_storage_bytes":  713485763,
+    "ffmpeg_smoke_passed":  true,
+    "ffmpeg_encoding_duration_ms":  2961.5802,
+    "ffmpeg_reported_maxrss_kib":  296008,
+    "smoke_mp4":  "C:\\Projects\\Manas_Flow\\SocialStudio\\.runtime\\openmontage-pilot\\smoke\\encoding-smoke.mp4",
+    "smoke_is_horror_video":  false,
+    "piper_narration_test":  "NOT RUN: dependencies blocked",
+    "registry_preflight":  "NOT RUN",
+    "horror_production":  "NOT RUN",
+    "production_time_seconds":  null,
+    "production_gpu_vram_peak":  null,
+    "paid_api_calls":  0,
+    "credential_access":  false,
+    "windows_settings_changed":  false,
+    "extra_footage_music_downloaded":  false,
+    "helpers_syntax_checked":  6,
+    "helper_hashes":  [
+                          {
+                              "path":  "scripts/openmontage-setup-step.mjs",
+                              "sha256":  "1a7b0dcc0b85f93664300105def8194792db092fbd01f5b265ffe2deab91cee4"
+                          },
+                          {
+                              "path":  "scripts/openmontage-download-portable.mjs",
+                              "sha256":  "d39fc7beb7a4a2ea283363a4c1e4f16b641e7308788357d9f2e2f66402e999f5"
+                          },
+                          {
+                              "path":  "scripts/openmontage-check-voice-redirect.mjs",
+                              "sha256":  "b172e0c672a90468d16dddc157a69b7e0cc10a9d99f07f53736cecaf4f9594d3"
+                          },
+                          {
+                              "path":  "scripts/openmontage-wheel-manifest.mjs",
+                              "sha256":  "aa251077150654cef6eb74a92742f90424bb8619fab443f64e3e412b5301cab3"
+                          },
+                          {
+                              "path":  "scripts/openmontage-ffmpeg-smoke.mjs",
+                              "sha256":  "f3aa875e4d981a69b8355d8875a5ab58227889e5a6b3217e2be254a119ea7916"
+                          },
+                          {
+                              "path":  "scripts/openmontage-piper-smoke.mjs",
+                              "sha256":  "f6e160555cc88e8cb8d15c687bbda005800cd25a68d08f66cd66899ef733b7c7"
+                          }
+                      ]
+}

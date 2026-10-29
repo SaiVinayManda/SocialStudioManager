@@ -2,6 +2,12 @@
 
 Active milestone: **B: local OpenMontage Horror pilot**, by the owner's explicit 2026-10-29 priority change. Advanced Milestone A hardening is **DEFERRED, NOT ACCEPTED**. Preserve code/tests/history; remote dispatch stays disabled. MoneyPrinterTurbo/Postiz, n8n and publishing infrastructure remain out of scope.
 
+Current setup execution: the owner approved B-PILOT-SETUP-01. Source materialization, fresh venv and portable FFmpeg/voice verification completed. **Real FFmpeg encoding, ffprobe, full decode and caption-frame checks passed**; the two-second test pattern is not a Horror render. Verified payload 170.04 MiB, measured source/runtime storage 680.43 MiB; zero paid API calls or credential access.
+
+Blocked: the exact approved uv command exits 2 because `--only-binary :all:` conflicts with `--no-build`. [B-PILOT-UV-FIX-01](OPENMONTAGE_SETUP_ERRATA.md) requests only removal of the redundant flag; no altered command was run. Core/Piper dependencies are not installed, so the narration test/registry preflight and production remain unrun. Additional footage/service access needs separate approval. All receipts/files are preserved; no deletion, global settings or publishing. See [actual results](TEST_RESULTS.md).
+
+The preparation snapshot below predates this explicitly approved partial setup; its pending labels are historical.
+
 Latest pilot preparation:
 
 - Reused the pinned no-checkout clone for source inspection. No second clone, upstream change or package installation. Reviewed the operating/context contract, cinematic/documentary manifests, relevant directors, registry, dependencies, FFmpeg compose/stitch and Piper implementation.

@@ -1,0 +1,132 @@
+[
+  {
+    "name": "version",
+    "executable": "C:\\Projects\\Manas_Flow\\SocialStudio\\.runtime\\openmontage-pilot\\ffmpeg\\ffmpeg-9.0.2-essentials_build\\bin\\ffmpeg.exe",
+    "args": [
+      "-version"
+    ],
+    "started_utc": "2026-10-29T21:44:03.590Z",
+    "finished_utc": "2026-10-29T21:44:04.479Z",
+    "duration_ms": 888.9701,
+    "exit_code": 0,
+    "error_code": null
+  },
+  {
+    "name": "probe-version",
+    "executable": "C:\\Projects\\Manas_Flow\\SocialStudio\\.runtime\\openmontage-pilot\\ffmpeg\\ffmpeg-9.0.2-essentials_build\\bin\\ffprobe.exe",
+    "args": [
+      "-version"
+    ],
+    "started_utc": "2026-10-29T21:44:04.479Z",
+    "finished_utc": "2026-10-29T21:44:04.882Z",
+    "duration_ms": 402.4246999999999,
+    "exit_code": 0,
+    "error_code": null
+  },
+  {
+    "name": "encode",
+    "executable": "C:\\Projects\\Manas_Flow\\SocialStudio\\.runtime\\openmontage-pilot\\ffmpeg\\ffmpeg-9.0.2-essentials_build\\bin\\ffmpeg.exe",
+    "args": [
+      "-hide_banner",
+      "-nostdin",
+      "-n",
+      "-benchmark",
+      "-filter_threads",
+      "1",
+      "-f",
+      "lavfi",
+      "-i",
+      "testsrc2=size=1080x1920:rate=30",
+      "-f",
+      "lavfi",
+      "-i",
+      "sine=frequency=440:sample_rate=48000",
+      "-t",
+      "2",
+      "-vf",
+      "subtitles=captions.srt:force_style='Fontname=Arial,Fontsize=16,Outline=2,MarginV=80'",
+      "-c:v",
+      "libx264",
+      "-preset",
+      "veryfast",
+      "-threads",
+      "2",
+      "-pix_fmt",
+      "yuv420p",
+      "-c:a",
+      "aac",
+      "-shortest",
+      "-movflags",
+      "+faststart",
+      "encoding-smoke.mp4"
+    ],
+    "started_utc": "2026-10-29T21:44:04.883Z",
+    "finished_utc": "2026-10-29T21:44:07.844Z",
+    "duration_ms": 2961.5802000000003,
+    "exit_code": 0,
+    "error_code": null
+  },
+  {
+    "name": "probe",
+    "executable": "C:\\Projects\\Manas_Flow\\SocialStudio\\.runtime\\openmontage-pilot\\ffmpeg\\ffmpeg-9.0.2-essentials_build\\bin\\ffprobe.exe",
+    "args": [
+      "-v",
+      "error",
+      "-show_entries",
+      "format=duration,format_name:stream=codec_name,codec_type,width,height,sample_rate,channels,r_frame_rate",
+      "-of",
+      "json",
+      "encoding-smoke.mp4"
+    ],
+    "started_utc": "2026-10-29T21:44:07.846Z",
+    "finished_utc": "2026-10-29T21:44:07.913Z",
+    "duration_ms": 67.1938999999993,
+    "exit_code": 0,
+    "error_code": null
+  },
+  {
+    "name": "full-decode",
+    "executable": "C:\\Projects\\Manas_Flow\\SocialStudio\\.runtime\\openmontage-pilot\\ffmpeg\\ffmpeg-9.0.2-essentials_build\\bin\\ffmpeg.exe",
+    "args": [
+      "-hide_banner",
+      "-v",
+      "error",
+      "-nostdin",
+      "-i",
+      "encoding-smoke.mp4",
+      "-f",
+      "null",
+      "-"
+    ],
+    "started_utc": "2026-10-29T21:44:07.914Z",
+    "finished_utc": "2026-10-29T21:44:08.071Z",
+    "duration_ms": 157.7426999999998,
+    "exit_code": 0,
+    "error_code": null
+  },
+  {
+    "name": "preview-frame",
+    "executable": "C:\\Projects\\Manas_Flow\\SocialStudio\\.runtime\\openmontage-pilot\\ffmpeg\\ffmpeg-9.0.2-essentials_build\\bin\\ffmpeg.exe",
+    "args": [
+      "-hide_banner",
+      "-v",
+      "error",
+      "-nostdin",
+      "-n",
+      "-ss",
+      "0.7",
+      "-i",
+      "encoding-smoke.mp4",
+      "-frames:v",
+      "1",
+      "-threads",
+      "1",
+      "encoding-preview.png"
+    ],
+    "started_utc": "2026-10-29T21:44:08.072Z",
+    "finished_utc": "2026-10-29T21:44:08.225Z",
+    "duration_ms": 152.16149999999925,
+    "exit_code": 0,
+    "error_code": null
+  }
+]

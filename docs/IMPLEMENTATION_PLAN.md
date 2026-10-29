@@ -9,8 +9,8 @@ Success means one real playable original Horror story about a 3 AM phone call: r
 | Task | Status and acceptance |
 | --- | --- |
 | B-01 Existing source/host inspection | Clone 195eab24478dc9363326aec437aefc3701635ddf confirmed; cinematic pipeline and tools inspected. Node/npm/Python/GPU inventory verified; no engine import or generation |
-| B-02 Minimum setup | **PENDING B-PILOT-SETUP-01**: isolated upstream core/Piper environment, portable FFmpeg/ffprobe 9.0.2, one 63.5 MB voice. [Exact packet](OPENMONTAGE_INSTALL_APPROVAL.md). No Remotion/HyperFrames/CUDA/Torch/video-model stack |
-| B-03 Actual capability preflight | After setup: upstream registry/provider summary in a secret-free environment; FFmpeg/Piper/voice/sample encoding checks. Actual provider counts NOT RUN |
+| B-02 Minimum setup | **Owner-approved; PARTIAL**: pinned source extracted, venv created, FFmpeg/ffprobe 9.0.2 and voice hash-verified. Core/Piper installation blocked by uv flag conflict; [one-flag correction approval pending](OPENMONTAGE_SETUP_ERRATA.md). No Remotion/HyperFrames/CUDA/Torch/video-model stack |
+| B-03 Actual capability preflight | Real FFmpeg 1080x1920 H.264/AAC encode/probe/full decode/caption-frame check passed. Piper narration and upstream registry summary NOT RUN pending dependencies |
 | B-04 Cinematic production | Research/proposal/script/scene/assets/edit/compose directors and checkpoints. [Draft](HORROR_PILOT_PROPOSAL.md) and [job input](../brands/horror/config/pilot.json) prepared, no stage marked complete. Verified-license stock motion and original local score/effects; no paid APIs |
 | B-05 Render/QA | Actual 57-63s vertical MP4, probe/full decode, audio/caption/black/freeze checks plus manual review, rights manifest, measured timing and sampled RAM/GPU/VRAM. NOT RUN |
 | B-06 Review/reproducibility | Actual local output path/preview, versioned commands, retained artifacts/errors and manual review; no publishing |

@@ -1,0 +1,15 @@
+{
+  "executable": "C:\\Users\\Vinay\\AppData\\Local\\Microsoft\\WindowsApps\\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\\python.exe",
+  "args": [
+    "-I",
+    "-m",
+    "venv",
+    "C:\\Projects\\Manas_Flow\\SocialStudio\\.runtime\\openmontage-pilot\\venv"
+  ],
+  "started_utc": "2026-10-29T21:35:11.345Z",
+  "finished_utc": "2026-10-29T21:35:31.834Z",
+  "exit_code": 0,
+  "error_code": null,
+  "environment": "explicit allowlist only; controlled HOME, TEMP, caches; no owner credentials",
+  "inherited_environment": false
+}

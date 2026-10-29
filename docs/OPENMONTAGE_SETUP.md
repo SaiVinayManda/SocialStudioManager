@@ -1,6 +1,6 @@
 # OpenMontage native Windows pilot setup
 
-OpenMontage is primary. The owner explicitly deferred advanced Milestone A hardening and authorized this local pilot before A acceptance. Installation/model/credential/charge/system/publishing gates remain. **B-PILOT-SETUP-01 is pending; nothing has been installed or rendered.** Use [the exact setup packet](OPENMONTAGE_INSTALL_APPROVAL.md), not `make setup`, global installs or automatic `npx` downloads.
+OpenMontage is primary; advanced A hardening remains deferred. **B-PILOT-SETUP-01 was explicitly owner-approved and is partially executed**: source extracted, venv created, portable FFmpeg/ffprobe 9.0.2 and the pinned voice verified. Real FFmpeg encoding/probe/full decode passed. Core/Piper dependency installation and narration are blocked by the approved uv command's mutually exclusive flags. See [the one-flag correction request](OPENMONTAGE_SETUP_ERRATA.md) and [actual results](TEST_RESULTS.md). The original approval packet stays byte-for-byte frozen for audit; its old pending label is historical, not the consent record.
 
 Reuse the existing anonymous no-checkout evaluation clone:
 
@@ -9,7 +9,7 @@ C:\Users\Vinay\AppData\Local\Temp\SocialStudio-VideoEngineAudit-20261029\OpenMon
 195eab24478dc9363326aec437aefc3701635ddf
 ```
 
-The clone currently contains Git objects only. README, operating/context contract, manifests, relevant cinematic director skills, registry/config/dependency declarations, Piper and FFmpeg paths were inspected as data. No upstream import/setup code ran. Materialize one working source tree at `C:\Projects\Manas_Flow\SocialStudio\openmontage` from these existing objects after setup approval; no duplicate clone or network fetch is needed. Keep the engine separate and pinned.
+The original clone contains Git objects only; its source is now materialized at `C:\Projects\Manas_Flow\SocialStudio\openmontage` from those objects. No duplicate clone/fetch or upstream modification. Engine registry/generation imports have not run. Keep this pinned source separate; do not restart setup or overwrite the existing tree/environment.
 
 ## Existing workflow and selected route
 
@@ -27,8 +27,8 @@ Footage: use the existing registry/stock adapters and verified item-level rights
 | --- | --- |
 | Node/npm | 22.19.0 / 10.9.3; no reinstall |
 | Python | Existing 3.11.9 outside PATH, located explicitly; no new interpreter needed. Existing 3.14.9 also inventoried previously, not selected for this Windows ONNX environment |
-| Python packages | Required core/Piper/ONNX packages missing; Pillow 9.5.0 is below upstream >=10. New isolated environment avoids altering owner packages |
-| FFmpeg/ffprobe/Piper | Not resolved on this session PATH; portable project-local setup proposed |
+| Python packages | New venv created, core/Piper/ONNX installation blocked pending the exact uv flag correction; owner packages unmodified |
+| FFmpeg/ffprobe/Piper | Portable 9.0.2 binaries verified/tested under `.runtime/openmontage-pilot/ffmpeg/ffmpeg-9.0.2-essentials_build/bin`; Piper voice files ready, Piper executable not installed; system PATH unchanged |
 | GPU | RTX 4060 Laptop 8,188 MiB, driver 591.91; runtime performance not benchmarked |
 | Remotion/HyperFrames | No installed runtime in this no-checkout clone; global availability not asserted; unnecessary for the initial selected route |
 | Providers | Real registry preflight NOT RUN. No credential file or provider account is used for the pilot |
@@ -49,6 +49,6 @@ The [job configuration](../brands/horror/config/pilot.json) and [creative draft]
 6. Independently decode/probe the final MP4; verify audio, dimensions, duration, subtitle presentation, all assets/rights and black/frozen/truncated sections. Review the complete video visually and audibly; a static detector alone cannot establish quality or distinguish intended holds.
 7. Record actual times, sampled RAM/GPU/VRAM, renderer/dependencies, commands, exits and failures. Planned engine output is `brands/horror/projects/horror-3am-call-001/renders/final.mp4`; expose a validated deliverable in `brands/horror/outputs`. These paths do not yet contain a video. Provide the actual path and approved preview only after success. Build the reusable parameterized entry point afterwards.
 
-Exact setup commands are in [B-PILOT-SETUP-01](OPENMONTAGE_INSTALL_APPROVAL.md). Successful production commands and measured results are **NOT AVAILABLE YET**; record the actual invocations/versions/lock/media hashes/stage approvals as they occur. Do not advertise a one-command production replay before it has rendered. First narration and rendering should use one process at a time, CPU Piper and modest FFmpeg threads; sample total process RAM and nvidia-smi periodically, labeling sampled peaks rather than inventing exact hardware maxima.
+The frozen setup commands are in [B-PILOT-SETUP-01](OPENMONTAGE_INSTALL_APPROVAL.md); the requested correction is separate. Actual bounded command wrappers, smoke scripts and receipts are retained. `node scripts/openmontage-ffmpeg-smoke.mjs` produced the real encoding test and intentionally refuses an existing output directory; do not rerun by overwriting it. `openmontage-piper-smoke.mjs` is prepared but unrun. Successful **production** commands/results are not available yet; record actual invocations/versions/lock/media hashes/approvals as they occur. Do not advertise production replay before a render succeeds. First narration/render should be serial, CPU Piper and modest FFmpeg threads, with sampled process/GPU telemetry labelled accurately.
 
 MoneyPrinterTurbo's previously approved dependency download is archived evidence only. Do not install/integrate it or Postiz. No OpenMontage dependency, account, model or renderer has been installed/activated during Milestone A coding.
