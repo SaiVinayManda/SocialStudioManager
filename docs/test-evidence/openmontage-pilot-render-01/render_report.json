@@ -1,0 +1,56 @@
+{
+  "version": "1.0",
+  "outputs": [
+    {
+      "path": "C:\\Projects\\Manas_Flow\\SocialStudio\\generated-videos\\horror\\pilot-001\\final\\horror_pilot_001.mp4",
+      "format": "mp4",
+      "codec": "h264",
+      "audio_codec": "aac",
+      "resolution": "1080x1920",
+      "fps": 30,
+      "duration_seconds": 60,
+      "file_size_bytes": 21303869,
+      "platform_target": "vertical local review"
+    }
+  ],
+  "render_time_seconds": 246.007,
+  "warnings": [
+    "Three 720p source clips were upscaled.",
+    "Source caller UI uses a visible softened screen band to remove unrelated text.",
+    "Caption timing is measured per phrase and interpolated within phrases; not forced alignment.",
+    "Owner listening/synchronization review pending; ASR transcript comparison was not run.",
+    "An early local screen-blend attempt hit a 120 s timeout; a fast regional blur succeeded.",
+    "First final render hit an upstream subtitle-style type mismatch; a call-only compatibility correction succeeded.",
+    "This run contained an unnecessary concat re-encode from instrumentation; the helper now preserves explicit global codec-copy settings. No successful final video was rerendered."
+  ],
+  "verification_notes": [
+    "Actual upstream video_stitch and video_compose executed; proposal FFmpeg runtime retained.",
+    "Independent probe and full decode passed. No black/freeze reports.",
+    "Eight actual final-video frames inspected: captions legible, inside safe area and with matching expected text.",
+    "Decoded final audio correlates 0.996691 with the existing mix.",
+    "Zero charges, no credentials/system changes/publishing."
+  ],
+  "render_grammar": "cinematic-trailer",
+  "metadata": {
+    "successful_stitch_seconds": 51.08,
+    "successful_final_compose_and_self_review_seconds": 194.927,
+    "source_select_preparation_seconds": 97.24068799999998,
+    "max_ffmpeg_process_rss_bytes": 1794846720,
+    "ram_scope": "Largest benchmark-reported single FFmpeg process RSS; not an aggregate of all application processes.",
+    "ram_peak_evidence": "stitch-approved-command-25.json",
+    "gpu_observation": {
+      "samples": 45,
+      "scope": "Whole GPU, includes desktop/other applications; not job-attributed VRAM",
+      "peak_used_mib": 1382,
+      "peak_utilization_percent": 25,
+      "renderer": "CPU libx264; no GPU encoder or video-generation model used"
+    },
+    "additional_download_bytes": 11459413,
+    "cumulative_video_payload_bytes": 203225651,
+    "mp4_sha256": "48fb3d02aecb4e83c43654d111194fd44870011c229a8b7387d8a83096858528",
+    "preview_path": "C:\\Projects\\Manas_Flow\\SocialStudio\\generated-videos\\horror\\pilot-001\\previews\\horror_pilot_001_preview.mp4",
+    "rights_manifest": "assets/ATTRIBUTION.md",
+    "human_review": "pending owner playback/listening review",
+    "publishing": false
+  }
+}

@@ -1,0 +1,12 @@
+{
+    "approval_id":  "B-PILOT-MEDIA-CONTINUE-01",
+    "owner_message":  "approve B-PILOT-MEDIA-CONTINUE-01",
+    "owner_instruction":  "Owner explicitly approved the exact documented sources, paths, digest and restrictions, at most 17 MiB additional footage and one 20-minute extension; immediately continue local render after verification.",
+    "packet_sha256":  "7845bbe366c0ebc2918f0c4b914dfa00f2beee1697924c3a9215c0bcd421dedd",
+    "recorded_at_utc":  "2026-10-30T18:34:53.6677258Z",
+    "received_before_expiry":  true,
+    "max_additional_bytes":  17825792,
+    "charges_usd":  0,
+    "credentials":  false,
+    "publishing":  false
+}

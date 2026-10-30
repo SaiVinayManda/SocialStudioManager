@@ -1,7 +1,7 @@
 // Thin local launcher: the agent executes the upstream pipeline one stage at a time.
 import fs from 'node:fs';
 import path from 'node:path';
-import {spawnSync} from 'node:child_process';
+import {spawn,spawnSync} from 'node:child_process';
 import {fileURLToPath} from 'node:url';
 const root = path.dirname(path.dirname(fileURLToPath(import.meta.url)));
 const runtime = path.join(root, '.runtime', 'openmontage-pilot');
@@ -43,8 +43,17 @@ else:
 `, {flag:'wx'});
 const env={SystemRoot:'C:\\Windows',PATH:[path.join(runtime,'venv','Scripts'),path.join(runtime,'ffmpeg','ffmpeg-9.0.2-essentials_build','bin'),'C:\\Windows\\System32'].join(';'),TEMP:path.join(runtime,'tmp'),TMP:path.join(runtime,'tmp'),HOME:path.join(runtime,'home'),USERPROFILE:path.join(runtime,'home'),APPDATA:path.join(runtime,'home','AppData','Roaming'),LOCALAPPDATA:path.join(runtime,'home','AppData','Local'),PYTHONUTF8:'1',PIP_CONFIG_FILE:'NUL',OMP_NUM_THREADS:'4'};
 const start=new Date().toISOString();
-const result=spawnSync(path.join(runtime,'venv','Scripts','python.exe'),['-I',driver,request],{env,shell:false,windowsHide:true,encoding:'utf8',timeout:900000,maxBuffer:8*1024*1024});
+let resourceLog=null,stopFile=null;
+if(payload.measure_resources){
+ resourceLog=path.join(job,'logs','resources-'+path.basename(request,'.json')+'-'+Date.now()+'.jsonl');stopFile=resourceLog+'.stop';
+ fs.writeFileSync(resourceLog,'',{flag:'wx'});
+ spawn(process.execPath,[path.join(root,'scripts','sample-horror-resources.mjs'),resourceLog,stopFile,String(process.pid)],{env,cwd:root,shell:false,windowsHide:true,stdio:'ignore'});
+}
+const selectedDriver=payload.measure_resources?path.join(root,'scripts','openmontage-render-tool.py'):driver;
+const result=spawnSync(path.join(runtime,'venv','Scripts','python.exe'),['-I',selectedDriver,request],{env,shell:false,windowsHide:true,encoding:'utf8',timeout:900000,maxBuffer:8*1024*1024});
+if(stopFile)fs.writeFileSync(stopFile,'done',{flag:'wx'});
 const receipt={started_utc:start,finished_utc:new Date().toISOString(),request,exit_code:result.status,error:result.error?.code??null,stdout:result.stdout??'',stderr:result.stderr??''};
+if(resourceLog)receipt.resource_samples_path=resourceLog;
 const target=path.join(job,'logs','call-'+Date.now()+'.json');
 fs.writeFileSync(target,JSON.stringify(receipt,null,2),{flag:'wx'});
 console.log(JSON.stringify({...receipt,receipt_path:target}));

@@ -1,0 +1,11 @@
+{
+    "captured_at_utc":  "2026-10-30T19:14:21.3152393Z",
+    "below_17_MiB":  true,
+    "setup_plus_media_accounting_including_metadata_reserve_bytes":  601142708,
+    "below_200_MiB":  true,
+    "below_750_MiB":  true,
+    "additional_footage_bytes":  11459413,
+    "source_runtime_and_pilot_storage_bytes":  1459062937,
+    "below_3_GiB":  true,
+    "source_video_payload_bytes":  203225651
+}

@@ -1,0 +1,449 @@
+{
+    "action":  "tool",
+    "tool":  "video_compose",
+    "measure_resources":  true,
+    "params":  {
+                   "operation":  "render",
+                   "edit_decisions":  {
+                                          "version":  "1.0",
+                                          "render_runtime":  "ffmpeg",
+                                          "renderer_family":  "cinematic-trailer",
+                                          "composition_mode":  "templated",
+                                          "cuts":  [
+                                                       {
+                                                           "id":  "assembled-picture",
+                                                           "source":  "C:\\Projects\\Manas_Flow\\SocialStudio\\generated-videos\\horror\\pilot-001\\renders\\picture_crossfades.mp4",
+                                                           "in_seconds":  0,
+                                                           "out_seconds":  60,
+                                                           "reason":  "Eight approved moving selects assembled by upstream video_stitch; editorial cuts retained in checkpoint_edit."
+                                                       }
+                                                   ],
+                                          "subtitles":  {
+                                                            "enabled":  true,
+                                                            "source":  "C:\\Projects\\Manas_Flow\\SocialStudio\\generated-videos\\horror\\pilot-001\\subtitles\\horror_pilot_001.ass",
+                                                            "font":  "Arial",
+                                                            "font_size":  58,
+                                                            "position":  "bottom-center"
+                                                        },
+                                          "metadata":  {
+                                                           "target_duration_seconds":  60,
+                                                           "compose_target":  {
+                                                                                  "width":  1080,
+                                                                                  "height":  1920,
+                                                                                  "fit":  "cover"
+                                                                              },
+                                                           "delivery_promise":  {
+                                                                                    "promise_type":  "motion_led",
+                                                                                    "motion_required":  true,
+                                                                                    "source_required":  false,
+                                                                                    "tone_mode":  "cinematic horror",
+                                                                                    "quality_floor":  "presentable",
+                                                                                    "approved_fallback":  null
+                                                                                },
+                                                           "proposal_render_runtime":  "ffmpeg",
+                                                           "crossfade_overlap_seconds":  0.4,
+                                                           "timeline_seconds":  60,
+                                                           "measured_audio_ref":  "assets/audio-provenance.json",
+                                                           "mix_ref":  "previews/horror_pilot_audio_preview.wav",
+                                                           "audio_unchanged":  true
+                                                       }
+                                      },
+                   "asset_manifest":  {
+                                          "version":  "1.0",
+                                          "assets":  [
+                                                         {
+                                                             "id":  "source-phone",
+                                                             "type":  "video",
+                                                             "path":  "C:\\Projects\\Manas_Flow\\SocialStudio\\generated-videos\\horror\\pilot-001\\assets\\phone.mp4",
+                                                             "source_tool":  "bounded_public_stock_input",
+                                                             "scene_id":  "source",
+                                                             "provider":  "Mixkit",
+                                                             "license":  "Mixkit Stock Video Free License",
+                                                             "original_url":  "https://mixkit.co/free-stock-video/black-phone-on-laptop-247/",
+                                                             "cost_usd":  0,
+                                                             "generation_summary":  "Item-confirmed commercial Free licence, hash and full decode verified."
+                                                         },
+                                                         {
+                                                             "id":  "source-rain",
+                                                             "type":  "video",
+                                                             "path":  "C:\\Projects\\Manas_Flow\\SocialStudio\\generated-videos\\horror\\pilot-001\\assets\\rain.mp4",
+                                                             "source_tool":  "bounded_public_stock_input",
+                                                             "scene_id":  "source",
+                                                             "provider":  "Mixkit",
+                                                             "license":  "Mixkit Stock Video Free License",
+                                                             "original_url":  "https://mixkit.co/free-stock-video/colorful-rain-soaked-bokeh-lights-at-night-99841/",
+                                                             "cost_usd":  0,
+                                                             "generation_summary":  "Item-confirmed commercial Free licence, hash and full decode verified."
+                                                         },
+                                                         {
+                                                             "id":  "source-curtain",
+                                                             "type":  "video",
+                                                             "path":  "C:\\Projects\\Manas_Flow\\SocialStudio\\generated-videos\\horror\\pilot-001\\assets\\curtain.mp4",
+                                                             "source_tool":  "bounded_public_stock_input",
+                                                             "scene_id":  "source",
+                                                             "provider":  "Mixkit",
+                                                             "license":  "Mixkit Stock Video Free License",
+                                                             "original_url":  "https://mixkit.co/free-stock-video/view-of-a-window-with-a-curtain-3977/",
+                                                             "cost_usd":  0,
+                                                             "generation_summary":  "Item-confirmed commercial Free licence, hash and full decode verified."
+                                                         },
+                                                         {
+                                                             "id":  "source-bedroom",
+                                                             "type":  "video",
+                                                             "path":  "C:\\Projects\\Manas_Flow\\SocialStudio\\generated-videos\\horror\\pilot-001\\assets\\bedroom.mp4",
+                                                             "source_tool":  "bounded_public_stock_input",
+                                                             "scene_id":  "source",
+                                                             "provider":  "Mixkit",
+                                                             "license":  "Mixkit Stock Video Free License",
+                                                             "original_url":  "https://mixkit.co/free-stock-video/master-bedroom-and-window-3111/",
+                                                             "cost_usd":  0,
+                                                             "generation_summary":  "Item-confirmed commercial Free licence, hash and full decode verified."
+                                                         },
+                                                         {
+                                                             "id":  "source-hall",
+                                                             "type":  "video",
+                                                             "path":  "C:\\Projects\\Manas_Flow\\SocialStudio\\generated-videos\\horror\\pilot-001\\assets\\hall.mp4",
+                                                             "source_tool":  "bounded_public_stock_input",
+                                                             "scene_id":  "source",
+                                                             "provider":  "Mixkit",
+                                                             "license":  "Mixkit Stock Video Free License",
+                                                             "original_url":  "https://mixkit.co/free-stock-video/black-stairs-and-a-large-window-3094/",
+                                                             "cost_usd":  0,
+                                                             "generation_summary":  "Item-confirmed commercial Free licence, hash and full decode verified."
+                                                         },
+                                                         {
+                                                             "id":  "source-night",
+                                                             "type":  "video",
+                                                             "path":  "C:\\Projects\\Manas_Flow\\SocialStudio\\generated-videos\\horror\\pilot-001\\assets\\night.mp4",
+                                                             "source_tool":  "bounded_public_stock_input",
+                                                             "scene_id":  "source",
+                                                             "provider":  "Mixkit",
+                                                             "license":  "Mixkit Stock Video Free License",
+                                                             "original_url":  "https://mixkit.co/free-stock-video/view-from-a-window-of-the-night-outside-3978/",
+                                                             "cost_usd":  0,
+                                                             "generation_summary":  "Item-confirmed commercial Free licence, hash and full decode verified."
+                                                         },
+                                                         {
+                                                             "id":  "shot-01",
+                                                             "type":  "video",
+                                                             "path":  "C:\\Projects\\Manas_Flow\\SocialStudio\\generated-videos\\horror\\pilot-001\\assets\\selects\\shot-01.mp4",
+                                                             "source_tool":  "ffmpeg_source_select",
+                                                             "scene_id":  "shot-01",
+                                                             "duration_seconds":  3.2,
+                                                             "resolution":  "1080x1920",
+                                                             "cost_usd":  0,
+                                                             "license":  "Derived from item-licensed Mixkit source",
+                                                             "generation_summary":  "Measured source trim, vertical crop, restrained cool grade; no still substitution."
+                                                         },
+                                                         {
+                                                             "id":  "shot-02",
+                                                             "type":  "video",
+                                                             "path":  "C:\\Projects\\Manas_Flow\\SocialStudio\\generated-videos\\horror\\pilot-001\\assets\\selects\\shot-02.mp4",
+                                                             "source_tool":  "ffmpeg_source_select",
+                                                             "scene_id":  "shot-02",
+                                                             "duration_seconds":  9.4,
+                                                             "resolution":  "1080x1920",
+                                                             "cost_usd":  0,
+                                                             "license":  "Derived from item-licensed Mixkit source",
+                                                             "generation_summary":  "Measured source trim, vertical crop, restrained cool grade; no still substitution."
+                                                         },
+                                                         {
+                                                             "id":  "shot-03",
+                                                             "type":  "video",
+                                                             "path":  "C:\\Projects\\Manas_Flow\\SocialStudio\\generated-videos\\horror\\pilot-001\\assets\\selects\\shot-03.mp4",
+                                                             "source_tool":  "ffmpeg_source_select",
+                                                             "scene_id":  "shot-03",
+                                                             "duration_seconds":  7.4,
+                                                             "resolution":  "1080x1920",
+                                                             "cost_usd":  0,
+                                                             "license":  "Derived from item-licensed Mixkit source",
+                                                             "generation_summary":  "Measured source trim, vertical crop, restrained cool grade; no still substitution."
+                                                         },
+                                                         {
+                                                             "id":  "shot-04",
+                                                             "type":  "video",
+                                                             "path":  "C:\\Projects\\Manas_Flow\\SocialStudio\\generated-videos\\horror\\pilot-001\\assets\\selects\\shot-04.mp4",
+                                                             "source_tool":  "ffmpeg_source_select",
+                                                             "scene_id":  "shot-04",
+                                                             "duration_seconds":  3.4,
+                                                             "resolution":  "1080x1920",
+                                                             "cost_usd":  0,
+                                                             "license":  "Derived from item-licensed Mixkit source",
+                                                             "generation_summary":  "Measured source trim, vertical crop, restrained cool grade; no still substitution."
+                                                         },
+                                                         {
+                                                             "id":  "shot-05",
+                                                             "type":  "video",
+                                                             "path":  "C:\\Projects\\Manas_Flow\\SocialStudio\\generated-videos\\horror\\pilot-001\\assets\\selects\\shot-05-screen-diffusion-v2.mp4",
+                                                             "source_tool":  "ffmpeg_source_select",
+                                                             "scene_id":  "shot-05",
+                                                             "duration_seconds":  11.4,
+                                                             "resolution":  "1080x1920",
+                                                             "cost_usd":  0,
+                                                             "license":  "Derived from item-licensed Mixkit source",
+                                                             "generation_summary":  "Soft screen-area diffusion removes unrelated stock caller name/time; actual photographed motion preserved."
+                                                         },
+                                                         {
+                                                             "id":  "shot-06",
+                                                             "type":  "video",
+                                                             "path":  "C:\\Projects\\Manas_Flow\\SocialStudio\\generated-videos\\horror\\pilot-001\\assets\\selects\\shot-06.mp4",
+                                                             "source_tool":  "ffmpeg_source_select",
+                                                             "scene_id":  "shot-06",
+                                                             "duration_seconds":  11.4,
+                                                             "resolution":  "1080x1920",
+                                                             "cost_usd":  0,
+                                                             "license":  "Derived from item-licensed Mixkit source",
+                                                             "generation_summary":  "Measured source trim, vertical crop, restrained cool grade; no still substitution."
+                                                         },
+                                                         {
+                                                             "id":  "shot-07",
+                                                             "type":  "video",
+                                                             "path":  "C:\\Projects\\Manas_Flow\\SocialStudio\\generated-videos\\horror\\pilot-001\\assets\\selects\\shot-07.mp4",
+                                                             "source_tool":  "ffmpeg_source_select",
+                                                             "scene_id":  "shot-07",
+                                                             "duration_seconds":  10.4,
+                                                             "resolution":  "1080x1920",
+                                                             "cost_usd":  0,
+                                                             "license":  "Derived from item-licensed Mixkit source",
+                                                             "generation_summary":  "Measured source trim, vertical crop, restrained cool grade; no still substitution."
+                                                         },
+                                                         {
+                                                             "id":  "shot-08",
+                                                             "type":  "video",
+                                                             "path":  "C:\\Projects\\Manas_Flow\\SocialStudio\\generated-videos\\horror\\pilot-001\\assets\\selects\\shot-08-screen-diffusion-v2.mp4",
+                                                             "source_tool":  "ffmpeg_source_select",
+                                                             "scene_id":  "shot-08",
+                                                             "duration_seconds":  6.2,
+                                                             "resolution":  "1080x1920",
+                                                             "cost_usd":  0,
+                                                             "license":  "Derived from item-licensed Mixkit source",
+                                                             "generation_summary":  "Soft screen-area diffusion removes unrelated stock caller name/time; actual photographed motion preserved."
+                                                         },
+                                                         {
+                                                             "id":  "narration",
+                                                             "type":  "narration",
+                                                             "path":  "C:\\Projects\\Manas_Flow\\SocialStudio\\generated-videos\\horror\\pilot-001\\assets\\narration.wav",
+                                                             "source_tool":  "piper_tts",
+                                                             "scene_id":  "all",
+                                                             "cost_usd":  0,
+                                                             "generation_summary":  "Existing completed asset reused; see audio-provenance.json and tool receipts."
+                                                         },
+                                                         {
+                                                             "id":  "score",
+                                                             "type":  "music",
+                                                             "path":  "C:\\Projects\\Manas_Flow\\SocialStudio\\generated-videos\\horror\\pilot-001\\assets\\original_score.wav",
+                                                             "source_tool":  "original_local_synthesis",
+                                                             "scene_id":  "all",
+                                                             "cost_usd":  0,
+                                                             "generation_summary":  "Existing completed asset reused; see audio-provenance.json and tool receipts."
+                                                         },
+                                                         {
+                                                             "id":  "effects",
+                                                             "type":  "sfx",
+                                                             "path":  "C:\\Projects\\Manas_Flow\\SocialStudio\\generated-videos\\horror\\pilot-001\\assets\\original_effects.wav",
+                                                             "source_tool":  "original_local_synthesis",
+                                                             "scene_id":  "all",
+                                                             "cost_usd":  0,
+                                                             "generation_summary":  "Existing completed asset reused; see audio-provenance.json and tool receipts."
+                                                         },
+                                                         {
+                                                             "id":  "mix",
+                                                             "type":  "audio",
+                                                             "path":  "C:\\Projects\\Manas_Flow\\SocialStudio\\generated-videos\\horror\\pilot-001\\previews\\horror_pilot_audio_preview.wav",
+                                                             "source_tool":  "audio_mixer",
+                                                             "scene_id":  "all",
+                                                             "cost_usd":  0,
+                                                             "generation_summary":  "Existing completed asset reused; see audio-provenance.json and tool receipts."
+                                                         },
+                                                         {
+                                                             "id":  "srt",
+                                                             "type":  "subtitle",
+                                                             "path":  "C:\\Projects\\Manas_Flow\\SocialStudio\\generated-videos\\horror\\pilot-001\\subtitles\\horror_pilot_001.srt",
+                                                             "source_tool":  "subtitle_gen",
+                                                             "scene_id":  "all",
+                                                             "cost_usd":  0,
+                                                             "generation_summary":  "Existing completed asset reused; see audio-provenance.json and tool receipts."
+                                                         },
+                                                         {
+                                                             "id":  "ass",
+                                                             "type":  "subtitle",
+                                                             "path":  "C:\\Projects\\Manas_Flow\\SocialStudio\\generated-videos\\horror\\pilot-001\\subtitles\\horror_pilot_001.ass",
+                                                             "source_tool":  "local_caption_style",
+                                                             "scene_id":  "all",
+                                                             "cost_usd":  0,
+                                                             "generation_summary":  "Existing completed asset reused; see audio-provenance.json and tool receipts."
+                                                         }
+                                                     ],
+                                          "total_cost_usd":  0,
+                                          "metadata":  {
+                                                           "rights_ref":  "assets/source-downloads.json",
+                                                           "audio_rights_ref":  "assets/audio-provenance.json",
+                                                           "selects_ref":  "assets/reviewed-selects-manifest.json",
+                                                           "source_video_bytes":  203225651,
+                                                           "additional_video_bytes":  11459413,
+                                                           "all_actual_motion":  true,
+                                                           "review_notes":  "Scene review frames inspected; framed wall artwork excluded by crop; unrelated phone name diffused. No missing planned source. Intermediates and originals preserved.",
+                                                           "approval_id":  "B-PILOT-MEDIA-01",
+                                                           "media_continuation":  "B-PILOT-MEDIA-CONTINUE-01"
+                                                       }
+                                      },
+                   "proposal_packet":  {
+                                           "version":  "1.0",
+                                           "concept_options":  [
+                                                                   {
+                                                                       "id":  "caller",
+                                                                       "title":  "The Second Caller",
+                                                                       "hook":  "Your own voice knows what happens next.",
+                                                                       "narrative_structure":  "story",
+                                                                       "visual_approach":  "Escalation to an intimate identity reversal; phone/corridor/bed details.",
+                                                                       "target_duration_seconds":  60,
+                                                                       "why_this_works":  "Available real moving stock can support an offscreen threat without a generated monster or actor."
+                                                                   },
+                                                                   {
+                                                                       "id":  "house",
+                                                                       "title":  "The House Holds Its Breath",
+                                                                       "hook":  "An ordinary room becomes a trap.",
+                                                                       "narrative_structure":  "story",
+                                                                       "visual_approach":  "Texture-first long takes and silence; less literal phone coverage.",
+                                                                       "target_duration_seconds":  60,
+                                                                       "why_this_works":  "Available real moving stock can support an offscreen threat without a generated monster or actor."
+                                                                   },
+                                                                   {
+                                                                       "id":  "three",
+                                                                       "title":  "Three Calls Before Dawn",
+                                                                       "hook":  "Each ring removes another safe place.",
+                                                                       "narrative_structure":  "story",
+                                                                       "visual_approach":  "Frantic repeated-call structure; fast intercuts rather than a whisper landing.",
+                                                                       "target_duration_seconds":  60,
+                                                                       "why_this_works":  "Available real moving stock can support an offscreen threat without a generated monster or actor."
+                                                                   }
+                                                               ],
+                                           "selected_concept":  {
+                                                                    "concept_id":  "caller",
+                                                                    "rationale":  "Existing owner-selected original proposal; B-PILOT-MEDIA-01 full local run."
+                                                                },
+                                           "production_plan":  {
+                                                                   "pipeline":  "cinematic",
+                                                                   "render_runtime":  "ffmpeg",
+                                                                   "renderer_family":  "cinematic-trailer",
+                                                                   "composition_mode":  "templated",
+                                                                   "stages":  [
+                                                                                  {
+                                                                                      "stage":  "assets",
+                                                                                      "tools":  [
+                                                                                                    {
+                                                                                                        "tool_name":  "piper_tts",
+                                                                                                        "role":  "Narration",
+                                                                                                        "available":  true,
+                                                                                                        "provider":  "local",
+                                                                                                        "estimated_cost_usd":  0
+                                                                                                    }
+                                                                                                ],
+                                                                                      "approach":  "Stock source selects with per-item rights and real motion; original score/effects; measured phrase captions."
+                                                                                  },
+                                                                                  {
+                                                                                      "stage":  "compose",
+                                                                                      "tools":  [
+                                                                                                    {
+                                                                                                        "tool_name":  "video_compose",
+                                                                                                        "role":  "Upstream composition",
+                                                                                                        "available":  true,
+                                                                                                        "provider":  "ffmpeg",
+                                                                                                        "estimated_cost_usd":  0
+                                                                                                    },
+                                                                                                    {
+                                                                                                        "tool_name":  "audio_mixer",
+                                                                                                        "role":  "Controlled speech and score mix",
+                                                                                                        "available":  true,
+                                                                                                        "provider":  "ffmpeg",
+                                                                                                        "estimated_cost_usd":  0
+                                                                                                    }
+                                                                                                ],
+                                                                                      "approach":  "Approved 1080x1920 video-led FFmpeg route, restrained transitions, no static fallback."
+                                                                                  }
+                                                                              ],
+                                                                   "delivery_promise":  {
+                                                                                            "promise_type":  "motion_led",
+                                                                                            "motion_required":  true,
+                                                                                            "source_required":  false,
+                                                                                            "tone_mode":  "cinematic horror",
+                                                                                            "quality_floor":  "presentable",
+                                                                                            "approved_fallback":  null
+                                                                                        },
+                                                                   "music_source":  {
+                                                                                        "source_type":  "bring_your_own",
+                                                                                        "provider":  "locally authored original synthesis",
+                                                                                        "mood_direction":  "Low drone, sparse pulse, ring and knocks; quiet beneath narration.",
+                                                                                        "estimated_cost_usd":  0
+                                                                                    },
+                                                                   "voice_selection":  {
+                                                                                           "provider":  "piper_tts",
+                                                                                           "voice_id":  "en_US-ljspeech-medium",
+                                                                                           "rationale":  "Approved and tested local voice",
+                                                                                           "delivery_style":  "Measured intimate narration with clear diction",
+                                                                                           "pacing_policy":  "Phrase-level silence measured from actual WAV durations",
+                                                                                           "sample_approval_required":  false
+                                                                                       },
+                                                                   "quality_tradeoffs":  [
+                                                                                             {
+                                                                                                 "tradeoff":  "Free CPU voice and stock coverage instead of bespoke actors",
+                                                                                                 "recommendation":  "Keep the approved model and review the real result",
+                                                                                                 "quality_impact":  "Voice has limited dramatic acting; stock continuity is suggestive."
+                                                                                             }
+                                                                                         ],
+                                                                   "decision_log_ref":  "C:\\Projects\\Manas_Flow\\SocialStudio\\generated-videos\\horror\\pilot-001\\decision_log.json"
+                                                               },
+                                           "cost_estimate":  {
+                                                                 "total_estimated_usd":  0,
+                                                                 "budget_cap_usd":  0,
+                                                                 "budget_verdict":  "within_budget",
+                                                                 "line_items":  [
+                                                                                    {
+                                                                                        "tool":  "piper_tts",
+                                                                                        "operation":  "Local narration",
+                                                                                        "estimated_usd":  0
+                                                                                    },
+                                                                                    {
+                                                                                        "tool":  "video_compose",
+                                                                                        "operation":  "Local FFmpeg rendering",
+                                                                                        "estimated_usd":  0
+                                                                                    },
+                                                                                    {
+                                                                                        "tool":  "public stock acquisition",
+                                                                                        "operation":  "At most eight approved source clips",
+                                                                                        "estimated_usd":  0
+                                                                                    }
+                                                                                ]
+                                                             },
+                                           "approval":  {
+                                                            "status":  "approved",
+                                                            "user_notes":  "Owner: approve B-PILOT-MEDIA-01. Unchanged original script and bounded full-run; no publishing.",
+                                                            "approved_budget_usd":  0
+                                                        },
+                                           "metadata":  {
+                                                            "target_resolution":  "1080x1920",
+                                                            "motion_required":  true,
+                                                            "coverage_gate":  "Inspect actual clips before accepting assets; stop on material missing coverage.",
+                                                            "approval_record":  "logs/media-approval.json"
+                                                        }
+                                       },
+                   "audio_path":  "C:\\Projects\\Manas_Flow\\SocialStudio\\generated-videos\\horror\\pilot-001\\previews\\horror_pilot_audio_preview.wav",
+                   "subtitle_path":  "C:\\Projects\\Manas_Flow\\SocialStudio\\generated-videos\\horror\\pilot-001\\subtitles\\horror_pilot_001.ass",
+                   "subtitle_style":  {
+                                          "font":  "Arial",
+                                          "font_size":  58,
+                                          "bold":  true,
+                                          "outline_width":  3,
+                                          "shadow":  1,
+                                          "margin_v":  280,
+                                          "alignment":  2,
+                                          "primary_color":  "\u0026H00FFFFFF",
+                                          "outline_color":  "\u0026H00101010"
+                                      },
+                   "codec":  "libx264",
+                   "crf":  20,
+                   "preset":  "fast",
+                   "script_path":  "C:\\Projects\\Manas_Flow\\SocialStudio\\generated-videos\\horror\\pilot-001\\scripts\\horror_pilot_001.txt",
+                   "output_path":  "C:\\Projects\\Manas_Flow\\SocialStudio\\generated-videos\\horror\\pilot-001\\final\\horror_pilot_001.mp4"
+               }
+}

@@ -1,5 +1,19 @@
 # Current progress
 
+**2026-10-30: first real OpenMontage Horror MP4 rendered and independently validated; ready for owner review.**
+
+Output: `C:\Projects\Manas_Flow\SocialStudio\generated-videos\horror\pilot-001\final\horror_pilot_001.mp4` — 60.0 seconds, 1080x1920, 30 fps, H.264/AAC, 21,303,869 bytes. The 540x960 review copy is in `previews/horror_pilot_001_preview.mp4`. Narration, original score/effects and existing subtitles were reused; all six licensed real-motion sources verified. Actual upstream assets/edit/compose checkpoints passed. Publishing stage was not entered.
+
+Independent probe/full decode, no black/freeze reports, audio-preservation correlation 0.996691 and eight readable burned-caption samples passed. Audio: -16.56 LUFS, -0.83 dBTP. Successful upstream assembly plus composition/self-review took 246.007 s (51.080 + 194.927); source select preparation separately took 97.241 s. Largest FFmpeg-process benchmark RSS was 1,794,846,720 bytes (~1.67 GiB), not aggregate application RAM. Forty-five whole-GPU samples peaked at 1,382 MiB / 25%; those observations include other applications. Rendering used CPU libx264.
+
+The owner explicitly approved B-PILOT-MEDIA-CONTINUE-01. Exactly three clips / 11,459,413 bytes acquired by 18:34:57 UTC, within its 17 MiB / 20-minute limits; cumulative video payload 203,225,651 bytes remains below 200 MiB. No additional installs/models/credentials/charges/system changes. Both frozen approval packets remain unchanged.
+
+Known limitations: three 720p interior sources upscaled; a visible softened phone-screen band removes unrelated stock caller text; intra-phrase caption timing is approximate. Owner listening/pacing review is still needed. No ASR/forced-alignment model was downloaded. The source-confirmed subtitle-style mismatch was resolved in the job call only; no upstream source change. [Actual evidence](test-evidence/openmontage-pilot-render-01/render_report.json), [tests](TEST_RESULTS.md), [executed recipe](OPENMONTAGE_RENDER_RECIPE.md).
+
+Advanced Milestone A remains **DEFERRED, NOT ACCEPTED**. Supervisor code/history preserved; its 77 tests were not rerun as video evidence. No n8n, publishing or additional infrastructure started. First-video delivery is achieved; formal owner acceptance and reusable-job entry point remain separate backlog work.
+
+## Historical preparation snapshots (superseded by the render above)
+
 Active milestone: **B: local OpenMontage Horror pilot**, by the owner's explicit 2026-10-29 priority change. Advanced Milestone A hardening is **DEFERRED, NOT ACCEPTED**. Preserve code/tests/history; remote dispatch stays disabled. MoneyPrinterTurbo/Postiz, n8n and publishing infrastructure remain out of scope.
 
 **Current, 2026-10-30: assets partially complete; media time extension pending.** The owner explicitly approved B-PILOT-MEDIA-01 before expiry, including unchanged full-run creative production. The upstream decision log records that policy. Research/proposal/script/scene-plan checkpoints passed upstream validation; assets remains in_progress. Three licensed moving clips, 191,766,238 bytes, passed independent hashes, probe and full decode; no source black/freeze detector reports.

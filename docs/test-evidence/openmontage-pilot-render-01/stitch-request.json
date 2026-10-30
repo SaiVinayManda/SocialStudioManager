@@ -1,0 +1,27 @@
+{
+  "action": "tool",
+  "tool": "video_stitch",
+  "measure_resources": true,
+  "params": {
+    "operation": "stitch",
+    "clips": [
+      "C:\\Projects\\Manas_Flow\\SocialStudio\\generated-videos\\horror\\pilot-001\\assets\\selects\\shot-01.mp4",
+      "C:\\Projects\\Manas_Flow\\SocialStudio\\generated-videos\\horror\\pilot-001\\assets\\selects\\shot-02.mp4",
+      "C:\\Projects\\Manas_Flow\\SocialStudio\\generated-videos\\horror\\pilot-001\\assets\\selects\\shot-03.mp4",
+      "C:\\Projects\\Manas_Flow\\SocialStudio\\generated-videos\\horror\\pilot-001\\assets\\selects\\shot-04.mp4",
+      "C:\\Projects\\Manas_Flow\\SocialStudio\\generated-videos\\horror\\pilot-001\\assets\\selects\\shot-05-screen-diffusion-v2.mp4",
+      "C:\\Projects\\Manas_Flow\\SocialStudio\\generated-videos\\horror\\pilot-001\\assets\\selects\\shot-06.mp4",
+      "C:\\Projects\\Manas_Flow\\SocialStudio\\generated-videos\\horror\\pilot-001\\assets\\selects\\shot-07.mp4",
+      "C:\\Projects\\Manas_Flow\\SocialStudio\\generated-videos\\horror\\pilot-001\\assets\\selects\\shot-08-screen-diffusion-v2.mp4"
+    ],
+    "transition": "crossfade",
+    "transition_duration": 0.4,
+    "target_resolution": "1080x1920",
+    "target_fps": 30,
+    "codec": "libx264",
+    "crf": 20,
+    "preset": "veryfast",
+    "auto_normalize": false,
+    "output_path": "C:\\Projects\\Manas_Flow\\SocialStudio\\generated-videos\\horror\\pilot-001\\renders\\picture_crossfades.mp4"
+  }
+}

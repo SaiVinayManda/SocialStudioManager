@@ -1,0 +1,11 @@
+{
+  "started_utc": "2026-10-30T18:46:46.043Z",
+  "finished_utc": "2026-10-30T18:47:37.123Z",
+  "request": "C:\\Projects\\Manas_Flow\\SocialStudio\\generated-videos\\horror\\pilot-001\\logs\\stitch-approved.json",
+  "exit_code": 0,
+  "error": null,
+  "stdout": "{\"success\": true, \"data\": {\"operation\": \"stitch\", \"clip_count\": 8, \"transition\": \"crossfade\", \"transition_duration\": 0.4, \"auto_normalized\": false, \"output\": \"C:\\\\Projects\\\\Manas_Flow\\\\SocialStudio\\\\generated-videos\\\\horror\\\\pilot-001\\\\renders\\\\picture_crossfades.mp4\", \"duration\": 60.0, \"file_size_bytes\": 21805810, \"method\": \"xfade_crossfade\"}, \"error\": null}\r\n",
+  "stderr": "",
+  "resource_samples_path": "C:\\Projects\\Manas_Flow\\SocialStudio\\generated-videos\\horror\\pilot-001\\logs\\resources-stitch-approved-1793386006044.jsonl",
+  "file": "call-1793386057124.json"
+}

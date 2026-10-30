@@ -1,0 +1,76 @@
+{
+  "version": "1.0",
+  "output_path": "C:\\Projects\\Manas_Flow\\SocialStudio\\generated-videos\\horror\\pilot-001\\final\\horror_pilot_001.mp4",
+  "status": "pass",
+  "checks": {
+    "technical_probe": {
+      "valid_container": true,
+      "duration_seconds": 60,
+      "resolution": "1080x1920",
+      "fps": 30,
+      "has_audio": true,
+      "codec": "h264",
+      "file_size_bytes": 21303869,
+      "issues": [],
+      "target_duration": 60,
+      "duration_drift_pct": 0
+    },
+    "visual_spotcheck": {
+      "frames_sampled": 8,
+      "frame_paths": [
+        "C:\\Projects\\Manas_Flow\\SocialStudio\\generated-videos\\horror\\pilot-001\\previews\\final-review-01.png",
+        "C:\\Projects\\Manas_Flow\\SocialStudio\\generated-videos\\horror\\pilot-001\\previews\\final-review-02.png",
+        "C:\\Projects\\Manas_Flow\\SocialStudio\\generated-videos\\horror\\pilot-001\\previews\\final-review-03.png",
+        "C:\\Projects\\Manas_Flow\\SocialStudio\\generated-videos\\horror\\pilot-001\\previews\\final-review-04.png",
+        "C:\\Projects\\Manas_Flow\\SocialStudio\\generated-videos\\horror\\pilot-001\\previews\\final-review-05.png",
+        "C:\\Projects\\Manas_Flow\\SocialStudio\\generated-videos\\horror\\pilot-001\\previews\\final-review-06.png",
+        "C:\\Projects\\Manas_Flow\\SocialStudio\\generated-videos\\horror\\pilot-001\\previews\\final-review-07.png",
+        "C:\\Projects\\Manas_Flow\\SocialStudio\\generated-videos\\horror\\pilot-001\\previews\\final-review-08.png"
+      ],
+      "black_frames_detected": false,
+      "broken_overlays": false,
+      "missing_assets": false,
+      "unreadable_text": false,
+      "issues": []
+    },
+    "audio_spotcheck": {
+      "narration_present": true,
+      "music_present": true,
+      "unexpected_silence": false,
+      "clipping_detected": false,
+      "mix_intelligible": true,
+      "issues": []
+    },
+    "promise_preservation": {
+      "delivery_promise_honored": true,
+      "silent_downgrade_detected": false,
+      "runtime_swap_detected": false,
+      "issues": [],
+      "renderer_family_used": "cinematic-trailer",
+      "render_runtime_used": "ffmpeg",
+      "runtime_swap_check": "ok — proposal and edit agree (proposal_packet.production_plan.render_runtime)",
+      "motion_ratio_actual": 1
+    },
+    "subtitle_check": {
+      "subtitles_expected": true,
+      "subtitles_present": true,
+      "issues": [],
+      "coverage_ratio": 1
+    },
+    "transcript_comparison": {
+      "transcript_matches_script": false,
+      "word_accuracy": null,
+      "script_word_count": 0,
+      "transcript_word_count": 0,
+      "spurious_punctuation_words": [],
+      "issues": [
+        "transcript_comparison skipped: narration_transcript not provided"
+      ]
+    }
+  },
+  "issues_found": [
+    "transcript_comparison skipped: narration_transcript not provided",
+    "Caption visibility inspected in eight actual frames; full subjective listening/timing review remains with owner."
+  ],
+  "recommended_action": "present_to_user"
+}

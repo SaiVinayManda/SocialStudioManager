@@ -1,6 +1,6 @@
 # Social Studio
 
-Self-hosted multi-brand production, with OpenMontage primary. Current priority: **one local Horror video**. Existing setup is verified. Under the owner's B-PILOT-MEDIA-01 approval, upstream planning checkpoints passed, three licensed clips were decoded, all 17 Piper phrases rendered, 32 SRT cues generated, and a real 60-second audio preview mixed. The acquisition window expired before the remaining interior clips transferred; [the bounded time extension](docs/HORROR_PILOT_MEDIA_CONTINUATION.md) is pending. [Actual evidence](docs/test-evidence/openmontage-pilot-assets-01/summary.json). Advanced A hardening is deferred; its code/77-test history is preserved. No Horror MP4 has rendered or published.
+Self-hosted multi-brand production, with OpenMontage primary. **First real Horror pilot rendered and independently validated:** 60.0 s, 1080x1920, 30 fps, H.264/AAC, 21,303,869 bytes. Local file: `generated-videos/horror/pilot-001/final/horror_pilot_001.mp4`. Existing narration/music/subtitles reused; actual upstream cinematic stages, video_stitch and video_compose executed. [Evidence](docs/test-evidence/openmontage-pilot-render-01/render_report.json) and [executed recipe](docs/OPENMONTAGE_RENDER_RECIPE.md). Owner playback/listening review is pending. Advanced A hardening stays deferred; its code/77-test history is preserved. Nothing published.
 
 Use the existing Node runtime; there are no new npm dependencies or installation steps:
 

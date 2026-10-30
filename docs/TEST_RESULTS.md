@@ -1,6 +1,28 @@
 # Actual verification results
 
-## Current OpenMontage pilot assets — 2026-10-30
+## Finished Horror pilot — 2026-10-30
+
+**Actual MP4 exists and passed automated validation and sampled visual review.** [Render report](test-evidence/openmontage-pilot-render-01/render_report.json), [independent validation](test-evidence/openmontage-pilot-render-01/validation.json), [upstream final review](test-evidence/openmontage-pilot-render-01/final_review.json). Owner listening/playback approval is pending; nothing published.
+
+| Actual result | Evidence |
+| --- | --- |
+| Final output | `generated-videos/horror/pilot-001/final/horror_pilot_001.mp4`; 21,303,869 bytes; SHA256 `48fb3d02aecb4e83c43654d111194fd44870011c229a8b7387d8a83096858528` |
+| Format | FFprobe: MP4, 60.000 s, 1080x1920 (9:16), 30/1 fps, H.264 yuv420p and AAC audio |
+| Decode/motion | Entire final video decoded successfully. No reports from blackdetect (`d=0.10:pix_th=0.02:pic_th=0.99`) or freezedetect (`n=-50dB:d=2`) |
+| Narration/music/effects | Existing completed mix reused. Decoded output correlates 0.996691 with it; loudness -16.56 LUFS, true peak -0.83 dBTP, no clipping. This proves mix preservation; it does not replace listening |
+| Burned captions | 32 cues styled as ASS. Eight actual final-video samples inspected: expected text visible/readable, safe margins, no clipping. Phrase timing measured; intra-phrase timing interpolated. No forced alignment or ASR test claimed |
+| Production engine | Actual upstream cinematic assets/edit/compose checkpoints, video_stitch crossfades and video_compose FFmpeg render/self-review passed. Proposal/runtime preserved; actual motion ratio 1.0. No publishing checkpoint |
+| Render duration | Successful stitch 51.080 s; successful final composition/self-review 194.927 s; sum **246.007 s (4 min 6 s)**. Source-select preprocessing separately 97.241 s. Debugging, prior narration and approval waits are excluded from this render figure |
+| RAM | Largest benchmark-reported single FFmpeg process maxrss 1,752,780 KiB = 1,794,846,720 bytes (~1.67 GiB). Not a sum of all application/process RAM |
+| GPU | 45 whole-GPU observations during composition: peak used 1,382 MiB, utilization 25%. Includes desktop/other applications; not attributable job VRAM. Renderer used CPU libx264. Minimal-environment GPU sampler was unavailable, so an independent read-only hardware sampler supplied these observations |
+| Acquisition | Exact approved three smaller clips: 11,459,413 bytes; completed at 18:34:57 UTC inside 18:34:53.775-18:54:53.775 window. Six-clip cumulative payload 203,225,651 bytes, below 200 MiB. Item-specific licences/provenance saved; original score/effects reused |
+| Costs/scope | USD 0 production API charges; no credentials, installations/models, system changes or public publishing |
+
+Failures and fixes are retained in pilot logs and the [recipe](OPENMONTAGE_RENDER_RECIPE.md): a slow screen-blend filter timed out at 120 s; fast regional blur to new derived files succeeded. One checkpoint attempt preceded completion of its asset preparation and stopped with ENOENT before changing pipeline state; it was retried only after preparation finished. Initial final composition returned `'str' object has no attribute 'items'` because upstream subtitle schema and renderer disagree; omission of the optional style string retained the explicit approved style dictionary and succeeded. No upstream source was changed. Instrumentation caused an unnecessary concat re-encode in this first run; its global codec-copy handling was corrected afterward, without rerendering the delivered video. Actual captured commands/timings remain the evidence.
+
+Limits: some sources are 720p upscaled, stock coverage is suggestive, and phone-screen diffusion is visible. Naturalness and detailed caption synchronization await owner listening. Old supervisor results below remain historical and separate from this actual video evidence.
+
+## Earlier partial OpenMontage pilot assets — 2026-10-30
 
 **Partial production only: no final Horror MP4 and no final-video validation pass.** [Actual evidence/receipts](test-evidence/openmontage-pilot-assets-01/summary.json). The 77 historical supervisor tests were not rerun and do not validate this video.
 

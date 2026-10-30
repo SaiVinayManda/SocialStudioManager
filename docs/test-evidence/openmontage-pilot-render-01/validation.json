@@ -1,0 +1,232 @@
+{
+  "captured_at_utc": "2026-10-30T19:02:13.274Z",
+  "output_path": "C:\\Projects\\Manas_Flow\\SocialStudio\\generated-videos\\horror\\pilot-001\\final\\horror_pilot_001.mp4",
+  "exists": true,
+  "bytes": 21303869,
+  "sha256": "48fb3d02aecb4e83c43654d111194fd44870011c229a8b7387d8a83096858528",
+  "probe": {
+    "streams": [
+      {
+        "index": 0,
+        "codec_name": "h264",
+        "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+        "profile": "High",
+        "codec_type": "video",
+        "codec_tag_string": "avc1",
+        "codec_tag": "0x31637661",
+        "mime_codec_string": "avc1.640028",
+        "width": 1080,
+        "height": 1920,
+        "coded_width": 1080,
+        "coded_height": 1920,
+        "has_b_frames": 2,
+        "sample_aspect_ratio": "1:1",
+        "display_aspect_ratio": "9:16",
+        "pix_fmt": "yuv420p",
+        "level": 40,
+        "color_range": "tv",
+        "color_space": "bt709",
+        "color_transfer": "bt709",
+        "color_primaries": "bt709",
+        "chroma_location": "left",
+        "field_order": "progressive",
+        "is_avc": "true",
+        "nal_length_size": "4",
+        "id": "0x1",
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1",
+        "time_base": "1/15360",
+        "start_pts": 512,
+        "start_time": "0.033333",
+        "duration_ts": 921088,
+        "duration": "59.966667",
+        "bit_rate": "2762675",
+        "bits_per_raw_sample": "8",
+        "nb_frames": "1799",
+        "extradata_size": 51,
+        "disposition": {
+          "default": 1,
+          "dub": 0,
+          "original": 0,
+          "comment": 0,
+          "lyrics": 0,
+          "karaoke": 0,
+          "forced": 0,
+          "hearing_impaired": 0,
+          "visual_impaired": 0,
+          "clean_effects": 0,
+          "attached_pic": 0,
+          "timed_thumbnails": 0,
+          "non_diegetic": 0,
+          "captions": 0,
+          "descriptions": 0,
+          "metadata": 0,
+          "dependent": 0,
+          "still_image": 0,
+          "multilayer": 0
+        },
+        "tags": {
+          "language": "und",
+          "handler_name": "VideoHandler",
+          "encoder": "Lavc63.1.102 libx264"
+        }
+      },
+      {
+        "index": 1,
+        "codec_name": "aac",
+        "codec_long_name": "AAC (Advanced Audio Coding)",
+        "profile": "LC",
+        "codec_type": "audio",
+        "codec_tag_string": "mp4a",
+        "codec_tag": "0x6134706d",
+        "mime_codec_string": "mp4a.40.2",
+        "sample_fmt": "fltp",
+        "sample_rate": "48000",
+        "channels": 1,
+        "channel_layout": "mono",
+        "bits_per_sample": 0,
+        "initial_padding": 1024,
+        "id": "0x2",
+        "r_frame_rate": "0/0",
+        "avg_frame_rate": "0/0",
+        "time_base": "1/48000",
+        "start_pts": 0,
+        "start_time": "0.000000",
+        "duration_ts": 2880000,
+        "duration": "60.000000",
+        "bit_rate": "70442",
+        "nb_frames": "2814",
+        "extradata_size": 5,
+        "disposition": {
+          "default": 1,
+          "dub": 0,
+          "original": 0,
+          "comment": 0,
+          "lyrics": 0,
+          "karaoke": 0,
+          "forced": 0,
+          "hearing_impaired": 0,
+          "visual_impaired": 0,
+          "clean_effects": 0,
+          "attached_pic": 0,
+          "timed_thumbnails": 0,
+          "non_diegetic": 0,
+          "captions": 0,
+          "descriptions": 0,
+          "metadata": 0,
+          "dependent": 0,
+          "still_image": 0,
+          "multilayer": 0
+        },
+        "tags": {
+          "language": "und",
+          "handler_name": "SoundHandler"
+        }
+      }
+    ],
+    "format": {
+      "filename": "C:\\Projects\\Manas_Flow\\SocialStudio\\generated-videos\\horror\\pilot-001\\final\\horror_pilot_001.mp4",
+      "nb_streams": 2,
+      "nb_programs": 0,
+      "nb_stream_groups": 0,
+      "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+      "format_long_name": "QuickTime / MOV",
+      "start_time": "0.000000",
+      "duration": "60.000000",
+      "size": "21303869",
+      "bit_rate": "2840515",
+      "probe_score": 100,
+      "tags": {
+        "major_brand": "isom",
+        "minor_version": "512",
+        "compatible_brands": "isomiso2avc1mp41",
+        "encoder": "Lavf63.1.102"
+      }
+    }
+  },
+  "valid_mp4": true,
+  "full_video_decode_passed": true,
+  "resolution_passed": true,
+  "duration_passed": true,
+  "audio_present": true,
+  "audio_loudness": {
+    "input_i": "-16.56",
+    "input_tp": "-0.83",
+    "input_lra": "3.70",
+    "input_thresh": "-27.97",
+    "output_i": "-16.31",
+    "output_tp": "-1.50",
+    "output_lra": "3.50",
+    "output_thresh": "-27.64",
+    "normalization_type": "dynamic",
+    "target_offset": "0.31"
+  },
+  "existing_audio_preserved": {
+    "correlation": 0.9966911178339166,
+    "rms_error": 0.009988070173351071,
+    "decoded_samples_compared": 2880000,
+    "passed": true
+  },
+  "black_reports": [],
+  "freeze_reports": [],
+  "no_black_or_freeze_reports": true,
+  "subtitle_cues": 32,
+  "caption_visual_samples": [
+    {
+      "cue": 1,
+      "at": 0.8280000000000001,
+      "text": "At three AM, I",
+      "path": "C:\\Projects\\Manas_Flow\\SocialStudio\\generated-videos\\horror\\pilot-001\\previews\\final-review-01.png"
+    },
+    {
+      "cue": 5,
+      "at": 8.073500000000001,
+      "text": "bedroom door.\"",
+      "path": "C:\\Projects\\Manas_Flow\\SocialStudio\\generated-videos\\horror\\pilot-001\\previews\\final-review-02.png"
+    },
+    {
+      "cue": 10,
+      "at": 17.001,
+      "text": "I asked.",
+      "path": "C:\\Projects\\Manas_Flow\\SocialStudio\\generated-videos\\horror\\pilot-001\\previews\\final-review-03.png"
+    },
+    {
+      "cue": 15,
+      "at": 27.3235,
+      "text": "Then a text appeared:",
+      "path": "C:\\Projects\\Manas_Flow\\SocialStudio\\generated-videos\\horror\\pilot-001\\previews\\final-review-04.png"
+    },
+    {
+      "cue": 20,
+      "at": 36.795500000000004,
+      "text": "outside isn't looking for",
+      "path": "C:\\Projects\\Manas_Flow\\SocialStudio\\generated-videos\\horror\\pilot-001\\previews\\final-review-05.png"
+    },
+    {
+      "cue": 25,
+      "at": 44.769,
+      "text": "ear.",
+      "path": "C:\\Projects\\Manas_Flow\\SocialStudio\\generated-videos\\horror\\pilot-001\\previews\\final-review-06.png"
+    },
+    {
+      "cue": 29,
+      "at": 52.8535,
+      "text": "Under the bed, my",
+      "path": "C:\\Projects\\Manas_Flow\\SocialStudio\\generated-videos\\horror\\pilot-001\\previews\\final-review-07.png"
+    },
+    {
+      "cue": 32,
+      "at": 58.4055,
+      "text": "answer.\"",
+      "path": "C:\\Projects\\Manas_Flow\\SocialStudio\\generated-videos\\horror\\pilot-001\\previews\\final-review-08.png"
+    }
+  ],
+  "caption_visual_review": "Agent inspected all eight saved final-video samples: expected caption text is visible, readable, within safe area and not clipped. This does not claim listening/forced alignment.",
+  "preview_path": "C:\\Projects\\Manas_Flow\\SocialStudio\\generated-videos\\horror\\pilot-001\\previews\\horror_pilot_001_preview.mp4",
+  "paid_api_charges_usd": 0,
+  "publishing": false,
+  "source_rights_manifest": "assets/ATTRIBUTION.md",
+  "manual_listening_review": "Owner review pending; no ASR/forced-alignment model installed.",
+  "automated_validation_passed": true,
+  "sampled_caption_visibility_passed": true
+}
