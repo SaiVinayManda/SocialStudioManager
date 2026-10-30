@@ -1,0 +1,138 @@
+name: socialstudio
+services:
+  postgres:
+    image: postgres:17.11-alpine
+    pull_policy: never
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: studio_bootstrap
+      POSTGRES_DB: social_studio
+      POSTGRES_PASSWORD_FILE: /run/secrets/pg_bootstrap
+      TZ: Europe/Berlin
+    command: [postgres, -c, shared_buffers=128MB, -c, max_connections=40, -c, log_statement=none, -c, log_min_error_statement=panic]
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./postgres/init:/docker-entrypoint-initdb.d:ro
+      - ./postgres/migrations:/studio-migrations:ro
+      - ./postgres/seeds:/studio-seeds:ro
+    secrets: [pg_bootstrap, pg_app, pg_n8n]
+    networks: [studio_internal]
+    healthcheck:
+      test: [CMD-SHELL, pg_isready -U studio_bootstrap -d social_studio]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+    mem_limit: 512m
+    cpus: 1
+    security_opt: [no-new-privileges:true]
+  studio-api:
+    image: docker.n8n.io/n8nio/n8n:2.45.7
+    pull_policy: never
+    entrypoint: [node, /studio/services/studio-runtime/server.mjs]
+    user: '1000:1000'
+    restart: unless-stopped
+    read_only: true
+    tmpfs: [/tmp:size=32m]
+    environment:
+      PORT: '8780'
+      BIND_HOST: 0.0.0.0
+      PGHOST: postgres
+      PGPORT: '5432'
+      PGDATABASE: social_studio
+      PGUSER: studio_app
+      PG_PASSWORD_FILE: /run/secrets/pg_app
+      CONTROL_TOKEN_FILE: /run/secrets/control_token
+      N8N_TOKEN_FILE: /run/secrets/n8n_token
+      WORKER_TOKEN_FILE: /run/secrets/worker_token
+      WEBHOOK_KEY_FILE: /run/secrets/webhook_key
+      PUBLISH_MODE: mock
+      TZ: Europe/Berlin
+    volumes:
+      - ../services:/studio/services:ro
+      - ../brands/registry.json:/studio/brands.json:ro
+      - ../generated-videos:/studio/media/generated:ro
+      - ../brands:/studio/media/brands:ro
+    secrets: [pg_app, control_token, n8n_token, worker_token, webhook_key]
+    ports: ['127.0.0.1:8780:8780']
+    networks: [studio_internal]
+    depends_on:
+      postgres: {condition: service_healthy}
+    healthcheck:
+      test: [CMD, node, -e, "fetch('http://127.0.0.1:8780/health').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"]
+      interval: 5s
+      timeout: 4s
+      retries: 20
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    mem_limit: 384m
+    cpus: 1
+  n8n:
+    image: docker.n8n.io/n8nio/n8n:2.45.7
+    pull_policy: never
+    restart: unless-stopped
+    user: '1000:1000'
+    environment:
+      DB_TYPE: postgresdb
+      DB_POSTGRESDB_HOST: postgres
+      DB_POSTGRESDB_PORT: '5432'
+      DB_POSTGRESDB_DATABASE: n8n_internal
+      DB_POSTGRESDB_SCHEMA: n8n
+      DB_POSTGRESDB_USER: n8n_internal
+      DB_POSTGRESDB_PASSWORD_FILE: /run/secrets/pg_n8n
+      N8N_ENCRYPTION_KEY_FILE: /run/secrets/n8n_encryption
+      N8N_HOST: localhost
+      N8N_PORT: '5678'
+      N8N_PROTOCOL: http
+      WEBHOOK_URL: http://localhost:5678/
+      N8N_EDITOR_BASE_URL: http://localhost:5678/
+      N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS: 'true'
+      N8N_BLOCK_ENV_ACCESS_IN_NODE: 'true'
+      N8N_BLOCK_FILE_ACCESS_TO_N8N_FILES: 'true'
+      N8N_DIAGNOSTICS_ENABLED: 'false'
+      N8N_VERSION_NOTIFICATIONS_ENABLED: 'false'
+      N8N_TEMPLATES_ENABLED: 'false'
+      N8N_PERSONALIZATION_ENABLED: 'false'
+      N8N_COMMUNITY_PACKAGES_ENABLED: 'false'
+      N8N_RUNNERS_ENABLED: 'true'
+      N8N_RUNNERS_MODE: internal
+      NODES_EXCLUDE: '["n8n-nodes-base.executeCommand","n8n-nodes-base.ssh","n8n-nodes-base.readWriteFile","n8n-nodes-base.localFileTrigger"]'
+      EXECUTIONS_DATA_SAVE_ON_SUCCESS: all
+      EXECUTIONS_DATA_SAVE_ON_ERROR: all
+      EXECUTIONS_DATA_MAX_AGE: '168'
+      EXECUTIONS_DATA_PRUNE: 'true'
+      GENERIC_TIMEZONE: Europe/Berlin
+      TZ: Europe/Berlin
+    volumes:
+      - n8n_data:/home/node/.n8n
+      - ./n8n/workflows:/studio-workflows:ro
+    secrets: [pg_n8n, n8n_encryption]
+    ports: ['127.0.0.1:5678:5678']
+    networks: [studio_internal]
+    depends_on:
+      postgres: {condition: service_healthy}
+      studio-api: {condition: service_healthy}
+    healthcheck:
+      test: [CMD, node, -e, "fetch('http://127.0.0.1:5678/healthz/readiness').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"]
+      interval: 10s
+      timeout: 5s
+      retries: 30
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    mem_limit: 1536m
+    cpus: 2
+networks:
+  studio_internal:
+    name: socialstudio_internal
+    internal: true
+volumes:
+  postgres_data: {name: socialstudio_postgres_data}
+  n8n_data: {name: socialstudio_n8n_data}
+secrets:
+  pg_bootstrap: {file: ../.runtime/orchestrator/secrets/pg_bootstrap}
+  pg_app: {file: ../.runtime/orchestrator/secrets/pg_app}
+  pg_n8n: {file: ../.runtime/orchestrator/secrets/pg_n8n}
+  control_token: {file: ../.runtime/orchestrator/secrets/control_token}
+  n8n_token: {file: ../.runtime/orchestrator/secrets/n8n_token}
+  worker_token: {file: ../.runtime/orchestrator/secrets/worker_token}
+  webhook_key: {file: ../.runtime/orchestrator/secrets/webhook_key}
+  n8n_encryption: {file: ../.runtime/orchestrator/secrets/n8n_encryption}

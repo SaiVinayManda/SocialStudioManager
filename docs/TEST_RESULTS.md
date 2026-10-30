@@ -1,5 +1,13 @@
 # Actual verification results
 
+## Milestone E foundation — 2026-10-30
+
+Actual checks: tracked baseline `4fdefbb`, preserved untracked owner note; native FFprobe reconfirmed the existing Horror MP4; Docker server/Compose metadata and cached image versions inspected with a fresh empty Docker config (no saved auth access). Default sandbox denied Docker pipe access; the same read-only inspection succeeded through tool escalation. A Go-template quoting attempt failed before metadata lookup and was replaced with a labels-only query. No containers/images/host settings changed.
+
+`docker compose -p socialstudio -f infrastructure/docker-compose.yml config --quiet` passed. Public npm metadata resolved exactly 14 pinned packages (431,898 unpacked bytes), lock SHA256 `a1ce597ee3ea17042f9ba0fe46cdbd7b7087d6a5b7218fa838c0b98335ea331a`; **no package payload or dependency install**. Node syntax checks and `git diff --check` pass. Initial public metadata fetch was denied by the network sandbox; identical metadata-only retry succeeded outside it without credentials.
+
+Database migrations/constraints, service health, workflow import/execution, PostgreSQL persistence and end-to-end acceptance are **NOT RUN**. Neither application unit mocks nor the historical supervisor tests will count as the required deployed n8n/PostgreSQL acceptance. [Approval packet](ORCHESTRATOR_SETUP_APPROVAL.md).
+
 ## Finished Horror pilot — 2026-10-30
 
 **Actual MP4 exists and passed automated validation and sampled visual review.** [Render report](test-evidence/openmontage-pilot-render-01/render_report.json), [independent validation](test-evidence/openmontage-pilot-render-01/validation.json), [upstream final review](test-evidence/openmontage-pilot-render-01/final_review.json). Owner listening/playback approval is pending; nothing published.

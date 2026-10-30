@@ -1,0 +1,133 @@
+{
+  "captured_at_utc": "2026-10-30T20:32:59.115Z",
+  "operation": "public metadata only; no package downloaded/installed",
+  "packages": [
+    {
+      "name": "pg",
+      "version": "8.16.3",
+      "url": "https://registry.npmjs.org/pg/8.16.3",
+      "tarball": "https://registry.npmjs.org/pg/-/pg-8.16.3.tgz",
+      "integrity": "sha512-enxc1h0jA/aq5oSDMvqyW3q89ra6XIIDZgCX9vkMrnz5DFTw/Ny3Li2lFQ+pt3L6MCgm/5o2o8HW9hiJji+xvw==",
+      "unpacked_size": 88242,
+      "has_install_scripts": false
+    },
+    {
+      "name": "pg-cloudflare",
+      "version": "1.2.7",
+      "url": "https://registry.npmjs.org/pg-cloudflare/1.2.7",
+      "tarball": "https://registry.npmjs.org/pg-cloudflare/-/pg-cloudflare-1.2.7.tgz",
+      "integrity": "sha512-YgCtzMH0ptvZJslLM1ffsY4EuGaU0cx4XSdXLRFae8bPP4dS5xL1tNB3k2o/N64cHJpwU7dxKli/nZ2lUa5fLg==",
+      "unpacked_size": 23093,
+      "has_install_scripts": false
+    },
+    {
+      "name": "pg-connection-string",
+      "version": "2.9.1",
+      "url": "https://registry.npmjs.org/pg-connection-string/2.9.1",
+      "tarball": "https://registry.npmjs.org/pg-connection-string/-/pg-connection-string-2.9.1.tgz",
+      "integrity": "sha512-nkc6NpDcvPVpZXxrreI/FOtX3XemeLl8E0qFr6F2Lrm/I8WOnaWNhIPK2Z7OHpw7gh5XJThi6j6ppgNoaT1w4w==",
+      "unpacked_size": 14902,
+      "has_install_scripts": false
+    },
+    {
+      "name": "pg-pool",
+      "version": "3.10.1",
+      "url": "https://registry.npmjs.org/pg-pool/3.10.1",
+      "tarball": "https://registry.npmjs.org/pg-pool/-/pg-pool-3.10.1.tgz",
+      "integrity": "sha512-Tu8jMlcX+9d8+QVzKIvM/uJtp07PKr82IUOYEphaWcoBhIYkoHpLXN3qO59nAI11ripznDsEzEv8nUxBVWajGg==",
+      "unpacked_size": 29623,
+      "has_install_scripts": false
+    },
+    {
+      "name": "pg-protocol",
+      "version": "1.10.3",
+      "url": "https://registry.npmjs.org/pg-protocol/1.10.3",
+      "tarball": "https://registry.npmjs.org/pg-protocol/-/pg-protocol-1.10.3.tgz",
+      "integrity": "sha512-6DIBgBQaTKDJyxnXaLiLR8wBpQQcGWuAESkRBX/t6OwA8YsqP+iVSiond2EDy6Y/dsGk8rh/jtax3js5NeV7JQ==",
+      "unpacked_size": 188990,
+      "has_install_scripts": false
+    },
+    {
+      "name": "pg-types",
+      "version": "2.2.0",
+      "url": "https://registry.npmjs.org/pg-types/2.2.0",
+      "tarball": "https://registry.npmjs.org/pg-types/-/pg-types-2.2.0.tgz",
+      "integrity": "sha512-qTAAlrEsl8s4OiEQY69wDvcMIdQN6wdz5ojQiOy6YRMuynxenON0O5oCpJI6lshc6scgAY8qvJ2On/p+CXY0GA==",
+      "unpacked_size": 35296,
+      "has_install_scripts": false
+    },
+    {
+      "name": "pgpass",
+      "version": "1.0.5",
+      "url": "https://registry.npmjs.org/pgpass/1.0.5",
+      "tarball": "https://registry.npmjs.org/pgpass/-/pgpass-1.0.5.tgz",
+      "integrity": "sha512-FdW9r/jQZhSeohs1Z3sI1yxFQNFvMcnmfuj4WBMUTxOrAyLMaTcE1aAMBiTlbMNaXvBCQuVi0R7hd8udDSP7ug==",
+      "unpacked_size": 10323,
+      "has_install_scripts": false
+    },
+    {
+      "name": "pg-int8",
+      "version": "1.0.1",
+      "url": "https://registry.npmjs.org/pg-int8/1.0.1",
+      "tarball": "https://registry.npmjs.org/pg-int8/-/pg-int8-1.0.1.tgz",
+      "integrity": "sha512-WCtabS6t3c8SkpDBUlb1kjOs7l66xsGdKpIPZsg4wR+B3+u9UAum2odSsF9tnvxg80h4ZxLWMy4pRjOsFIqQpw==",
+      "unpacked_size": null,
+      "has_install_scripts": false
+    },
+    {
+      "name": "postgres-array",
+      "version": "2.0.0",
+      "url": "https://registry.npmjs.org/postgres-array/2.0.0",
+      "tarball": "https://registry.npmjs.org/postgres-array/-/postgres-array-2.0.0.tgz",
+      "integrity": "sha512-VpZrUqU5A69eQyW2c5CA1jtLecCsN2U/bD6VilrFDWq5+5UIEVO7nazS3TEcHf1zuPYO/sqGvUvW62g86RXZuA==",
+      "unpacked_size": 4903,
+      "has_install_scripts": false
+    },
+    {
+      "name": "postgres-bytea",
+      "version": "1.0.0",
+      "url": "https://registry.npmjs.org/postgres-bytea/1.0.0",
+      "tarball": "https://registry.npmjs.org/postgres-bytea/-/postgres-bytea-1.0.0.tgz",
+      "integrity": "sha512-xy3pmLuQqRBZBXDULy7KbaitYqLcmxigw14Q5sj8QBVLqEwXfeybIKVWiqAXTlcvdvb0+xkOtDbfQMOf4lST1w==",
+      "unpacked_size": null,
+      "has_install_scripts": false
+    },
+    {
+      "name": "postgres-date",
+      "version": "1.0.7",
+      "url": "https://registry.npmjs.org/postgres-date/1.0.7",
+      "tarball": "https://registry.npmjs.org/postgres-date/-/postgres-date-1.0.7.tgz",
+      "integrity": "sha512-suDmjLVQg78nMK2UZ454hAG+OAW+HQPZ6n++TNDUX+L0+uUlLywnoxJKDou51Zm+zTCjrCl0Nq6J9C5hP9vK/Q==",
+      "unpacked_size": 5915,
+      "has_install_scripts": false
+    },
+    {
+      "name": "postgres-interval",
+      "version": "1.2.0",
+      "url": "https://registry.npmjs.org/postgres-interval/1.2.0",
+      "tarball": "https://registry.npmjs.org/postgres-interval/-/postgres-interval-1.2.0.tgz",
+      "integrity": "sha512-9ZhXKM/rw350N1ovuWHbGxnGh/SNJ4cnxHiM0rxE4VN41wsg8P8zWn9hv/buK00RP4WvlOyr/RBDiptyxVbkZQ==",
+      "unpacked_size": 6727,
+      "has_install_scripts": false
+    },
+    {
+      "name": "xtend",
+      "version": "4.0.2",
+      "url": "https://registry.npmjs.org/xtend/4.0.2",
+      "tarball": "https://registry.npmjs.org/xtend/-/xtend-4.0.2.tgz",
+      "integrity": "sha512-LKYU1iAXJXUgAXn9URjiu+MWhyUXHsvfp7mcuYm9dSUKK0/CjtrUwFAxD82/mCWbtLsGjFIad0wIsod4zrTAEQ==",
+      "unpacked_size": 6465,
+      "has_install_scripts": false
+    },
+    {
+      "name": "split2",
+      "version": "4.2.0",
+      "url": "https://registry.npmjs.org/split2/4.2.0",
+      "tarball": "https://registry.npmjs.org/split2/-/split2-4.2.0.tgz",
+      "integrity": "sha512-UcjcJOWknrNkF6PLX83qcHM6KHgVKNkV62Y8a5uYDVv9ydGQVwAHMKqHdJje1VTWpljG0WYpCDhrCdAOYH4TWg==",
+      "unpacked_size": 17419,
+      "has_install_scripts": false
+    }
+  ],
+  "lock_sha256": "a1ce597ee3ea17042f9ba0fe46cdbd7b7087d6a5b7218fa838c0b98335ea331a"
+}

@@ -1,5 +1,11 @@
 # Current progress
 
+**Milestone E authorized, 2026-10-30: foundation in progress.** Existing tracked checkout was clean at `4fdefbb`; the owner's historical `implementationsoofar.md` remains untracked and unchanged. The completed Horror MP4 was reprobed successfully (60.000 s / 1080x1920 / H.264 + AAC / 21,303,869 bytes). Existing Docker Desktop 4.40.0 / Linux engine 28.0.4 / Compose 2.34.0 are operational; unrelated containers remain untouched.
+
+Created isolated Compose definitions, separate application/n8n database roles/schemas, migration 001, six-brand mock seeds, registry, and a 14-package pg dependency lock generated from public metadata only. No packages/images installed and no secrets created. Compose config validation passed. Current cached n8n 1.116.2 / PostgreSQL 17.10 are not used as the proposed deployment pins. [E-INFRA-SETUP-01 and E-LOCAL-AUTH-01](ORCHESTRATOR_SETUP_APPROVAL.md) are pending before downloads/provisioning. No Social Studio services or workflows have been deployed/executed. Local implementation can continue while awaiting those separate grants. Advanced Milestone A stays deferred.
+
+The completed pilot and older progress snapshots below remain evidence; the earlier prohibition on n8n was superseded by the owner's Milestone E request.
+
 **2026-10-30: first real OpenMontage Horror MP4 rendered and independently validated; ready for owner review.**
 
 Output: `C:\Projects\Manas_Flow\SocialStudio\generated-videos\horror\pilot-001\final\horror_pilot_001.mp4` — 60.0 seconds, 1080x1920, 30 fps, H.264/AAC, 21,303,869 bytes. The 540x960 review copy is in `previews/horror_pilot_001_preview.mp4`. Narration, original score/effects and existing subtitles were reused; all six licensed real-motion sources verified. Actual upstream assets/edit/compose checkpoints passed. Publishing stage was not entered.

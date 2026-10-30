@@ -1,5 +1,20 @@
 # Social Studio implementation plan
 
+## Current owner direction: Milestone E local orchestration
+
+The owner's 2026-10-30 implementation request authorizes local Milestone E coding/tests/commits and an actual existing-video mock acceptance pipeline. It supersedes the earlier B-only infrastructure exclusion below. Preserve Milestone A unchanged and disabled. First Horror MP4 is real and reprobed; do not rerender it for acceptance. Installation, local secret provisioning, external accounts and publishing retain their distinct gates.
+
+| Stage | Acceptance | State |
+| --- | --- | --- |
+| E-1 Foundation | Inspect, versioned PostgreSQL schema/seeds, isolated Compose, exact setup/auth packet, baseline checkpoint | Prepared; Compose config passes; SQL not applied; [approvals pending](ORCHESTRATOR_SETUP_APPROVAL.md) |
+| E-2 Pipeline MVP | Existing-file intake → actual PostgreSQL/n8n → validation → explicit test approval → mock scheduling and all three destinations → persisted notifications | Implementation next; not deployed/tested |
+| E-3 Engine integration | Narrow preapproved OpenMontage project execution; unchanged existing-file route, real subprocess status/cancel/timeouts | Pending; raw topic generation still needs existing creative/asset approval gates |
+| E-4 Official adapters | Separate credential-free official API contracts for YouTube/Instagram/Facebook; mock default, live denied | Pending; account/live grants separate |
+| E-5 AI boundary | Typed AI tasks, deterministic mock/fallback; 9Router interface disabled without its own grant | Pending; no router install/model credentials |
+| E-6 Reliability | Leases/idempotency/recovery/reconciliation, negative cases, true deployed acceptance evidence | Pending; no unattended startup |
+
+Earlier plans below are preserved historical scope and evidence, not current deployment claims.
+
 Current owner direction: **Milestone B local OpenMontage Horror pilot first; advanced Milestone A hardening DEFERRED, NOT ACCEPTED.** The owner's explicit 2026-10-29 priority change authorizes local B inspection, coding, templates, existing tools, tests and commits before A acceptance. Preserve all supervisor code/tests/history and keep remote dispatch disabled. Installation, credentials, models, charges, Windows changes, destructive actions and publishing retain their gates. Stop preparing the A-03 deployment request.
 
 ## Active local pilot backlog

@@ -1,0 +1,11 @@
+# Local Social Studio deployment
+
+Prepared for the owner's Milestone E request. **Not deployed or accepted yet.** Installation and fresh local credential provisioning require the separate grants in [the approval packet](../docs/ORCHESTRATOR_SETUP_APPROVAL.md). Existing Docker Desktop 4.40.0 / engine 28.0.4 / Compose 2.34.0 are operational; do not reinstall or change their WSL backend. Other containers/volumes are out of scope.
+
+Pinned images: n8n 2.45.7; PostgreSQL 17.11-alpine. Application uses Node's built-in HTTP/test/crypto/filesystem APIs plus the 14-package frozen pg dependency closure. The native Windows worker reuses the approved portable FFmpeg/ffprobe; no new video/model download. No Docker socket is mounted into any service. A single internal Docker network carries n8n, application and PostgreSQL traffic; no container Internet egress is required for mock acceptance.
+
+Host ports: 127.0.0.1:5678 (n8n) and 127.0.0.1:8780 (authenticated application APIs). PostgreSQL is not exposed. n8n has its own database/schema/role; application runtime gets only its own schema DML permissions. Persistent volumes are `socialstudio_postgres_data` and `socialstudio_n8n_data`. Fresh local secret files live under Git-ignored `.runtime/orchestrator/secrets`, with explicit owner/SYSTEM ACLs. Do not print them or put values in workflow exports.
+
+After approvals and implementation checks, operator setup will pull only these images, install the locked application dependency without scripts, initialize the fresh project volumes, seed six brands with mock-only destinations, import workflows/local header-auth credentials into this new n8n instance, and run the existing Horror MP4 acceptance test. These steps do not connect social/model/Hermes accounts.
+
+Safe stop: `docker compose -p socialstudio -f infrastructure/docker-compose.yml stop`; stop the native worker with its local process control. Safe resume: `docker compose -p socialstudio -f infrastructure/docker-compose.yml up -d --pull never`. Neither command deletes data. Do not use `down -v`, volume/image prune, database resets or unattended startup. Backups are owner-operated and go to the Git-ignored runtime; backup definitions may be versioned, database dumps may not.

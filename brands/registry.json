@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "brands": [
+    {"id":"10000000-0000-4000-8000-000000000001","slug":"horror","name":"Horror","language":"en","approval_required":true},
+    {"id":"10000000-0000-4000-8000-000000000002","slug":"storytelling","name":"Storytelling","language":"en","approval_required":true},
+    {"id":"10000000-0000-4000-8000-000000000003","slug":"motivation","name":"Motivation","language":"en","approval_required":true},
+    {"id":"10000000-0000-4000-8000-000000000004","slug":"travel","name":"Travel","language":"en","approval_required":true},
+    {"id":"10000000-0000-4000-8000-000000000005","slug":"business-insights","name":"Business Insights","language":"en","approval_required":true},
+    {"id":"10000000-0000-4000-8000-000000000006","slug":"company","name":"Company","language":"en","approval_required":true}
+  ]
+}

@@ -2,6 +2,8 @@
 
 ## Current implementation authorization and next actions
 
+**Current Milestone E gates:** [E-INFRA-SETUP-01](ORCHESTRATOR_SETUP_APPROVAL.md) covers exactly the new pinned images/locked pg packages and isolated local Compose deployment. **E-LOCAL-AUTH-01 is separate**, covering nine fresh project-local secrets, the new directory's owner/SYSTEM ACL and this fresh n8n/PG instance's local auth only. Neither is granted by this checklist. No existing credentials, external account connections, new host services/startup or live publishing are included. Ordinary E coding/tests/commits are explicitly authorized by the latest owner request; A remains deferred.
+
 **Immediate owner action: review the completed local video** at `generated-videos/horror/pilot-001/final/horror_pilot_001.mp4` or its smaller preview. Automated checks and sampled caption visibility passed; subjective narration, pacing and subtitle synchronization need listening. No new setup/media approval is pending for this completed pilot. Publishing remains prohibited until a separate explicit grant; do not access social credentials or resume advanced supervisor work.
 
 **Latest priority change:** the owner explicitly deferred advanced A hardening and authorized the local OpenMontage Horror pilot before A acceptance. A-03 protected deployment is deferred, not requested now. Supervisor code/tests/history remain preserved and live dispatch disabled. This replaces the A-first sequencing below only for the local pilot.

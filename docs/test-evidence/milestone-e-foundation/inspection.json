@@ -1,0 +1,31 @@
+{
+    "docker_engine":  "28.0.4",
+    "docker_os":  "linux",
+    "baseline_commit":  "4fdefbb",
+    "cached_postgres_version":  "17.10",
+    "workflows_executed":  false,
+    "docker_operational":  true,
+    "captured_at_utc":  "2026-10-30T20:41:17.5333288Z",
+    "cached_n8n_version":  "1.116.2",
+    "docker_desktop":  "4.40.0",
+    "horror_video":  {
+                         "size":  21303869,
+                         "width":  1080,
+                         "exists":  true,
+                         "audio":  "aac",
+                         "ffprobe_exit":  0,
+                         "height":  1920,
+                         "duration":  60,
+                         "video":  "h264"
+                     },
+    "live_publishing":  false,
+    "proposed_postgres":  "17.11-alpine",
+    "credentials_created":  false,
+    "studio_services_deployed":  false,
+    "compose_config_passed":  true,
+    "migrations_applied":  false,
+    "docker_compose":  "2.34.0",
+    "software_installed":  false,
+    "proposed_n8n":  "2.45.7",
+    "owner_baseline_untracked_preserved":  true
+}
