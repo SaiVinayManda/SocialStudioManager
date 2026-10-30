@@ -1,0 +1,12 @@
+{
+    "approval_id":  "B-PILOT-MEDIA-01",
+    "owner_message":  "approve B-PILOT-MEDIA-01",
+    "recorded_at_utc":  "2026-10-30T17:31:20.1350813Z",
+    "received_before_expiry":  true,
+    "packet_sha256":  "1ceb499f4c43cf1c6710cc9c02809bece32541d8844afba9ee8536ab31dd938c",
+    "full_run_creative_preauthorization":  true,
+    "publishing":  false,
+    "max_clips":  8,
+    "max_media_bytes":  209715200,
+    "acquisition_minutes":  20
+}

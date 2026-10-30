@@ -1,5 +1,9 @@
 # OpenMontage native Windows pilot setup
 
+Production update 2026-10-30: existing setup was reused. Under explicit B-PILOT-MEDIA-01, actual upstream research/proposal/script/scene-plan checkpoints validated, 17 Piper phrases rendered, 32 SRT cues generated and a 60-second audio preview mixed. Three licensed stock clips passed probe/decode/hash checks. The acquisition window expired before interior coverage completed; [the bounded continuation](HORROR_PILOT_MEDIA_CONTINUATION.md) is pending. No final MP4 exists. [Actual production evidence](test-evidence/openmontage-pilot-assets-01/summary.json).
+
+Local production commands used (not installers): `node scripts/prepare-horror-planning.mjs` writes agent-authored stage payloads once; `node scripts/openmontage-local-call.mjs <job-local-request.json>` dispatches one upstream checkpoint/tool at a time with cleared environment and Python networking disabled; `node scripts/audit-horror-sources.mjs` hashes/probes/fully decodes acquired clips; `node scripts/prepare-horror-audio.mjs` places measured phrases and authors original score/effects once; upstream subtitle_gen/audio_mixer consume the saved job-local requests. Receipts remain in the pilot logs. These are partial-run commands; a successful movie-render recipe does not yet exist. Existing outputs are preserved, not overwritten.
+
 OpenMontage is primary; advanced A hardening stays deferred. **The approved local setup and tool tests are complete** under B-PILOT-SETUP-01 and the owner's explicit B-PILOT-CONTINUE-01 grant. 52 frozen wheels installed offline; Piper narration, FFmpeg encoding/probe/full decode, local registry summary and pip check pass. Completed components must not be reinstalled. [Actual results](TEST_RESULTS.md). The original setup packet remains byte-for-byte frozen for audit; its pending label is historical. A finished Horror render still needs authorised moving footage.
 
 Reuse the existing anonymous no-checkout evaluation clone:

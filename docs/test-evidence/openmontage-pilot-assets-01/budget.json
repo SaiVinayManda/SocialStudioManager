@@ -1,0 +1,9 @@
+{
+    "setup_plus_media_budget_including_metadata_reserve_bytes":  589683295,
+    "source_video_bytes":  191766238,
+    "below_3_GiB":  true,
+    "media_cap_bytes":  209715200,
+    "captured_at_utc":  "2026-10-30T18:29:41.4263760Z",
+    "below_750_MiB":  true,
+    "source_runtime_and_pilot_storage_bytes":  1368932381
+}

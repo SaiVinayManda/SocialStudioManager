@@ -1,0 +1,9 @@
+{
+    "passed":  true,
+    "exit_code":  1,
+    "captured_at_utc":  "2026-10-30T18:29:39.1797332Z",
+    "network_called":  false,
+    "manifest_unchanged":  true,
+    "test":  "missing-continuation-grant",
+    "continuation_session_created":  false
+}

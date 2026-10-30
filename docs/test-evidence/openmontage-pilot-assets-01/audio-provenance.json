@@ -1,0 +1,172 @@
+{
+  "created_at_utc": "2026-10-30T18:04:23.013Z",
+  "voice": "Piper 1.8.0 / en_US-ljspeech-medium",
+  "length_scale": 1.22,
+  "sentence_silence": 0.15,
+  "raw_phrase_seconds": 44.26598639455782,
+  "trimmed_phrase_seconds": 44.26598639455782,
+  "narration_timeline_seconds": 60,
+  "speech_end_seconds": 58.79999999999999,
+  "timings": [
+    {
+      "id": "line-01",
+      "text": "At three AM, I called myself.",
+      "start": 0.12,
+      "end": 2.9528344671201814,
+      "raw_duration": 2.8328344671201813,
+      "source_trim_start": 0,
+      "source_trim_end": 2.8328344671201813
+    },
+    {
+      "id": "line-02",
+      "text": "A woman whispered, \"Whatever knocks, don't open the bedroom door.\"",
+      "start": 4.061604744461887,
+      "end": 8.566275946275946,
+      "raw_duration": 4.504671201814059,
+      "source_trim_start": 0,
+      "source_trim_end": 4.504671201814059
+    },
+    {
+      "id": "line-03",
+      "text": "It was my voice.",
+      "start": 9.259257369614511,
+      "end": 10.814994331065758,
+      "raw_duration": 1.555736961451247,
+      "source_trim_start": 0,
+      "source_trim_end": 1.555736961451247
+    },
+    {
+      "id": "line-04",
+      "text": "Three knocks came from the hallway.",
+      "start": 11.507975754404324,
+      "end": 13.957680969823825,
+      "raw_duration": 2.449705215419501,
+      "source_trim_start": 0,
+      "source_trim_end": 2.449705215419501
+    },
+    {
+      "id": "line-05",
+      "text": "\"How do you know?\" I asked.",
+      "start": 15.066451247165531,
+      "end": 17.35266439909297,
+      "raw_duration": 2.286213151927438,
+      "source_trim_start": 0,
+      "source_trim_end": 2.286213151927438
+    },
+    {
+      "id": "line-06",
+      "text": "\"Because I opened it.\"",
+      "start": 18.045645822431535,
+      "end": 19.485283010640153,
+      "raw_duration": 1.4396371882086167,
+      "source_trim_start": 0,
+      "source_trim_end": 1.4396371882086167
+    },
+    {
+      "id": "line-07",
+      "text": "The handle turned.",
+      "start": 20.17826443397872,
+      "end": 21.44375196232339,
+      "raw_duration": 1.2654875283446712,
+      "source_trim_start": 0,
+      "source_trim_end": 1.2654875283446712
+    },
+    {
+      "id": "line-08",
+      "text": "On the phone, I heard myself screaming.",
+      "start": 22.552522239665095,
+      "end": 25.78009593581022,
+      "raw_duration": 3.2275736961451247,
+      "source_trim_start": 0,
+      "source_trim_end": 3.2275736961451247
+    },
+    {
+      "id": "line-09",
+      "text": "Then a text appeared: CHECK UNDER YOUR BED.",
+      "start": 26.473077359148785,
+      "end": 29.874800715157857,
+      "raw_duration": 3.4017233560090703,
+      "source_trim_start": 0,
+      "source_trim_end": 3.4017233560090703
+    },
+    {
+      "id": "line-10",
+      "text": "I stopped breathing.",
+      "start": 30.983570992499562,
+      "end": 32.37676827141112,
+      "raw_duration": 1.3931972789115645,
+      "source_trim_start": 0,
+      "source_trim_end": 1.3931972789115645
+    },
+    {
+      "id": "line-11",
+      "text": "\"Don't worry,\" the caller whispered. \"The thing outside isn't looking for you.\"",
+      "start": 33.06974969474969,
+      "end": 37.910157858015,
+      "raw_duration": 4.840408163265306,
+      "source_trim_start": 0,
+      "source_trim_end": 4.840408163265306
+    },
+    {
+      "id": "line-12",
+      "text": "The knocking stopped.",
+      "start": 39.0189281353567,
+      "end": 40.400515436944005,
+      "raw_duration": 1.3815873015873017,
+      "source_trim_start": 0,
+      "source_trim_end": 1.3815873015873017
+    },
+    {
+      "id": "line-13",
+      "text": "Something beneath the mattress breathed against my ear.",
+      "start": 41.09349686028257,
+      "end": 44.91317939996511,
+      "raw_duration": 3.81968253968254,
+      "source_trim_start": 0,
+      "source_trim_end": 3.81968253968254
+    },
+    {
+      "id": "line-14",
+      "text": "\"It's looking for me.\"",
+      "start": 46.021949677306814,
+      "end": 47.26421725100296,
+      "raw_duration": 1.242267573696145,
+      "source_trim_start": 0,
+      "source_trim_end": 1.242267573696145
+    },
+    {
+      "id": "line-15",
+      "text": "My phone rang again. From my mother's number.",
+      "start": 48.372987528344666,
+      "end": 51.48350907029478,
+      "raw_duration": 3.1105215419501135,
+      "source_trim_start": 0,
+      "source_trim_end": 3.1105215419501135
+    },
+    {
+      "id": "line-16",
+      "text": "Under the bed, my own voice whispered:",
+      "start": 52.176490493633345,
+      "end": 55.125424733996155,
+      "raw_duration": 2.948934240362812,
+      "source_trim_start": 0,
+      "source_trim_end": 2.948934240362812
+    },
+    {
+      "id": "line-17",
+      "text": "\"This time, let me answer.\"",
+      "start": 56.23419501133786,
+      "end": 58.79999999999999,
+      "raw_duration": 2.5658049886621317,
+      "source_trim_start": 0,
+      "source_trim_end": 2.5658049886621317
+    }
+  ],
+  "caption_timing": "Measured phrase audio boundaries, character-weighted subphrase interpolation. Not ASR or forced alignment. Human synchronization/listening review pending.",
+  "music_rights": "Original procedural synthesis for this pilot; no third-party recordings or music models.",
+  "sfx_rights": "Original mathematical ring, decaying knocks, filtered-noise breath and creak; no downloaded recordings.",
+  "recipe_source": "scripts/prepare-horror-audio.mjs",
+  "recipe_sha256": "fb449b91a062dcb20cd9cc9e750bcb4904ba6a648c6dd17cdc25666585cf931b",
+  "seed": "0x030000",
+  "api_charges_usd": 0
+}

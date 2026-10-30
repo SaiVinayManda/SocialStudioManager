@@ -1,0 +1,9 @@
+{
+  "started_utc": "2026-10-30T18:02:09.313Z",
+  "finished_utc": "2026-10-30T18:02:15.386Z",
+  "request": "C:\\Projects\\Manas_Flow\\SocialStudio\\generated-videos\\horror\\pilot-001\\logs\\tts-line-11.json",
+  "exit_code": 0,
+  "error": null,
+  "stdout": "{\"success\": true, \"data\": {\"provider\": \"piper\", \"model\": \"C:\\\\Projects\\\\Manas_Flow\\\\SocialStudio\\\\.runtime\\\\openmontage-pilot\\\\voices\\\\en_US-ljspeech-medium.onnx\", \"speaker_id\": 0, \"text_length\": 79, \"output\": \"C:\\\\Projects\\\\Manas_Flow\\\\SocialStudio\\\\generated-videos\\\\horror\\\\pilot-001\\\\assets\\\\line-11.wav\", \"format\": \"wav\"}, \"error\": null}\r\n",
+  "stderr": ""
+}

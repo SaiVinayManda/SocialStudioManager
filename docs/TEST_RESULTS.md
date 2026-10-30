@@ -1,5 +1,29 @@
 # Actual verification results
 
+## Current OpenMontage pilot assets — 2026-10-30
+
+**Partial production only: no final Horror MP4 and no final-video validation pass.** [Actual evidence/receipts](test-evidence/openmontage-pilot-assets-01/summary.json). The 77 historical supervisor tests were not rerun and do not validate this video.
+
+| Actual check | Result |
+| --- | --- |
+| Approval | Owner explicitly approved B-PILOT-MEDIA-01 before expiry; packet SHA256 `1ceb499f4c43cf1c6710cc9c02809bece32541d8844afba9ee8536ab31dd938c`. Full-run creative policy recorded in upstream decision_log; publishing prohibited |
+| Upstream pipeline | Research (20 actual domain-restricted search queries), proposal, unchanged script and scene-plan artifacts passed upstream checkpoint validation. Assets in_progress; edit/compose not run |
+| Stock | Phone 67,569,595 bytes, rain 87,619,514, curtain 36,577,129. Item-specific Mixkit Free licence pages saved; independent SHA256, FFprobe and full decode passed. Phone/curtain 1920x1080, rain 1080x1920 |
+| Source detectors | No reports from `freezedetect=n=-50dB:d=2` and `blackdetect=d=0.3:pix_th=0.02:pic_th=0.98`. Sampled frames inspected. Source checks only |
+| Narration | 17 actual registry-dispatched piper_tts calls succeeded; installed Piper 1.8.0 / local en_US-ljspeech-medium, length_scale 1.22, sentence_silence 0.15. Summed call wall time 110.821 s; phrase audio 44.266 s; narration timeline 60 s including pauses, speech ends 58.8 s |
+| Subtitles | Actual subtitle_gen produced 32 SRT cues; ordered/nonoverlapping/in 60 s. Measured phrase bounds with interpolated intra-phrase timing, not forced alignment. Burn-in and playback sync not checked yet |
+| Original audio | Local mathematical drone/pulses, ring, knocks, breath texture and creak. No external recordings/models/services; recipe/seed/hash retained |
+| Audio preview | Actual audio_mixer full_mix succeeded with speech/music/SFX, ducking, normalization and 60 s target. Probe/full decode passed; measured input loudness -16.50 LUFS, true peak -1.49 dBTP, LRA 3.60 LU. AAC review copy encoded. This is audio, not a rendered movie |
+| Guards | Further 1080p clip rejected before file write by payload cap; smaller-variant command refused at expired session deadline. Continuation is pending separate owner approval |
+| Missing continuation grant | Actual command refused before network with ENOENT for the absent owner-grant receipt. Existing manifest hash unchanged; no continuation session created. [Guard receipt](test-evidence/openmontage-pilot-assets-01/continuation-guard.json) |
+| Budgets | Source/runtime/pilot storage observed 1,368,932,381 bytes; setup plus video payload accounting including metadata reserve 589,683,295 bytes. Below 3 GiB and 750 MiB respectively. These are retained-file/budget figures, not exact TLS wire traffic. [Budget receipt](test-evidence/openmontage-pilot-assets-01/budget.json) |
+
+Failures: Store Python is blocked by the default filesystem sandbox; the same installed interpreter ran through authorized tool escalation without system changes. The first Mixkit endpoint returned an HTML download modal; it was preserved, then its published allowed-host video URL used. One inline PowerShell edit failed parsing before file operations; a file-based patch corrected it. No failed check is reported as passed.
+
+Still pending: three interior sources, listening/naturalness, playback caption synchronization, final render and its burn-in/audio/black/freeze/rights checks. Production render time and RAM/GPU/VRAM fields are null. No repeated installs, credentials, charges or publishing. Next action: [bounded acquisition time extension](HORROR_PILOT_MEDIA_CONTINUATION.md).
+
+Earlier setup checks below are historical tool evidence, not current production acceptance.
+
 ## Tools ready and output workspace created: 2026-10-29
 
 **The approved local installation and tool tests are now complete. The Horror MP4 is not rendered.** The owner explicitly approved B-PILOT-CONTINUE-01; execution used the additional window 22:22:00-22:42:00 UTC and finished installation/preflight within it. No completed source/binary/model installation was repeated.

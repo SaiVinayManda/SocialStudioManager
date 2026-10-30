@@ -1,0 +1,75 @@
+{
+  "captured_at_utc": "2026-10-30T18:26:10.569Z",
+  "approval_id": "B-PILOT-MEDIA-01",
+  "approval_packet_sha256": "1ceb499f4c43cf1c6710cc9c02809bece32541d8844afba9ee8536ab31dd938c",
+  "full_run_creative_approved": true,
+  "media_acquisition_window": "2026-10-30T17:32:20Z/2026-10-30T17:52:20Z",
+  "media_acquisition_expired": true,
+  "source_video_count": 3,
+  "source_video_bytes": 191766238,
+  "source_hashes": [
+    {
+      "id": "phone",
+      "bytes": 67569595,
+      "sha256": "1c06984fbd2b4da846fc515d3df80ff4ae8122341dc83e019c76040c2dcb6add",
+      "source_url": "https://mixkit.co/free-stock-video/black-phone-on-laptop-247/",
+      "license_url": "https://mixkit.co/license/modal/videoFree/"
+    },
+    {
+      "id": "rain",
+      "bytes": 87619514,
+      "sha256": "6532048d634a6633f6515d68536ab4f7a7d0540ac77ba8550fe5d323541e2d08",
+      "source_url": "https://mixkit.co/free-stock-video/colorful-rain-soaked-bokeh-lights-at-night-99841/",
+      "license_url": "https://mixkit.co/license/modal/videoFree/"
+    },
+    {
+      "id": "curtain",
+      "bytes": 36577129,
+      "sha256": "64971c02fdb91db12801c8b23a5429f81682ebe1a47516e57d6f022257ed1af4",
+      "source_url": "https://mixkit.co/free-stock-video/view-of-a-window-with-a-curtain-3977/",
+      "license_url": "https://mixkit.co/license/modal/videoFree/"
+    }
+  ],
+  "source_decode_report": "source-audit-1793383343839.json",
+  "piper_successful_phrases": 17,
+  "piper_call_runtime_seconds": 110.82100000000001,
+  "phrase_audio_seconds": 44.26598639455782,
+  "narration_timeline_seconds": 60,
+  "speech_end_seconds": 58.79999999999999,
+  "subtitle_cues": 32,
+  "subtitle_order_and_range_pass": true,
+  "subtitle_timing_method": "Measured phrase audio boundaries, character-weighted subphrase interpolation. Not ASR or forced alignment. Human synchronization/listening review pending.",
+  "audio_preview_duration_seconds": 60,
+  "audio_preview_loudness_lufs": -16.5,
+  "audio_preview_true_peak_dbtp": -1.49,
+  "audio_preview_loudness_range_lu": 3.6,
+  "audio_manual_listening_review": "pending",
+  "completed_pipeline_stages": [
+    "research",
+    "proposal",
+    "script",
+    "scene_plan"
+  ],
+  "current_pipeline_stage": "assets",
+  "missing_sources": [
+    "bedroom",
+    "hall",
+    "night"
+  ],
+  "continuation_approval": "PENDING B-PILOT-MEDIA-CONTINUE-01",
+  "final_video_exists": false,
+  "finished_video_validation": "NOT RUN",
+  "render_runtime_seconds": null,
+  "production_peak_ram_bytes": null,
+  "production_peak_gpu_vram_bytes": null,
+  "api_charges_usd": 0,
+  "credential_access": false,
+  "publishing": false,
+  "setup_repeated": false,
+  "failures": [
+    "Sandbox blocks existing Store Python; authorized tool escalation used without system changes.",
+    "First stock download endpoint returned HTML modal; preserved as provenance, then followed its published allowed-host video URL.",
+    "Full-resolution next clip rejected before file write by 200 MiB cap.",
+    "Smaller-variant continuation blocked by acquisition expiry; no further network requests made."
+  ]
+}
