@@ -1,0 +1,24 @@
+{
+  "executable": "C:\\Projects\\Manas_Flow\\SocialStudio\\.runtime\\openmontage-pilot\\venv\\Scripts\\python.exe",
+  "args": [
+    "-I",
+    "-m",
+    "pip",
+    "--isolated",
+    "--disable-pip-version-check",
+    "install",
+    "--no-index",
+    "--only-binary=:all:",
+    "--require-hashes",
+    "--find-links",
+    "C:\\Projects\\Manas_Flow\\SocialStudio\\.runtime\\openmontage-pilot\\wheelhouse",
+    "-r",
+    "C:\\Projects\\Manas_Flow\\SocialStudio\\.runtime\\openmontage-pilot\\requirements.lock"
+  ],
+  "started_utc": "2026-10-29T22:38:10.151Z",
+  "finished_utc": "2026-10-29T22:39:20.253Z",
+  "exit_code": 0,
+  "error_code": null,
+  "environment": "explicit allowlist only; controlled HOME, TEMP, caches; no owner credentials",
+  "inherited_environment": false
+}

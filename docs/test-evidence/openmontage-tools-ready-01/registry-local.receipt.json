@@ -1,0 +1,13 @@
+{
+  "executable": "C:\\Projects\\Manas_Flow\\SocialStudio\\.runtime\\openmontage-pilot\\venv\\Scripts\\python.exe",
+  "args": [
+    "-I",
+    "C:\\Projects\\Manas_Flow\\SocialStudio\\scripts\\openmontage-local-preflight.py"
+  ],
+  "started_utc": "2026-10-29T22:40:08.770Z",
+  "finished_utc": "2026-10-29T22:40:14.550Z",
+  "exit_code": 1,
+  "error_code": null,
+  "environment": "explicit allowlist only; controlled HOME, TEMP, caches; no owner credentials",
+  "inherited_environment": false
+}

@@ -9,6 +9,7 @@ node_modules/
 coverage/
 outputs/
 /openmontage/
+/generated-videos/
 !/brands/*/outputs/
 /brands/*/inputs/*
 /brands/*/projects/*

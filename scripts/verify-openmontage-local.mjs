@@ -7,7 +7,7 @@ import { fileURLToPath } from 'node:url';
 const root = path.dirname(path.dirname(fileURLToPath(import.meta.url)));
 const base = path.join(root, '.runtime', 'openmontage-pilot');
 const bin = path.join(base, 'ffmpeg', 'ffmpeg-9.0.2-essentials_build', 'bin');
-const env = { SystemRoot: 'C:\\Windows', PATH: 'C:\\Windows\\System32', TEMP: path.join(base, 'tmp'), TMP: path.join(base, 'tmp'), HOME: path.join(base, 'home'), USERPROFILE: path.join(base, 'home'), APPDATA: path.join(base, 'home', 'AppData', 'Roaming'), LOCALAPPDATA: path.join(base, 'home', 'AppData', 'Local'), PYTHONUTF8: '1' };
+const env = { SystemRoot: 'C:\\Windows', PATH: 'C:\\Windows\\System32', TEMP: path.join(base, 'tmp'), TMP: path.join(base, 'tmp'), HOME: path.join(base, 'home'), USERPROFILE: path.join(base, 'home'), APPDATA: path.join(base, 'home', 'AppData', 'Roaming'), LOCALAPPDATA: path.join(base, 'home', 'AppData', 'Local'), PYTHONUTF8: '1', PIP_CONFIG_FILE: 'NUL', PIP_KEYRING_PROVIDER: 'disabled' };
 const stamp = new Date().toISOString(), commands = [];
 function run(executable, args) {
   const r = spawnSync(executable, args, { env, shell: false, windowsHide: true, encoding: 'utf8', timeout: 30000, maxBuffer: 1048576 });
@@ -28,13 +28,22 @@ const probe = JSON.parse(run(path.join(bin, 'ffprobe.exe'), ['-v', 'error', '-sh
 run(path.join(bin, 'ffmpeg.exe'), ['-hide_banner', '-v', 'error', '-nostdin', '-i', path.join(base, 'smoke', 'encoding-smoke.mp4'), '-f', 'null', '-']);
 const code = "import json,importlib.metadata as m; names=['PyYAML','pydantic','jsonschema','python-dotenv','Pillow','numpy','requests','google-auth','google-genai','openai','fastapi','uvicorn','watchfiles','websockets','piper-tts','onnxruntime']; installed={d.metadata['Name'].lower():d.version for d in m.distributions()}; print(json.dumps({n:installed.get(n.lower()) for n in names}))";
 const packages = JSON.parse(run(path.join(base, 'venv', 'Scripts', 'python.exe'), ['-I', '-c', code]));
+const dependencyCheck = run(path.join(base, 'venv', 'Scripts', 'python.exe'), ['-I', '-m', 'pip', '--isolated', '--disable-pip-version-check', 'check']).trim();
+const session = JSON.parse(fs.readFileSync(path.join(base, 'session.json'), 'utf8'));
+const piperFile = path.join(base, 'smoke', 'piper-result.json');
+const piper = fs.existsSync(piperFile) ? JSON.parse(fs.readFileSync(piperFile, 'utf8')) : null;
+const registryFile = path.join(base, 'logs', 'registry-ascii.stdout');
+const registry = fs.existsSync(registryFile) ? JSON.parse(fs.readFileSync(registryFile, 'utf8')) : null;
 const result = {
   verified_at_utc: stamp, scope: 'Read-only local continuation check; no install/network/credential access',
-  setup_approval: 'B-PILOT-SETUP-01 explicitly approved, partial execution', resolver_correction_approval: 'NOT RECORDED',
-  setup_deadline_utc: '2026-10-29T22:17:56Z', ffmpeg_version: version, cached_hashes: hashes, probe,
+  setup_approval: session.approval, continuation_approval_record: session.continuation_approval ?? null,
+  setup_deadline_utc: session.deadline_utc, ffmpeg_version: version, cached_hashes: hashes, probe,
   full_decode_exit_code: 0, packages, piper_executable_present: fs.existsSync(path.join(base, 'venv', 'Scripts', 'piper.exe')),
-  dependency_lock_present: fs.existsSync(path.join(base, 'requirements.lock')), piper_test: 'NOT RUN',
-  horror_video_present: fs.existsSync(path.join(root, 'brands', 'horror', 'projects', 'horror-3am-call-001', 'renders', 'final.mp4')), commands,
+  dependency_lock_present: fs.existsSync(path.join(base, 'requirements.lock')), dependency_check: dependencyCheck,
+  piper_test: piper?.passed ? 'passed' : 'NOT RUN', piper_result: piper,
+  local_registry_runtimes: registry?.summary?.composition_runtimes ?? null,
+  tools_ready: Object.values(packages).every(Boolean) && piper?.passed === true && registry !== null,
+  horror_video_present: fs.existsSync(path.join(root, 'generated-videos', 'horror', 'pilot-001', 'final', 'horror_pilot_001.mp4')), commands,
 };
 const receipt = path.join(base, 'logs', 'continuation-' + stamp.replaceAll(':', '-') + '.json');
 fs.writeFileSync(receipt, JSON.stringify(result, null, 2), { flag: 'wx' });

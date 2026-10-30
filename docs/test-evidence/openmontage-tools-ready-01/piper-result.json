@@ -1,0 +1,31 @@
+{
+  "test": "real_piper_narration",
+  "passed": true,
+  "started_utc": "2026-10-29T22:39:27.752Z",
+  "finished_utc": "2026-10-29T22:39:34.911Z",
+  "elapsed_ms": 7156.7759,
+  "executable": "C:\\Projects\\Manas_Flow\\SocialStudio\\.runtime\\openmontage-pilot\\venv\\Scripts\\piper.exe",
+  "args": [
+    "--model",
+    "C:\\Projects\\Manas_Flow\\SocialStudio\\.runtime\\openmontage-pilot\\voices\\en_US-ljspeech-medium.onnx",
+    "--speaker",
+    "0",
+    "--length-scale",
+    "1.05",
+    "--sentence-silence",
+    "0.25",
+    "--output_file",
+    "C:\\Projects\\Manas_Flow\\SocialStudio\\.runtime\\openmontage-pilot\\smoke\\piper-narration.wav"
+  ],
+  "text": "At three AM, my phone rang. The caller ID showed my own number.\n",
+  "exit_code": 0,
+  "error_code": null,
+  "api_calls": 0,
+  "output_path": "C:\\Projects\\Manas_Flow\\SocialStudio\\.runtime\\openmontage-pilot\\smoke\\piper-narration.wav",
+  "sample_rate": 22050,
+  "channels": 1,
+  "bits_per_sample": 16,
+  "duration_seconds": 4.336689342403628,
+  "rms_dbfs": -17.400002418472013,
+  "bytes": 191292
+}

@@ -1,6 +1,6 @@
 # B-PILOT-CONTINUE-01: finish the existing local setup
 
-State: **PENDING OWNER APPROVAL**. B-PILOT-SETUP-01 was explicitly approved, but installation is incomplete. The latest "continue" request is not a grant for this correction or time extension.
+State: **EXPLICITLY APPROVED AND EXECUTED**. The owner replied "approve" to B-PILOT-CONTINUE-01. The additional window was 2026-10-29T22:22:00Z to 22:42:00Z; installation and local tests completed by 22:40:41Z. See [actual evidence](TEST_RESULTS.md). The proposal below is preserved as the approved scope, not permission for repeated installation or media downloads.
 
 The read-only recheck at 2026-10-29T22:14:08Z confirmed the approved FFmpeg archive/model hashes and a successful decode of the existing 1080x1920 H.264/AAC test MP4. All 16 queried OpenMontage/Piper dependency distributions are absent from the project venv; `piper.exe`, the dependency lock and final Horror MP4 are absent. No package install or external request was made by that check.
 

@@ -9,9 +9,9 @@ Success means one real playable original Horror story about a 3 AM phone call: r
 | Task | Status and acceptance |
 | --- | --- |
 | B-01 Existing source/host inspection | Clone 195eab24478dc9363326aec437aefc3701635ddf confirmed; cinematic pipeline and tools inspected. Node/npm/Python/GPU inventory verified; no engine import or generation |
-| B-02 Minimum setup | **Owner-approved; PARTIAL**: pinned source extracted, venv created, FFmpeg/ffprobe 9.0.2 and voice hash-verified. Core/Piper installation blocked by uv flag conflict; [one-flag correction approval pending](OPENMONTAGE_SETUP_ERRATA.md). No Remotion/HyperFrames/CUDA/Torch/video-model stack |
-| B-03 Actual capability preflight | Real FFmpeg 1080x1920 H.264/AAC encode/probe/full decode/caption-frame check passed. Piper narration and upstream registry summary NOT RUN pending dependencies |
-| B-04 Cinematic production | Research/proposal/script/scene/assets/edit/compose directors and checkpoints. [Draft](HORROR_PILOT_PROPOSAL.md) and [job input](../brands/horror/config/pilot.json) prepared, no stage marked complete. Verified-license stock motion and original local score/effects; no paid APIs |
+| B-02 Minimum setup | **Complete under explicit B-PILOT-SETUP-01 and B-PILOT-CONTINUE-01 grants**: pinned source/venv, 52 hash-verified wheels installed offline, portable FFmpeg/ffprobe 9.0.2 and voice ready. No repeated completed install or optional GPU/model stack |
+| B-03 Actual capability preflight | **Passed**: real Piper WAV, real FFmpeg 1080x1920 H.264/AAC encoding/probe/decode/caption-frame check, upstream local registry/provider summary and offline pip check. This is tool validation, not a finished production |
+| B-04 Cinematic production | Dedicated `generated-videos/horror/pilot-001` created; original script/voice preview/logs saved. Actual pipeline stages remain pending authorised moving footage. [B-PILOT-MEDIA-01](HORROR_PILOT_MEDIA_APPROVAL.md) requests clip acquisition and explicit unchanged full-run preauthorization; no paid APIs/publishing |
 | B-05 Render/QA | Actual 57-63s vertical MP4, probe/full decode, audio/caption/black/freeze checks plus manual review, rights manifest, measured timing and sampled RAM/GPU/VRAM. NOT RUN |
 | B-06 Review/reproducibility | Actual local output path/preview, versioned commands, retained artifacts/errors and manual review; no publishing |
 | B-07 Reusable entry point | After the first successful video only: parameterized brand/topic/script/duration/aspect/voice/style/subtitles/output job creation around the existing pipeline |

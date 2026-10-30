@@ -1,0 +1,11 @@
+{
+    "recorded_utc":  "2026-10-29T23:18:08.5483979Z",
+    "source":  "C:\\Projects\\Manas_Flow\\SocialStudio\\pip\\cache",
+    "destination":  "C:\\Projects\\Manas_Flow\\SocialStudio\\.runtime\\openmontage-pilot\\cache\\pip-http",
+    "reason":  "pip platform cache defaulted to project root during approved download; retain it in approved runtime cache",
+    "source_created_utc":  "2026-10-29T22:34:26.2459689Z",
+    "files_preserved":  208,
+    "bytes_preserved":  90031488,
+    "deleted_files":  0,
+    "unrelated_file":  "implementationsoofar.md left untouched"
+}

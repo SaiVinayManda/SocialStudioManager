@@ -1,5 +1,30 @@
 # Actual verification results
 
+## Tools ready and output workspace created: 2026-10-29
+
+**The approved local installation and tool tests are now complete. The Horror MP4 is not rendered.** The owner explicitly approved B-PILOT-CONTINUE-01; execution used the additional window 22:22:00-22:42:00 UTC and finished installation/preflight within it. No completed source/binary/model installation was repeated.
+
+| Actual current OpenMontage check | Result |
+| --- | --- |
+| Binary-only resolution | Exact approved corrected command succeeded at 22:27:39.911 UTC. uv's Store-registry discovery first failed with access denial; selecting the already approved venv via process-local `VIRTUAL_ENV`/PATH solved it without changing CLI arguments, interpreter version or Windows permissions. Failed receipts retained |
+| Wheel admission/staging | 52 Windows-compatible wheels; 83,637,130 payload bytes. Public PyPI metadata verified before staging, then every downloaded file independently matched frozen SHA-256/size. No source build or optional GPU/model stack |
+| Offline installation | Exit 0, finished **22:39:20.253 UTC**, existing project venv only. Piper **1.8.0**, CPU ONNX Runtime **1.31.1**. Owner/global Python packages unmodified |
+| Installed dependency consistency | Fresh isolated metadata check finds all 16 queried core/Piper packages; offline `pip check` exits 0: "No broken requirements found." [Verification receipt](test-evidence/openmontage-tools-ready-01/verification.json) |
+| **Real Piper narration** | **PASS**, exit 0. 4.336689s WAV, 22,050 Hz mono PCM16, 191,292 bytes, RMS -17.4000 dBFS. Generation elapsed **7156.7759 ms**, finished 22:39:34.911 UTC. Original local voice; no network/API. Audible level/structure verified; naturalness/intelligibility still needs listening review |
+| **Real FFmpeg encoding** | Earlier actual two-second 1080x1920 H.264/AAC + burned-caption test remains valid; fresh probe and full decode exit 0. Its **2961.5802 ms** encoding / **296,008 KiB FFmpeg-reported maxrss** are smoke-test measurements, not Horror production figures |
+| Upstream registry | Actual `registry.discover()` and `provider_menu_summary()` pass, completed **22:40:41.492 UTC**. Selected Piper, video_compose, video_stitch, audio_mixer and subtitle_gen report available. Local profile: FFmpeg true; optional Remotion/HyperFrames excluded. Python network calls denied; no provider/credential/service use |
+| Registry reporting failure | First preflight computed results but failed printing Unicode through Windows cp1252. ASCII-safe JSON retry passed; source/generation path unchanged, original failure retained |
+| Dedicated output | Created `generated-videos/horror/pilot-001/{final,previews,subtitles,scripts,assets,logs}`. Original script, actual voice sample preview and tool receipts saved. Final MP4, video preview and production subtitles are not yet generated. No existing video overwritten |
+| Upstream project initialization | Actual `lib.checkpoint.init_project("pilot-001", ..., pipeline_type="cinematic")` exited 0 at 23:04:45 UTC and created the canonical job marker/folders in the requested output tree. No stage or render marked complete; networking denied |
+
+Measured setup file payload plus explicit manifest metadata: **263,699,329 bytes (251.48 MiB)**. Budget accounting including the 128 MiB metadata reserve: **397,917,057 bytes (379.48 MiB)**, below 750 MiB. Source/runtime/pilot storage observed, including the retained pip HTTP cache: **1,141,277,160 bytes (1088.41 MiB)**, below 3 GiB. Preserve the distinction between measured payload, reserved network allowance and exact network traffic.
+
+During Git review, pip's 90,031,488-byte HTTP cache was found at project-root `pip/cache` rather than the intended runtime cache. Its creation was within the recorded approved wheel-download interval. After verifying absolute source/destination containment, no links and an absent destination, moved all 208 files unchanged into `.runtime/openmontage-pilot/cache/pip-http`; no deletion/overwrite occurred. [Relocation receipt](test-evidence/openmontage-tools-ready-01/pip-cache-relocation.json). Storage accounting above includes it. The unrelated untracked `implementationsoofar.md` was preserved and not staged.
+
+Output workspace: `C:\Projects\Manas_Flow\SocialStudio\generated-videos\horror\pilot-001`. Voice preview: `previews\piper_voice_sample.wav`; original narration text: `scripts\horror_pilot_001.txt`. These are real local files; they are not a finished video. Intended final path: `final\horror_pilot_001.mp4` (**does not exist**).
+
+Next blocker: no approved moving-footage inputs exist. [B-PILOT-MEDIA-01](HORROR_PILOT_MEDIA_APPROVAL.md) requests a bounded licensed clip acquisition plus optional explicit full-run creative preauthorization. No additional footage/music/provider service was accessed. **Production render time, production RAM/GPU/VRAM peak and final quality checks remain NOT RUN**, with null values rather than invented measurements. Historical supervisor tests below are not video-engine validation.
+
 ## Latest continuation check: 2026-10-29T22:14:08Z
 
 **Setup approval exists, installation is incomplete.** Checked owner approval/history and current files; the latest generic continuation did not approve B-PILOT-UV-FIX-01. No changed resolver command, installation, download, credential access or external service call ran.

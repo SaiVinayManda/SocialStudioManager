@@ -1,6 +1,6 @@
 # B-PILOT-UV-FIX-01: one command correction
 
-State: **PENDING**. Do not treat this proposal as approval or change the frozen B-PILOT-SETUP-01 packet/hash.
+State: **APPROVED through B-PILOT-CONTINUE-01 and executed successfully**. Original failure evidence is retained; the original B-PILOT-SETUP-01 packet/hash stays unchanged. The text below preserves the correction requested, not a new grant.
 
 Actual installed uv 0.9.6 rejected the approved compile command before resolution: `--only-binary :all:` cannot be combined with `--no-build`. Exit 2; no dependency lock/package download or installation was produced. Evidence: `.runtime/openmontage-pilot/logs/resolve.stderr` and `resolve.receipt.json`.
 

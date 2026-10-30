@@ -1,0 +1,32 @@
+{
+    "scope":  "Local registry; Python network denied, optional Node runtimes excluded from child PATH",
+    "composition_runtimes":  {
+                                 "ffmpeg":  true,
+                                 "remotion":  false,
+                                 "hyperframes":  false
+                             },
+    "selected_tools":  [
+                           {
+                               "name":  "piper_tts",
+                               "status":  "available"
+                           },
+                           {
+                               "name":  "video_compose",
+                               "status":  "available"
+                           },
+                           {
+                               "name":  "video_stitch",
+                               "status":  "available"
+                           },
+                           {
+                               "name":  "audio_mixer",
+                               "status":  "available"
+                           },
+                           {
+                               "name":  "subtitle_gen",
+                               "status":  "available"
+                           }
+                       ],
+    "generation_executed":  false,
+    "provider_services_accessed":  false
+}

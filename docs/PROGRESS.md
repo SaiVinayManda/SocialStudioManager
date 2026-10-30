@@ -2,6 +2,14 @@
 
 Active milestone: **B: local OpenMontage Horror pilot**, by the owner's explicit 2026-10-29 priority change. Advanced Milestone A hardening is **DEFERRED, NOT ACCEPTED**. Preserve code/tests/history; remote dispatch stays disabled. MoneyPrinterTurbo/Postiz, n8n and publishing infrastructure remain out of scope.
 
+**Current: local tools ready; waiting for authorised motion footage.** B-PILOT-CONTINUE-01 was explicitly approved. All 52 frozen wheels were verified and installed offline; installation finished at 22:39:20 UTC, real Piper narration passed at 22:39:34, and actual upstream local registry preflight passed at 22:40:41, inside the granted window. Offline `pip check` also passes. FFmpeg's real encoding/probe/decode/caption test is retained. No further setup approval or repeated installation is needed.
+
+Created the requested dedicated `generated-videos/horror/pilot-001` folders without overwriting a video. The script, voice-sample preview and test logs are saved there. **`final/horror_pilot_001.mp4` does not exist yet.** Setup tools/probe evidence is in [TEST_RESULTS.md](TEST_RESULTS.md), separate from historical supervisor tests.
+
+Next request: [B-PILOT-MEDIA-01](HORROR_PILOT_MEDIA_APPROVAL.md), up to eight verified-license moving clips / 200 MiB, no accounts/paid services/extra software or models. The optional full-run preauthorization would cover the unchanged proposal through OpenMontage's creative gates while retaining reviews/checkpoints. Music/effects will be original local synthesis; no external recording download requested. Await that grant or cleared local footage; do not substitute the synthetic encoding test or a slideshow. No production runtime/peak-resource/quality pass is claimed.
+
+The earlier partial-setup and pending-correction snapshots below are historical.
+
 Latest continuation verification (22:14:08 UTC): B-PILOT-SETUP-01 approval is recorded, but installation is incomplete. Cached hashes and existing MP4 probe/full decode pass. All 16 queried project-venv engine/Piper packages are absent; no Piper executable, lock, narration result or Horror video exists. No new install/download/external call was made. Old supervisor tests are historical and do not validate video production.
 
 Next owner action: [B-PILOT-CONTINUE-01](OPENMONTAGE_CONTINUATION_APPROVAL.md), combining the still-unapproved one-flag resolver correction with a maximum additional 20-minute window after the original 22:17:56 UTC cutoff. Cumulative 750 MiB/3 GiB limits, sources and approved software stay unchanged. Completed components will be reused, not reinstalled. Approved/supplied moving footage is also still required separately. The current "continue" message is not treated as any of those grants.

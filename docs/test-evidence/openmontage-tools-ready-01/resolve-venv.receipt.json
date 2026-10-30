@@ -1,0 +1,26 @@
+{
+  "executable": "C:\\Users\\Vinay\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python311\\Scripts\\uv.exe",
+  "args": [
+    "--no-config",
+    "--no-cache",
+    "--no-python-downloads",
+    "pip",
+    "compile",
+    "C:\\Projects\\Manas_Flow\\SocialStudio\\setup\\openmontage-pilot.requirements.in",
+    "--python-version",
+    "3.11.9",
+    "--python-platform",
+    "x86_64-pc-windows-msvc",
+    "--only-binary",
+    ":all:",
+    "--generate-hashes",
+    "--output-file",
+    "C:\\Projects\\Manas_Flow\\SocialStudio\\.runtime\\openmontage-pilot\\requirements.lock"
+  ],
+  "started_utc": "2026-10-29T22:25:09.451Z",
+  "finished_utc": "2026-10-29T22:25:09.540Z",
+  "exit_code": 2,
+  "error_code": null,
+  "environment": "explicit allowlist only; controlled HOME, TEMP, caches; no owner credentials",
+  "inherited_environment": false
+}
