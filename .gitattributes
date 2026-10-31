@@ -5,3 +5,10 @@ docs/test-evidence/openmontage-tools-ready-01/*.stderr -text -diff
 docs/test-evidence/openmontage-pilot-assets-01/*.stderr -text -diff
 *.sh text eol=lf
 *.sql text eol=lf
+# Keep owner-reviewed byte digests reproducible across Windows checkouts.
+docs/ORCHESTRATOR_SETUP_APPROVAL.md text eol=lf
+docs/ORCHESTRATOR_LOCAL_ACCESS_APPROVAL.md text eol=lf
+scripts/create-studio-local-secrets.mjs text eol=lf
+services/studio-runtime/package-lock.json text eol=lf
+services/loopback-proxy/server.mjs text eol=lf
+infrastructure/docker-compose.local-access.yml text eol=lf
