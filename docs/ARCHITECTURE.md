@@ -1,5 +1,7 @@
 # Social Studio architecture
 
+**Current E2 addition (2026-10-31):** the existing Studio API contains a durable AI manager, migration 002 adds attempts/immutable outputs/provider capability state, and workflow 02 now polls one provider-independent AI interface. Six brand profiles and eight schemas feed a draft OpenMontage mapper. Actual n8n/PG mock acceptance and restart persistence pass; real inference is blocked on route permission/cost and CLI isolation. No extra containers, models, account credentials, render or publishing. [AI architecture and operator guide](AI_BRAIN.md), [verification matrix](AI_BRAIN_TEST_MATRIX.md). Codex → agy → 9Router priority is preserved; A remains deferred.
+
 Current result: **Milestone E existing-video MVP automated acceptance passed** after all three explicit E grants. Four services healthy; fixed proxy provides only loopback access, while n8n/application/PostgreSQL retain internal-only networking. Twelve workflows actually imported/published/executed; twenty deployed regression scenarios passed. [Orchestration architecture](ORCHESTRATOR_ARCHITECTURE.md), [operations](ORCHESTRATOR_OPERATIONS.md) and [actual evidence](TEST_RESULTS.md) identify remaining stages. Advanced A stays preserved/deferred/live-disabled. No new render, social account connection or live publishing enabled.
 
 ```mermaid

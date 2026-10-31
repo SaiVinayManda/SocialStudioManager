@@ -1,0 +1,283 @@
+{
+  "type": "object",
+  "properties": {
+    "script": {
+      "type": "object",
+      "properties": {
+        "opening_hook": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 500
+        },
+        "original_script": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 12000
+        },
+        "narration_text": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 12000
+        },
+        "closing_line": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 500
+        },
+        "pacing": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2000
+        },
+        "scenes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "scene_number": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 24
+              },
+              "duration_seconds": {
+                "type": "number",
+                "minimum": 1,
+                "maximum": 120
+              },
+              "narration": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 3000
+              },
+              "visual_direction": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 2000
+              },
+              "footage_keywords": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 100
+                },
+                "minItems": 1,
+                "maxItems": 8
+              },
+              "transition": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 200
+              },
+              "sound_design": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 1000
+              }
+            },
+            "required": [
+              "scene_number",
+              "duration_seconds",
+              "narration",
+              "visual_direction",
+              "footage_keywords",
+              "transition",
+              "sound_design"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 24
+        }
+      },
+      "required": [
+        "opening_hook",
+        "original_script",
+        "narration_text",
+        "closing_line",
+        "pacing",
+        "scenes"
+      ],
+      "additionalProperties": false
+    },
+    "titles": {
+      "type": "object",
+      "properties": {
+        "titles": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "title": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 150
+              },
+              "platform": {
+                "type": "string",
+                "enum": [
+                  "youtube",
+                  "instagram",
+                  "facebook",
+                  "all"
+                ]
+              }
+            },
+            "required": [
+              "title",
+              "platform"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 5,
+          "maxItems": 5
+        }
+      },
+      "required": [
+        "titles"
+      ],
+      "additionalProperties": false
+    },
+    "captions": {
+      "type": "object",
+      "properties": {
+        "youtube_description": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 5000
+        },
+        "instagram_caption": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2200
+        },
+        "facebook_caption": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 5000
+        }
+      },
+      "required": [
+        "youtube_description",
+        "instagram_caption",
+        "facebook_caption"
+      ],
+      "additionalProperties": false
+    },
+    "hashtags": {
+      "type": "object",
+      "properties": {
+        "youtube": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^#[A-Za-z0-9_]{1,60}$"
+          },
+          "minItems": 1,
+          "maxItems": 20
+        },
+        "instagram": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^#[A-Za-z0-9_]{1,60}$"
+          },
+          "minItems": 1,
+          "maxItems": 20
+        },
+        "facebook": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^#[A-Za-z0-9_]{1,60}$"
+          },
+          "minItems": 1,
+          "maxItems": 20
+        }
+      },
+      "required": [
+        "youtube",
+        "instagram",
+        "facebook"
+      ],
+      "additionalProperties": false
+    },
+    "storyboard": {
+      "type": "object",
+      "properties": {
+        "scenes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "scene_number": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 24
+              },
+              "duration_seconds": {
+                "type": "number",
+                "minimum": 1,
+                "maximum": 120
+              },
+              "narration": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 3000
+              },
+              "visual_direction": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 2000
+              },
+              "footage_keywords": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 100
+                },
+                "minItems": 1,
+                "maxItems": 8
+              },
+              "transition": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 200
+              },
+              "sound_design": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 1000
+              }
+            },
+            "required": [
+              "scene_number",
+              "duration_seconds",
+              "narration",
+              "visual_direction",
+              "footage_keywords",
+              "transition",
+              "sound_design"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 24
+        }
+      },
+      "required": [
+        "scenes"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "script",
+    "titles",
+    "captions",
+    "hashtags",
+    "storyboard"
+  ],
+  "additionalProperties": false
+}

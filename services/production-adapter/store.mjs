@@ -1,6 +1,7 @@
 import crypto from 'node:crypto';
 import {demand,exact,uuid,checksum,hash,canonical,jobInput} from '../studio-runtime/contracts.mjs';
 import {transaction,event} from '../studio-runtime/db.mjs';
+import {validateRequest as validateAiRequest} from '../ai-agent-manager/contracts.mjs';
 export async function job(db,id,lock=false){
   demand(uuid(id),'INVALID_JOB_ID');const r=await db.query('SELECT j.*,b.slug AS brand_slug FROM studio.content_jobs j JOIN studio.brands b ON b.id=j.brand_id WHERE j.id=$1'+(lock?' FOR UPDATE OF j':''),[id]);
   demand(r.rowCount,'JOB_NOT_FOUND',404);return r.rows[0];
@@ -8,6 +9,7 @@ export async function job(db,id,lock=false){
 export async function intake(db,body){
   demand(uuid(body?.brand_id),'INVALID_BRAND');const brand=(await db.query('SELECT * FROM studio.brands WHERE id=$1',[body.brand_id])).rows[0];demand(brand,'UNKNOWN_BRAND',404);
   const input=jobInput(body,brand),fingerprint=hash(canonical({brand:brand.id,type:input.source_type,source:input.source.expected_checksum??input.source})),requestHash=hash(canonical(input));
+  if(input.production_settings.ai_request)validateAiRequest({...input.production_settings.ai_request,brand_id:brand.id,content_job_id:'00000000-0000-4000-8000-000000000001',idempotency_key:input.idempotency_key});
   return transaction(db,async c=>{
     const id=crypto.randomUUID(),r=await c.query(`INSERT INTO studio.content_jobs(id,brand_id,source_type,source_reference,topic,script_reference,production_settings,content_metadata,idempotency_key,source_fingerprint,request_checksum)
       VALUES($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11) ON CONFLICT DO NOTHING RETURNING *`,[id,brand.id,input.source_type,input.source,input.topic??null,input.script_reference??null,input.production_settings,input.metadata,input.idempotency_key,fingerprint,requestHash]);
@@ -17,6 +19,7 @@ export async function intake(db,body){
 }
 export async function start(db,id){return transaction(db,async c=>{
   const j=await job(c,id,true);if(['processing','produced','validated','awaiting_approval','approved','scheduled','published'].includes(j.status))return {...j,job_id:id};
+  demand(j.source_type!=='ai_only','AI_ONLY_RENDER_FORBIDDEN',403);
   demand(j.status==='queued','JOB_NOT_STARTABLE',409);const kind=j.source_type==='existing_file'?'validate':'render';
   await c.query('INSERT INTO studio.production_tasks(id,job_id,kind) VALUES($1,$2,$3) ON CONFLICT DO NOTHING',[crypto.randomUUID(),id,kind]);
   const engine=j.source_reference.engine_project?'openmontage/'+j.source_reference.engine_project:'existing/'+id;

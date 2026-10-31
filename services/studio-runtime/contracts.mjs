@@ -33,7 +33,8 @@ export function jobInput(body,brand){
   demand(body.topic===undefined||(typeof body.topic==='string'&&body.topic.length<=2000),'INVALID_TOPIC');
   if(body.script_reference!==undefined){exact(body.script_reference,['root_id','relative_path'],['root_id','relative_path']);demand(/\.txt$/i.test(body.script_reference.relative_path),'TEXT_SCRIPT_REQUIRED');reference({...body.script_reference,relative_path:body.script_reference.relative_path.replace(/\.txt$/i,'.mp4')},brand.slug);}
   const settings=body.production_settings??{};
-  exact(settings,['expected_width','expected_height','min_duration','max_duration','require_audio','subtitle_reference','licence_reference','platforms','scheduled_at','acceptance_run_id','timeout_ms','requires_ai']);
+  exact(settings,['expected_width','expected_height','min_duration','max_duration','require_audio','subtitle_reference','licence_reference','platforms','scheduled_at','acceptance_run_id','timeout_ms','requires_ai','ai_request']);
+  if(settings.ai_request!==undefined)demand(settings.requires_ai===true&&settings.ai_request&&typeof settings.ai_request==='object'&&!Array.isArray(settings.ai_request),'INVALID_AI_SETTINGS');
   for(const key of ['expected_width','expected_height'])if(settings[key]!==undefined)demand(Number.isInteger(settings[key])&&settings[key]>=240&&settings[key]<=3840,'INVALID_RESOLUTION');
   for(const key of ['min_duration','max_duration'])if(settings[key]!==undefined)demand(Number.isFinite(settings[key])&&settings[key]>0&&settings[key]<=3600,'INVALID_DURATION');
   demand((settings.min_duration??1)<=(settings.max_duration??3600),'INVALID_DURATION_RANGE');

@@ -1,0 +1,74 @@
+{
+  "passed": true,
+  "checks": 11,
+  "results": [
+    {
+      "name": "AI provider status requires authentication",
+      "status": 401,
+      "expected": 401,
+      "passed": true
+    },
+    {
+      "name": "operator can inspect provider capabilities",
+      "status": 200,
+      "expected": 200,
+      "passed": true
+    },
+    {
+      "name": "n8n can inspect provider health",
+      "status": 200,
+      "expected": 200,
+      "passed": true
+    },
+    {
+      "name": "worker cannot browse AI task history",
+      "status": 403,
+      "expected": 403,
+      "passed": true
+    },
+    {
+      "name": "unknown task history returns 404",
+      "status": 404,
+      "expected": 404,
+      "passed": true
+    },
+    {
+      "name": "n8n cannot claim native AI work",
+      "status": 403,
+      "expected": 403,
+      "passed": true
+    },
+    {
+      "name": "operator API cannot impersonate native AI worker",
+      "status": 403,
+      "expected": 403,
+      "passed": true
+    },
+    {
+      "name": "worker claim rejects caller-supplied execution flags",
+      "status": 400,
+      "expected": 400,
+      "passed": true
+    },
+    {
+      "name": "unknown cancellation returns 404",
+      "status": 404,
+      "expected": 404,
+      "passed": true
+    },
+    {
+      "name": "worker cannot cancel operator tasks",
+      "status": 403,
+      "expected": 403,
+      "passed": true
+    },
+    {
+      "name": "stale worker heartbeat cannot modify a task",
+      "status": 409,
+      "expected": 409,
+      "passed": true
+    }
+  ],
+  "actual_deployed_api": true,
+  "model_requests": 0
+}

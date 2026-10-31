@@ -1,5 +1,15 @@
 # Human actions and approval register
 
+## E2 current blocker — real model canary, NOT GRANTED
+
+The E2 local manager, additive migration 002 and workflow 02 are running and mock-tested. Existing infrastructure/auth grants were reused only within the existing internal service configuration; no installers, key generation or owner bootstrap repeated. **E2 is not complete.** See [implementation guide](AI_BRAIN.md) and [actual test matrix](AI_BRAIN_TEST_MATRIX.md).
+
+Next minimum owner action: [E2-REAL-CANARY-01](AI_BRAIN_CANARY_APPROVAL.md), one n8n content-package task, at most one request through the existing loopback 9Router, USD 0 permitted spend, 4,000 output tokens, 120-second task/one 20-minute completion window, no later than 2026-11-01 18:00 UTC. **Also confirm that the exact `oc/jev-1.13-free` route is authorised, genuinely zero billed cost and cannot internally fall back to a billable/unapproved route.** Model-list names do not establish this. If unknown, stop; provide supported zero-cost route evidence for a revised packet. No provider credential-store access is requested.
+
+Codex → agy → 9Router remains the default order. Both CLIs are real/headless-capable, but their safe unattended isolation is not verified, so this canary skips them without reading authentication. Separate isolation/auth approval is required before either executes; do not activate advanced Milestone A as a shortcut. The one-call packet grants no future unattended production or publishing. No real-canary approval receipt/policy has been created. Current drafts are explicitly deterministic fixtures.
+
+After the real grant, review actual output/provider history and schema/PG/n8n evidence before accepting E2. Preserve uncertain outcomes and consumed-request ledgers; do not clear them to repeat a request. No public publishing or new video render is authorised.
+
 ## Current owner actions after automated MVP acceptance — 2026-10-31
 
 **E-INFRA-SETUP-01, E-LOCAL-AUTH-01 and E-LOCAL-ACCESS-01 were explicitly granted and completed. Do not ask again or rerun their installers/generator/bootstrap.** [Access receipt](test-evidence/milestone-e-access-01/owner-approval.json); both frozen packets retain their historical authored labels. Real existing-video n8n/PostgreSQL acceptance passed, all twelve workflows executed successfully, twenty deployed regressions passed. Four services and one manually started native media worker are running. [Current runbook](ORCHESTRATOR_OPERATIONS.md).

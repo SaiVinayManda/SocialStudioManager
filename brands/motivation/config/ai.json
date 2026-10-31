@@ -1,0 +1,24 @@
+{
+  "slug": "motivation",
+  "identity": "Practical encouragement with realistic actions",
+  "audience": "Adults building habits",
+  "tone": "Encouraging, direct, grounded",
+  "restrictions": [
+    "No medical claims",
+    "No guaranteed life outcomes"
+  ],
+  "language": "en",
+  "preferred_duration_seconds": 60,
+  "content_format": "vertical short video",
+  "platform_guidance": {
+    "youtube": "Clear title and informative description",
+    "instagram": "Concise caption and relevant hashtags",
+    "facebook": "Accessible context and a clear opening"
+  },
+  "provider_order": [
+    "codex",
+    "agy",
+    "9router"
+  ],
+  "prompt_template_version": "studio-prompts-2026-10-31.1"
+}

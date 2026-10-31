@@ -1,0 +1,18 @@
+{
+  "task": {
+    "id": "4894013b-97ea-460f-b410-3a275d306dca",
+    "brand_id": "10000000-0000-4000-8000-000000000001",
+    "job_id": "4ddc2a6d-3de0-4f36-b49d-b0167a22e7f1",
+    "status": "completed",
+    "provider_used": "mock",
+    "output_checksum": "361ebc934632c9997497415072a07cb0cb54a5da8d308ad2d805ce25333f92ac"
+  },
+  "outputs": 1,
+  "attempts": 2,
+  "production_tasks": 0,
+  "publishing_jobs": 0,
+  "schema_versions": [
+    1,
+    2
+  ]
+}

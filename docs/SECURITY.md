@@ -1,5 +1,13 @@
 # Supervisor security and acceptance boundary
 
+## Current E2 AI boundary
+
+E2 extends the existing authenticated local API, with strict v2 input/output contracts, one active AI attempt, leases/deadlines, budget reservations and immutable brand-bound outputs. Common credential-shaped editorial input/output is rejected before persistence; diagnostics are categories, not raw provider errors. No arbitrary HTTP command/path/endpoint interface is exposed. Only existing internal role keys are reused. The n8n/app/PG network and fixed loopback proxy are unchanged.
+
+Installed Codex/agy headless capabilities are metadata-verified, but safe unattended OS isolation and model auth are not. Their default adapters have no executor and cannot launch an owner-privileged agent. They are not made safe merely by a working directory, plan/read-only flags or prompts. HTTP-only 9Router execution is also off until a digest-bound owner grant and verified no-charge route exist. Existing router listener `0.0.0.0:20128` was observed, not changed; Social Studio calls loopback. No router credential store/saved CLI authentication was read. No perfect prompt-injection or secret-detection claim is made.
+
+The proposed real canary is one scoped task/request, no tools, no render/post, with a persistent request ledger. A lost live-policy lease is manual review and cannot blindly re-execute. The [pending packet](AI_BRAIN_CANARY_APPROVAL.md) defines exact commands, scope digests, risks and non-destructive rollback. It is not granted. Existing A security results below remain historical and do not establish a safe E2 CLI executor.
+
 ## Current Milestone E boundary (automated existing-file MVP passed)
 
 The owner explicitly granted all three E packets. Nine fresh keys retain the approved owner/SYSTEM ACL; none logged/committed. Four services run: only the fixed proxy has frontend routing and loopback bindings; n8n/app/database retain internal-only networking. Actual n8n/PostgreSQL mock acceptance, thirteen API security checks and twenty deployed regression scenarios passed. No old credentials, external account or real publishing were used. Fresh owner bootstrap uses the original approved password file's first 64 characters to satisfy verified n8n validation; the file/generator remain unchanged. No Windows power/firewall/service/startup change; native worker is manual. Runtime/media stay ignored. Earlier denied config access remains historical evidence. This is not an accepted A OS sandbox or a complete live-platform production security audit.

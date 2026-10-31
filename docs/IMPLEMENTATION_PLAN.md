@@ -1,5 +1,21 @@
 # Social Studio implementation plan
 
+## Current owner direction: E2 AI Brain
+
+The owner's E2 implementation request supersedes the older mock-only AI boundary for local coding, tests, additive application migrations and integration with the existing local services. It grants no new model credentials, paid calls, software/system changes, public endpoints or publishing. Advanced A remains deferred; no repeat video render.
+
+| E2 work | Current state | Remaining engineering estimate |
+| --- | --- | --- |
+| Discover actual API/n8n/PG/Codex/agy/router capabilities | Complete, help/model metadata only; no model auth | 0 h |
+| Durable AI manager, schemas, six-brand prompts, attempts, budgets, cancel/recovery | Implemented; 88 local and 24 PG checks pass | 0.5–1 h operator/review fixes if exposed by real canary |
+| Existing workflow 02 integration and mock compatibility | Deployed; actual signed canary passed, no render/post | 0 h |
+| OpenMontage draft input translation | Both actual upstream schemas pass; no checkpoint advanced | 0 h for this scope |
+| Real no-charge provider canary | Blocked on exact route/cost confirmation and E2-REAL-CANARY-01 approval | 0.5–1.5 h after grant; hard single-call/window limits apply |
+| Codex/agy unattended runtime isolation and scoped auth | Not verified/activated; adapters skip safely | 4–8 h separately scoped engineering, excluding approvals; no A supervisor restart |
+| Extended unattended AI production activation | Not granted by a one-call test | Separate review after actual canary evidence |
+
+Estimates are engineering effort, not granted time/spend budgets. [Current guide](AI_BRAIN.md), [26-case verification matrix](AI_BRAIN_TEST_MATRIX.md), [pending real-canary packet](AI_BRAIN_CANARY_APPROVAL.md). Earlier backlogs are retained; E2 is not complete merely from files or mock evidence.
+
 ## Current owner direction: Milestone E local orchestration
 
 Latest actual state (2026-10-31): all three E grants received and executed within scope. Four services healthy, loopback access working, native worker running. PostgreSQL migration 001/six-brand/mock seeds applied; twelve workflows actually imported/published/executed successfully. **Stage 1 and Stage 2 existing-video automated MVP acceptance passed**, plus twenty deployed regression scenarios and local 34+2 checks. First real Horror import-to-three-mock-destinations test took 20.841 s; no rerender/public posting. [Proof](test-evidence/milestone-e-deployed/d9301e97-4f96-4492-a135-c3c71ba3a892.json), [regressions](test-evidence/milestone-e-deployed/regression-709b64e7-3bb1-42b9-bd72-a8d79fc44a98.json). A remains deferred. New render, official credentialed transports, backup/retention and continuous ingestion activation remain unfinished; full Milestone E is not accepted merely from this MVP.

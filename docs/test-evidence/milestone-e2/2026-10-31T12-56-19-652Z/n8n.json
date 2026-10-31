@@ -1,0 +1,43 @@
+{
+  "workflow_02": {
+    "id": "socialstudio0002",
+    "active": true
+  },
+  "canary_workflow_executions": [
+    {
+      "id": 3287,
+      "workflowId": "socialstudio0001",
+      "status": "success",
+      "startedAt": "2026-10-31T13:49:43.001+01:00",
+      "stoppedAt": "2026-10-31T13:49:43.158+01:00"
+    },
+    {
+      "id": 3288,
+      "workflowId": "socialstudio0002",
+      "status": "success",
+      "startedAt": "2026-10-31T13:49:43.111+01:00",
+      "stoppedAt": "2026-10-31T13:49:44.241+01:00"
+    },
+    {
+      "id": 3289,
+      "workflowId": "socialstudio0001",
+      "status": "success",
+      "startedAt": "2026-10-31T13:49:43.128+01:00",
+      "stoppedAt": "2026-10-31T13:49:43.334+01:00"
+    },
+    {
+      "id": 3291,
+      "workflowId": "socialstudio0002",
+      "status": "success",
+      "startedAt": "2026-10-31T13:49:43.288+01:00",
+      "stoppedAt": "2026-10-31T13:49:44.407+01:00"
+    },
+    {
+      "id": 3293,
+      "workflowId": "socialstudio0001",
+      "status": "success",
+      "startedAt": "2026-10-31T13:49:44.462+01:00",
+      "stoppedAt": "2026-10-31T13:49:44.715+01:00"
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "run_id": "c1324fcc-04d6-4978-bc65-4354fbe4d599",
+  "job_id": "4ddc2a6d-3de0-4f36-b49d-b0167a22e7f1",
+  "started_at": "2026-10-31T12:35:35.647Z",
+  "mode": "mock",
+  "payload": {
+    "brand_id": "10000000-0000-4000-8000-000000000001",
+    "source_type": "ai_only",
+    "topic": "A mysterious voicemail from someone who disappeared ten years ago.",
+    "idempotency_key": "e2-canary:c1324fcc-04d6-4978-bc65-4354fbe4d599",
+    "ai_request": {
+      "task_type": "content_package",
+      "input": {
+        "topic": "A mysterious voicemail from someone who disappeared ten years ago.",
+        "genre": "horror",
+        "audience": "Adult suspense viewers",
+        "duration_seconds": 60,
+        "language": "en",
+        "tone": "Cinematic suspense",
+        "hook_style": "Immediate unsettling revelation",
+        "scene_count": 6,
+        "platforms": [
+          "youtube",
+          "instagram",
+          "facebook"
+        ]
+      },
+      "output_schema_version": "social-studio.ai.v2",
+      "provider_policy": {
+        "mode": "mock",
+        "providers": [
+          "mock-unavailable",
+          "mock"
+        ]
+      },
+      "maximum_cost": 0,
+      "timeout_ms": 120000,
+      "retry_policy": {
+        "max_attempts_per_provider": 1,
+        "initial_backoff_ms": 100
+      }
+    }
+  }
+}

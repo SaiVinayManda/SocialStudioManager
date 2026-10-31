@@ -1,0 +1,12 @@
+import fs from 'node:fs';import path from 'node:path';import {spawnSync} from 'node:child_process';
+import {localGrant,control,until} from './studio-test-client.mjs';
+import {childEnvironment} from '../services/production-adapter/media.mjs';import {demand,uuid} from '../services/studio-runtime/contracts.mjs';
+const root=localGrant(),id=process.argv[2];demand(uuid(id),'AI_TASK_UUID_REQUIRED');demand(process.argv.includes('--restart-existing-postgres'),'EXISTING_POSTGRES_RESTART_CONFIRMATION_REQUIRED');
+const before=await control('/ai/tasks/'+id);demand(before.status==='completed'&&before.simulated===true,'COMPLETED_MOCK_TASK_REQUIRED');
+const exe='C:\\Program Files\\Docker\\Docker\\resources\\cli-plugins\\docker-compose.exe',args=['-p','socialstudio','-f','infrastructure/docker-compose.yml','-f','infrastructure/docker-compose.local-access.yml','restart','postgres'];
+const started=new Date().toISOString(),result=spawnSync(exe,args,{cwd:root,env:{...childEnvironment(root),DOCKER_CONFIG:path.join(root,'.runtime/orchestrator-inspection/docker-empty')},windowsHide:true,encoding:'utf8',timeout:30000,maxBuffer:65536});demand(result.status===0,'POSTGRES_RESTART_FAILED');
+await until(async()=>{try{return (await fetch('http://127.0.0.1:8780/health',{signal:AbortSignal.timeout(2000)})).ok;}catch{return false;}},{timeout:60000,interval:1000});
+const after=await control('/ai/tasks/'+id),n8n=await fetch('http://127.0.0.1:5678/healthz/readiness',{signal:AbortSignal.timeout(5000)});
+demand(after.status===before.status&&after.output_checksum===before.output_checksum&&after.attempt_history.length===before.attempt_history.length&&n8n.ok,'AI_RESTART_PERSISTENCE_FAILED');
+const report={passed:true,started_at:started,completed_at:new Date().toISOString(),task_id:id,status:after.status,output_checksum:after.output_checksum,attempts_before:before.attempt_history.length,attempts_after:after.attempt_history.length,actual_postgres_restart:true,n8n_readiness_http_status:n8n.status,new_inference_requests:0,new_renders:0,public_posts:0};
+const dir=path.join(root,'docs/test-evidence/milestone-e2',started.replaceAll(/[:.]/g,'-'));fs.mkdirSync(dir,{recursive:true});fs.writeFileSync(path.join(dir,'restart-persistence.json'),JSON.stringify(report,null,2)+'\n',{flag:'wx'});console.log(JSON.stringify({...report,evidence:dir}));

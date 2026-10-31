@@ -1,5 +1,21 @@
 # Actual verification results
 
+## E2 AI Brain — 2026-10-31, current implementation evidence
+
+**Real inference: NOT RUN / NOT APPROVED. E2 acceptance remains pending.** Current results are separate from historical supervisor fixture counts and the prior E pipeline baseline.
+
+- Combined secret-free local suite: **88 passed, 0 failed, 0 skipped** (51 AI, 35 existing orchestrator, 2 proxy). [Receipt](test-evidence/milestone-e2/2026-10-31T12-55-33-292Z/unit.json).
+- Actual PostgreSQL lifecycle/constraints: **24/24**, rollback fixtures, not mocked SQL. Actual AI API auth/role checks **11/11**, existing API regressions **13/13**. [PG receipt](test-evidence/milestone-e2/2026-10-31T12-45-14-107Z/postgres-ai-checks.json), [AI auth](test-evidence/milestone-e2/2026-10-31T12-45-14-107Z/ai-api-auth-checks.json), [existing auth](test-evidence/milestone-e2/2026-10-31T12-45-14-107Z/existing-api-regression.json).
+- Actual signed n8n → PG → manager → schema validation → PG → n8n mock canary: **passed, 1.5796999 s host elapsed**. Run `3a5a058b-4664-4130-8071-7e259cc0ca5d`, task `18cb1a4c-ac62-4d57-9d97-ca83e0989ce3`. One immutable output, two **simulated** attempts (`mock-unavailable`, `mock`), no production or publishing tasks. [Canary](test-evidence/milestone-e2/3a5a058b-4664-4130-8071-7e259cc0ca5d/canary.json), [PG rows](test-evidence/milestone-e2/2026-10-31T12-56-19-652Z/postgres.json), [actual workflow-02 successes 3288/3291](test-evidence/milestone-e2/2026-10-31T12-56-19-652Z/n8n.json).
+- Actual PG restart retained task/checksum/history and n8n readiness returned 200: [receipt](test-evidence/milestone-e2/2026-10-31T12-54-50-138Z/restart-persistence.json).
+- Mapped script and scene_plan passed both actual upstream JSON schemas using existing Python/jsonschema; unchanged pilot re-probed **60.000 s, 1080×1920**, SHA-256 `48fb3d02aecb4e83c43654d111194fd44870011c229a8b7387d8a83096858528`. [Artifact receipt](test-evidence/milestone-e2/2026-10-31T12-38-30-404Z/artifact-validation.json). No render.
+- Existing completed-job n8n pipeline/dedup/mock-result regression passed: [receipt](test-evidence/milestone-e-deployed/d9301e97-4f96-4492-a135-c3c71ba3a892-2026-10-31T12-36-29-302Z.json). This reuses prior successful platform receipts; it does not claim twelve fresh publishing executions.
+- Four existing services running/healthy: [snapshot](test-evidence/milestone-e2/2026-10-31T12-56-19-652Z/services.json). Migration versions 1/2 present; 002 checksum `1e123be81d20f82ae5f7dcf77ea7fdcca68c7c091878a4e3e5b93cfb4598a63e`.
+
+Actual discovery: Codex 0.165.0, standalone headless `agy`, 9Router 0.5.112 `/v1/models` HTTP 200. Safe CLI execution, authentication availability/quotas, zero-charge route and real inference are not validated. [Provider evidence](test-evidence/milestone-e2/2026-10-31T12-56-19-652Z/provider-discovery.json). No saved provider credentials were read. No RAM/VRAM or model cost numbers invented.
+
+Initial integration failures were fixed and retained: SQL `42P08` type inference; sandbox-only Python launcher access; old verifier's protective `EEXIST`; metadata version parsing with a PATH warning. Full mapping and limits: [AI_BRAIN_TEST_MATRIX.md](AI_BRAIN_TEST_MATRIX.md). Generated deterministic drafts live under `brands/horror/projects/ai-3ff5a006-6bac-49de-a633-8eac218bbea6/`, outside Git. Actual model-generated output location: **none yet**.
+
 ## Milestone E actual loopback/workflow acceptance — 2026-10-31
 
 **First existing-file MVP passed against actual running n8n/PostgreSQL.** [Primary end-to-end record](test-evidence/milestone-e-deployed/d9301e97-4f96-4492-a135-c3c71ba3a892.json), [20-scenario deployed regression](test-evidence/milestone-e-deployed/regression-709b64e7-3bb1-42b9-bd72-a8d79fc44a98.json), [window/health/resource snapshot](test-evidence/milestone-e-access-01/final-state.json). These supersede earlier zero-import/blocked snapshots below.

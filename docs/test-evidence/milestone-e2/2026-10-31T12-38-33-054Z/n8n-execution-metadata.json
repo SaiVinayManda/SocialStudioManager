@@ -1,0 +1,264 @@
+{
+  "workflows": [
+    {
+      "id": "socialstudio0003",
+      "active": true
+    },
+    {
+      "id": "socialstudio0004",
+      "active": true
+    },
+    {
+      "id": "socialstudio0005",
+      "active": true
+    },
+    {
+      "id": "socialstudio0008",
+      "active": true
+    },
+    {
+      "id": "socialstudio0010",
+      "active": true
+    },
+    {
+      "id": "socialstudio0001",
+      "active": true
+    },
+    {
+      "id": "socialstudio0002",
+      "active": true
+    },
+    {
+      "id": "socialstudio0007",
+      "active": true
+    },
+    {
+      "id": "socialstudio0009",
+      "active": true
+    },
+    {
+      "id": "socialstudio0012",
+      "active": true
+    },
+    {
+      "id": "socialstudio0006",
+      "active": true
+    },
+    {
+      "id": "socialstudio0011",
+      "active": true
+    }
+  ],
+  "recent_executions": [
+    {
+      "id": 3130,
+      "workflowId": "socialstudio0006",
+      "status": "success",
+      "startedAt": "2026-10-31T13:38:29.553+01:00",
+      "stoppedAt": "2026-10-31T13:38:29.598+01:00"
+    },
+    {
+      "id": 3129,
+      "workflowId": "socialstudio0011",
+      "status": "success",
+      "startedAt": "2026-10-31T13:38:27.594+01:00",
+      "stoppedAt": "2026-10-31T13:38:27.635+01:00"
+    },
+    {
+      "id": 3128,
+      "workflowId": "socialstudio0006",
+      "status": "success",
+      "startedAt": "2026-10-31T13:38:24.556+01:00",
+      "stoppedAt": "2026-10-31T13:38:24.604+01:00"
+    },
+    {
+      "id": 3127,
+      "workflowId": "socialstudio0006",
+      "status": "success",
+      "startedAt": "2026-10-31T13:38:19.555+01:00",
+      "stoppedAt": "2026-10-31T13:38:19.593+01:00"
+    },
+    {
+      "id": 3126,
+      "workflowId": "socialstudio0006",
+      "status": "success",
+      "startedAt": "2026-10-31T13:38:14.554+01:00",
+      "stoppedAt": "2026-10-31T13:38:14.592+01:00"
+    },
+    {
+      "id": 3125,
+      "workflowId": "socialstudio0006",
+      "status": "success",
+      "startedAt": "2026-10-31T13:38:09.554+01:00",
+      "stoppedAt": "2026-10-31T13:38:09.593+01:00"
+    },
+    {
+      "id": 3124,
+      "workflowId": "socialstudio0006",
+      "status": "success",
+      "startedAt": "2026-10-31T13:38:04.56+01:00",
+      "stoppedAt": "2026-10-31T13:38:04.601+01:00"
+    },
+    {
+      "id": 3123,
+      "workflowId": "socialstudio0006",
+      "status": "success",
+      "startedAt": "2026-10-31T13:37:59.553+01:00",
+      "stoppedAt": "2026-10-31T13:37:59.591+01:00"
+    },
+    {
+      "id": 3122,
+      "workflowId": "socialstudio0011",
+      "status": "success",
+      "startedAt": "2026-10-31T13:37:57.597+01:00",
+      "stoppedAt": "2026-10-31T13:37:57.636+01:00"
+    },
+    {
+      "id": 3121,
+      "workflowId": "socialstudio0006",
+      "status": "success",
+      "startedAt": "2026-10-31T13:37:54.551+01:00",
+      "stoppedAt": "2026-10-31T13:37:54.595+01:00"
+    },
+    {
+      "id": 3120,
+      "workflowId": "socialstudio0006",
+      "status": "success",
+      "startedAt": "2026-10-31T13:37:49.556+01:00",
+      "stoppedAt": "2026-10-31T13:37:49.602+01:00"
+    },
+    {
+      "id": 3119,
+      "workflowId": "socialstudio0006",
+      "status": "success",
+      "startedAt": "2026-10-31T13:37:44.553+01:00",
+      "stoppedAt": "2026-10-31T13:37:44.586+01:00"
+    },
+    {
+      "id": 3118,
+      "workflowId": "socialstudio0006",
+      "status": "success",
+      "startedAt": "2026-10-31T13:37:39.557+01:00",
+      "stoppedAt": "2026-10-31T13:37:39.598+01:00"
+    },
+    {
+      "id": 3117,
+      "workflowId": "socialstudio0006",
+      "status": "success",
+      "startedAt": "2026-10-31T13:37:32.21+01:00",
+      "stoppedAt": "2026-10-31T13:37:32.293+01:00"
+    },
+    {
+      "id": 3116,
+      "workflowId": "socialstudio0006",
+      "status": "success",
+      "startedAt": "2026-10-31T13:37:29.562+01:00",
+      "stoppedAt": "2026-10-31T13:37:29.602+01:00"
+    },
+    {
+      "id": 3115,
+      "workflowId": "socialstudio0011",
+      "status": "success",
+      "startedAt": "2026-10-31T13:37:27.603+01:00",
+      "stoppedAt": "2026-10-31T13:37:27.661+01:00"
+    },
+    {
+      "id": 3114,
+      "workflowId": "socialstudio0006",
+      "status": "success",
+      "startedAt": "2026-10-31T13:37:24.562+01:00",
+      "stoppedAt": "2026-10-31T13:37:24.603+01:00"
+    },
+    {
+      "id": 3113,
+      "workflowId": "socialstudio0006",
+      "status": "success",
+      "startedAt": "2026-10-31T13:37:19.574+01:00",
+      "stoppedAt": "2026-10-31T13:37:19.638+01:00"
+    },
+    {
+      "id": 3112,
+      "workflowId": "socialstudio0006",
+      "status": "success",
+      "startedAt": "2026-10-31T13:37:14.565+01:00",
+      "stoppedAt": "2026-10-31T13:37:14.607+01:00"
+    },
+    {
+      "id": 3111,
+      "workflowId": "socialstudio0006",
+      "status": "success",
+      "startedAt": "2026-10-31T13:37:09.569+01:00",
+      "stoppedAt": "2026-10-31T13:37:09.606+01:00"
+    },
+    {
+      "id": 3110,
+      "workflowId": "socialstudio0006",
+      "status": "success",
+      "startedAt": "2026-10-31T13:37:04.557+01:00",
+      "stoppedAt": "2026-10-31T13:37:04.603+01:00"
+    },
+    {
+      "id": 3109,
+      "workflowId": "socialstudio0006",
+      "status": "success",
+      "startedAt": "2026-10-31T13:36:59.575+01:00",
+      "stoppedAt": "2026-10-31T13:36:59.623+01:00"
+    },
+    {
+      "id": 3108,
+      "workflowId": "socialstudio0011",
+      "status": "success",
+      "startedAt": "2026-10-31T13:36:57.619+01:00",
+      "stoppedAt": "2026-10-31T13:36:57.658+01:00"
+    },
+    {
+      "id": 3107,
+      "workflowId": "socialstudio0006",
+      "status": "success",
+      "startedAt": "2026-10-31T13:36:54.569+01:00",
+      "stoppedAt": "2026-10-31T13:36:54.616+01:00"
+    },
+    {
+      "id": 3106,
+      "workflowId": "socialstudio0006",
+      "status": "success",
+      "startedAt": "2026-10-31T13:36:49.566+01:00",
+      "stoppedAt": "2026-10-31T13:36:49.607+01:00"
+    },
+    {
+      "id": 3105,
+      "workflowId": "socialstudio0006",
+      "status": "success",
+      "startedAt": "2026-10-31T13:36:44.57+01:00",
+      "stoppedAt": "2026-10-31T13:36:44.612+01:00"
+    },
+    {
+      "id": 3104,
+      "workflowId": "socialstudio0006",
+      "status": "success",
+      "startedAt": "2026-10-31T13:36:39.557+01:00",
+      "stoppedAt": "2026-10-31T13:36:39.599+01:00"
+    },
+    {
+      "id": 3103,
+      "workflowId": "socialstudio0006",
+      "status": "success",
+      "startedAt": "2026-10-31T13:36:34.574+01:00",
+      "stoppedAt": "2026-10-31T13:36:34.617+01:00"
+    },
+    {
+      "id": 3102,
+      "workflowId": "socialstudio0006",
+      "status": "success",
+      "startedAt": "2026-10-31T13:36:29.577+01:00",
+      "stoppedAt": "2026-10-31T13:36:29.619+01:00"
+    },
+    {
+      "id": 3101,
+      "workflowId": "socialstudio0012",
+      "status": "success",
+      "startedAt": "2026-10-31T13:36:28.844+01:00",
+      "stoppedAt": "2026-10-31T13:36:28.94+01:00"
+    }
+  ]
+}

@@ -26,10 +26,14 @@ const flows=[];
 }
 {
   const w=workflow(2,'AI Content Preparation'),entry=trigger(w);
-  const ai=api(w,'Prepare deterministic metadata','/ai/tasks','POST',`={{ {brand_id:$json.brand_id,job_id:$json.job_id,task_type:'title_generation',input:{topic:$json.topic || 'Local video'},provider_policy:{providers:['mock-unavailable','mock']},maximum_cost:0,timeout_ms:5000} }}`);
+  const ai=api(w,'Submit configured AI task','/ai/tasks','POST',`={{ $json.production_settings?.ai_request ? {...$json.production_settings.ai_request,brand_id:$json.brand_id,content_job_id:$json.job_id,idempotency_key:'ai:'+$json.job_id+':v'+$json.content_version,content_version:$json.content_version} : {brand_id:$json.brand_id,job_id:$json.job_id,task_type:'title_generation',input:{topic:$json.topic || 'Local video'},provider_policy:{providers:['mock-unavailable','mock']},maximum_cost:0,timeout_ms:5000} }}`);
   const ok=eq(w,'AI completed','={{ $json.status }}','completed');
+  const pending=eq(w,'AI still active','={{ String(["queued","running","retry_wait"].includes($json.status)) }}','true'),pause=wait(w,'Await AI task',1),read=api(w,'Read AI task status',"={{ 'http://studio-api:8780/ai/tasks/' + ($json.task_id || $json.id) }}",'GET');
   const save=api(w,'Store structured result',"={{ 'http://studio-api:8780/jobs/' + $('Subworkflow input').first().json.job_id + '/ai-result' }}",'POST','={{ {task_id:$json.id} }}');
-  link(w,entry,ai);link(w,ai,ok);link(w,ok,save);link(w,save,call(w,'Continue production',3));flows.push(w);
+  const render=eq(w,'Video production requested','={{ String($json.source_type !== "ai_only") }}','true');
+  const failure=node(w,'AI failure notification','set',{keepOnlySet:true,values:{string:[{name:'job_id',value:"={{ $('Subworkflow input').first().json.job_id }}"},{name:'event_type',value:'production.failed'},{name:'idempotency_key',value:"={{ 'ai.failure:' + $json.id }}"}]}},2);
+  link(w,entry,ai);link(w,ai,ok);link(w,ok,pending,1);link(w,pending,pause);link(w,pause,read);link(w,read,ok);link(w,ok,save);link(w,save,render);link(w,render,call(w,'Continue production',3));link(w,pending,failure,1);link(w,failure,call(w,'Report AI failure',10));
+  flows.push(w);
 }
 {
   const w=workflow(3,'OpenMontage Production'),entry=trigger(w),start=api(w,'Queue production','/jobs','POST','={{ {job_id:$json.job_id} }}'),pause=wait(w,'Await native worker',2),status=api(w,'Read production status',"={{ 'http://studio-api:8780/jobs/' + $json.job_id }}",'GET');

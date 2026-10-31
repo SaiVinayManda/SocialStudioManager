@@ -1,0 +1,26 @@
+{
+  "type": "object",
+  "properties": {
+    "youtube_description": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 5000
+    },
+    "instagram_caption": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 2200
+    },
+    "facebook_caption": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 5000
+    }
+  },
+  "required": [
+    "youtube_description",
+    "instagram_caption",
+    "facebook_caption"
+  ],
+  "additionalProperties": false
+}

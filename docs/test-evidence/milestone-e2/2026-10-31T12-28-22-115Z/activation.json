@@ -1,0 +1,47 @@
+{
+  "steps": [
+    {
+      "name": "read-migration-metadata",
+      "exit_code": 0,
+      "at": "2026-10-31T12:28:22.378Z"
+    },
+    {
+      "name": "read-migration-metadata",
+      "exit_code": 0,
+      "at": "2026-10-31T12:28:22.556Z"
+    },
+    {
+      "name": "apply-ai-migration",
+      "exit_code": 0,
+      "at": "2026-10-31T12:28:22.895Z"
+    },
+    {
+      "name": "read-migration-metadata",
+      "exit_code": 0,
+      "at": "2026-10-31T12:28:23.077Z"
+    },
+    {
+      "name": "restart-studio-api",
+      "exit_code": 0,
+      "at": "2026-10-31T12:28:24.149Z"
+    },
+    {
+      "name": "import-workflow-02",
+      "exit_code": 0,
+      "at": "2026-10-31T12:28:34.596Z"
+    },
+    {
+      "name": "publish-workflow-02",
+      "exit_code": 0,
+      "at": "2026-10-31T12:28:40.152Z"
+    },
+    {
+      "name": "restart-n8n",
+      "exit_code": 0,
+      "at": "2026-10-31T12:28:41.586Z"
+    }
+  ],
+  "model_requests": 0,
+  "credentials_created": 0,
+  "public_posts": 0
+}

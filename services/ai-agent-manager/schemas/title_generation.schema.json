@@ -1,0 +1,38 @@
+{
+  "type": "object",
+  "properties": {
+    "titles": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 150
+          },
+          "platform": {
+            "type": "string",
+            "enum": [
+              "youtube",
+              "instagram",
+              "facebook",
+              "all"
+            ]
+          }
+        },
+        "required": [
+          "title",
+          "platform"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 5,
+      "maxItems": 5
+    }
+  },
+  "required": [
+    "titles"
+  ],
+  "additionalProperties": false
+}

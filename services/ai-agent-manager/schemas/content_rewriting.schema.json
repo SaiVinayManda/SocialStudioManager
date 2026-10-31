@@ -1,0 +1,36 @@
+{
+  "type": "object",
+  "properties": {
+    "revised_text": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 12000
+    },
+    "change_notes": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 1500
+      },
+      "minItems": 1,
+      "maxItems": 24
+    },
+    "preserved_facts": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 1000
+      },
+      "minItems": 0,
+      "maxItems": 30
+    }
+  },
+  "required": [
+    "revised_text",
+    "change_notes",
+    "preserved_facts"
+  ],
+  "additionalProperties": false
+}

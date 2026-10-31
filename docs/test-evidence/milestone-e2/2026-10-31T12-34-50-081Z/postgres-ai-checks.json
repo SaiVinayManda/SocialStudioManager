@@ -1,0 +1,11 @@
+{
+  "passed": false,
+  "checks": 1,
+  "results": [
+    {
+      "name": "migration 002 is recorded with its checksum",
+      "passed": true
+    }
+  ],
+  "error": "42P08"
+}

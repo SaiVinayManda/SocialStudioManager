@@ -1,0 +1,104 @@
+{
+  "timestamp": "2026-10-31T12:10:51.073Z",
+  "credential_access": false,
+  "inference_requests": 0,
+  "commands": [
+    {
+      "name": "codex-version",
+      "exit_code": 0,
+      "evidence": ".runtime\\ai-brain\\discovery\\codex-version.txt"
+    },
+    {
+      "name": "codex-exec-help",
+      "exit_code": 0,
+      "evidence": ".runtime\\ai-brain\\discovery\\codex-exec-help.txt"
+    },
+    {
+      "name": "agy-help",
+      "exit_code": 0,
+      "evidence": ".runtime\\ai-brain\\discovery\\agy-help.txt"
+    }
+  ],
+  "agy": {
+    "path": "C:\\Users\\Vinay\\AppData\\Local\\agy\\bin\\agy.exe",
+    "sha256": "b4bbcc9f65d355bc84523d4f43e1ead34992890baf60c24e4ccbf605e2da6858"
+  },
+  "router": {
+    "version": "0.5.112",
+    "source": "installed public package manifest"
+  },
+  "endpoints": [
+    {
+      "url": "http://127.0.0.1:20128/health",
+      "http_status": 404
+    },
+    {
+      "url": "http://127.0.0.1:20128/v1/models",
+      "http_status": 200,
+      "models": [
+        {
+          "id": "openrouter/typesafe/jev-1.13",
+          "owned_by": "openrouter"
+        },
+        {
+          "id": "agnes/agnes-2.5-flash",
+          "owned_by": "agnes"
+        },
+        {
+          "id": "agnes/agnes-2.5-pro",
+          "owned_by": "agnes"
+        },
+        {
+          "id": "agnes/agnes-2.5-pro-beta",
+          "owned_by": "agnes"
+        },
+        {
+          "id": "agnes/agnes-3.0-flash",
+          "owned_by": "agnes"
+        },
+        {
+          "id": "af/gpt-oss-120b",
+          "owned_by": "af"
+        },
+        {
+          "id": "af/gpt-oss-20b",
+          "owned_by": "af"
+        },
+        {
+          "id": "af/kimi-k2.7-code",
+          "owned_by": "af"
+        },
+        {
+          "id": "mmf/mimo-auto",
+          "owned_by": "mmf"
+        },
+        {
+          "id": "oc/muse-spark-1.2-contributor-free",
+          "owned_by": "oc"
+        },
+        {
+          "id": "oc/muse-spark-1.3-contributor-free",
+          "owned_by": "oc"
+        },
+        {
+          "id": "oc/union-alpha",
+          "owned_by": "oc"
+        },
+        {
+          "id": "oc/jev-1.13-free",
+          "owned_by": "oc"
+        }
+      ],
+      "models_are_not_authorization_or_quota_evidence": true
+    },
+    {
+      "url": "http://127.0.0.1:8780/health",
+      "http_status": 200
+    },
+    {
+      "url": "http://127.0.0.1:5678/healthz/readiness",
+      "http_status": 200
+    }
+  ],
+  "codex_version": "codex-cli 0.165.0\nWARNING: proceeding, even though we could not create PATH aliases: CODEX_HOME points to \"C:\\\\Projects\\\\Manas_Flow\\\\SocialStudio\\\\.runtime\\\\ai-brain\\\\discovery\\\\empty-home\\\\codex\", but that path does not exist"
+}

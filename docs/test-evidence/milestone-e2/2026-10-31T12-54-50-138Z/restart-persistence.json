@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "started_at": "2026-10-31T12:54:50.138Z",
+  "completed_at": "2026-10-31T12:54:51.933Z",
+  "task_id": "18cb1a4c-ac62-4d57-9d97-ca83e0989ce3",
+  "status": "completed",
+  "output_checksum": "361ebc934632c9997497415072a07cb0cb54a5da8d308ad2d805ce25333f92ac",
+  "attempts_before": 2,
+  "attempts_after": 2,
+  "actual_postgres_restart": true,
+  "n8n_readiness_http_status": 200,
+  "new_inference_requests": 0,
+  "new_renders": 0,
+  "public_posts": 0
+}

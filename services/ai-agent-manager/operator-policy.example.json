@@ -1,0 +1,20 @@
+{
+  "approval_id": "E2-REAL-CANARY-01",
+  "authorized": false,
+  "expires_at": "OWNER_APPROVED_EXPIRY_REQUIRED",
+  "maximum_calls": 1,
+  "maximum_tasks": 1,
+  "maximum_cost_usd": 0,
+  "content_job_id": "OWNER_APPROVED_CANARY_JOB_UUID_REQUIRED",
+  "codex": { "enabled": false },
+  "agy": { "enabled": false },
+  "router": {
+    "endpoint": "http://127.0.0.1:20128/v1/chat/completions",
+    "model": "oc/jev-1.13-free",
+    "allowed_response_models": ["oc/jev-1.13-free", "jev-1.13-free"],
+    "auth_mode": "none",
+    "route_verified": false,
+    "reservation_usd": 0,
+    "max_output_tokens": 4000
+  }
+}

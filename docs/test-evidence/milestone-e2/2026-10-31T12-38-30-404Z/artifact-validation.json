@@ -1,0 +1,27 @@
+{
+  "captured_at": "2026-10-31T12:38:30.873Z",
+  "passed": true,
+  "upstream_schema_validation": {
+    "passed": true,
+    "checks": [
+      {
+        "artifact": "script",
+        "upstream_schema_valid": true
+      },
+      {
+        "artifact": "scene_plan",
+        "upstream_schema_valid": true
+      }
+    ],
+    "rendered": false
+  },
+  "existing_pilot": {
+    "ffprobe_exit_code": 0,
+    "width": 1080,
+    "height": 1920,
+    "duration_seconds": 60,
+    "sha256": "48fb3d02aecb4e83c43654d111194fd44870011c229a8b7387d8a83096858528",
+    "unchanged": true
+  },
+  "rendered": false
+}

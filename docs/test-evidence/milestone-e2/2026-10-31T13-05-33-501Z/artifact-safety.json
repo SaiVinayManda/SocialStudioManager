@@ -1,0 +1,12 @@
+{
+  "captured_utc": "2026-10-31T13:05:33.480Z",
+  "files_scanned": 99,
+  "plaintext_secret_hits": 0,
+  "hit_files": [],
+  "values_printed": false,
+  "original_video_sha256": "48fb3d02aecb4e83c43654d111194fd44870011c229a8b7387d8a83096858528",
+  "original_setup_packet_sha256": "7ae25c85329724af724b676bc69c2802a17f1ec24136ba8cb06dc0e0920ee26a",
+  "access_packet_sha256": "dcc860db57fcbc0ea2e86b4a0fa6e6bf5d018bd2c00f0564e45c5e5e4465156e",
+  "proxy_sha256": "39cb42a4ba4f1df48f65d13631a4e9930749ec93dbeab2a810b522fbb6178b67",
+  "override_sha256": "4ce3adb9f0cd9c1ee757eb1816dff2ca831594ba8b707a81ed8008b248ff4a07"
+}

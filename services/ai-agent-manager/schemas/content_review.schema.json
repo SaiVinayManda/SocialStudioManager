@@ -1,0 +1,68 @@
+{
+  "type": "object",
+  "properties": {
+    "scores": {
+      "type": "object",
+      "properties": {
+        "hook_strength": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 10
+        },
+        "narrative_consistency": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 10
+        },
+        "clarity": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 10
+        },
+        "brand_alignment": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 10
+        }
+      },
+      "required": [
+        "hook_strength",
+        "narrative_consistency",
+        "clarity",
+        "brand_alignment"
+      ],
+      "additionalProperties": false
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 1500
+      },
+      "minItems": 0,
+      "maxItems": 20
+    },
+    "policy_notes": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 1500
+      },
+      "minItems": 0,
+      "maxItems": 20
+    },
+    "advisory": {
+      "type": "boolean",
+      "const": true
+    }
+  },
+  "required": [
+    "scores",
+    "findings",
+    "policy_notes",
+    "advisory"
+  ],
+  "additionalProperties": false
+}

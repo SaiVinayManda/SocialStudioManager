@@ -6,6 +6,8 @@ import * as production from '../production-adapter/store.mjs';
 import * as publishing from '../publishing-adapter/store.mjs';
 import * as operations from './operations.mjs';
 import {providerHealth} from '../ai-agent-manager/providers.mjs';
+import * as ai from '../ai-agent-manager/store.mjs';
+import * as aiIntake from '../ai-agent-manager/intake.mjs';
 const send=(res,status,data)=>{res.writeHead(status,{'content-type':'application/json','cache-control':'no-store','x-content-type-options':'nosniff'});res.end(JSON.stringify(data));};
 async function body(req){let bytes=0;const chunks=[];for await(const chunk of req){bytes+=chunk.length;demand(bytes<=262144,'REQUEST_TOO_LARGE',413);chunks.push(chunk);}if(!bytes)return {};try{return JSON.parse(Buffer.concat(chunks).toString('utf8'));}catch{throw new StudioError('INVALID_JSON');}}
 function restrictedPath(root,reference,slug){
@@ -15,7 +17,7 @@ function restrictedPath(root,reference,slug){
   let current=base;demand(!fs.lstatSync(current).isSymbolicLink(),'LINK_FORBIDDEN',403);for(const part of parts){current=path.join(current,part);demand(!fs.lstatSync(current).isSymbolicLink(),'LINK_FORBIDDEN',403);}
   const stat=fs.statSync(target);demand(stat.isFile()&&stat.nlink===1&&stat.size<=1073741824,'UNSAFE_OUTPUT_FILE',403);return target;
 }
-export function createServer({db,secrets,webhookKey,mediaRoot='/studio/media'}){
+export function createServer({db,secrets,webhookKey,mediaRoot='/studio/media',aiEnabled=false}){
   const server=http.createServer({maxHeaderSize:8192},async(req,res)=>{
     try{
       const url=new URL(req.url,'http://localhost');const route=url.pathname;
@@ -24,7 +26,7 @@ export function createServer({db,secrets,webhookKey,mediaRoot='/studio/media'}){
       let m;const data=['POST','PUT','PATCH'].includes(req.method)?await body(req):null;
       if(req.method==='GET'&&route==='/brands'){allow('control','n8n');return send(res,200,{brands:(await db.query('SELECT id,name,slug,default_language FROM studio.brands ORDER BY slug')).rows});}
       if(req.method==='POST'&&route==='/webhooks/verify'){allow('n8n');return send(res,200,await operations.webhook(db,data,webhookKey));}
-      if(req.method==='POST'&&route==='/intake'){allow('control','n8n');return send(res,201,await production.intake(db,data));}
+      if(req.method==='POST'&&route==='/intake'){allow('control','n8n');if(data?.source_type==='ai_only'){demand(aiEnabled,'AI_SCHEMA_NOT_READY',503);return send(res,201,await aiIntake.intake(db,data));}return send(res,201,await production.intake(db,data));}
       if(req.method==='POST'&&route==='/jobs'){
         allow('control','n8n');demand(data&&typeof data==='object'&&!Array.isArray(data),'OBJECT_REQUIRED');let id;
         if(Object.hasOwn(data,'job_id')){exact(data,['job_id'],['job_id']);id=data.job_id;}
@@ -54,13 +56,17 @@ export function createServer({db,secrets,webhookKey,mediaRoot='/studio/media'}){
       if((m=route.match(/^\/publishing\/([a-f0-9-]+)$/))&&req.method==='GET'){allow('n8n','control');return send(res,200,await publishing.publishingJob(db,m[1]));}
       if((m=route.match(/^\/publishing\/([a-f0-9-]+)\/publish\/(youtube|instagram|facebook)$/))&&req.method==='POST'){allow('n8n');return send(res,200,await publishing.publish(db,m[1],m[2]));}
       if((m=route.match(/^\/publishing\/([a-f0-9-]+)\/reconcile$/))&&req.method==='POST'){allow('control','n8n');return send(res,200,await publishing.reconcile(db,m[1]));}
-      if(req.method==='POST'&&route==='/ai/tasks'){allow('n8n','control');return send(res,201,await operations.aiTask(db,data));}
-      if((m=route.match(/^\/ai\/tasks\/([a-f0-9-]+)$/))&&req.method==='GET'){allow('control','n8n');demand(uuid(m[1]),'INVALID_AI_ID');const r=await db.query('SELECT * FROM studio.ai_tasks WHERE id=$1',[m[1]]);demand(r.rowCount,'AI_TASK_NOT_FOUND',404);return send(res,200,r.rows[0]);}
-      if(req.method==='GET'&&route==='/ai/providers/health'){allow('control','n8n');return send(res,200,providerHealth());}
-      if((m=route.match(/^\/jobs\/([a-f0-9-]+)\/ai-result$/))&&req.method==='POST'){allow('n8n');return send(res,200,await operations.saveAi(db,m[1],data));}
+      if(req.method==='POST'&&route==='/ai/tasks'){allow('n8n','control');if(data?.output_schema_version){demand(aiEnabled,'AI_SCHEMA_NOT_READY',503);return send(res,202,await ai.submit(db,data));}return send(res,201,await operations.aiTask(db,data));}
+      if((m=route.match(/^\/ai\/tasks\/([a-f0-9-]+)$/))&&req.method==='GET'){allow('control','n8n');demand(uuid(m[1]),'INVALID_AI_ID');if(aiEnabled)return send(res,200,await ai.getTask(db,m[1]));const r=await db.query('SELECT * FROM studio.ai_tasks WHERE id=$1',[m[1]]);demand(r.rowCount,'AI_TASK_NOT_FOUND',404);return send(res,200,r.rows[0]);}
+      if((m=route.match(/^\/ai\/tasks\/([a-f0-9-]+)\/cancel$/))&&req.method==='POST'){allow('control','n8n');demand(aiEnabled,'AI_SCHEMA_NOT_READY',503);exact(data,[]);return send(res,200,await ai.cancel(db,m[1]));}
+      if((m=route.match(/^\/ai\/tasks\/([a-f0-9-]+)\/history$/))&&req.method==='GET'){allow('control','n8n');demand(aiEnabled,'AI_SCHEMA_NOT_READY',503);const t=await ai.getTask(db,m[1]);return send(res,200,{task_id:t.id,attempts:t.attempt_history});}
+      if(req.method==='GET'&&['/ai/providers/health','/ai/providers/status'].includes(route)){allow('control','n8n');return send(res,200,aiEnabled?await ai.health(db):providerHealth());}
+      if(req.method==='POST'&&route==='/ai/worker/claim'){allow('worker');demand(aiEnabled,'AI_SCHEMA_NOT_READY',503);exact(data,['job_id']);return send(res,200,await ai.claim(db,'live',data.job_id??null));}
+      if((m=route.match(/^\/ai\/worker\/tasks\/([a-f0-9-]+)\/(heartbeat|reserve|complete)$/))&&req.method==='POST'){allow('worker');demand(aiEnabled,'AI_SCHEMA_NOT_READY',503);return send(res,200,await ai[m[2]](db,m[1],data));}
+      if((m=route.match(/^\/jobs\/([a-f0-9-]+)\/ai-result$/))&&req.method==='POST'){allow('n8n');const result=aiEnabled?await aiIntake.saveResult(db,m[1],data):null;return send(res,200,result??await operations.saveAi(db,m[1],data));}
       if(req.method==='POST'&&route==='/notifications'){allow('n8n');return send(res,201,await operations.notify(db,data));}
       if(req.method==='GET'&&route==='/notifications'){allow('control');return send(res,200,{notifications:(await db.query('SELECT * FROM studio.notifications ORDER BY delivered_at DESC LIMIT 100')).rows});}
-      if(req.method==='POST'&&route==='/recovery'){allow('n8n','control');return send(res,200,await operations.recover(db));}
+      if(req.method==='POST'&&route==='/recovery'){allow('n8n','control');const result=await operations.recover(db);return send(res,200,aiEnabled?{...result,...await ai.recover(db)}:result);}
       if(req.method==='GET'&&route==='/reports'){allow('control','n8n');return send(res,200,await operations.reporting(db,url.searchParams.get('brand_id')));}
       throw new StudioError('NOT_FOUND',404);
     }catch(error){
@@ -74,7 +80,9 @@ export async function main(){
   const read=name=>{const value=fs.readFileSync(process.env[name],'utf8').trim();demand(value.length>=32,'MISSING_LOCAL_SECRET');return value;};
   const secrets={control:read('CONTROL_TOKEN_FILE'),n8n:read('N8N_TOKEN_FILE'),worker:read('WORKER_TOKEN_FILE')},webhookKey=read('WEBHOOK_KEY_FILE'),db=await database();
   await db.query('SELECT version FROM studio.schema_migrations WHERE version=1');
-  const server=createServer({db,secrets,webhookKey});server.listen(Number(process.env.PORT??8780),process.env.BIND_HOST??'127.0.0.1',()=>console.log(JSON.stringify({service:'studio-api',ready:true,mode:'mock'})));
-  const stop=()=>server.close(()=>db.end().finally(()=>process.exit(0)));process.on('SIGINT',stop);process.on('SIGTERM',stop);
+  const aiEnabled=(await db.query('SELECT version FROM studio.schema_migrations WHERE version=2')).rowCount===1;
+  let ticking=false;const timer=aiEnabled?setInterval(async()=>{if(ticking)return;ticking=true;try{await ai.tickMock(db);}catch{}finally{ticking=false;}},500):null;
+  const server=createServer({db,secrets,webhookKey,aiEnabled});server.listen(Number(process.env.PORT??8780),process.env.BIND_HOST??'127.0.0.1',()=>console.log(JSON.stringify({service:'studio-api',ready:true,mode:'mock',ai_schema:aiEnabled?2:1})));
+  const stop=()=>{clearInterval(timer);server.close(()=>db.end().finally(()=>process.exit(0)));};process.on('SIGINT',stop);process.on('SIGTERM',stop);
 }
 if(process.argv[1]&&path.resolve(process.argv[1])===fileURLToPath(import.meta.url))main().catch(()=>{console.error(JSON.stringify({service:'studio-api',ready:false,error:'STARTUP_FAILED_NO_SECRET_VALUES_LOGGED'}));process.exitCode=1;});

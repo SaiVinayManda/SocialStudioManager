@@ -1,0 +1,99 @@
+{
+  "type": "object",
+  "properties": {
+    "opening_hook": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 500
+    },
+    "original_script": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 12000
+    },
+    "narration_text": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 12000
+    },
+    "closing_line": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 500
+    },
+    "pacing": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 2000
+    },
+    "scenes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "scene_number": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 24
+          },
+          "duration_seconds": {
+            "type": "number",
+            "minimum": 1,
+            "maximum": 120
+          },
+          "narration": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 3000
+          },
+          "visual_direction": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 2000
+          },
+          "footage_keywords": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 100
+            },
+            "minItems": 1,
+            "maxItems": 8
+          },
+          "transition": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 200
+          },
+          "sound_design": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 1000
+          }
+        },
+        "required": [
+          "scene_number",
+          "duration_seconds",
+          "narration",
+          "visual_direction",
+          "footage_keywords",
+          "transition",
+          "sound_design"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 1,
+      "maxItems": 24
+    }
+  },
+  "required": [
+    "opening_hook",
+    "original_script",
+    "narration_text",
+    "closing_line",
+    "pacing",
+    "scenes"
+  ],
+  "additionalProperties": false
+}

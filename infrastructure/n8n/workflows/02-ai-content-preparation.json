@@ -17,8 +17,8 @@
       }
     },
     {
-      "id": "64407a81b73ebdef96ce279f192877e7",
-      "name": "Prepare deterministic metadata",
+      "id": "bb16b31503a7e02abc661ef998d04ca2",
+      "name": "Submit configured AI task",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
@@ -32,7 +32,7 @@
         "genericAuthType": "httpHeaderAuth",
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "={{ {brand_id:$json.brand_id,job_id:$json.job_id,task_type:'title_generation',input:{topic:$json.topic || 'Local video'},provider_policy:{providers:['mock-unavailable','mock']},maximum_cost:0,timeout_ms:5000} }}",
+        "jsonBody": "={{ $json.production_settings?.ai_request ? {...$json.production_settings.ai_request,brand_id:$json.brand_id,content_job_id:$json.job_id,idempotency_key:'ai:'+$json.job_id+':v'+$json.content_version,content_version:$json.content_version} : {brand_id:$json.brand_id,job_id:$json.job_id,task_type:'title_generation',input:{topic:$json.topic || 'Local video'},provider_policy:{providers:['mock-unavailable','mock']},maximum_cost:0,timeout_ms:5000} }}",
         "options": {
           "timeout": 15000
         }
@@ -66,12 +66,73 @@
       }
     },
     {
+      "id": "eb4db2b285762137c08614fabc304759",
+      "name": "AI still active",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        660,
+        0
+      ],
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ String([\"queued\",\"running\",\"retry_wait\"].includes($json.status)) }}",
+              "operation": "equal",
+              "value2": "true"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "f776b6fc997c68c04c6c36f1ceac0077",
+      "name": "Await AI task",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        880,
+        0
+      ],
+      "parameters": {
+        "resume": "timeInterval",
+        "amount": 1,
+        "unit": "seconds"
+      }
+    },
+    {
+      "id": "4fa0885f1a4b6b491c5ce0f52809a8a8",
+      "name": "Read AI task status",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1100,
+        0
+      ],
+      "parameters": {
+        "method": "GET",
+        "url": "={{ 'http://studio-api:8780/ai/tasks/' + ($json.task_id || $json.id) }}",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "options": {
+          "timeout": 15000
+        }
+      },
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "socialstudioauth",
+          "name": "Social Studio internal API"
+        }
+      }
+    },
+    {
       "id": "8c22d3cf4d846ac45a41965fb26bf19f",
       "name": "Store structured result",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        660,
+        1320,
         0
       ],
       "parameters": {
@@ -94,12 +155,62 @@
       }
     },
     {
+      "id": "240a31148a6996e6a65d452a66354430",
+      "name": "Video production requested",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        1540,
+        0
+      ],
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ String($json.source_type !== \"ai_only\") }}",
+              "operation": "equal",
+              "value2": "true"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "f66da055a82b2a89cc6d38df9fd61dc0",
+      "name": "AI failure notification",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 2,
+      "position": [
+        1760,
+        0
+      ],
+      "parameters": {
+        "keepOnlySet": true,
+        "values": {
+          "string": [
+            {
+              "name": "job_id",
+              "value": "={{ $('Subworkflow input').first().json.job_id }}"
+            },
+            {
+              "name": "event_type",
+              "value": "production.failed"
+            },
+            {
+              "name": "idempotency_key",
+              "value": "={{ 'ai.failure:' + $json.id }}"
+            }
+          ]
+        }
+      }
+    },
+    {
       "id": "21fef5ed03588d2cdb8fc90d43b77cac",
       "name": "Continue production",
       "type": "n8n-nodes-base.executeWorkflow",
       "typeVersion": 1.2,
       "position": [
-        880,
+        1980,
         0
       ],
       "parameters": {
@@ -114,6 +225,28 @@
           "waitForSubWorkflow": false
         }
       }
+    },
+    {
+      "id": "9a1fa47a94e08e077542598a417b5826",
+      "name": "Report AI failure",
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        2200,
+        0
+      ],
+      "parameters": {
+        "source": "database",
+        "workflowId": {
+          "__rl": true,
+          "value": "socialstudio0010",
+          "mode": "id"
+        },
+        "mode": "each",
+        "options": {
+          "waitForSubWorkflow": false
+        }
+      }
     }
   ],
   "connections": {
@@ -121,14 +254,14 @@
       "main": [
         [
           {
-            "node": "Prepare deterministic metadata",
+            "node": "Submit configured AI task",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Prepare deterministic metadata": {
+    "Submit configured AI task": {
       "main": [
         [
           {
@@ -147,6 +280,53 @@
             "type": "main",
             "index": 0
           }
+        ],
+        [
+          {
+            "node": "AI still active",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI still active": {
+      "main": [
+        [
+          {
+            "node": "Await AI task",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "AI failure notification",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Await AI task": {
+      "main": [
+        [
+          {
+            "node": "Read AI task status",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Read AI task status": {
+      "main": [
+        [
+          {
+            "node": "AI completed",
+            "type": "main",
+            "index": 0
+          }
         ]
       ]
     },
@@ -154,7 +334,29 @@
       "main": [
         [
           {
+            "node": "Video production requested",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Video production requested": {
+      "main": [
+        [
+          {
             "node": "Continue production",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI failure notification": {
+      "main": [
+        [
+          {
+            "node": "Report AI failure",
             "type": "main",
             "index": 0
           }

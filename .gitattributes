@@ -14,3 +14,20 @@ services/loopback-proxy/server.mjs text eol=lf
 infrastructure/docker-compose.local-access.yml text eol=lf
 # Preserve raw access/setup stdout and stderr, including native line endings.
 docs/test-evidence/milestone-e-access-01/*/*.log -text -diff
+# E2 canary scope digests must survive Windows checkouts byte-for-byte.
+docs/AI_BRAIN_CANARY_APPROVAL.md text eol=lf
+docs/AI_BRAIN_CANARY_SCOPE.json text eol=lf
+services/ai-agent-manager/*.mjs text eol=lf
+services/ai-agent-manager/*.json text eol=lf
+services/ai-agent-manager/README.md text eol=lf
+services/ai-agent-manager/schemas/*.json text eol=lf
+services/studio-runtime/*.mjs text eol=lf
+services/production-adapter/*.mjs text eol=lf
+brands/*/config/ai.json text eol=lf
+infrastructure/n8n/workflows/02-ai-content-preparation.json text eol=lf
+scripts/ai-brain-canary.mjs text eol=lf
+scripts/verify-ai-artifacts.mjs text eol=lf
+scripts/record-ai-deployment.mjs text eol=lf
+scripts/studio-test-client.mjs text eol=lf
+scripts/generate-studio-workflows.mjs text eol=lf
+scripts/check-ai-openmontage.py text eol=lf

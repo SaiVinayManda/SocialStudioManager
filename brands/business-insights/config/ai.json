@@ -1,0 +1,24 @@
+{
+  "slug": "business-insights",
+  "identity": "Evidence-aware business education",
+  "audience": "Founders and working professionals",
+  "tone": "Concise, analytical, accessible",
+  "restrictions": [
+    "No personalised financial advice",
+    "Do not invent statistics or citations"
+  ],
+  "language": "en",
+  "preferred_duration_seconds": 60,
+  "content_format": "vertical short video",
+  "platform_guidance": {
+    "youtube": "Clear title and informative description",
+    "instagram": "Concise caption and relevant hashtags",
+    "facebook": "Accessible context and a clear opening"
+  },
+  "provider_order": [
+    "codex",
+    "agy",
+    "9router"
+  ],
+  "prompt_template_version": "studio-prompts-2026-10-31.1"
+}

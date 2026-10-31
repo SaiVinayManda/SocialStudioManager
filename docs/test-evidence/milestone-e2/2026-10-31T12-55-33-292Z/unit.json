@@ -1,0 +1,16 @@
+{
+  "started_at": "2026-10-31T12:55:33.292Z",
+  "completed_at": "2026-10-31T12:55:39.779Z",
+  "command": "node --test --test-reporter=tap tests/ai-brain/runtime.test.mjs tests/orchestrator/runtime.test.mjs tests/orchestrator/proxy.test.mjs",
+  "exit_code": 0,
+  "counts": {
+    "tests": 88,
+    "pass": 88,
+    "fail": 0,
+    "skipped": 0
+  },
+  "passed": true,
+  "providers": "simulated fixtures only; no real inference",
+  "postgres_executed": false,
+  "n8n_executed": false
+}

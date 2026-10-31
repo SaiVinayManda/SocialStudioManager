@@ -1,0 +1,27 @@
+{
+  "steps": [
+    {
+      "name": "read-migration-metadata",
+      "exit_code": 0,
+      "at": "2026-10-31T12:49:39.604Z"
+    },
+    {
+      "name": "read-migration-metadata",
+      "exit_code": 0,
+      "at": "2026-10-31T12:49:39.780Z"
+    },
+    {
+      "name": "read-migration-metadata",
+      "exit_code": 0,
+      "at": "2026-10-31T12:49:39.985Z"
+    },
+    {
+      "name": "restart-studio-api",
+      "exit_code": 0,
+      "at": "2026-10-31T12:49:40.605Z"
+    }
+  ],
+  "model_requests": 0,
+  "credentials_created": 0,
+  "public_posts": 0
+}

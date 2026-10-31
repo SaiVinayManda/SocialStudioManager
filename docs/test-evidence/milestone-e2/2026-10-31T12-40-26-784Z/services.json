@@ -1,0 +1,22 @@
+[
+  {
+    "service": "loopback-proxy",
+    "state": "running",
+    "health": "healthy"
+  },
+  {
+    "service": "n8n",
+    "state": "running",
+    "health": "healthy"
+  },
+  {
+    "service": "postgres",
+    "state": "running",
+    "health": "healthy"
+  },
+  {
+    "service": "studio-api",
+    "state": "running",
+    "health": "healthy"
+  }
+]
