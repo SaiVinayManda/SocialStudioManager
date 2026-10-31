@@ -1,0 +1,53 @@
+{
+  "approval_id": "E4-ROUTE-CONFIG-01",
+  "state": "PENDING_OWNER_APPROVAL",
+  "owner_approved": false,
+  "prepared_at": "2026-10-31T22:25:40.880Z",
+  "expires_at": "2026-11-01T18:00:00Z",
+  "maximum_minutes": 20,
+  "maximum_new_model_entries": 1,
+  "maximum_inference_calls": 0,
+  "maximum_cost_usd": 0,
+  "provider": "openrouter",
+  "connection": "SocialManager",
+  "upstream_model": "nvidia/nemotron-3.5-super-vl:free",
+  "qualified_model": "openrouter/nvidia/nemotron-3.5-super-vl:free",
+  "files": [
+    {
+      "path": "docs/E4_ROUTE_CONFIGURATION_APPROVAL.md",
+      "sha256": "7932a1d7d82ec24b99990d5762102c92b8d77b0b9c05a1ffc09272dbb39077a3"
+    },
+    {
+      "path": "scripts/e4-exact-route-source.mjs",
+      "sha256": "bb9e22a8a048068835073440881111d5a946be686730e9c131c8e2387172e0b0"
+    },
+    {
+      "path": "scripts/e4-exact-route-status.mjs",
+      "sha256": "3f9d1a86819eb3abc47838f9f94ed3c9b6023d2c243fe903cdccbc1a66c18870"
+    },
+    {
+      "path": "scripts/test-e4-router-core.mjs",
+      "sha256": "20c587c6bbb59e7a08c89f516e6a367e6b5fe9c569b80952359ca2302488c230"
+    },
+    {
+      "path": "scripts/e4-source-redaction.mjs",
+      "sha256": "eb22b21e494ab67d756b657620d236e3a6eabea180c2be05c10a56e420be191d"
+    },
+    {
+      "path": "docs/test-evidence/milestone-e4/exact-route/dashboard-observations.json",
+      "sha256": "d662ca384fb6256ffaef6954a8b1b34acb860f5544f89ab079accc5874a60058"
+    },
+    {
+      "path": "docs/test-evidence/milestone-e4/exact-route/current-model-status.json",
+      "sha256": "ac36d85521b01366ee0e576eba12f0846ba01adf7abc92b370456b903893ce22"
+    },
+    {
+      "path": "docs/test-evidence/milestone-e4/exact-route/offline-core-test.json",
+      "sha256": "92544f791f46ac2a0a180561cd3d2eac382a58208f2ea017be3261e447d5af67"
+    },
+    {
+      "path": "docs/test-evidence/milestone-e4/exact-route/request-builder-source.json",
+      "sha256": "30cd481a7459364219cdc0445e7ce0e37c10aaf4b96ca702048cfe189f84ddb1"
+    }
+  ]
+}

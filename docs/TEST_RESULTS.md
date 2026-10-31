@@ -1,5 +1,15 @@
 # Actual verification results
 
+## E4 exact route investigation — 2026-10-31, no inference
+
+- **Actual authenticated metadata check passed 1/1**, zero failures, for OpenRouter `SocialManager`. Its source-confirmed upstream is a key-status GET. No model generation/key reveal. [UI receipt](test-evidence/milestone-e4/exact-route/dashboard-observations.json).
+- Prepared/cancelled exact Model ID form; preview matched. Target is not registered. Native save/Test handlers were source-inspected: saving metadata is separate; Enter in Model ID invokes Test. One active connection, round robin off and no combos were observed.
+- **Three installed-core offline cases passed:** 200 one stub call, 429 one, 503 four. Every request preserved exact model, JSON schema, zero-price/NVIDIA/no-fallback controls, disabled reasoning and empty plugins. This verifies core compatibility but **fails the strict one-attempt assumption**. No real quota error, model failover or inference. [Result/fingerprints](test-evidence/milestone-e4/exact-route/offline-core-test.json).
+- Local catalog remains 37 IDs without the target. Official target price/schema was rechecked. [Metadata](test-evidence/milestone-e4/exact-route/current-model-status.json), [narrowed redacted source](test-evidence/milestone-e4/exact-route/request-builder-source.json). Source-helper missing-marker failures were corrected before final successful extraction. No settings changed.
+- New scripts passed Node syntax checks. Prior 145 local/60 deployed checks below are preserved baseline evidence, not rerun totals. Existing production code/workflows were unchanged; no new render/regression expansion was needed.
+
+Pending: [configuration-only permission](E4_ROUTE_CONFIGURATION_APPROVAL.md), retry-bound resolution and a fresh final inference packet. No E4 AI output, MP4, QC, n8n generation IDs or mock publication records exist. No old model-specific grant is reused. [Next steps](E4_EXACT_ROUTE_FINDINGS.md).
+
 ## E4 shadow-topic revision — 2026-10-31 20:26–20:28 UTC
 
 **145/145 local tests passed, zero skipped**, including old-topic/approval rejection and public-source secret-literal redaction (complete/truncated forms). Provider requests are simulated test responses. [Report](test-evidence/milestone-e4/regressions/2026-10-31T20-26-48-417Z/unit.json), [TAP](test-evidence/milestone-e4/regressions/2026-10-31T20-26-48-417Z/unit.tap).

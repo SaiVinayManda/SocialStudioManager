@@ -1,0 +1,19 @@
+{
+  "at": "2026-10-31T22:16:50.301Z",
+  "local_model_count": 37,
+  "local_openrouter_ids": [
+    "openrouter/typesafe/jev-1.13"
+  ],
+  "exact_model_registered": false,
+  "public_pricing": {
+    "model": "nvidia/nemotron-3.5-super-vl:free",
+    "provider": "nvidia",
+    "prompt_price": 0,
+    "completion_price": 0,
+    "public_endpoint": "https://openrouter.ai/api/v1/models/nvidia/nemotron-3.5-super-vl:free/endpoints",
+    "checked_at": "2026-10-31T22:16:50.300Z",
+    "account_entitlement_verified": false
+  },
+  "inference_calls": 0,
+  "credentials_accessed": false
+}

@@ -1,5 +1,7 @@
 # Supervisor security and acceptance boundary
 
+E4 exact-route update (2026-10-31): supported authenticated UI and OpenRouter-only key-status metadata check succeeded without key/cookie extraction. One model registration is pending; inference stays off. Offline installed-core tests preserve price/provider controls but prove default retries (four attempts on 503); do not claim one-attempt enforcement or relax the existing guard. Enter in Model ID invokes a separate inference Test and is excluded from configuration approval. No unattended CLI, new credential, service rebuild, public posting or advanced supervisor activation. [Packet](E4_ROUTE_CONFIGURATION_APPROVAL.md).
+
 ## Current E3 local production boundary
 
 The owner-authorised topic pipeline runs fixed, digest-pinned local code with finite storyboard/component/voice/style vocabularies, derived same-brand paths, verified local asset/licence hashes, no shell/URL/FFmpeg-filter parameters from model output, clean subprocess environment and bounded single-job execution. Selected local video decoding limits FFmpeg protocols to file/pipe; unverified assets become explicit original procedural fallback. A persistent job budget, duration/timeout and expiry cap local rendering. This is trusted local media code, not proof of an OS sandbox or permission to run agent-generated code.

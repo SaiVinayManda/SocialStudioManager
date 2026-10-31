@@ -1,5 +1,11 @@
 # Human actions and approval register
 
+## Immediate E4 action — exact model registration only
+
+Review **E4-ROUTE-CONFIG-01** under [the exact packet](E4_ROUTE_CONFIGURATION_APPROVAL.md) and [digest scope](E4_ROUTE_CONFIGURATION_SCOPE.json), or perform its seven dashboard steps. It adds only `nvidia/nemotron-3.5-super-vl:free` to existing OpenRouter `SocialManager`; connection validation passed 1/1, so no reconnection is needed. No key access, alias/combo creation, inference, worker activation or rendering is included. **Do not press Enter in Model ID:** source confirms it invokes model Test.
+
+After registration, require client route `openrouter/nvidia/nemotron-3.5-super-vl:free` and settle the retry bound before requesting a fresh final inference grant. The offline core preserved restrictions but made four attempts on 503; current zero-extra-retry guards remain unchanged. Old model-specific packets are not reused. [Evidence](E4_EXACT_ROUTE_FINDINGS.md).
+
 ## E4 current action — shadow-topic revision, E4-FREE-CANARY-02
 
 Owner-reported OpenRouter/Antigravity setup was inspected through unauthenticated metadata and installed static code. The catalogue is reachable, but it does not prove upstream auth, quota or zero-charge controls. Protected alias/combo/pricing APIs returned 401 and were not bypassed. No browser control is requested for this continuation. [Exact findings](E4_CONNECTION_VERIFICATION.md).

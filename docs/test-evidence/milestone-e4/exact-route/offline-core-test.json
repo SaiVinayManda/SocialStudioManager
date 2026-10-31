@@ -1,0 +1,73 @@
+{
+  "at": "2026-10-31T22:11:54.009Z",
+  "passed": true,
+  "offline_only": true,
+  "actual_installed_module_factories": [
+    96179,
+    74957,
+    74379,
+    86724,
+    41004
+  ],
+  "provider_config": "Non-secret fixed OpenRouter endpoint; no private runtime overrides",
+  "sources": [
+    {
+      "file": "7373.js",
+      "sha256": "caacdd6674c1ac0fb8097800ceda5ad3945f2d91d9ff83af2c1958ca81d51510"
+    },
+    {
+      "file": "9696.js",
+      "sha256": "69b2561ebe18330bdeaa529498451b7e63ffe77f6d30716b7ff8478e0a70d4a8"
+    },
+    {
+      "file": "9609.js",
+      "sha256": "0cce7a9e615a84f5bcb390fa91b06319075dc7de5c351b4d4660a1e9e97fbae4"
+    }
+  ],
+  "checks": [
+    {
+      "http_fixture": 200,
+      "upstream_mock_calls": 1,
+      "provider_controls_preserved": true,
+      "model_unchanged": true,
+      "single_attempt": true
+    },
+    {
+      "http_fixture": 429,
+      "upstream_mock_calls": 1,
+      "provider_controls_preserved": true,
+      "model_unchanged": true,
+      "single_attempt": true
+    },
+    {
+      "http_fixture": 503,
+      "upstream_mock_calls": 4,
+      "provider_controls_preserved": true,
+      "model_unchanged": true,
+      "single_attempt": false
+    }
+  ],
+  "default_retries": {
+    "429": {
+      "attempts": 0,
+      "delayMs": 0
+    },
+    "502": {
+      "attempts": 3,
+      "delayMs": 3000
+    },
+    "503": {
+      "attempts": 3,
+      "delayMs": 2000
+    },
+    "504": {
+      "attempts": 2,
+      "delayMs": 3000
+    }
+  },
+  "routing_fields_preserved_in_core": true,
+  "one_upstream_attempt_guaranteed": false,
+  "real_network_calls": 0,
+  "model_inference_calls": 0,
+  "live_credentials_accessed": false
+}

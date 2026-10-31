@@ -1,5 +1,11 @@
 # Social Studio implementation plan
 
+## Current E4 gate — exact route configuration
+
+Authenticated UI and a real metadata-only check confirmed the existing OpenRouter connection works. The exact free Nemotron model is suggested but not registered. Prepared/cancelled form verified its upstream ID. A narrow one-entry [configuration approval](E4_ROUTE_CONFIGURATION_APPROVAL.md) is ready; inference authorization comes separately after registration and limits are verified.
+
+Three installed-core offline tests preserved exact model/price/provider/schema restrictions; 503 made four attempts, so strict single-attempt readiness remains blocked. Do not patch/reinstall services or silently accept retries. Existing production code/provider priority is unchanged. [Actual findings](E4_EXACT_ROUTE_FINDINGS.md). Remaining estimate: 10–20 minutes for approved registration/verification, then 30–60 minutes for a separately approved inference/render if the route succeeds.
+
 ## Latest E4 shadow-topic continuation — 2026-10-31
 
 The owner reports OpenRouter and Antigravity connected in existing 9Router. Read-only API/source verification found 37 advertised IDs, including 27 `ag/` models and the decision-only OpenRouter Jev entry. No text-generation request was sent. [Findings and evidence](E4_CONNECTION_VERIFICATION.md).
