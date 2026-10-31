@@ -1,5 +1,7 @@
 # Milestone E2 AI Brain — deployed local state
 
+**Latest, 2026-10-31 13:13 UTC:** conditional E2-REAL-CANARY-01 approval was received, but preflight stopped before inference. Exact model remains listed; pricing metadata is protected (401), no-paid-fallback/charge conditions are unverified, and Jev's documented decision-only interface is unsuitable for scriptwriting. No model substitution or invocation. [Current findings and minimum next evidence](AI_BRAIN_CANARY_PREFLIGHT.md). Older not-authorised snapshots below mean no unconditional activation, not absence of the owner's conditional grant.
+
 2026-10-31: the durable manager and asynchronous n8n integration are running. **Real inference has not been authorised or executed. E2 is not accepted.** Advanced supervisor work remains deferred. The completed Horror MP4 has not been regenerated or published.
 
 The existing Studio API, PostgreSQL and n8n were extended in place. No dependencies, images or models were installed; no credentials were created or changed. The owner file `implementationsoofar.md` is preserved unmodified and uncommitted.

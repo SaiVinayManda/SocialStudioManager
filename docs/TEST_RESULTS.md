@@ -1,5 +1,13 @@
 # Actual verification results
 
+## E2 conditional real-canary preflight — 2026-10-31 13:13 UTC
+
+**STOPPED BEFORE INFERENCE; not a real-provider pass or a live provider failure.** All 46 execution digests and both packet/manifest digests matched; absolute expiry unexpired. `GET /v1/models` on existing loopback 9Router returned HTTP 200 and lists exact `oc/jev-1.13-free`. `GET /api/pricing` returned HTTP 401; no authentication retry, secrets/config access or model test. Local route pinning, no-paid-fallback/substitution and extra-charge conditions could not be verified.
+
+Official TypeSafe/OpenCode documentation confirms Jev uses typed decision questions rather than text generation; the earlier packet chose the wrong model type for a horror script. Public upstream free pricing is not proof of this installed route's billing policy. [Primary sources, exact blocker and receipt](AI_BRAIN_CANARY_PREFLIGHT.md), [actual metadata JSON](test-evidence/milestone-e2/canary-preflight-2026-10-31T13-13-21-862Z/preflight.json).
+
+Inference requests **0**; actual model/response duration/token usage/billed cost **not measured**; no new task/attempt/output records or generated output. No n8n job submitted, render, publishing, software install, CLI agent or privileged deployment. A syntax-only helper error was corrected before I/O; subsequent `node --check` and the two-GET metadata preflight passed. Prior 88-test/mock/persistence evidence below was not rerun or represented as real inference. Conditional owner grant recorded; no unconditional activation or priority change.
+
 ## E2 AI Brain — 2026-10-31, current implementation evidence
 
 **Real inference: NOT RUN / NOT APPROVED. E2 acceptance remains pending.** Current results are separate from historical supervisor fixture counts and the prior E pipeline baseline.

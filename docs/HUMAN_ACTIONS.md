@@ -1,5 +1,11 @@
 # Human actions and approval register
 
+## Latest E2 conditional grant — 2026-10-31
+
+The owner **conditionally approved E2-REAL-CANARY-01**, requiring verified zero-charge routing with no paid fallback or substitution before inference. Do not ask for the same approval again as though it was never received. The condition remains unsatisfied: 9Router model listing is HTTP 200, but its pricing endpoint is HTTP 401 and protected route/account metadata was not accessed. No inference or active runtime receipt was created. [Exact preflight results](AI_BRAIN_CANARY_PREFLIGHT.md).
+
+The earlier packet's `oc/jev-1.13-free` selection is also unsuitable: primary documentation identifies Jev as a typed decision model, not a prose generator. Minimum next human action: identify/approve a supported text-generation route and provide redacted exact upstream/current zero-cost entitlement/no-paid-fallback or substitution evidence. Do not send credentials. A changed model/contract requires a revised scope; there is no permission to substitute silently. No paid request, Codex/agy execution, render or publishing is approved. The original packet and its digests remain intact.
+
 ## E2 current blocker — real model canary, NOT GRANTED
 
 The E2 local manager, additive migration 002 and workflow 02 are running and mock-tested. Existing infrastructure/auth grants were reused only within the existing internal service configuration; no installers, key generation or owner bootstrap repeated. **E2 is not complete.** See [implementation guide](AI_BRAIN.md) and [actual test matrix](AI_BRAIN_TEST_MATRIX.md).
