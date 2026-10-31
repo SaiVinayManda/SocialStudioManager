@@ -1,5 +1,13 @@
 # Supervisor security and acceptance boundary
 
+## Current E3 local production boundary
+
+The owner-authorised topic pipeline runs fixed, digest-pinned local code with finite storyboard/component/voice/style vocabularies, derived same-brand paths, verified local asset/licence hashes, no shell/URL/FFmpeg-filter parameters from model output, clean subprocess environment and bounded single-job execution. Selected local video decoding limits FFmpeg protocols to file/pipe; unverified assets become explicit original procedural fallback. A persistent job budget, duration/timeout and expiry cap local rendering. This is trusted local media code, not proof of an OS sandbox or permission to run agent-generated code.
+
+The proposed E3 real-AI worker is HTTP-only and disabled: its manifest is BLOCKED_ROUTE_EVIDENCE. Actual blocked-start testing stops before internal-key access/inference. Model/route entitlement and no-paid-substitution enforcement remain unverified; a boolean/zero-cost reservation cannot establish a financial guarantee. Source/route hashes, owner grant, three exact topics/job bindings, max three requests and zero permitted cost are required before activation. Codex/agy executors remain absent; their priority is preserved without unrestricted unattended execution. No old Jev grant was reused. [Blocked packet](E3_AI_APPROVAL.md).
+
+Existing checksum/version approvals and brand-scoped mock destinations are unchanged. Ordinary topic jobs receive no automatic mock-test approval. Real publishing, model credentials/auth changes, installations, public exposure, Windows services and advanced supervisor activation remain separately gated. [Actual test/recovery limits](E3_DYNAMIC_VIDEO.md).
+
 ## Current E2 AI boundary
 
 E2 extends the existing authenticated local API, with strict v2 input/output contracts, one active AI attempt, leases/deadlines, budget reservations and immutable brand-bound outputs. Common credential-shaped editorial input/output is rejected before persistence; diagnostics are categories, not raw provider errors. No arbitrary HTTP command/path/endpoint interface is exposed. Only existing internal role keys are reused. The n8n/app/PG network and fixed loopback proxy are unchanged.

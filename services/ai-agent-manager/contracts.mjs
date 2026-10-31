@@ -42,7 +42,7 @@ export function categorize(error){
   const code=error?.code??'';
   if(code==='AI_CREDENTIAL_MATERIAL_DENIED')return 'credential_policy';
   if(code==='AI_BRAND_MISMATCH'||code==='INVALID_AI_BRAND_PROFILE'||code==='AI_UNSAFE_ARTIFACT_PATH'||code==='AI_LINK_FORBIDDEN')return 'unsafe_request';
-  if(code.startsWith('AI_OUTPUT')||code.startsWith('AI_SCENE')||code==='AI_DURATION_MISMATCH'||code==='AI_STORYBOARD_INCONSISTENT'||code==='AI_NARRATION_INCONSISTENT')return 'invalid_output';
+  if(code.startsWith('AI_OUTPUT')||code.startsWith('AI_SCENE')||code==='AI_DURATION_MISMATCH'||code==='AI_STORYBOARD_INCONSISTENT'||code==='AI_NARRATION_INCONSISTENT'||code==='AI_SCRIPT_SPEECH_BUDGET_EXCEEDED')return 'invalid_output';
   return 'provider_outage';
 }
 export class ProviderError extends Error{constructor(category){super(category);this.category=category;this.code=category;}}

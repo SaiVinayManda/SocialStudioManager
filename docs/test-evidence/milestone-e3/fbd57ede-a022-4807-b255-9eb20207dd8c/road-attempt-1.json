@@ -1,0 +1,639 @@
+{
+  "key": "road",
+  "title": "The Empty Road",
+  "topic": "A driver sees someone standing in the middle of an abandoned road.",
+  "started_at": "2026-10-31T15:47:26.095Z",
+  "script_source": "explicit fixture fallback",
+  "model_calls": 0,
+  "public_posts": 0,
+  "job_id": "4821d85d-612a-4f81-8fad-b2d04fffaa3c",
+  "ai": {
+    "task_id": "409ebd1a-fed1-46d0-b76e-5a7edea501a9",
+    "provider": "mock",
+    "model": "deterministic-fixture-v2",
+    "simulated": true,
+    "duration_ms": 94,
+    "checksum": "ee0f611a60d4fcf4ff4810491e27f0e3e0e97b66555028f327828ea6dcf559b5",
+    "attempt_history": [
+      {
+        "id": "214d9e32-059c-4937-8ac8-22601e3cb997",
+        "provider": "mock",
+        "model": "deterministic-fixture-v2",
+        "attempt_number": 1,
+        "status": "completed",
+        "error_category": null,
+        "duration_ms": 9,
+        "token_usage": null,
+        "actual_cost": 0,
+        "estimated_cost": 0,
+        "reserved_cost": 0,
+        "exit_code": null,
+        "simulated": true,
+        "started_at": "2026-10-31T15:47:26.320Z",
+        "completed_at": "2026-10-31T15:47:26.329Z"
+      }
+    ]
+  },
+  "script": "The road was empty. Then my headlights found someone waiting.",
+  "package": {
+    "script": {
+      "ending": "Then my headlights found someone waiting",
+      "narration_text": "The road was empty. Then my headlights found someone waiting.",
+      "estimated_duration_seconds": 5
+    },
+    "concept": {
+      "angle": "Explicit fixture: an ordinary setting becomes unsettling",
+      "audience": "Adult suspense-story viewers",
+      "opening_hook": "The road was empty.",
+      "narrative_arc": "Establish, disturb, leave an unresolved ending",
+      "emotional_tone": "Cinematic, tense, clear English"
+    },
+    "metadata": {
+      "titles": [
+        "The Empty Road",
+        "The Empty Road: A Short Story",
+        "The Empty Road: After Dark",
+        "The Empty Road: Who Was There?",
+        "The Empty Road: Original Fiction"
+      ],
+      "hashtags": {
+        "youtube": [
+          "#OriginalFiction",
+          "#ShortStory"
+        ],
+        "facebook": [
+          "#OriginalFiction"
+        ],
+        "instagram": [
+          "#OriginalFiction",
+          "#ShortStory"
+        ]
+      },
+      "youtube_title": "The Empty Road",
+      "facebook_caption": "A driver sees someone standing in the middle of an abandoned road. Original fiction for review.",
+      "instagram_caption": "The Empty Road. An original fictional short.",
+      "youtube_description": "Original fictional test draft. A driver sees someone standing in the middle of an abandoned road. Script/storyboard supplied by a labelled deterministic fixture; no model inference."
+    },
+    "storyboard": {
+      "scenes": [
+        {
+          "asset_id": "",
+          "component": "image_motion",
+          "narration": "The road was empty. Then my headlights found someone waiting.",
+          "atmosphere": "Brand-directed, restrained atmospheric lighting",
+          "audio_cues": [
+            "drone",
+            "wind"
+          ],
+          "transition": "fade",
+          "asset_query": [
+            "road"
+          ],
+          "environment": "road",
+          "scene_number": 1,
+          "text_overlay": "",
+          "start_seconds": 0,
+          "camera_movement": "pan_left",
+          "duration_seconds": 5,
+          "visual_description": "Foggy road, headlights and distant silhouetted figure; original local illustration with camera motion"
+        }
+      ]
+    }
+  },
+  "asset": {
+    "id": "e87ffdbc-720a-4a49-abf8-ec487fce8994",
+    "job_id": "4821d85d-612a-4f81-8fad-b2d04fffaa3c",
+    "brand_id": "10000000-0000-4000-8000-000000000001",
+    "file_reference": {
+      "root_id": "generated",
+      "relative_path": "horror/topic-c0af6f72736bc4c27de87f1eb9ae282c/final/video.mp4",
+      "engine_project": "topic-c0af6f72736bc4c27de87f1eb9ae282c"
+    },
+    "media_type": "video",
+    "checksum": "08fff3e4c2b883937592544eb378d8783cde0ee5f27be483fe5933fe61853670",
+    "duration": 5,
+    "width": 1080,
+    "height": 1920,
+    "byte_size": "892201",
+    "licence_metadata": {
+      "reference": {
+        "root_id": "generated",
+        "checksum": "9d607255a1beb6a3522e93ee44aa44d4edb543f69ccd6c794e5ab6c5458b1018",
+        "relative_path": "horror/topic-c0af6f72736bc4c27de87f1eb9ae282c/assets/ATTRIBUTION.md"
+      },
+      "evidence_checksum": "9d607255a1beb6a3522e93ee44aa44d4edb543f69ccd6c794e5ab6c5458b1018",
+      "legal_verification": "Operator must review the saved licence evidence; a checksum alone does not grant usage rights."
+    },
+    "validation_report": {
+      "bytes": 892201,
+      "width": 1080,
+      "codecs": {
+        "audio": "aac",
+        "video": "h264"
+      },
+      "engine": "OpenMontage registry: Piper/audio_mixer/video_compose",
+      "height": 1920,
+      "passed": true,
+      "scenes": [
+        {
+          "camera": "pan_left",
+          "number": 1,
+          "component": "image_motion",
+          "environment": "road",
+          "source_sha256": "0cd95f0402758c3d2a0a80a14721da3861024aa75282e3ca540a317a6e66357b"
+        }
+      ],
+      "quality": {
+        "passed": true,
+        "mean_dbfs": -21.6,
+        "peak_dbfs": -4,
+        "subtitle_cues": 2,
+        "freeze_noise_db": -65,
+        "final_resolution": "1080x1920",
+        "source_resolution": "540x960",
+        "no_black_intervals": true,
+        "subtitle_alignment": "Actual per-phrase waveform duration; no overlapping cues; no ASR",
+        "no_frozen_intervals": true,
+        "full_decode_exit_code": 0,
+        "source_motion_metrics": [
+          {
+            "passed": true,
+            "decoded_frames": 150,
+            "one_second_differences": [
+              1.1518210172653198,
+              2.4366049766540527,
+              4.7001543045043945,
+              6.918271541595459
+            ],
+            "longest_exact_duplicate_run": 0,
+            "mean_adjacent_frame_difference": 0.3851928412914276
+          }
+        ]
+      },
+      "checksum": "08fff3e4c2b883937592544eb378d8783cde0ee5f27be483fe5933fe61853670",
+      "duration": 5,
+      "narration": {
+        "text": "The road was empty. Then my headlights found someone waiting.",
+        "voice": "en_US-ljspeech-medium",
+        "phrases": [
+          {
+            "text": "The road was empty.",
+            "scene": 1,
+            "speed_factor": 0.85,
+            "raw_duration_seconds": 1.1261678004535147,
+            "fitted_duration_seconds": 1.3059583333333333
+          },
+          {
+            "text": "Then my headlights found someone waiting.",
+            "scene": 1,
+            "speed_factor": 0.85,
+            "raw_duration_seconds": 2.2175056689342405,
+            "fitted_duration_seconds": 2.5971458333333333
+          }
+        ],
+        "provider": "Piper 1.8.0"
+      },
+      "resources": {
+        "scope": "Whole host/GPU, includes all other applications; not renderer process RSS",
+        "samples": 22,
+        "peak_gpu_vram_mib": null,
+        "peak_host_ram_bytes": 14477721600,
+        "peak_gpu_util_percent": null
+      },
+      "subtitles": {
+        "cues": 2,
+        "artifact_valid": true,
+        "burned_in_verification": "Requires existing digest-bound render evidence or human preview; ffprobe cannot detect rasterized words."
+      },
+      "new_render": true,
+      "performance": {
+        "qc_seconds": 0.6400000000139698,
+        "audio_mix_seconds": 0.21899999998277053,
+        "composition_seconds": 4.827999999979511,
+        "visual_render_seconds": 5.5310000000172295,
+        "asset_selection_seconds": 0.005786299999999756,
+        "worker_pipeline_seconds": 20.40600000001723,
+        "voice_generation_seconds": 7.26600000000326,
+        "storyboard_preparation_seconds": 1.2339999999967404
+      },
+      "audio_present": true,
+      "script_source": "explicit deterministic fixture; no real inference",
+      "source_job_id": "4821d85d-612a-4f81-8fad-b2d04fffaa3c",
+      "elapsed_seconds": 21.394386999999995,
+      "licence_metadata": {
+        "reference": {
+          "root_id": "generated",
+          "checksum": "9d607255a1beb6a3522e93ee44aa44d4edb543f69ccd6c794e5ab6c5458b1018",
+          "relative_path": "horror/topic-c0af6f72736bc4c27de87f1eb9ae282c/assets/ATTRIBUTION.md"
+        },
+        "evidence_checksum": "9d607255a1beb6a3522e93ee44aa44d4edb543f69ccd6c794e5ab6c5458b1018",
+        "legal_verification": "Operator must review the saved licence evidence; a checksum alone does not grant usage rights."
+      },
+      "output_reference": {
+        "root_id": "generated",
+        "relative_path": "horror/topic-c0af6f72736bc4c27de87f1eb9ae282c/final/video.mp4",
+        "engine_project": "topic-c0af6f72736bc4c27de87f1eb9ae282c"
+      },
+      "ffprobe_exit_code": 0,
+      "generation_seconds": 20.94260630000001,
+      "full_decode_exit_code": 0,
+      "subtitle_burn_evidence": {
+        "method": "Successful OpenMontage FFmpeg subtitles filter, saved decoded frame for visual review",
+        "preview": "C:\\Projects\\Manas_Flow\\SocialStudio\\generated-videos\\horror\\topic-c0af6f72736bc4c27de87f1eb9ae282c\\previews\\frame-mid.png"
+      },
+      "engine_project_reference": "topic-c0af6f72736bc4c27de87f1eb9ae282c"
+    },
+    "validation_status": "passed",
+    "created_at": "2026-10-31T15:47:48.150Z",
+    "updated_at": "2026-10-31T15:47:48.150Z",
+    "windows_path": "C:\\Projects\\Manas_Flow\\SocialStudio\\generated-videos\\horror\\topic-c0af6f72736bc4c27de87f1eb9ae282c\\final\\video.mp4"
+  },
+  "approval": {
+    "id": "2be920be-0996-44d3-984f-2b8f7e305423",
+    "checksum": "08fff3e4c2b883937592544eb378d8783cde0ee5f27be483fe5933fe61853670",
+    "version": 2
+  },
+  "rendered_at": "2026-10-31T15:49:57.088Z",
+  "publishing": [
+    {
+      "id": "e0cc3b89-7a32-44fa-8216-fe0949225b6c",
+      "platform": "facebook",
+      "status": "published",
+      "post_id": "mock-facebook-496de6457731285caeb440f6",
+      "media_asset_id": "e87ffdbc-720a-4a49-abf8-ec487fce8994",
+      "checksum": "08fff3e4c2b883937592544eb378d8783cde0ee5f27be483fe5933fe61853670",
+      "attempt_count": 1,
+      "completed_at": "2026-10-31T15:49:59.223Z",
+      "last_error": null
+    },
+    {
+      "id": "04e7e77f-0f92-4724-a491-0698722101ca",
+      "platform": "instagram",
+      "status": "published",
+      "post_id": "mock-instagram-aa8696f82301671bd1b9cd8e",
+      "media_asset_id": "e87ffdbc-720a-4a49-abf8-ec487fce8994",
+      "checksum": "08fff3e4c2b883937592544eb378d8783cde0ee5f27be483fe5933fe61853670",
+      "attempt_count": 1,
+      "completed_at": "2026-10-31T15:50:01.654Z",
+      "last_error": null
+    },
+    {
+      "id": "a6d7f9e6-9d3b-4e44-a0a6-751a3eb877b7",
+      "platform": "youtube",
+      "status": "published",
+      "post_id": "mock-youtube-4fde8a965e2ee2ed6a510b21",
+      "media_asset_id": "e87ffdbc-720a-4a49-abf8-ec487fce8994",
+      "checksum": "08fff3e4c2b883937592544eb378d8783cde0ee5f27be483fe5933fe61853670",
+      "attempt_count": 1,
+      "completed_at": "2026-10-31T15:50:06.677Z",
+      "last_error": null
+    }
+  ],
+  "report": {
+    "jobs_by_brand": [
+      {
+        "slug": "horror",
+        "total": 16,
+        "videos_completed": 7,
+        "pending_approvals": 2,
+        "failed_jobs": 1,
+        "average_production_seconds": 16.35612782500002
+      }
+    ],
+    "publishing_results": [
+      {
+        "slug": "horror",
+        "platform": "facebook",
+        "status": "published",
+        "count": 4
+      },
+      {
+        "slug": "horror",
+        "platform": "instagram",
+        "status": "published",
+        "count": 4
+      },
+      {
+        "slug": "horror",
+        "platform": "youtube",
+        "status": "cancelled",
+        "count": 1
+      },
+      {
+        "slug": "horror",
+        "platform": "youtube",
+        "status": "manual_review",
+        "count": 1
+      },
+      {
+        "slug": "horror",
+        "platform": "youtube",
+        "status": "published",
+        "count": 5
+      }
+    ],
+    "mode": "mock",
+    "public_posts": 0
+  },
+  "notifications": [
+    {
+      "id": "739569aa-4f6e-45d4-a8a7-208c680fb2a2",
+      "event_type": "publishing.succeeded",
+      "sink": "local"
+    },
+    {
+      "id": "0497ba7e-7551-40df-b77e-1d4f053c7319",
+      "event_type": "publishing.succeeded",
+      "sink": "local"
+    },
+    {
+      "id": "29b75665-2a18-48b7-b1d2-81f123f010bc",
+      "event_type": "publishing.succeeded",
+      "sink": "local"
+    },
+    {
+      "id": "3475cdfd-f7a0-4f66-8f4b-5714c47f5290",
+      "event_type": "preview.ready",
+      "sink": "local"
+    },
+    {
+      "id": "15bb3405-abec-41a2-8f1e-c31383364cbd",
+      "event_type": "approval.required",
+      "sink": "local"
+    },
+    {
+      "id": "1d3076d0-4a5f-4847-bec3-22d6c50ca6db",
+      "event_type": "job.accepted",
+      "sink": "local"
+    }
+  ],
+  "executions": [
+    {
+      "id": 5821,
+      "workflow_id": "socialstudio0001",
+      "status": "success",
+      "started_at": "2026-10-31T16:47:26.107+01:00",
+      "stopped_at": "2026-10-31T16:47:26.242+01:00"
+    },
+    {
+      "id": 5822,
+      "workflow_id": "socialstudio0002",
+      "status": "success",
+      "started_at": "2026-10-31T16:47:26.198+01:00",
+      "stopped_at": "2026-10-31T16:47:27.307+01:00"
+    },
+    {
+      "id": 5823,
+      "workflow_id": "socialstudio0010",
+      "status": "success",
+      "started_at": "2026-10-31T16:47:26.234+01:00",
+      "stopped_at": "2026-10-31T16:47:26.33+01:00"
+    },
+    {
+      "id": 5824,
+      "workflow_id": "socialstudio0003",
+      "status": "success",
+      "started_at": "2026-10-31T16:47:27.302+01:00",
+      "stopped_at": "2026-10-31T16:47:48.73+01:00"
+    },
+    {
+      "id": 5830,
+      "workflow_id": "socialstudio0004",
+      "status": "success",
+      "started_at": "2026-10-31T16:47:48.724+01:00",
+      "stopped_at": "2026-10-31T16:47:48.787+01:00"
+    },
+    {
+      "id": 5831,
+      "workflow_id": "socialstudio0005",
+      "status": "success",
+      "started_at": "2026-10-31T16:47:48.781+01:00",
+      "stopped_at": "2026-10-31T16:49:57.168+01:00"
+    },
+    {
+      "id": 5881,
+      "workflow_id": "socialstudio0006",
+      "status": "success",
+      "started_at": "2026-10-31T16:49:57.085+01:00",
+      "stopped_at": "2026-10-31T16:49:59.2+01:00"
+    },
+    {
+      "id": 5882,
+      "workflow_id": "socialstudio0010",
+      "status": "success",
+      "started_at": "2026-10-31T16:49:57.124+01:00",
+      "stopped_at": "2026-10-31T16:49:57.249+01:00"
+    },
+    {
+      "id": 5883,
+      "workflow_id": "socialstudio0010",
+      "status": "success",
+      "started_at": "2026-10-31T16:49:57.154+01:00",
+      "stopped_at": "2026-10-31T16:49:57.223+01:00"
+    },
+    {
+      "id": 5884,
+      "workflow_id": "socialstudio0009",
+      "status": "success",
+      "started_at": "2026-10-31T16:49:59.193+01:00",
+      "stopped_at": "2026-10-31T16:49:59.263+01:00"
+    },
+    {
+      "id": 5885,
+      "workflow_id": "socialstudio0010",
+      "status": "success",
+      "started_at": "2026-10-31T16:49:59.256+01:00",
+      "stopped_at": "2026-10-31T16:49:59.298+01:00"
+    },
+    {
+      "id": 5886,
+      "workflow_id": "socialstudio0006",
+      "status": "success",
+      "started_at": "2026-10-31T16:49:59.552+01:00",
+      "stopped_at": "2026-10-31T16:50:01.63+01:00"
+    },
+    {
+      "id": 5887,
+      "workflow_id": "socialstudio0008",
+      "status": "success",
+      "started_at": "2026-10-31T16:50:01.623+01:00",
+      "stopped_at": "2026-10-31T16:50:01.692+01:00"
+    },
+    {
+      "id": 5888,
+      "workflow_id": "socialstudio0010",
+      "status": "success",
+      "started_at": "2026-10-31T16:50:01.685+01:00",
+      "stopped_at": "2026-10-31T16:50:01.723+01:00"
+    },
+    {
+      "id": 5889,
+      "workflow_id": "socialstudio0006",
+      "status": "success",
+      "started_at": "2026-10-31T16:50:04.558+01:00",
+      "stopped_at": "2026-10-31T16:50:06.645+01:00"
+    },
+    {
+      "id": 5890,
+      "workflow_id": "socialstudio0007",
+      "status": "success",
+      "started_at": "2026-10-31T16:50:06.635+01:00",
+      "stopped_at": "2026-10-31T16:50:06.721+01:00"
+    },
+    {
+      "id": 5891,
+      "workflow_id": "socialstudio0010",
+      "status": "success",
+      "started_at": "2026-10-31T16:50:06.713+01:00",
+      "stopped_at": "2026-10-31T16:50:06.755+01:00"
+    },
+    {
+      "id": 5892,
+      "workflow_id": "socialstudio0001",
+      "status": "success",
+      "started_at": "2026-10-31T16:50:07.514+01:00",
+      "stopped_at": "2026-10-31T16:50:07.607+01:00"
+    },
+    {
+      "id": 5893,
+      "workflow_id": "socialstudio0010",
+      "status": "success",
+      "started_at": "2026-10-31T16:50:07.601+01:00",
+      "stopped_at": "2026-10-31T16:50:07.66+01:00"
+    },
+    {
+      "id": 5894,
+      "workflow_id": "socialstudio0012",
+      "status": "success",
+      "started_at": "2026-10-31T16:50:07.61+01:00",
+      "stopped_at": "2026-10-31T16:50:07.725+01:00"
+    }
+  ],
+  "events": [
+    {
+      "id": 337,
+      "event_type": "job.accepted",
+      "created_at": "2026-10-31T16:47:26.168011+01:00"
+    },
+    {
+      "id": 338,
+      "event_type": "ai.queued",
+      "created_at": "2026-10-31T16:47:26.236008+01:00"
+    },
+    {
+      "id": 339,
+      "event_type": "ai.attempt_finished",
+      "created_at": "2026-10-31T16:47:26.3297+01:00"
+    },
+    {
+      "id": 340,
+      "event_type": "ai.result_attached",
+      "created_at": "2026-10-31T16:47:27.276126+01:00"
+    },
+    {
+      "id": 341,
+      "event_type": "production.queued",
+      "created_at": "2026-10-31T16:47:27.333323+01:00"
+    },
+    {
+      "id": 342,
+      "event_type": "worker.claimed",
+      "created_at": "2026-10-31T16:47:27.802119+01:00"
+    },
+    {
+      "id": 343,
+      "event_type": "production.completed",
+      "created_at": "2026-10-31T16:47:48.150386+01:00"
+    },
+    {
+      "id": 344,
+      "event_type": "quality.passed",
+      "created_at": "2026-10-31T16:47:48.760225+01:00"
+    },
+    {
+      "id": 345,
+      "event_type": "approval.requested",
+      "created_at": "2026-10-31T16:47:48.811903+01:00"
+    },
+    {
+      "id": 367,
+      "event_type": "approval.approved",
+      "created_at": "2026-10-31T16:49:55.378395+01:00"
+    },
+    {
+      "id": 368,
+      "event_type": "publishing.scheduled",
+      "created_at": "2026-10-31T16:49:57.125715+01:00"
+    },
+    {
+      "id": 369,
+      "event_type": "publishing.verification_requested",
+      "created_at": "2026-10-31T16:49:57.139432+01:00"
+    },
+    {
+      "id": 370,
+      "event_type": "worker.claimed",
+      "created_at": "2026-10-31T16:49:57.523013+01:00"
+    },
+    {
+      "id": 371,
+      "event_type": "publishing.succeeded",
+      "created_at": "2026-10-31T16:49:59.223598+01:00"
+    },
+    {
+      "id": 372,
+      "event_type": "publishing.verification_requested",
+      "created_at": "2026-10-31T16:49:59.579512+01:00"
+    },
+    {
+      "id": 373,
+      "event_type": "worker.claimed",
+      "created_at": "2026-10-31T16:49:59.791411+01:00"
+    },
+    {
+      "id": 374,
+      "event_type": "publishing.succeeded",
+      "created_at": "2026-10-31T16:50:01.654215+01:00"
+    },
+    {
+      "id": 375,
+      "event_type": "publishing.verification_requested",
+      "created_at": "2026-10-31T16:50:04.586441+01:00"
+    },
+    {
+      "id": 376,
+      "event_type": "worker.claimed",
+      "created_at": "2026-10-31T16:50:05.353242+01:00"
+    },
+    {
+      "id": 377,
+      "event_type": "publishing.succeeded",
+      "created_at": "2026-10-31T16:50:06.67719+01:00"
+    }
+  ],
+  "completed_at": "2026-10-31T15:50:06.677Z",
+  "acceptance_passed": true,
+  "performance": {
+    "ai_task_ms": 94,
+    "qc_seconds": 0.6400000000139698,
+    "audio_mix_seconds": 0.21899999998277053,
+    "composition_seconds": 4.827999999979511,
+    "visual_render_seconds": 5.5310000000172295,
+    "asset_selection_seconds": 0.005786299999999756,
+    "worker_pipeline_seconds": 20.40600000001723,
+    "voice_generation_seconds": 7.26600000000326,
+    "storyboard_preparation_seconds": 1.2339999999967404,
+    "render_subprocess_seconds": 20.94260630000001,
+    "worker_total_seconds": 21.394386999999995,
+    "intake_to_media_seconds": 22.055,
+    "intake_to_last_mock_publication_seconds": 160.582,
+    "render_relative_to_19_39s_baseline": 1.0800725270758127,
+    "resources": {
+      "scope": "Whole host/GPU, includes all other applications; not renderer process RSS",
+      "samples": 22,
+      "peak_gpu_vram_mib": null,
+      "peak_host_ram_bytes": 14477721600,
+      "peak_gpu_util_percent": null
+    }
+  }
+}

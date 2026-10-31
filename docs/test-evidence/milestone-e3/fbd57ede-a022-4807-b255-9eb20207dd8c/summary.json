@@ -1,0 +1,801 @@
+{
+  "at": "2026-10-31T16:47:07.964Z",
+  "run_id": "fbd57ede-a022-4807-b255-9eb20207dd8c",
+  "dynamic_video_acceptance": true,
+  "real_ai_acceptance": false,
+  "model_calls": 0,
+  "public_posts": 0,
+  "rows": [
+    {
+      "case": "mirror",
+      "topic": "A mirror whispers your name when nobody is home.",
+      "job_id": "5ad0e3ec-b3e2-4ee8-9fa3-947f2f4556ee",
+      "asset_id": "1ca5fd5e-01a1-479c-80b1-eff8dcab75ac",
+      "path": "C:\\Projects\\Manas_Flow\\SocialStudio\\generated-videos\\horror\\topic-789aaabf927070b98a60f52581da9f4a\\final\\video.mp4",
+      "checksum": "1801c5491189bd0ed3bc07f005932f5d1717c9c89f610be413643d1d0482a907",
+      "duration": 5,
+      "width": 1080,
+      "height": 1920,
+      "bytes": 772161,
+      "script": "Alone at home, I heard my name. The mirror answered.",
+      "provider": "mock",
+      "simulated": true,
+      "scenes": [
+        {
+          "camera": "push_in",
+          "number": 1,
+          "component": "environment",
+          "environment": "mirror",
+          "source_sha256": "e73d6cb7dca90b9567cd76dd3f3b9a2554de0f2c8f8a958ce530868a5e4bfa4a"
+        }
+      ],
+      "quality": {
+        "passed": true,
+        "mean_dbfs": -21.3,
+        "peak_dbfs": -3.9,
+        "subtitle_cues": 2,
+        "freeze_noise_db": -65,
+        "final_resolution": "1080x1920",
+        "source_resolution": "540x960",
+        "no_black_intervals": true,
+        "subtitle_alignment": "Actual per-phrase waveform duration; no overlapping cues; no ASR",
+        "no_frozen_intervals": true,
+        "full_decode_exit_code": 0,
+        "source_motion_metrics": [
+          {
+            "passed": true,
+            "decoded_frames": 150,
+            "one_second_differences": [
+              3.412654399871826,
+              3.2785184383392334,
+              3.4443209171295166,
+              3.633580207824707
+            ],
+            "longest_exact_duplicate_run": 0,
+            "mean_adjacent_frame_difference": 0.4064740240573883
+          }
+        ]
+      },
+      "performance": {
+        "ai_task_ms": 151,
+        "qc_seconds": 0.610000000015134,
+        "audio_mix_seconds": 0.21900000001187436,
+        "composition_seconds": 4.921999999991385,
+        "visual_render_seconds": 5.60899999999674,
+        "asset_selection_seconds": 0.006647499999999127,
+        "worker_pipeline_seconds": 20.60899999999674,
+        "voice_generation_seconds": 7.35899999999674,
+        "storyboard_preparation_seconds": 1.187999999994645,
+        "render_subprocess_seconds": 21.146463200000003,
+        "worker_total_seconds": 21.621820300000003,
+        "intake_to_media_seconds": 22.842,
+        "intake_to_last_mock_publication_seconds": 173.595,
+        "render_relative_to_19_39s_baseline": 1.0905860340381641,
+        "resources": {
+          "scope": "Whole host/GPU, includes all other applications; not renderer process RSS",
+          "samples": 23,
+          "peak_gpu_vram_mib": null,
+          "peak_host_ram_bytes": 14370721792,
+          "peak_gpu_util_percent": null
+        }
+      },
+      "publishing": [
+        {
+          "id": "784c013e-8e93-4973-b753-02b5c0359cae",
+          "platform": "facebook",
+          "status": "published",
+          "post_id": "mock-facebook-6f5ed771b9dfe69a668cd8b2",
+          "media_asset_id": "1ca5fd5e-01a1-479c-80b1-eff8dcab75ac",
+          "checksum": "1801c5491189bd0ed3bc07f005932f5d1717c9c89f610be413643d1d0482a907",
+          "attempt_count": 1,
+          "completed_at": "2026-10-31T15:49:51.686Z",
+          "last_error": null
+        },
+        {
+          "id": "48ce692d-0e8e-447c-aedb-601556228c4e",
+          "platform": "instagram",
+          "status": "published",
+          "post_id": "mock-instagram-96aa4d6e11c746277705d765",
+          "media_asset_id": "1ca5fd5e-01a1-479c-80b1-eff8dcab75ac",
+          "checksum": "1801c5491189bd0ed3bc07f005932f5d1717c9c89f610be413643d1d0482a907",
+          "attempt_count": 1,
+          "completed_at": "2026-10-31T15:49:55.209Z",
+          "last_error": null
+        },
+        {
+          "id": "8803f100-c248-4305-9f88-dca9bc982bc9",
+          "platform": "youtube",
+          "status": "published",
+          "post_id": "mock-youtube-d3ffe4bb0a5497e1f4f5f97f",
+          "media_asset_id": "1ca5fd5e-01a1-479c-80b1-eff8dcab75ac",
+          "checksum": "1801c5491189bd0ed3bc07f005932f5d1717c9c89f610be413643d1d0482a907",
+          "attempt_count": 1,
+          "completed_at": "2026-10-31T15:49:54.239Z",
+          "last_error": null
+        }
+      ],
+      "execution_ids": [
+        {
+          "id": 5810,
+          "workflow": "socialstudio0001"
+        },
+        {
+          "id": 5811,
+          "workflow": "socialstudio0002"
+        },
+        {
+          "id": 5812,
+          "workflow": "socialstudio0010"
+        },
+        {
+          "id": 5813,
+          "workflow": "socialstudio0003"
+        },
+        {
+          "id": 5819,
+          "workflow": "socialstudio0004"
+        },
+        {
+          "id": 5820,
+          "workflow": "socialstudio0005"
+        },
+        {
+          "id": 5866,
+          "workflow": "socialstudio0006"
+        },
+        {
+          "id": 5867,
+          "workflow": "socialstudio0009"
+        },
+        {
+          "id": 5868,
+          "workflow": "socialstudio0010"
+        },
+        {
+          "id": 5869,
+          "workflow": "socialstudio0006"
+        },
+        {
+          "id": 5870,
+          "workflow": "socialstudio0010"
+        },
+        {
+          "id": 5871,
+          "workflow": "socialstudio0010"
+        },
+        {
+          "id": 5872,
+          "workflow": "socialstudio0006"
+        },
+        {
+          "id": 5873,
+          "workflow": "socialstudio0008"
+        },
+        {
+          "id": 5874,
+          "workflow": "socialstudio0010"
+        },
+        {
+          "id": 5875,
+          "workflow": "socialstudio0007"
+        },
+        {
+          "id": 5876,
+          "workflow": "socialstudio0010"
+        },
+        {
+          "id": 5877,
+          "workflow": "socialstudio0001"
+        },
+        {
+          "id": 5878,
+          "workflow": "socialstudio0010"
+        },
+        {
+          "id": 5879,
+          "workflow": "socialstudio0012"
+        }
+      ]
+    },
+    {
+      "case": "road",
+      "topic": "A driver sees someone standing in the middle of an abandoned road.",
+      "job_id": "4821d85d-612a-4f81-8fad-b2d04fffaa3c",
+      "asset_id": "e87ffdbc-720a-4a49-abf8-ec487fce8994",
+      "path": "C:\\Projects\\Manas_Flow\\SocialStudio\\generated-videos\\horror\\topic-c0af6f72736bc4c27de87f1eb9ae282c\\final\\video.mp4",
+      "checksum": "08fff3e4c2b883937592544eb378d8783cde0ee5f27be483fe5933fe61853670",
+      "duration": 5,
+      "width": 1080,
+      "height": 1920,
+      "bytes": 892201,
+      "script": "The road was empty. Then my headlights found someone waiting.",
+      "provider": "mock",
+      "simulated": true,
+      "scenes": [
+        {
+          "camera": "pan_left",
+          "number": 1,
+          "component": "image_motion",
+          "environment": "road",
+          "source_sha256": "0cd95f0402758c3d2a0a80a14721da3861024aa75282e3ca540a317a6e66357b"
+        }
+      ],
+      "quality": {
+        "passed": true,
+        "mean_dbfs": -21.6,
+        "peak_dbfs": -4,
+        "subtitle_cues": 2,
+        "freeze_noise_db": -65,
+        "final_resolution": "1080x1920",
+        "source_resolution": "540x960",
+        "no_black_intervals": true,
+        "subtitle_alignment": "Actual per-phrase waveform duration; no overlapping cues; no ASR",
+        "no_frozen_intervals": true,
+        "full_decode_exit_code": 0,
+        "source_motion_metrics": [
+          {
+            "passed": true,
+            "decoded_frames": 150,
+            "one_second_differences": [
+              1.1518210172653198,
+              2.4366049766540527,
+              4.7001543045043945,
+              6.918271541595459
+            ],
+            "longest_exact_duplicate_run": 0,
+            "mean_adjacent_frame_difference": 0.3851928412914276
+          }
+        ]
+      },
+      "performance": {
+        "ai_task_ms": 94,
+        "qc_seconds": 0.6400000000139698,
+        "audio_mix_seconds": 0.21899999998277053,
+        "composition_seconds": 4.827999999979511,
+        "visual_render_seconds": 5.5310000000172295,
+        "asset_selection_seconds": 0.005786299999999756,
+        "worker_pipeline_seconds": 20.40600000001723,
+        "voice_generation_seconds": 7.26600000000326,
+        "storyboard_preparation_seconds": 1.2339999999967404,
+        "render_subprocess_seconds": 20.94260630000001,
+        "worker_total_seconds": 21.394386999999995,
+        "intake_to_media_seconds": 22.055,
+        "intake_to_last_mock_publication_seconds": 160.582,
+        "render_relative_to_19_39s_baseline": 1.0800725270758127,
+        "resources": {
+          "scope": "Whole host/GPU, includes all other applications; not renderer process RSS",
+          "samples": 22,
+          "peak_gpu_vram_mib": null,
+          "peak_host_ram_bytes": 14477721600,
+          "peak_gpu_util_percent": null
+        }
+      },
+      "publishing": [
+        {
+          "id": "e0cc3b89-7a32-44fa-8216-fe0949225b6c",
+          "platform": "facebook",
+          "status": "published",
+          "post_id": "mock-facebook-496de6457731285caeb440f6",
+          "media_asset_id": "e87ffdbc-720a-4a49-abf8-ec487fce8994",
+          "checksum": "08fff3e4c2b883937592544eb378d8783cde0ee5f27be483fe5933fe61853670",
+          "attempt_count": 1,
+          "completed_at": "2026-10-31T15:49:59.223Z",
+          "last_error": null
+        },
+        {
+          "id": "04e7e77f-0f92-4724-a491-0698722101ca",
+          "platform": "instagram",
+          "status": "published",
+          "post_id": "mock-instagram-aa8696f82301671bd1b9cd8e",
+          "media_asset_id": "e87ffdbc-720a-4a49-abf8-ec487fce8994",
+          "checksum": "08fff3e4c2b883937592544eb378d8783cde0ee5f27be483fe5933fe61853670",
+          "attempt_count": 1,
+          "completed_at": "2026-10-31T15:50:01.654Z",
+          "last_error": null
+        },
+        {
+          "id": "a6d7f9e6-9d3b-4e44-a0a6-751a3eb877b7",
+          "platform": "youtube",
+          "status": "published",
+          "post_id": "mock-youtube-4fde8a965e2ee2ed6a510b21",
+          "media_asset_id": "e87ffdbc-720a-4a49-abf8-ec487fce8994",
+          "checksum": "08fff3e4c2b883937592544eb378d8783cde0ee5f27be483fe5933fe61853670",
+          "attempt_count": 1,
+          "completed_at": "2026-10-31T15:50:06.677Z",
+          "last_error": null
+        }
+      ],
+      "execution_ids": [
+        {
+          "id": 5821,
+          "workflow": "socialstudio0001"
+        },
+        {
+          "id": 5822,
+          "workflow": "socialstudio0002"
+        },
+        {
+          "id": 5823,
+          "workflow": "socialstudio0010"
+        },
+        {
+          "id": 5824,
+          "workflow": "socialstudio0003"
+        },
+        {
+          "id": 5830,
+          "workflow": "socialstudio0004"
+        },
+        {
+          "id": 5831,
+          "workflow": "socialstudio0005"
+        },
+        {
+          "id": 5881,
+          "workflow": "socialstudio0006"
+        },
+        {
+          "id": 5882,
+          "workflow": "socialstudio0010"
+        },
+        {
+          "id": 5883,
+          "workflow": "socialstudio0010"
+        },
+        {
+          "id": 5884,
+          "workflow": "socialstudio0009"
+        },
+        {
+          "id": 5885,
+          "workflow": "socialstudio0010"
+        },
+        {
+          "id": 5886,
+          "workflow": "socialstudio0006"
+        },
+        {
+          "id": 5887,
+          "workflow": "socialstudio0008"
+        },
+        {
+          "id": 5888,
+          "workflow": "socialstudio0010"
+        },
+        {
+          "id": 5889,
+          "workflow": "socialstudio0006"
+        },
+        {
+          "id": 5890,
+          "workflow": "socialstudio0007"
+        },
+        {
+          "id": 5891,
+          "workflow": "socialstudio0010"
+        },
+        {
+          "id": 5892,
+          "workflow": "socialstudio0001"
+        },
+        {
+          "id": 5893,
+          "workflow": "socialstudio0010"
+        },
+        {
+          "id": 5894,
+          "workflow": "socialstudio0012"
+        }
+      ]
+    },
+    {
+      "case": "message",
+      "topic": "A phone receives a message from someone who disappeared years ago.",
+      "job_id": "ede518d3-e3c3-42b2-9eb9-b4af0965b536",
+      "asset_id": "77e466d1-6999-41e9-bbc9-c4b082559555",
+      "path": "C:\\Projects\\Manas_Flow\\SocialStudio\\generated-videos\\horror\\topic-6135ef9b54a8828f41231d84d849ec1c\\final\\video.mp4",
+      "checksum": "499b3adda87757b164423a77ce5cd3071c5bd5b05cb8f823ac4b85b0736cc335",
+      "duration": 5,
+      "width": 1080,
+      "height": 1920,
+      "bytes": 900936,
+      "script": "Her number vanished years ago. Tonight, it said: I am outside.",
+      "provider": "mock",
+      "simulated": true,
+      "scenes": [
+        {
+          "camera": "drift",
+          "number": 1,
+          "component": "typography",
+          "environment": "phone",
+          "source_sha256": "5f31a789dbaca7be5c0ebf44c9a3969cf8a8cac8c658901138f8883da815e423"
+        }
+      ],
+      "quality": {
+        "passed": true,
+        "mean_dbfs": -20.7,
+        "peak_dbfs": -4,
+        "subtitle_cues": 2,
+        "freeze_noise_db": -65,
+        "final_resolution": "1080x1920",
+        "source_resolution": "540x960",
+        "no_black_intervals": true,
+        "subtitle_alignment": "Actual per-phrase waveform duration; no overlapping cues; no ASR",
+        "no_frozen_intervals": true,
+        "full_decode_exit_code": 0,
+        "source_motion_metrics": [
+          {
+            "passed": true,
+            "decoded_frames": 150,
+            "one_second_differences": [
+              12.957746505737305,
+              5.222469329833984,
+              5.642746925354004,
+              5.854290008544922
+            ],
+            "longest_exact_duplicate_run": 0,
+            "mean_adjacent_frame_difference": 0.6211531758308411
+          }
+        ]
+      },
+      "performance": {
+        "ai_task_ms": 125,
+        "qc_seconds": 0.6870000000053551,
+        "audio_mix_seconds": 0.23499999998603016,
+        "composition_seconds": 4.64100000000326,
+        "visual_render_seconds": 8.344000000011874,
+        "asset_selection_seconds": 0.007266699999992852,
+        "worker_pipeline_seconds": 23.35999999998603,
+        "voice_generation_seconds": 7.578000000008615,
+        "storyboard_preparation_seconds": 1.1719999999913853,
+        "render_subprocess_seconds": 23.842642399999995,
+        "worker_total_seconds": 24.269473700000002,
+        "intake_to_media_seconds": 25.081,
+        "intake_to_last_mock_publication_seconds": 146.16,
+        "render_relative_to_19_39s_baseline": 1.229636018566271,
+        "resources": {
+          "scope": "Whole host/GPU, includes all other applications; not renderer process RSS",
+          "samples": 25,
+          "peak_gpu_vram_mib": null,
+          "peak_host_ram_bytes": 14298054656,
+          "peak_gpu_util_percent": null
+        }
+      },
+      "publishing": [
+        {
+          "id": "913e328b-000d-4ad2-b5e7-cc5c252b47fc",
+          "platform": "facebook",
+          "status": "published",
+          "post_id": "mock-facebook-a554ed6f621584a0e5d59d1e",
+          "media_asset_id": "77e466d1-6999-41e9-bbc9-c4b082559555",
+          "checksum": "499b3adda87757b164423a77ce5cd3071c5bd5b05cb8f823ac4b85b0736cc335",
+          "attempt_count": 1,
+          "completed_at": "2026-10-31T15:50:11.684Z",
+          "last_error": null
+        },
+        {
+          "id": "c985834a-5883-412a-ae81-9b28ec17c93c",
+          "platform": "instagram",
+          "status": "published",
+          "post_id": "mock-instagram-919cc7a61520018eb407fe02",
+          "media_asset_id": "77e466d1-6999-41e9-bbc9-c4b082559555",
+          "checksum": "499b3adda87757b164423a77ce5cd3071c5bd5b05cb8f823ac4b85b0736cc335",
+          "attempt_count": 1,
+          "completed_at": "2026-10-31T15:50:14.844Z",
+          "last_error": null
+        },
+        {
+          "id": "de035f7e-eaf2-43bf-8615-7541bfb98101",
+          "platform": "youtube",
+          "status": "published",
+          "post_id": "mock-youtube-52a6220bf57d74833475f972",
+          "media_asset_id": "77e466d1-6999-41e9-bbc9-c4b082559555",
+          "checksum": "499b3adda87757b164423a77ce5cd3071c5bd5b05cb8f823ac4b85b0736cc335",
+          "attempt_count": 1,
+          "completed_at": "2026-10-31T15:50:16.679Z",
+          "last_error": null
+        }
+      ],
+      "execution_ids": [
+        {
+          "id": 5833,
+          "workflow": "socialstudio0001"
+        },
+        {
+          "id": 5834,
+          "workflow": "socialstudio0002"
+        },
+        {
+          "id": 5835,
+          "workflow": "socialstudio0010"
+        },
+        {
+          "id": 5836,
+          "workflow": "socialstudio0003"
+        },
+        {
+          "id": 5843,
+          "workflow": "socialstudio0004"
+        },
+        {
+          "id": 5844,
+          "workflow": "socialstudio0005"
+        },
+        {
+          "id": 5895,
+          "workflow": "socialstudio0006"
+        },
+        {
+          "id": 5896,
+          "workflow": "socialstudio0009"
+        },
+        {
+          "id": 5897,
+          "workflow": "socialstudio0010"
+        },
+        {
+          "id": 5898,
+          "workflow": "socialstudio0006"
+        },
+        {
+          "id": 5899,
+          "workflow": "socialstudio0010"
+        },
+        {
+          "id": 5900,
+          "workflow": "socialstudio0010"
+        },
+        {
+          "id": 5901,
+          "workflow": "socialstudio0006"
+        },
+        {
+          "id": 5902,
+          "workflow": "socialstudio0008"
+        },
+        {
+          "id": 5903,
+          "workflow": "socialstudio0010"
+        },
+        {
+          "id": 5904,
+          "workflow": "socialstudio0007"
+        },
+        {
+          "id": 5905,
+          "workflow": "socialstudio0010"
+        },
+        {
+          "id": 5906,
+          "workflow": "socialstudio0001"
+        },
+        {
+          "id": 5907,
+          "workflow": "socialstudio0010"
+        },
+        {
+          "id": 5908,
+          "workflow": "socialstudio0012"
+        },
+        {
+          "id": 5991,
+          "workflow": "socialstudio0001"
+        },
+        {
+          "id": 5992,
+          "workflow": "socialstudio0010"
+        },
+        {
+          "id": 5993,
+          "workflow": "socialstudio0012"
+        }
+      ]
+    }
+  ],
+  "health": [
+    {
+      "service": "loopback-proxy",
+      "state": "running",
+      "health": "healthy"
+    },
+    {
+      "service": "n8n",
+      "state": "running",
+      "health": "healthy"
+    },
+    {
+      "service": "postgres",
+      "state": "running",
+      "health": "healthy"
+    },
+    {
+      "service": "studio-api",
+      "state": "running",
+      "health": "healthy"
+    }
+  ],
+  "migrations": [
+    {
+      "version": 1,
+      "name": "foundation",
+      "checksum": "4766440a63d2e3850aa0a30aeac40bebda88218e7fd3ff1ba3b53a9c4a7f8d3c"
+    },
+    {
+      "version": 2,
+      "name": "ai-brain",
+      "checksum": "1e123be81d20f82ae5f7dcf77ea7fdcca68c7c091878a4e3e5b93cfb4598a63e"
+    },
+    {
+      "version": 3,
+      "name": "dynamic-production",
+      "checksum": "f38a5154846ad1e97511c54b1b97be538a7eb8247d7204875ced4f279d19002c"
+    }
+  ],
+  "global_recovery_execution": [
+    {
+      "id": 6711,
+      "workflowId": "socialstudio0011",
+      "status": "success"
+    }
+  ],
+  "baselines_unchanged": {
+    "pilot_60s": "48fb3d02aecb4e83c43654d111194fd44870011c229a8b7387d8a83096858528",
+    "door_5s": "3c82d7ea829be6e6e537afeb4d484f190aec29fd30c11d58b6b5482923b0e718"
+  },
+  "provider_status": {
+    "provider_order": [
+      "codex",
+      "agy",
+      "9router"
+    ],
+    "providers": [
+      {
+        "provider": "codex",
+        "status": "unsupported",
+        "last_checked": "2026-10-31T12:56:21.420Z",
+        "last_success": null,
+        "last_failure": null,
+        "error_category": "external_isolation_not_verified",
+        "capability_metadata": {
+          "jsonl": true,
+          "version": "codex-cli 0.165.0",
+          "output_schema": true,
+          "cli_help_verified": true,
+          "live_inference_verified": false
+        }
+      },
+      {
+        "provider": "agy",
+        "status": "unsupported",
+        "last_checked": "2026-10-31T12:56:21.454Z",
+        "last_success": null,
+        "last_failure": null,
+        "error_category": "external_isolation_and_tool_allowlist_not_verified",
+        "capability_metadata": {
+          "print_mode": true,
+          "json_schema": true,
+          "cli_help_verified": true,
+          "executable_sha256": "b4bbcc9f65d355bc84523d4f43e1ead34992890baf60c24e4ccbf605e2da6858",
+          "live_inference_verified": false
+        }
+      },
+      {
+        "provider": "9router",
+        "status": "approval_required",
+        "last_checked": "2026-10-31T12:56:21.458Z",
+        "last_success": null,
+        "last_failure": null,
+        "error_category": "route_cost_and_provider_authorization_required",
+        "capability_metadata": {
+          "listed_models": [
+            "openrouter/typesafe/jev-1.13",
+            "agnes/agnes-2.5-flash",
+            "agnes/agnes-2.5-pro",
+            "agnes/agnes-2.5-pro-beta",
+            "agnes/agnes-3.0-flash",
+            "af/gpt-oss-120b",
+            "af/gpt-oss-20b",
+            "af/kimi-k2.7-code",
+            "mmf/mimo-auto",
+            "oc/muse-spark-1.2-contributor-free",
+            "oc/muse-spark-1.3-contributor-free",
+            "oc/union-alpha",
+            "oc/jev-1.13-free"
+          ],
+          "package_version": "0.5.112",
+          "loopback_endpoint": "http://127.0.0.1:20128/v1",
+          "free_usage_verified": false,
+          "model_list_http_status": 200,
+          "live_inference_verified": false
+        }
+      },
+      {
+        "provider": "mock",
+        "status": "available",
+        "last_checked": "2026-10-31T16:03:25.503Z",
+        "last_success": "2026-10-31T16:03:25.503Z",
+        "last_failure": "2026-10-31T12:49:43.665Z",
+        "error_category": null,
+        "capability_metadata": {}
+      }
+    ],
+    "live_execution_requires_operator_policy": true
+  },
+  "visual_comparison": {
+    "passed": true,
+    "method": "Pairwise mean absolute RGB difference of actual raw source midpoint frames, before captions; threshold >4/255. Confirms changed imagery, not artistic quality.",
+    "comparisons": [
+      {
+        "a": "mirror",
+        "b": "road",
+        "mean_absolute_pixel_difference_0_to_255": 24.29611111111111,
+        "different": true
+      },
+      {
+        "a": "mirror",
+        "b": "message",
+        "mean_absolute_pixel_difference_0_to_255": 23.406162551440328,
+        "different": true
+      },
+      {
+        "a": "road",
+        "b": "message",
+        "mean_absolute_pixel_difference_0_to_255": 31.472067901234567,
+        "different": true
+      }
+    ],
+    "scenes": [
+      {
+        "case": "mirror",
+        "frame": "C:\\Projects\\Manas_Flow\\SocialStudio\\generated-videos\\horror\\topic-789aaabf927070b98a60f52581da9f4a\\assets\\video\\scene-01-raw-mid.png",
+        "environment": "mirror",
+        "component": "environment",
+        "checksum": "1801c5491189bd0ed3bc07f005932f5d1717c9c89f610be413643d1d0482a907"
+      },
+      {
+        "case": "road",
+        "frame": "C:\\Projects\\Manas_Flow\\SocialStudio\\generated-videos\\horror\\topic-c0af6f72736bc4c27de87f1eb9ae282c\\assets\\video\\scene-01-raw-mid.png",
+        "environment": "road",
+        "component": "image_motion",
+        "checksum": "08fff3e4c2b883937592544eb378d8783cde0ee5f27be483fe5933fe61853670"
+      },
+      {
+        "case": "message",
+        "frame": "C:\\Projects\\Manas_Flow\\SocialStudio\\generated-videos\\horror\\topic-6135ef9b54a8828f41231d84d849ec1c\\assets\\video\\scene-01-raw-mid.png",
+        "environment": "phone",
+        "component": "typography",
+        "checksum": "499b3adda87757b164423a77ce5cd3071c5bd5b05cb8f823ac4b85b0736cc335"
+      }
+    ]
+  },
+  "caption_evidence": {
+    "passed": true,
+    "method": "Actual decoded frame sampled within a measured subtitle cue; bright text pixels in caption region plus successful logged subtitles filter. No OCR/ASR claim.",
+    "results": [
+      {
+        "case": "mirror",
+        "sample_time_seconds": 1.2707083333333333,
+        "expected_cue_text": "Alone at home, I heard my name.",
+        "decoded_frame": "C:\\Projects\\Manas_Flow\\SocialStudio\\generated-videos\\horror\\topic-789aaabf927070b98a60f52581da9f4a\\previews\\first-caption.png",
+        "bright_pixels_in_caption_region": 26204,
+        "passed": true
+      },
+      {
+        "case": "road",
+        "sample_time_seconds": 0.7329791666666667,
+        "expected_cue_text": "The road was empty.",
+        "decoded_frame": "C:\\Projects\\Manas_Flow\\SocialStudio\\generated-videos\\horror\\topic-c0af6f72736bc4c27de87f1eb9ae282c\\previews\\first-caption.png",
+        "bright_pixels_in_caption_region": 17157,
+        "passed": true
+      },
+      {
+        "case": "message",
+        "sample_time_seconds": 1.0975104166666667,
+        "expected_cue_text": "Her number vanished years ago.",
+        "decoded_frame": "C:\\Projects\\Manas_Flow\\SocialStudio\\generated-videos\\horror\\topic-6135ef9b54a8828f41231d84d849ec1c\\previews\\first-caption.png",
+        "bright_pixels_in_caption_region": 27103,
+        "passed": true
+      }
+    ]
+  }
+}

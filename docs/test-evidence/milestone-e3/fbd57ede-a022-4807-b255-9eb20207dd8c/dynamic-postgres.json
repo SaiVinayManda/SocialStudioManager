@@ -1,0 +1,56 @@
+{
+  "passed": true,
+  "actual_postgres": true,
+  "rolled_back": true,
+  "providers": "explicit mock fixtures only",
+  "checks": [
+    {
+      "name": "migration 003 and its digest are persisted",
+      "passed": true
+    },
+    {
+      "name": "topic intake registers a new ordinary generation job without test approval",
+      "passed": true
+    },
+    {
+      "name": "duplicate topic delivery is durable and idempotent",
+      "passed": true
+    },
+    {
+      "name": "changed topic with same idempotency key is rejected",
+      "passed": true
+    },
+    {
+      "name": "uncleared live mode fails before creating a paid task",
+      "passed": true
+    },
+    {
+      "name": "generation cannot start before a completed AI/fixture result",
+      "passed": true
+    },
+    {
+      "name": "production package schema and attempt history persist",
+      "passed": true
+    },
+    {
+      "name": "AI-to-OpenMontage mapping preserves topic and timed storyboard",
+      "passed": true
+    },
+    {
+      "name": "production queue records real render kind rather than existing-file validation",
+      "passed": true
+    },
+    {
+      "name": "failed dynamic rendering cannot reach approval",
+      "passed": true
+    },
+    {
+      "name": "Travel topic has isolated output, profile and audience",
+      "passed": true
+    },
+    {
+      "name": "cross-brand AI attachment is rejected",
+      "passed": true
+    }
+  ]
+}

@@ -1,0 +1,156 @@
+{
+  "passed": true,
+  "job_id": "74212973-983e-4837-844d-412d5d8dc40c",
+  "brand": "travel",
+  "status": "awaiting_approval",
+  "test_approval_created": false,
+  "public_posts": 0,
+  "script_source": "Supplied deterministic fixture via ordinary CLI, not AI",
+  "asset": {
+    "id": "c7fe5122-dbdb-4c77-9c4b-4919e2c4c54b",
+    "job_id": "74212973-983e-4837-844d-412d5d8dc40c",
+    "brand_id": "10000000-0000-4000-8000-000000000004",
+    "file_reference": {
+      "root_id": "generated",
+      "relative_path": "travel/topic-2b18e85939ece72659f50d246e674207/final/video.mp4",
+      "engine_project": "topic-2b18e85939ece72659f50d246e674207"
+    },
+    "media_type": "video",
+    "checksum": "47f68dc86a3095e0252483a2ac595627fb202d472e01a33c6249cb8ee095b5ee",
+    "duration": 5,
+    "width": 1080,
+    "height": 1920,
+    "byte_size": "953863",
+    "licence_metadata": {
+      "reference": {
+        "root_id": "generated",
+        "checksum": "606d50078ab8b361c27d5c5f4aa595e60f3e89453b20643be2cffb3d5b7fc721",
+        "relative_path": "travel/topic-2b18e85939ece72659f50d246e674207/assets/ATTRIBUTION.md"
+      },
+      "evidence_checksum": "606d50078ab8b361c27d5c5f4aa595e60f3e89453b20643be2cffb3d5b7fc721",
+      "legal_verification": "Operator must review the saved licence evidence; a checksum alone does not grant usage rights."
+    },
+    "validation_report": {
+      "bytes": 953863,
+      "width": 1080,
+      "codecs": {
+        "audio": "aac",
+        "video": "h264"
+      },
+      "engine": "OpenMontage registry: Piper/audio_mixer/video_compose",
+      "height": 1920,
+      "passed": true,
+      "scenes": [
+        {
+          "camera": "push_in",
+          "number": 1,
+          "component": "environment",
+          "environment": "travel",
+          "source_sha256": "f5c10e02030f5fa6239f3479a4275b4456a2afe7f5e5f549404e93cb62300a78"
+        }
+      ],
+      "quality": {
+        "passed": true,
+        "mean_dbfs": -20.8,
+        "peak_dbfs": -1,
+        "subtitle_cues": 2,
+        "freeze_noise_db": -65,
+        "final_resolution": "1080x1920",
+        "source_resolution": "540x960",
+        "no_black_intervals": true,
+        "subtitle_alignment": "Actual per-phrase waveform duration; no overlapping cues; no ASR",
+        "no_frozen_intervals": true,
+        "full_decode_exit_code": 0,
+        "source_motion_metrics": [
+          {
+            "passed": true,
+            "decoded_frames": 150,
+            "one_second_differences": [
+              5.266234397888184,
+              4.87617301940918,
+              5.0876851081848145,
+              5.7954936027526855
+            ],
+            "longest_exact_duplicate_run": 0,
+            "mean_adjacent_frame_difference": 0.63962322473526
+          }
+        ]
+      },
+      "checksum": "47f68dc86a3095e0252483a2ac595627fb202d472e01a33c6249cb8ee095b5ee",
+      "duration": 5,
+      "narration": {
+        "text": "Mountains catch the morning light. A quiet lake reflects the sky.",
+        "voice": "en_US-ljspeech-medium",
+        "phrases": [
+          {
+            "text": "Mountains catch the morning light.",
+            "scene": 1,
+            "speed_factor": 0.85,
+            "raw_duration_seconds": 1.9504761904761905,
+            "fitted_duration_seconds": 2.2721666666666667
+          },
+          {
+            "text": "A quiet lake reflects the sky.",
+            "scene": 1,
+            "speed_factor": 0.85,
+            "raw_duration_seconds": 2.0085260770975055,
+            "fitted_duration_seconds": 2.353666666666667
+          }
+        ],
+        "provider": "Piper 1.8.0"
+      },
+      "resources": {
+        "scope": "Whole host/GPU, includes all other applications; not renderer process RSS",
+        "samples": 23,
+        "peak_gpu_vram_mib": null,
+        "peak_host_ram_bytes": 14497124352,
+        "peak_gpu_util_percent": null
+      },
+      "subtitles": {
+        "cues": 2,
+        "artifact_valid": true,
+        "burned_in_verification": "Requires existing digest-bound render evidence or human preview; ffprobe cannot detect rasterized words."
+      },
+      "new_render": true,
+      "performance": {
+        "qc_seconds": 0.6559999999881256,
+        "audio_mix_seconds": 0.21900000001187436,
+        "composition_seconds": 4.875,
+        "visual_render_seconds": 6.35899999999674,
+        "asset_selection_seconds": 0.0015361000000002605,
+        "worker_pipeline_seconds": 21.437999999994645,
+        "voice_generation_seconds": 7.344000000011874,
+        "storyboard_preparation_seconds": 1.2809999999881256
+      },
+      "audio_present": true,
+      "script_source": "explicit deterministic fixture; no real inference",
+      "source_job_id": "74212973-983e-4837-844d-412d5d8dc40c",
+      "elapsed_seconds": 22.414727900000003,
+      "licence_metadata": {
+        "reference": {
+          "root_id": "generated",
+          "checksum": "606d50078ab8b361c27d5c5f4aa595e60f3e89453b20643be2cffb3d5b7fc721",
+          "relative_path": "travel/topic-2b18e85939ece72659f50d246e674207/assets/ATTRIBUTION.md"
+        },
+        "evidence_checksum": "606d50078ab8b361c27d5c5f4aa595e60f3e89453b20643be2cffb3d5b7fc721",
+        "legal_verification": "Operator must review the saved licence evidence; a checksum alone does not grant usage rights."
+      },
+      "output_reference": {
+        "root_id": "generated",
+        "relative_path": "travel/topic-2b18e85939ece72659f50d246e674207/final/video.mp4",
+        "engine_project": "topic-2b18e85939ece72659f50d246e674207"
+      },
+      "ffprobe_exit_code": 0,
+      "generation_seconds": 21.95913,
+      "full_decode_exit_code": 0,
+      "subtitle_burn_evidence": {
+        "method": "Successful OpenMontage FFmpeg subtitles filter, saved decoded frame for visual review",
+        "preview": "C:\\Projects\\Manas_Flow\\SocialStudio\\generated-videos\\travel\\topic-2b18e85939ece72659f50d246e674207\\previews\\frame-mid.png"
+      },
+      "engine_project_reference": "topic-2b18e85939ece72659f50d246e674207"
+    },
+    "validation_status": "passed",
+    "created_at": "2026-10-31T16:03:48.604Z",
+    "updated_at": "2026-10-31T16:03:48.604Z"
+  }
+}

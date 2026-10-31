@@ -1,0 +1,7 @@
+// Operator-only signed n8n client. Does not grant render/model/publishing scope.
+import fs from 'node:fs';import path from 'node:path';import crypto from 'node:crypto';import assert from 'node:assert/strict';import {root,webhook} from './e3-common.mjs';
+const args=process.argv.slice(2),get=name=>{const i=args.indexOf('--'+name);return i<0?undefined:args[i+1];};
+if(args.includes('--help')){console.log('node scripts/submit-video-topic.mjs --brand horror --topic "A new topic" --duration 5 --mode fixture [--script "Original narration"] [--idempotency topic:unique-id]');process.exit(0);}
+const brands=JSON.parse(fs.readFileSync(path.join(root,'brands/registry.json'),'utf8')).brands,brand=brands.find(b=>b.slug===get('brand'));assert(brand,'Known --brand required');assert(get('topic')&&get('duration'),'--topic and --duration required');
+const body={source_type:'topic',brand_id:brand.id,topic:get('topic'),duration_seconds:Number(get('duration')),provider_mode:get('mode')??'fixture',idempotency_key:get('idempotency')??'topic:'+crypto.randomUUID(),...(get('script')?{script:get('script')}:{})};
+console.log(JSON.stringify({submission:await webhook('intake',body),script_source:body.provider_mode==='fixture'?'Explicit deterministic fixture draft; not real AI':'Real provider requested, subject to authorization',note:'Rendering is subject to the active bounded local worker policy. Publishing waits for an operator decision; no test approval is automatically created.'}));

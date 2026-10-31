@@ -2,8 +2,10 @@ import fs from 'node:fs';import path from 'node:path';import {fileURLToPath} fro
 import {demand} from '../studio-runtime/contracts.mjs';
 import {mediaPath,fileHash,validateVideo,runProcess,childEnvironment} from './media.mjs';
 import {renderHorrorTemplate} from './horror-template.mjs';
+import {renderDynamic} from './dynamic-render.mjs';
 const sleep=ms=>new Promise(r=>setTimeout(r,ms));
 export async function renderApproved(job,config,signal){
+  if(job.production_settings.generation_template==='storyboard-v1')return renderDynamic(job,config,signal);
   if(job.production_settings.generation_template)return renderHorrorTemplate(job,config,signal);
   const project=job.source_reference.engine_project,grant=config.approved_engine_projects?.[project];demand(grant&&Date.now()<Date.parse(grant.expires_at),'ENGINE_PROJECT_NOT_PREAPPROVED');
   const target=mediaPath(config.workspace,job.source_reference,job.brand_slug,{mustExist:false});demand(!fs.existsSync(target),'EXISTING_OUTPUT_PRESERVED');

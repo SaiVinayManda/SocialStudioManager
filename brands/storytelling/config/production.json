@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "slug": "storytelling",
+  "language": "en",
+  "voice": "en_US-ljspeech-medium",
+  "visual_style": "illustrated",
+  "palette": [
+    "#18263c",
+    "#d5a06b"
+  ],
+  "subtitle": {
+    "font": "Arial",
+    "font_size": 14,
+    "margin_v": 35,
+    "color": "#ffffff"
+  },
+  "music": {
+    "policy": "original_math",
+    "gain": 0.2
+  },
+  "default_duration_seconds": 30,
+  "prompt_template_version": "studio-production-prompts-v1"
+}

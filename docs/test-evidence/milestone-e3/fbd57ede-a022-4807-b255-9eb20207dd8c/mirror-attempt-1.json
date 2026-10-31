@@ -1,0 +1,16 @@
+{
+  "key": "mirror",
+  "title": "The Whispering Mirror",
+  "topic": "A mirror whispers your name when nobody is home.",
+  "started_at": "2026-10-31T15:42:15.963Z",
+  "script_source": "explicit fixture fallback",
+  "model_calls": 0,
+  "public_posts": 0,
+  "job_id": "9831fc5a-38bd-4403-bde1-f47f2f5b4116",
+  "job_error": {
+    "code": "DYNAMIC_RENDER_FAILED",
+    "exit_code": null
+  },
+  "acceptance_passed": false,
+  "error": "GENERATION_failed"
+}

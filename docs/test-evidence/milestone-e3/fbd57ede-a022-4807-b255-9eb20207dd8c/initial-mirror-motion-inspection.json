@@ -1,0 +1,14 @@
+{
+  "scope": "Actual failed first attempt source; explains low-motion false positive, not acceptance of that failed job",
+  "frames": 150,
+  "min_frame_difference": 0.044938271604938275,
+  "mean_frame_difference": 0.21814545529869914,
+  "max_frame_difference": 0.6324691358024691,
+  "longest_exact_duplicate_run": 0,
+  "one_second_differences": [
+    1.6366975308641976,
+    1.6350925925925925,
+    1.7396296296296296,
+    1.6857716049382716
+  ]
+}

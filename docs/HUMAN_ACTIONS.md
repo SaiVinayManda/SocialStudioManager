@@ -1,5 +1,11 @@
 # Human actions and approval register
 
+## E3 latest — rendering complete; real-model evidence outstanding
+
+The owner authorised dynamic local implementation and three real five-second fixture render tests with isolated mock-test decisions. Those tests passed, including nine mock results; [review the finished MP4s](E3_DYNAMIC_VIDEO.md). An ordinary Travel CLI draft remains awaiting operator review; no publishing job or automatic test approval was created for it. No new installation or credential/account access was required. Existing media/history are preserved.
+
+For real AI, the minimum next action is **non-secret exact-route/account evidence** for existing candidate `agnes/agnes-2.5-flash`, showing current free entitlement and fail-closed/no-paid-fallback/no-substitution enforcement. [Consolidated proposed call scope and risks](E3_AI_APPROVAL.md), [redacted field template](E3_ROUTE_EVIDENCE.example.json). Actual pricing/entitlement is unknown; USD 0 is the permitted budget, not a verified upstream price. The manifest is BLOCKED_ROUTE_EVIDENCE, not an executable grant. A review-ready packet and separate explicit owner approval are still required before the proposed maximum three requests. No grant, CLI agent activation or real inference is inferred from “continue”, old Jev approval, subscriptions or model names. Advanced A remains deferred; public publishing remains separately prohibited.
+
 ## Latest owner-requested generated-video test — completed 2026-10-31
 
 The current instruction authorized local development/execution using existing tools plus a supplied-script fixture and a clearly labelled isolated mock-test approval. That exact test passed; [result, local video and evidence](GENERATED_VIDEO_ACCEPTANCE.md). No new software, credentials, accounts, public endpoint or paid call was needed. No further approval is needed to review the local MP4. Existing model-route blockers below remain relevant only to future real inference; they did not block this explicitly allowed fixture render. Public posting remains disabled and requires separate exact-content/account approval. Advanced Milestone A remains deferred.

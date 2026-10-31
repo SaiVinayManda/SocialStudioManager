@@ -1,0 +1,30 @@
+{
+  "passed": true,
+  "method": "Actual decoded frame sampled within a measured subtitle cue; bright text pixels in caption region plus successful logged subtitles filter. No OCR/ASR claim.",
+  "results": [
+    {
+      "case": "mirror",
+      "sample_time_seconds": 1.2707083333333333,
+      "expected_cue_text": "Alone at home, I heard my name.",
+      "decoded_frame": "C:\\Projects\\Manas_Flow\\SocialStudio\\generated-videos\\horror\\topic-789aaabf927070b98a60f52581da9f4a\\previews\\first-caption.png",
+      "bright_pixels_in_caption_region": 26204,
+      "passed": true
+    },
+    {
+      "case": "road",
+      "sample_time_seconds": 0.7329791666666667,
+      "expected_cue_text": "The road was empty.",
+      "decoded_frame": "C:\\Projects\\Manas_Flow\\SocialStudio\\generated-videos\\horror\\topic-c0af6f72736bc4c27de87f1eb9ae282c\\previews\\first-caption.png",
+      "bright_pixels_in_caption_region": 17157,
+      "passed": true
+    },
+    {
+      "case": "message",
+      "sample_time_seconds": 1.0975104166666667,
+      "expected_cue_text": "Her number vanished years ago.",
+      "decoded_frame": "C:\\Projects\\Manas_Flow\\SocialStudio\\generated-videos\\horror\\topic-6135ef9b54a8828f41231d84d849ec1c\\previews\\first-caption.png",
+      "bright_pixels_in_caption_region": 27103,
+      "passed": true
+    }
+  ]
+}

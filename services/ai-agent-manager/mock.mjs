@@ -1,6 +1,8 @@
 import {ProviderError} from './contracts.mjs';
 import {validateOutput} from './schemas.mjs';
+import {productionFixture} from './production-fixtures.mjs';
 export function mockOutput(type,input={}){
+  if(type==='production_package')return validateOutput(type,productionFixture(input),input);
   const duration=input.duration_seconds??60,count=input.scene_count??6,topic=input.topic??'A local editorial fixture';
   const lines=['At three in the morning, a voicemail arrived from a number I had buried ten years ago.','It was my sister. She whispered the name only she had ever called me. Then: do not open the door.','I checked the message date. Tomorrow. Behind me, the hallway light blinked twice, just as it had the night she vanished.','Someone knocked. Through the peephole I saw her coat, dripping rain onto a perfectly dry porch. Her face stayed in shadow.','My phone rang again. This time the voice was mine. It said: she is already inside. I turned toward the dark hallway.','On the kitchen table lay her old phone. Its screen lit up with a recording. My voice whispered: do not open the door.'];
   const scenes=Array.from({length:count},(_,i)=>({scene_number:i+1,duration_seconds:duration/count,narration:lines[i%lines.length],visual_direction:['Phone illuminating a dark bedroom','Empty hallway under flickering light','Rain against a night window','Shadow beyond a closed front door','Dark kitchen and ringing phone','Phone screen fading into darkness'][i%6],footage_keywords:['night','telephone','suspense'],transition:'Brief dissolve',sound_design:'Restrained atmospheric drone under narration'}));

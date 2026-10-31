@@ -1,0 +1,40 @@
+{
+  "passed": true,
+  "actual_postgres": true,
+  "rolled_back": true,
+  "media_reports": "explicit synthetic fixtures; no claim of rendered QC",
+  "checks": [
+    {
+      "name": "failed render persists error and cannot enter QC or approval",
+      "passed": true
+    },
+    {
+      "name": "failed full-decode report creates no media and cannot schedule",
+      "passed": true
+    },
+    {
+      "name": "expired render lease preserves job for manual recovery without blind rerender",
+      "passed": true
+    },
+    {
+      "name": "interrupted read-only validation requeues within its retry bound",
+      "passed": true
+    },
+    {
+      "name": "cancellation wins over late worker success",
+      "passed": true
+    },
+    {
+      "name": "unapproved media cannot schedule",
+      "passed": true
+    },
+    {
+      "name": "approval with wrong checksum fails",
+      "passed": true
+    },
+    {
+      "name": "changed media checksum invalidates approval and prevents dispatch",
+      "passed": true
+    }
+  ]
+}

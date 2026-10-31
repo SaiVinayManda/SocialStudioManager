@@ -1,0 +1,47 @@
+{
+  "passed": true,
+  "method": "Pairwise mean absolute RGB difference of actual raw source midpoint frames, before captions; threshold >4/255. Confirms changed imagery, not artistic quality.",
+  "comparisons": [
+    {
+      "a": "mirror",
+      "b": "road",
+      "mean_absolute_pixel_difference_0_to_255": 24.29611111111111,
+      "different": true
+    },
+    {
+      "a": "mirror",
+      "b": "message",
+      "mean_absolute_pixel_difference_0_to_255": 23.406162551440328,
+      "different": true
+    },
+    {
+      "a": "road",
+      "b": "message",
+      "mean_absolute_pixel_difference_0_to_255": 31.472067901234567,
+      "different": true
+    }
+  ],
+  "scenes": [
+    {
+      "case": "mirror",
+      "frame": "C:\\Projects\\Manas_Flow\\SocialStudio\\generated-videos\\horror\\topic-789aaabf927070b98a60f52581da9f4a\\assets\\video\\scene-01-raw-mid.png",
+      "environment": "mirror",
+      "component": "environment",
+      "checksum": "1801c5491189bd0ed3bc07f005932f5d1717c9c89f610be413643d1d0482a907"
+    },
+    {
+      "case": "road",
+      "frame": "C:\\Projects\\Manas_Flow\\SocialStudio\\generated-videos\\horror\\topic-c0af6f72736bc4c27de87f1eb9ae282c\\assets\\video\\scene-01-raw-mid.png",
+      "environment": "road",
+      "component": "image_motion",
+      "checksum": "08fff3e4c2b883937592544eb378d8783cde0ee5f27be483fe5933fe61853670"
+    },
+    {
+      "case": "message",
+      "frame": "C:\\Projects\\Manas_Flow\\SocialStudio\\generated-videos\\horror\\topic-6135ef9b54a8828f41231d84d849ec1c\\assets\\video\\scene-01-raw-mid.png",
+      "environment": "phone",
+      "component": "typography",
+      "checksum": "499b3adda87757b164423a77ce5cd3071c5bd5b05cb8f823ac4b85b0736cc335"
+    }
+  ]
+}

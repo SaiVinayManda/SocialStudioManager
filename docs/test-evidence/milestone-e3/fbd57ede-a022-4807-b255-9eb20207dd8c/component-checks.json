@@ -1,0 +1,60 @@
+{
+  "passed": true,
+  "scope": "Actual PIL component frames; not video renders",
+  "checks": [
+    {
+      "component": "hallway",
+      "passed": true,
+      "frame_sha256": "7b6408b09b2ef67520e270a9737df48d32f5e9955810cefccde8f9f8a2afe470"
+    },
+    {
+      "component": "mirror",
+      "passed": true,
+      "frame_sha256": "955db68d24e9163fec0e46674c5c5e3b059a63a243e5951bdc478bf2db698476"
+    },
+    {
+      "component": "road",
+      "passed": true,
+      "frame_sha256": "11feeda757f10d7a41a967febf6bf677ebc38b066d3a631e9e45a87e90fae5b8"
+    },
+    {
+      "component": "phone",
+      "passed": true,
+      "frame_sha256": "0f1375493485205bb2210fdcc22a2615599f2461b08bb2703bbbd086ae5919e3"
+    },
+    {
+      "component": "forest",
+      "passed": true,
+      "frame_sha256": "7151abaa95e1826f76d6ac501e4fadab1214c748d80271d1a3769cde861fa63f"
+    },
+    {
+      "component": "street",
+      "passed": true,
+      "frame_sha256": "11feeda757f10d7a41a967febf6bf677ebc38b066d3a631e9e45a87e90fae5b8"
+    },
+    {
+      "component": "window",
+      "passed": true,
+      "frame_sha256": "bf6f81b39a7f539fecccda52a280ad797712cb1c3fc6c41e10b18f58fa28dbb9"
+    },
+    {
+      "component": "abstract",
+      "passed": true,
+      "frame_sha256": "69ba7f8f8677d82a20e0fa1c2c0cd1084c760c59556714fb43944d219eecd743"
+    },
+    {
+      "component": "product",
+      "passed": true,
+      "frame_sha256": "1d650f95cbe7f6005e1325347c0dc5997a1b80b060a208b0e51a34f4dcb4df24"
+    },
+    {
+      "component": "travel",
+      "passed": true,
+      "frame_sha256": "e91603d9ae5a7d4acb9dbc6963075399fc8a9f0800e8ec38ce22d945cefcc81b"
+    },
+    {
+      "component": "progressive text overlay on environment",
+      "passed": true
+    }
+  ]
+}

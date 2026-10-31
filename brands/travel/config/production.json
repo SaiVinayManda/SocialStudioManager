@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "slug": "travel",
+  "language": "en",
+  "voice": "en_US-ljspeech-medium",
+  "visual_style": "travel",
+  "palette": [
+    "#183c43",
+    "#76d4c5"
+  ],
+  "subtitle": {
+    "font": "Arial",
+    "font_size": 14,
+    "margin_v": 35,
+    "color": "#ffffff"
+  },
+  "music": {
+    "policy": "original_math",
+    "gain": 0.2
+  },
+  "default_duration_seconds": 30,
+  "prompt_template_version": "studio-production-prompts-v1"
+}

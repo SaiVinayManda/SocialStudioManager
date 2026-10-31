@@ -6,9 +6,10 @@ import {brandProfile} from './prompts.mjs';
 // invocation, OpenMontage source edits, or implicit approval of generated assets.
 export function toOpenMontage(task,slug){
   demand(uuid(task.id??task.task_id)&&uuid(task.content_job_id)&&uuid(task.brand_id),'INVALID_AI_IDENTITY');
-  demand(['script_generation','content_package'].includes(task.task_type),'AI_SCRIPT_REQUIRED');
+  demand(['script_generation','content_package','production_package'].includes(task.task_type),'AI_SCRIPT_REQUIRED');
   const profile=brandProfile(slug),output=task.validated_output??task.output;
   validateOutput(task.task_type,output,task.input??{});
+  if(task.task_type==='production_package')return {schema_version:'social-studio.openmontage-input.v2',job_id:task.content_job_id,brand_id:task.brand_id,brand_slug:slug,topic:task.input.topic,script:output.script.narration_text,duration_seconds:output.script.estimated_duration_seconds,concept:output.concept,storyboard:output.storyboard,platform_metadata:output.metadata,brand_settings:profile,source_ai_task_id:task.id??task.task_id,source_output_checksum:task.output_checksum??null,external_acquisition_approved:false,publishing_allowed:false};
   const script=task.task_type==='content_package'?output.script:output;
   const duration=script.scenes.reduce((a,s)=>a+s.duration_seconds,0);
   let clock=0;

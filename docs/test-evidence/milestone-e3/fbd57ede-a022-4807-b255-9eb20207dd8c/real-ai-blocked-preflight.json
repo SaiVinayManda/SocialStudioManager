@@ -1,0 +1,8 @@
+{
+  "command": "node services/ai-agent-manager/e3-worker.mjs --approved=E3-REAL-AI-01",
+  "exit_code": 1,
+  "error": "E3_ROUTE_REVIEW_INCOMPLETE",
+  "model_calls": 0,
+  "internal_key_read": false,
+  "owner_grant_created": false
+}

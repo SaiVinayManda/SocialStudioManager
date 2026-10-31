@@ -31,9 +31,10 @@ export async function saveResult(db,id,body){
     const output=task.validated_output;
     if(j.content_metadata.ai_output_checksum===task.output_checksum)return {job_id:id,status:j.status,source_type:j.source_type,deduplicated:true,task_id:task.id};
     demand(j.status==='queued'&&j.content_version===task.content_version,'AI_CONTENT_VERSION_CHANGED',409);
-    const metadata={ai_task_id:task.id,ai_output_checksum:task.output_checksum,ai_output_schema:task.output_schema_version,ai_output:output};
+    const metadata={ai_task_id:task.id,ai_output_checksum:task.output_checksum,ai_output_schema:task.output_schema_version,ai_output:output,ai_provider_used:task.provider_used,ai_simulated:task.simulated};
     if(task.task_type==='content_package')Object.assign(metadata,{title:output.titles.titles[0].title,description:output.captions.youtube_description,caption:output.captions.instagram_caption,hashtags:output.hashtags.instagram});
-    const mapping=['script_generation','content_package'].includes(task.task_type)?toOpenMontage(task,j.brand_slug):null;
+    if(task.task_type==='production_package')Object.assign(metadata,{title:output.metadata.youtube_title,description:output.metadata.youtube_description,caption:output.metadata.instagram_caption,hashtags:output.metadata.hashtags.instagram});
+    const mapping=['script_generation','content_package','production_package'].includes(task.task_type)?toOpenMontage(task,j.brand_slug):null;
     await c.query("UPDATE studio.content_jobs SET content_metadata=content_metadata||$2,content_version=content_version+1,status=CASE WHEN source_type='ai_only' THEN 'manual_review' ELSE status END WHERE id=$1",[id,metadata]);
     await event(c,id,'ai.result_attached',{task_id:task.id,output_checksum:task.output_checksum,openmontage_mapping_validated:Boolean(mapping),rendered:false});
     return {job_id:id,status:j.source_type==='ai_only'?'manual_review':j.status,source_type:j.source_type,task_id:task.id,openmontage_mapping:mapping,rendered:false};

@@ -1,0 +1,16 @@
+{
+  "started_at": "2026-10-31T16:34:10.558Z",
+  "completed_at": "2026-10-31T16:34:18.331Z",
+  "command": "node --test --test-reporter=tap tests/ai-brain/runtime.test.mjs tests/ai-brain/e3-policy.test.mjs tests/orchestrator/runtime.test.mjs tests/orchestrator/proxy.test.mjs tests/orchestrator/generated-video.test.mjs tests/orchestrator/dynamic-video.test.mjs",
+  "exit_code": 0,
+  "counts": {
+    "tests": 123,
+    "pass": 123,
+    "fail": 0,
+    "skipped": 0
+  },
+  "passed": true,
+  "providers": "simulated fixtures only; no real inference",
+  "postgres_executed": false,
+  "n8n_executed": false
+}

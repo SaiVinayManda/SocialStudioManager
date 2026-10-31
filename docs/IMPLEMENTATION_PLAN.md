@@ -1,5 +1,20 @@
 # Social Studio implementation plan
 
+## E3 current result — dynamic rendering accepted, real AI gated
+
+Three distinct five-second Horror topics passed the actual twelve-workflow architecture using explicit script/storyboard fixtures, real OpenMontage/Piper/FFmpeg, PostgreSQL, test approval and all three mock destinations. [Evidence and status](E3_DYNAMIC_VIDEO.md). Ordinary topic CLI plus independent Travel rendering also works. No source edit/manual scene composition is required per submission. Six profiles, closed production package, local asset index/provenance fallback, measured phrase timing, QC and bounded worker policy are implemented. Old fixed-template and existing-file paths are preserved.
+
+| Remaining work | Status / engineering estimate |
+| --- | --- |
+| Real AI route entitlement/cost/no-substitution evidence | Owner/external blocker; no inference permitted yet |
+| Review-ready scoped grant and real provider acceptance | HTTP worker/guards implemented, blocked-start and simulated policy tests pass; estimated 2–4 h after verified route evidence/approval |
+| Codex/agy independent unattended isolation | Unaccepted and disabled; not bypassed or resumed through advanced A |
+| Multi-scene transitions and actual licensed local-image/video selection | Implemented; additional end-to-end fixtures remain, estimated 2–4 h |
+| Additional installed voices/aspect ratios | Not enabled; requires explicit scope/model/dependency approval where applicable |
+| Public publishing | Disabled, independent account/content approval required |
+
+Current validation: 123 local tests; 24 AI PostgreSQL + 11 AI API + 13 existing API + 12 E3 PostgreSQL + 8 generation safety checks; three actual n8n video acceptances; eleven component-frame checks. No reinstall, new credentials, platform account, public exposure or Windows startup changes. Milestone A remains deferred.
+
 ## Current owner direction: generated-video acceptance completed — 2026-10-31
 
 The requested new five-second Horror video completed through actual n8n/OpenMontage/Piper/FFmpeg, PostgreSQL, explicit mock-test approval, scheduler, all three mock destinations, notifications and reporting. [Acceptance and reproducible commands](GENERATED_VIDEO_ACCEPTANCE.md). Reused the existing twelve workflows, installations and migrations; no new infrastructure or live AI provider was required. Advanced supervisor development remains deferred.

@@ -1,5 +1,6 @@
 import {demand} from '../studio-runtime/contracts.mjs';
 import {rejectCredentialMaterial} from './safety.mjs';
+import {productionPackageSchema} from './production-schema.mjs';
 
 export const SCHEMA_VERSION='social-studio.ai.v2';
 const text=(max=12000)=>({type:'string',minLength:1,maxLength:max});
@@ -13,6 +14,7 @@ const captions=object({youtube_description:text(5000),instagram_caption:text(220
 const hashtags=object(Object.fromEntries(['youtube','instagram','facebook'].map(p=>[p,list({type:'string',pattern:'^#[A-Za-z0-9_]{1,60}$'},1,20)])));
 const storyboard=object({scenes:list(scene)});
 export const outputSchemas={
+  production_package:productionPackageSchema,
   script_generation:script,title_generation:titles,caption_generation:captions,hashtag_generation:hashtags,storyboard_generation:storyboard,
   content_review:object({scores:object(Object.fromEntries(['hook_strength','narrative_consistency','clarity','brand_alignment'].map(x=>[x,{type:'number',minimum:0,maximum:10}]))),findings:list(text(1500),0,20),policy_notes:list(text(1500),0,20),advisory:{type:'boolean',const:true}}),
   content_rewriting:object({revised_text:text(),change_notes:list(text(1500)),preserved_facts:list(text(1000),0,30)}),
@@ -34,6 +36,12 @@ export function validateOutput(taskType,output,input={}){
   demand(Buffer.byteLength(JSON.stringify(output)??'')<=131072,'AI_OUTPUT_TOO_LARGE');
   rejectCredentialMaterial(output);
   demand(outputSchemas[taskType]&&matchesSchema(outputSchemas[taskType],output),'AI_OUTPUT_SCHEMA_INVALID');
+  if(taskType==='production_package'){
+    let clock=0;for(const [i,s]of output.storyboard.scenes.entries()){demand(s.scene_number===i+1&&Math.abs(s.start_seconds-clock)<0.025,'AI_SCENE_ORDER_INVALID');clock+=s.duration_seconds;demand(!s.asset_id||/^[a-zA-Z0-9_-]+$/.test(s.asset_id),'AI_SCENE_ASSET_INVALID');}
+    demand(Math.abs(clock-output.script.estimated_duration_seconds)<0.025&&(!input.duration_seconds||Math.abs(clock-input.duration_seconds)<0.025),'AI_DURATION_MISMATCH');
+    demand(output.script.narration_text.replace(/\s+/g,' ').trim()===output.storyboard.scenes.map(s=>s.narration).join(' ').replace(/\s+/g,' ').trim(),'AI_NARRATION_INCONSISTENT');
+    demand(output.storyboard.scenes.every(s=>s.narration.trim().split(/\s+/).length<=Math.ceil(s.duration_seconds*3.6)),'AI_SCRIPT_SPEECH_BUDGET_EXCEEDED');
+  }
   const boards=taskType==='content_package'?[output.script.scenes,output.storyboard.scenes]:['script_generation','storyboard_generation'].includes(taskType)?[output.scenes]:[];
   for(const scenes of boards){
     demand(scenes.every((s,i)=>s.scene_number===i+1),'AI_SCENE_ORDER_INVALID');

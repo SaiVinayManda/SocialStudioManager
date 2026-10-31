@@ -1,0 +1,17 @@
+{
+  "note": "NON-SECRET TEMPLATE ONLY. Not verified route evidence or permission to infer. Do not include keys, tokens, passwords, cookies or saved authentication.",
+  "endpoint": "http://127.0.0.1:20128/v1/chat/completions",
+  "model": "agnes/agnes-2.5-flash",
+  "route_id": "UNVERIFIED",
+  "exact_upstream_model": "UNVERIFIED",
+  "auth_mode": "UNVERIFIED",
+  "account_reference_redacted": "UNVERIFIED",
+  "zero_charge_entitlement_verified": false,
+  "free_allowance_and_enforcement": "UNVERIFIED",
+  "paid_fallback": "UNVERIFIED",
+  "automatic_model_substitution": "UNVERIFIED",
+  "maximum_upstream_attempts": "UNVERIFIED",
+  "exhaustion_behavior": "UNVERIFIED",
+  "valid_until": "UNVERIFIED",
+  "evidence_references": []
+}

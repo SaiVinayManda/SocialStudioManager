@@ -1,0 +1,639 @@
+{
+  "key": "mirror",
+  "title": "The Whispering Mirror",
+  "topic": "A mirror whispers your name when nobody is home.",
+  "started_at": "2026-10-31T15:47:01.614Z",
+  "script_source": "explicit fixture fallback",
+  "model_calls": 0,
+  "public_posts": 0,
+  "job_id": "5ad0e3ec-b3e2-4ee8-9fa3-947f2f4556ee",
+  "ai": {
+    "task_id": "7ec4fd76-e0d4-45ab-b708-949f904b020e",
+    "provider": "mock",
+    "model": "deterministic-fixture-v2",
+    "simulated": true,
+    "duration_ms": 151,
+    "checksum": "09be9f96db0f399a15481fe1fb65045968040b8f2c16c643e6dff1881adf5f64",
+    "attempt_history": [
+      {
+        "id": "da247111-91e1-4969-8bb0-6d826b78ddb3",
+        "provider": "mock",
+        "model": "deterministic-fixture-v2",
+        "attempt_number": 1,
+        "status": "completed",
+        "error_category": null,
+        "duration_ms": 9,
+        "token_usage": null,
+        "actual_cost": 0,
+        "estimated_cost": 0,
+        "reserved_cost": 0,
+        "exit_code": null,
+        "simulated": true,
+        "started_at": "2026-10-31T15:47:01.844Z",
+        "completed_at": "2026-10-31T15:47:01.854Z"
+      }
+    ]
+  },
+  "script": "Alone at home, I heard my name. The mirror answered.",
+  "package": {
+    "script": {
+      "ending": "The mirror answered",
+      "narration_text": "Alone at home, I heard my name. The mirror answered.",
+      "estimated_duration_seconds": 5
+    },
+    "concept": {
+      "angle": "Explicit fixture: an ordinary setting becomes unsettling",
+      "audience": "Adult suspense-story viewers",
+      "opening_hook": "Alone at home, I heard my name.",
+      "narrative_arc": "Establish, disturb, leave an unresolved ending",
+      "emotional_tone": "Cinematic, tense, clear English"
+    },
+    "metadata": {
+      "titles": [
+        "The Whispering Mirror",
+        "The Whispering Mirror: A Short Story",
+        "The Whispering Mirror: After Dark",
+        "The Whispering Mirror: Who Was There?",
+        "The Whispering Mirror: Original Fiction"
+      ],
+      "hashtags": {
+        "youtube": [
+          "#OriginalFiction",
+          "#ShortStory"
+        ],
+        "facebook": [
+          "#OriginalFiction"
+        ],
+        "instagram": [
+          "#OriginalFiction",
+          "#ShortStory"
+        ]
+      },
+      "youtube_title": "The Whispering Mirror",
+      "facebook_caption": "A mirror whispers your name when nobody is home. Original fiction for review.",
+      "instagram_caption": "The Whispering Mirror. An original fictional short.",
+      "youtube_description": "Original fictional test draft. A mirror whispers your name when nobody is home. Script/storyboard supplied by a labelled deterministic fixture; no model inference."
+    },
+    "storyboard": {
+      "scenes": [
+        {
+          "asset_id": "",
+          "component": "environment",
+          "narration": "Alone at home, I heard my name. The mirror answered.",
+          "atmosphere": "Brand-directed, restrained atmospheric lighting",
+          "audio_cues": [
+            "drone",
+            "whisper"
+          ],
+          "transition": "fade",
+          "asset_query": [
+            "mirror"
+          ],
+          "environment": "mirror",
+          "scene_number": 1,
+          "text_overlay": "",
+          "start_seconds": 0,
+          "camera_movement": "push_in",
+          "duration_seconds": 5,
+          "visual_description": "Dark bedroom, tall mirror and a reflection that moves independently"
+        }
+      ]
+    }
+  },
+  "asset": {
+    "id": "1ca5fd5e-01a1-479c-80b1-eff8dcab75ac",
+    "job_id": "5ad0e3ec-b3e2-4ee8-9fa3-947f2f4556ee",
+    "brand_id": "10000000-0000-4000-8000-000000000001",
+    "file_reference": {
+      "root_id": "generated",
+      "relative_path": "horror/topic-789aaabf927070b98a60f52581da9f4a/final/video.mp4",
+      "engine_project": "topic-789aaabf927070b98a60f52581da9f4a"
+    },
+    "media_type": "video",
+    "checksum": "1801c5491189bd0ed3bc07f005932f5d1717c9c89f610be413643d1d0482a907",
+    "duration": 5,
+    "width": 1080,
+    "height": 1920,
+    "byte_size": "772161",
+    "licence_metadata": {
+      "reference": {
+        "root_id": "generated",
+        "checksum": "09218336441219d31e4ed791d85f60d687ca7c5562c3968ca56f0af11b695800",
+        "relative_path": "horror/topic-789aaabf927070b98a60f52581da9f4a/assets/ATTRIBUTION.md"
+      },
+      "evidence_checksum": "09218336441219d31e4ed791d85f60d687ca7c5562c3968ca56f0af11b695800",
+      "legal_verification": "Operator must review the saved licence evidence; a checksum alone does not grant usage rights."
+    },
+    "validation_report": {
+      "bytes": 772161,
+      "width": 1080,
+      "codecs": {
+        "audio": "aac",
+        "video": "h264"
+      },
+      "engine": "OpenMontage registry: Piper/audio_mixer/video_compose",
+      "height": 1920,
+      "passed": true,
+      "scenes": [
+        {
+          "camera": "push_in",
+          "number": 1,
+          "component": "environment",
+          "environment": "mirror",
+          "source_sha256": "e73d6cb7dca90b9567cd76dd3f3b9a2554de0f2c8f8a958ce530868a5e4bfa4a"
+        }
+      ],
+      "quality": {
+        "passed": true,
+        "mean_dbfs": -21.3,
+        "peak_dbfs": -3.9,
+        "subtitle_cues": 2,
+        "freeze_noise_db": -65,
+        "final_resolution": "1080x1920",
+        "source_resolution": "540x960",
+        "no_black_intervals": true,
+        "subtitle_alignment": "Actual per-phrase waveform duration; no overlapping cues; no ASR",
+        "no_frozen_intervals": true,
+        "full_decode_exit_code": 0,
+        "source_motion_metrics": [
+          {
+            "passed": true,
+            "decoded_frames": 150,
+            "one_second_differences": [
+              3.412654399871826,
+              3.2785184383392334,
+              3.4443209171295166,
+              3.633580207824707
+            ],
+            "longest_exact_duplicate_run": 0,
+            "mean_adjacent_frame_difference": 0.4064740240573883
+          }
+        ]
+      },
+      "checksum": "1801c5491189bd0ed3bc07f005932f5d1717c9c89f610be413643d1d0482a907",
+      "duration": 5,
+      "narration": {
+        "text": "Alone at home, I heard my name. The mirror answered.",
+        "voice": "en_US-ljspeech-medium",
+        "phrases": [
+          {
+            "text": "Alone at home, I heard my name.",
+            "scene": 1,
+            "speed_factor": 0.85,
+            "raw_duration_seconds": 2.043356009070295,
+            "fitted_duration_seconds": 2.3814166666666665
+          },
+          {
+            "text": "The mirror answered.",
+            "scene": 1,
+            "speed_factor": 0.85,
+            "raw_duration_seconds": 1.2770975056689342,
+            "fitted_duration_seconds": 1.4797916666666666
+          }
+        ],
+        "provider": "Piper 1.8.0"
+      },
+      "resources": {
+        "scope": "Whole host/GPU, includes all other applications; not renderer process RSS",
+        "samples": 23,
+        "peak_gpu_vram_mib": null,
+        "peak_host_ram_bytes": 14370721792,
+        "peak_gpu_util_percent": null
+      },
+      "subtitles": {
+        "cues": 2,
+        "artifact_valid": true,
+        "burned_in_verification": "Requires existing digest-bound render evidence or human preview; ffprobe cannot detect rasterized words."
+      },
+      "new_render": true,
+      "performance": {
+        "qc_seconds": 0.610000000015134,
+        "audio_mix_seconds": 0.21900000001187436,
+        "composition_seconds": 4.921999999991385,
+        "visual_render_seconds": 5.60899999999674,
+        "asset_selection_seconds": 0.006647499999999127,
+        "worker_pipeline_seconds": 20.60899999999674,
+        "voice_generation_seconds": 7.35899999999674,
+        "storyboard_preparation_seconds": 1.187999999994645
+      },
+      "audio_present": true,
+      "script_source": "explicit deterministic fixture; no real inference",
+      "source_job_id": "5ad0e3ec-b3e2-4ee8-9fa3-947f2f4556ee",
+      "elapsed_seconds": 21.621820300000003,
+      "licence_metadata": {
+        "reference": {
+          "root_id": "generated",
+          "checksum": "09218336441219d31e4ed791d85f60d687ca7c5562c3968ca56f0af11b695800",
+          "relative_path": "horror/topic-789aaabf927070b98a60f52581da9f4a/assets/ATTRIBUTION.md"
+        },
+        "evidence_checksum": "09218336441219d31e4ed791d85f60d687ca7c5562c3968ca56f0af11b695800",
+        "legal_verification": "Operator must review the saved licence evidence; a checksum alone does not grant usage rights."
+      },
+      "output_reference": {
+        "root_id": "generated",
+        "relative_path": "horror/topic-789aaabf927070b98a60f52581da9f4a/final/video.mp4",
+        "engine_project": "topic-789aaabf927070b98a60f52581da9f4a"
+      },
+      "ffprobe_exit_code": 0,
+      "generation_seconds": 21.146463200000003,
+      "full_decode_exit_code": 0,
+      "subtitle_burn_evidence": {
+        "method": "Successful OpenMontage FFmpeg subtitles filter, saved decoded frame for visual review",
+        "preview": "C:\\Projects\\Manas_Flow\\SocialStudio\\generated-videos\\horror\\topic-789aaabf927070b98a60f52581da9f4a\\previews\\frame-mid.png"
+      },
+      "engine_project_reference": "topic-789aaabf927070b98a60f52581da9f4a"
+    },
+    "validation_status": "passed",
+    "created_at": "2026-10-31T15:47:24.456Z",
+    "updated_at": "2026-10-31T15:47:24.456Z",
+    "windows_path": "C:\\Projects\\Manas_Flow\\SocialStudio\\generated-videos\\horror\\topic-789aaabf927070b98a60f52581da9f4a\\final\\video.mp4"
+  },
+  "approval": {
+    "id": "bca24cb1-6e04-46cc-ab0f-73a553d6eb32",
+    "checksum": "1801c5491189bd0ed3bc07f005932f5d1717c9c89f610be413643d1d0482a907",
+    "version": 2
+  },
+  "rendered_at": "2026-10-31T15:49:48.251Z",
+  "publishing": [
+    {
+      "id": "784c013e-8e93-4973-b753-02b5c0359cae",
+      "platform": "facebook",
+      "status": "published",
+      "post_id": "mock-facebook-6f5ed771b9dfe69a668cd8b2",
+      "media_asset_id": "1ca5fd5e-01a1-479c-80b1-eff8dcab75ac",
+      "checksum": "1801c5491189bd0ed3bc07f005932f5d1717c9c89f610be413643d1d0482a907",
+      "attempt_count": 1,
+      "completed_at": "2026-10-31T15:49:51.686Z",
+      "last_error": null
+    },
+    {
+      "id": "48ce692d-0e8e-447c-aedb-601556228c4e",
+      "platform": "instagram",
+      "status": "published",
+      "post_id": "mock-instagram-96aa4d6e11c746277705d765",
+      "media_asset_id": "1ca5fd5e-01a1-479c-80b1-eff8dcab75ac",
+      "checksum": "1801c5491189bd0ed3bc07f005932f5d1717c9c89f610be413643d1d0482a907",
+      "attempt_count": 1,
+      "completed_at": "2026-10-31T15:49:55.209Z",
+      "last_error": null
+    },
+    {
+      "id": "8803f100-c248-4305-9f88-dca9bc982bc9",
+      "platform": "youtube",
+      "status": "published",
+      "post_id": "mock-youtube-d3ffe4bb0a5497e1f4f5f97f",
+      "media_asset_id": "1ca5fd5e-01a1-479c-80b1-eff8dcab75ac",
+      "checksum": "1801c5491189bd0ed3bc07f005932f5d1717c9c89f610be413643d1d0482a907",
+      "attempt_count": 1,
+      "completed_at": "2026-10-31T15:49:54.239Z",
+      "last_error": null
+    }
+  ],
+  "report": {
+    "jobs_by_brand": [
+      {
+        "slug": "horror",
+        "total": 16,
+        "videos_completed": 7,
+        "pending_approvals": 3,
+        "failed_jobs": 1,
+        "average_production_seconds": 16.35612782500002
+      }
+    ],
+    "publishing_results": [
+      {
+        "slug": "horror",
+        "platform": "facebook",
+        "status": "published",
+        "count": 3
+      },
+      {
+        "slug": "horror",
+        "platform": "instagram",
+        "status": "published",
+        "count": 3
+      },
+      {
+        "slug": "horror",
+        "platform": "youtube",
+        "status": "cancelled",
+        "count": 1
+      },
+      {
+        "slug": "horror",
+        "platform": "youtube",
+        "status": "manual_review",
+        "count": 1
+      },
+      {
+        "slug": "horror",
+        "platform": "youtube",
+        "status": "published",
+        "count": 4
+      }
+    ],
+    "mode": "mock",
+    "public_posts": 0
+  },
+  "notifications": [
+    {
+      "id": "2736e333-c3a7-4d34-a3cc-4772eb6475f2",
+      "event_type": "publishing.succeeded",
+      "sink": "local"
+    },
+    {
+      "id": "857fc046-32c3-40b2-98cd-6eb2337e5a87",
+      "event_type": "publishing.succeeded",
+      "sink": "local"
+    },
+    {
+      "id": "73d02728-965f-4f1a-b5ee-0c51b001ceed",
+      "event_type": "preview.ready",
+      "sink": "local"
+    },
+    {
+      "id": "7dad3c47-477e-4f80-a72f-6d20f7059a23",
+      "event_type": "approval.required",
+      "sink": "local"
+    },
+    {
+      "id": "bf2b3cc9-017e-4c99-a768-401c6a9d555a",
+      "event_type": "publishing.succeeded",
+      "sink": "local"
+    },
+    {
+      "id": "2413ccc3-fd07-4d43-a193-27ff0275e671",
+      "event_type": "job.accepted",
+      "sink": "local"
+    }
+  ],
+  "executions": [
+    {
+      "id": 5810,
+      "workflow_id": "socialstudio0001",
+      "status": "success",
+      "started_at": "2026-10-31T16:47:01.52+01:00",
+      "stopped_at": "2026-10-31T16:47:01.716+01:00"
+    },
+    {
+      "id": 5811,
+      "workflow_id": "socialstudio0002",
+      "status": "success",
+      "started_at": "2026-10-31T16:47:01.647+01:00",
+      "stopped_at": "2026-10-31T16:47:02.794+01:00"
+    },
+    {
+      "id": 5812,
+      "workflow_id": "socialstudio0010",
+      "status": "success",
+      "started_at": "2026-10-31T16:47:01.7+01:00",
+      "stopped_at": "2026-10-31T16:47:01.821+01:00"
+    },
+    {
+      "id": 5813,
+      "workflow_id": "socialstudio0003",
+      "status": "success",
+      "started_at": "2026-10-31T16:47:02.783+01:00",
+      "stopped_at": "2026-10-31T16:47:25.013+01:00"
+    },
+    {
+      "id": 5819,
+      "workflow_id": "socialstudio0004",
+      "status": "success",
+      "started_at": "2026-10-31T16:47:25.006+01:00",
+      "stopped_at": "2026-10-31T16:47:25.079+01:00"
+    },
+    {
+      "id": 5820,
+      "workflow_id": "socialstudio0005",
+      "status": "success",
+      "started_at": "2026-10-31T16:47:25.067+01:00",
+      "stopped_at": "2026-10-31T16:49:53.154+01:00"
+    },
+    {
+      "id": 5866,
+      "workflow_id": "socialstudio0006",
+      "status": "success",
+      "started_at": "2026-10-31T16:49:49.552+01:00",
+      "stopped_at": "2026-10-31T16:49:51.657+01:00"
+    },
+    {
+      "id": 5867,
+      "workflow_id": "socialstudio0009",
+      "status": "success",
+      "started_at": "2026-10-31T16:49:51.644+01:00",
+      "stopped_at": "2026-10-31T16:49:51.728+01:00"
+    },
+    {
+      "id": 5868,
+      "workflow_id": "socialstudio0010",
+      "status": "success",
+      "started_at": "2026-10-31T16:49:51.721+01:00",
+      "stopped_at": "2026-10-31T16:49:51.783+01:00"
+    },
+    {
+      "id": 5869,
+      "workflow_id": "socialstudio0006",
+      "status": "success",
+      "started_at": "2026-10-31T16:49:53.081+01:00",
+      "stopped_at": "2026-10-31T16:49:55.186+01:00"
+    },
+    {
+      "id": 5870,
+      "workflow_id": "socialstudio0010",
+      "status": "success",
+      "started_at": "2026-10-31T16:49:53.106+01:00",
+      "stopped_at": "2026-10-31T16:49:53.25+01:00"
+    },
+    {
+      "id": 5871,
+      "workflow_id": "socialstudio0010",
+      "status": "success",
+      "started_at": "2026-10-31T16:49:53.139+01:00",
+      "stopped_at": "2026-10-31T16:49:53.213+01:00"
+    },
+    {
+      "id": 5872,
+      "workflow_id": "socialstudio0006",
+      "status": "success",
+      "started_at": "2026-10-31T16:49:54.552+01:00",
+      "stopped_at": "2026-10-31T16:49:54.21+01:00"
+    },
+    {
+      "id": 5873,
+      "workflow_id": "socialstudio0008",
+      "status": "success",
+      "started_at": "2026-10-31T16:49:55.176+01:00",
+      "stopped_at": "2026-10-31T16:49:55.248+01:00"
+    },
+    {
+      "id": 5874,
+      "workflow_id": "socialstudio0010",
+      "status": "success",
+      "started_at": "2026-10-31T16:49:55.241+01:00",
+      "stopped_at": "2026-10-31T16:49:55.281+01:00"
+    },
+    {
+      "id": 5875,
+      "workflow_id": "socialstudio0007",
+      "status": "success",
+      "started_at": "2026-10-31T16:49:54.201+01:00",
+      "stopped_at": "2026-10-31T16:49:54.279+01:00"
+    },
+    {
+      "id": 5876,
+      "workflow_id": "socialstudio0010",
+      "status": "success",
+      "started_at": "2026-10-31T16:49:54.273+01:00",
+      "stopped_at": "2026-10-31T16:49:54.313+01:00"
+    },
+    {
+      "id": 5877,
+      "workflow_id": "socialstudio0001",
+      "status": "success",
+      "started_at": "2026-10-31T16:49:54.642+01:00",
+      "stopped_at": "2026-10-31T16:49:54.739+01:00"
+    },
+    {
+      "id": 5878,
+      "workflow_id": "socialstudio0010",
+      "status": "success",
+      "started_at": "2026-10-31T16:49:54.729+01:00",
+      "stopped_at": "2026-10-31T16:49:54.799+01:00"
+    },
+    {
+      "id": 5879,
+      "workflow_id": "socialstudio0012",
+      "status": "success",
+      "started_at": "2026-10-31T16:49:54.751+01:00",
+      "stopped_at": "2026-10-31T16:49:54.878+01:00"
+    }
+  ],
+  "events": [
+    {
+      "id": 328,
+      "event_type": "job.accepted",
+      "created_at": "2026-10-31T16:47:01.602911+01:00"
+    },
+    {
+      "id": 329,
+      "event_type": "ai.queued",
+      "created_at": "2026-10-31T16:47:01.702752+01:00"
+    },
+    {
+      "id": 330,
+      "event_type": "ai.attempt_finished",
+      "created_at": "2026-10-31T16:47:01.854046+01:00"
+    },
+    {
+      "id": 331,
+      "event_type": "ai.result_attached",
+      "created_at": "2026-10-31T16:47:02.758333+01:00"
+    },
+    {
+      "id": 332,
+      "event_type": "production.queued",
+      "created_at": "2026-10-31T16:47:02.821512+01:00"
+    },
+    {
+      "id": 333,
+      "event_type": "worker.claimed",
+      "created_at": "2026-10-31T16:47:02.947876+01:00"
+    },
+    {
+      "id": 334,
+      "event_type": "production.completed",
+      "created_at": "2026-10-31T16:47:24.456764+01:00"
+    },
+    {
+      "id": 335,
+      "event_type": "quality.passed",
+      "created_at": "2026-10-31T16:47:25.041758+01:00"
+    },
+    {
+      "id": 336,
+      "event_type": "approval.requested",
+      "created_at": "2026-10-31T16:47:25.107444+01:00"
+    },
+    {
+      "id": 355,
+      "event_type": "approval.approved",
+      "created_at": "2026-10-31T16:49:48.196742+01:00"
+    },
+    {
+      "id": 356,
+      "event_type": "publishing.scheduled",
+      "created_at": "2026-10-31T16:49:49.583547+01:00"
+    },
+    {
+      "id": 357,
+      "event_type": "publishing.verification_requested",
+      "created_at": "2026-10-31T16:49:49.597329+01:00"
+    },
+    {
+      "id": 358,
+      "event_type": "worker.claimed",
+      "created_at": "2026-10-31T16:49:49.690287+01:00"
+    },
+    {
+      "id": 359,
+      "event_type": "publishing.succeeded",
+      "created_at": "2026-10-31T16:49:51.686139+01:00"
+    },
+    {
+      "id": 361,
+      "event_type": "publishing.verification_requested",
+      "created_at": "2026-10-31T16:49:53.125932+01:00"
+    },
+    {
+      "id": 362,
+      "event_type": "worker.claimed",
+      "created_at": "2026-10-31T16:49:53.16042+01:00"
+    },
+    {
+      "id": 363,
+      "event_type": "publishing.verification_requested",
+      "created_at": "2026-10-31T16:49:54.580519+01:00"
+    },
+    {
+      "id": 364,
+      "event_type": "publishing.succeeded",
+      "created_at": "2026-10-31T16:49:55.209176+01:00"
+    },
+    {
+      "id": 365,
+      "event_type": "worker.claimed",
+      "created_at": "2026-10-31T16:49:55.457791+01:00"
+    },
+    {
+      "id": 366,
+      "event_type": "publishing.succeeded",
+      "created_at": "2026-10-31T16:49:54.239785+01:00"
+    }
+  ],
+  "completed_at": "2026-10-31T15:49:55.209Z",
+  "acceptance_passed": true,
+  "performance": {
+    "ai_task_ms": 151,
+    "qc_seconds": 0.610000000015134,
+    "audio_mix_seconds": 0.21900000001187436,
+    "composition_seconds": 4.921999999991385,
+    "visual_render_seconds": 5.60899999999674,
+    "asset_selection_seconds": 0.006647499999999127,
+    "worker_pipeline_seconds": 20.60899999999674,
+    "voice_generation_seconds": 7.35899999999674,
+    "storyboard_preparation_seconds": 1.187999999994645,
+    "render_subprocess_seconds": 21.146463200000003,
+    "worker_total_seconds": 21.621820300000003,
+    "intake_to_media_seconds": 22.842,
+    "intake_to_last_mock_publication_seconds": 173.595,
+    "render_relative_to_19_39s_baseline": 1.0905860340381641,
+    "resources": {
+      "scope": "Whole host/GPU, includes all other applications; not renderer process RSS",
+      "samples": 23,
+      "peak_gpu_vram_mib": null,
+      "peak_host_ram_bytes": 14370721792,
+      "peak_gpu_util_percent": null
+    }
+  }
+}

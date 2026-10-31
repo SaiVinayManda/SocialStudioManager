@@ -1,7 +1,7 @@
 import fs from 'node:fs';import path from 'node:path';import {spawnSync} from 'node:child_process';
 import {childEnvironment} from '../services/production-adapter/media.mjs';
 import {localGrant} from './studio-test-client.mjs';import {demand} from '../services/studio-runtime/contracts.mjs';
-const root=localGrant(),stamp=new Date().toISOString(),dir=path.join(root,'docs/test-evidence/milestone-e2',stamp.replaceAll(/[:.]/g,'-'));fs.mkdirSync(dir,{recursive:true});
+const root=localGrant(),stamp=new Date().toISOString(),dir=path.join(root,process.argv.includes('--e3')?'docs/test-evidence/milestone-e3/regressions':'docs/test-evidence/milestone-e2',stamp.replaceAll(/[:.]/g,'-'));fs.mkdirSync(dir,{recursive:true});
 const env={...childEnvironment(root),DOCKER_CONFIG:path.join(root,'.runtime/orchestrator-inspection/docker-empty')};
 const exe='C:\\Program Files\\Docker\\Docker\\resources\\cli-plugins\\docker-compose.exe',prefix=['-p','socialstudio','-f','infrastructure/docker-compose.yml','-f','infrastructure/docker-compose.local-access.yml'];
 function run(name,args){const r=spawnSync(exe,[...prefix,...args],{cwd:root,env,windowsHide:true,encoding:'utf8',timeout:120000,maxBuffer:2097152});let data;try{data=JSON.parse(r.stdout.trim());}catch{data={passed:false,error:'COMMAND_OR_JSON_FAILURE',exit_code:r.status};}fs.writeFileSync(path.join(dir,name+'.json'),JSON.stringify(data,null,2)+'\n',{flag:'wx'});console.log(JSON.stringify({name,passed:data.passed??true,checks:data.checks??null,error:data.error??null,evidence:path.join(dir,name+'.json')}));demand(r.status===0&&data.passed!==false,'DEPLOYED_AI_CHECK_FAILED_'+name);return data;}

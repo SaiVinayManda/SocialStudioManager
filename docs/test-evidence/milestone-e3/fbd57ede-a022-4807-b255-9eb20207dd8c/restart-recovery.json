@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "at": "2026-10-31T16:38:30.906Z",
+  "scope": "Actual manual media-worker restart while an ordinary dynamic Travel job awaits operator approval; no mid-render crash claim",
+  "worker_pid": 33204,
+  "job_id": "74212973-983e-4837-844d-412d5d8dc40c",
+  "status": "awaiting_approval",
+  "media_asset_id": "c7fe5122-dbdb-4c77-9c4b-4919e2c4c54b",
+  "checksum": "47f68dc86a3095e0252483a2ac595627fb202d472e01a33c6249cb8ee095b5ee",
+  "publishing_jobs": 0,
+  "policy_expiry_extended": false
+}

@@ -8,6 +8,7 @@ import * as operations from './operations.mjs';
 import {providerHealth} from '../ai-agent-manager/providers.mjs';
 import * as ai from '../ai-agent-manager/store.mjs';
 import * as aiIntake from '../ai-agent-manager/intake.mjs';
+import {intakeTopic} from '../production-adapter/topic-intake.mjs';
 const send=(res,status,data)=>{res.writeHead(status,{'content-type':'application/json','cache-control':'no-store','x-content-type-options':'nosniff'});res.end(JSON.stringify(data));};
 async function body(req){let bytes=0;const chunks=[];for await(const chunk of req){bytes+=chunk.length;demand(bytes<=262144,'REQUEST_TOO_LARGE',413);chunks.push(chunk);}if(!bytes)return {};try{return JSON.parse(Buffer.concat(chunks).toString('utf8'));}catch{throw new StudioError('INVALID_JSON');}}
 function restrictedPath(root,reference,slug){
@@ -26,7 +27,7 @@ export function createServer({db,secrets,webhookKey,mediaRoot='/studio/media',ai
       let m;const data=['POST','PUT','PATCH'].includes(req.method)?await body(req):null;
       if(req.method==='GET'&&route==='/brands'){allow('control','n8n');return send(res,200,{brands:(await db.query('SELECT id,name,slug,default_language FROM studio.brands ORDER BY slug')).rows});}
       if(req.method==='POST'&&route==='/webhooks/verify'){allow('n8n');return send(res,200,await operations.webhook(db,data,webhookKey));}
-      if(req.method==='POST'&&route==='/intake'){allow('control','n8n');if(data?.source_type==='ai_only'){demand(aiEnabled,'AI_SCHEMA_NOT_READY',503);return send(res,201,await aiIntake.intake(db,data));}return send(res,201,await production.intake(db,data));}
+      if(req.method==='POST'&&route==='/intake'){allow('control','n8n');if(data?.source_type==='topic'){demand(aiEnabled,'AI_SCHEMA_NOT_READY',503);return send(res,201,await intakeTopic(db,data,mediaRoot));}if(data?.source_type==='ai_only'){demand(aiEnabled,'AI_SCHEMA_NOT_READY',503);return send(res,201,await aiIntake.intake(db,data));}return send(res,201,await production.intake(db,data));}
       if(req.method==='POST'&&route==='/jobs'){
         allow('control','n8n');demand(data&&typeof data==='object'&&!Array.isArray(data),'OBJECT_REQUIRED');let id;
         if(Object.hasOwn(data,'job_id')){exact(data,['job_id'],['job_id']);id=data.job_id;}
