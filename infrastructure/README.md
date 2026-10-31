@@ -1,5 +1,7 @@
 # Local Social Studio deployment
 
+Actual update 2026-10-31: original setup and local-auth grants received; three services run internally and migration/seeds/SQL + deployed API checks passed. **Host access/full pipeline not working yet**: Docker does not publish the requested ports from an exclusively internal network. The extra [fixed proxy/bridge proposal](../docs/ORCHESTRATOR_LOCAL_ACCESS_APPROVAL.md) is unapproved; `docker-compose.local-access.yml` is a proposal only. No workflows imported/executed yet. The older prepared-only paragraph below is historical, not a statement that approved installation remains pending.
+
 Prepared for the owner's Milestone E request. **Not deployed or accepted yet.** Installation and fresh local credential provisioning require the separate grants in [the approval packet](../docs/ORCHESTRATOR_SETUP_APPROVAL.md). Existing Docker Desktop 4.40.0 / engine 28.0.4 / Compose 2.34.0 are operational; do not reinstall or change their WSL backend. Other containers/volumes are out of scope.
 
 Pinned images: n8n 2.45.7; PostgreSQL 17.11-alpine. Application uses Node's built-in HTTP/test/crypto/filesystem APIs plus the 14-package frozen pg dependency closure. The native Windows worker reuses the approved portable FFmpeg/ffprobe; no new video/model download. No Docker socket is mounted into any service. A single internal Docker network carries n8n, application and PostgreSQL traffic; no container Internet egress is required for mock acceptance.

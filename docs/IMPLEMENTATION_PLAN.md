@@ -2,6 +2,8 @@
 
 ## Current owner direction: Milestone E local orchestration
 
+Latest actual state (2026-10-31): both original E grants received; pinned images/14 packages/nine fresh local keys/three isolated services installed. PostgreSQL migration 001 and six-brand/mock seeds applied; four real SQL assertions and thirteen deployed API checks passed. n8n 2.45.7 is internally ready. Host ports do not publish on the original internal-only network; the reviewed [E-LOCAL-ACCESS-01](ORCHESTRATOR_LOCAL_ACCESS_APPROVAL.md) proxy/network/time correction is pending. Stage 1 installation/database validation achieved; host-access/bootstrap and Stage 2 actual n8n acceptance remain blocked. No workflow import, render, publishing or supervisor activation claimed.
+
 Current checkpoint (2026-10-31): E application modules, native worker, folder scanner, twelve workflow exports, SQL constraint fixture, bootstrap and genuine deployed E2E scripts are prepared. Local unit/HTTP/process/media checks passed. No deployment or database execution has occurred; both installation and fresh-local-auth grants remain pending. Ordinary local implementation has reached the deployment approval boundary. Advanced Milestone A is preserved/deferred.
 
 | Remaining work after approval | Estimated engineering hours | Acceptance evidence still required |

@@ -1,0 +1,23 @@
+{
+  "captured_utc": "2026-10-31T07:18:13.262Z",
+  "new_project": "socialstudio",
+  "n8n_version_actual": "2.45.7",
+  "n8n_internal_readiness_http": 200,
+  "postgres_migration": {"version":1,"name":"foundation","checksum":"4766440a63d2e3850aa0a30aeac40bebda88218e7fd3ff1ba3b53a9c4a7f8d3c"},
+  "brand_count": 6,
+  "mock_account_count": 18,
+  "real_sql_assertions_passed": 4,
+  "fixture_transaction": "rolled_back",
+  "runtime_roles_superuser": false,
+  "runtime_roles_createdb": false,
+  "runtime_roles_createrole": false,
+  "application_can_connect_n8n_database": false,
+  "requested_bindings": {"n8n":"127.0.0.1:5678","studio-api":"127.0.0.1:8780"},
+  "effective_published_ports": {},
+  "host_access_passed": false,
+  "blocker": "Internal-only network has no default-gateway network for Docker host port publication.",
+  "proxy_proposal_activated": false,
+  "workflow_imported_count": 0,
+  "end_to_end_passed": false,
+  "public_posts": 0
+}

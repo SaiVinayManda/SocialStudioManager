@@ -6,6 +6,7 @@ const root=localGrant(),runtime=path.join(root,'.runtime/orchestrator'),ledger=J
 demand(ledger.infra_setup===true,'E_INFRA_SETUP_APPROVAL_REQUIRED');demand(process.argv.includes('--fresh-local-instance'),'FRESH_INSTANCE_CONFIRMATION_REQUIRED');
 const receipt=path.join(runtime,'n8n-bootstrap.json');demand(!fs.existsSync(receipt),'EXISTING_BOOTSTRAP_PRESERVED');
 const docker='C:\\Program Files\\Docker\\Docker\\resources\\bin\\docker.exe',prefix=['compose','-p','socialstudio','-f','infrastructure/docker-compose.yml'];
+if(ledger.local_access===true)prefix.push('-f','infrastructure/docker-compose.local-access.yml');
 const env={...childEnvironment(root),DOCKER_CONFIG:path.join(root,'.runtime/orchestrator-inspection/docker-empty')};
 function command(args,input){const r=spawnSync(docker,[...prefix,...args],{cwd:root,env,windowsHide:true,input,encoding:'utf8',timeout:120000,maxBuffer:1048576});demand(r.status===0,'LOCAL_N8N_COMMAND_FAILED');return r.stdout;}
 function sql(query){return command(['exec','-T','postgres','psql','-v','ON_ERROR_STOP=1','-U','studio_bootstrap','-d','n8n_internal','-At','-c',query]).trim();}

@@ -1,0 +1,15 @@
+{
+  "captured_utc": "2026-10-31T07:20:52.195Z",
+  "command": "node --test --test-reporter=spec tests/orchestrator/proxy.test.mjs",
+  "exit_code": 0,
+  "tests": 2,
+  "passed": 2,
+  "failed": 0,
+  "skipped": 0,
+  "duration_ms": 199.404,
+  "checks": ["fixed-target forwarding and spoofed forwarding-header removal", "absolute-URL rejection, bounded unavailable response and local health"],
+  "combined_compose_config_validation_passed": true,
+  "proxy_container_created": false,
+  "frontend_network_created": false,
+  "effective_host_access_verified": false
+}

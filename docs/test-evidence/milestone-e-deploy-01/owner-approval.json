@@ -1,0 +1,16 @@
+{
+  "observed_utc": "2026-10-31T05:41:39.339Z",
+  "grants": ["E-INFRA-SETUP-01", "E-LOCAL-AUTH-01"],
+  "source": "Explicit owner message in this session",
+  "statement": "approve E-INFRA-SETUP-01 and separately E-LOCAL-AUTH-01 under the exact approval packet (docs/ORCHESTRATOR_SETUP_APPROVAL.md)",
+  "received_before_expiry": true,
+  "expires_utc": "2026-11-06T00:00:00Z",
+  "packet_sha256": "7ae25c85329724af724b676bc69c2802a17f1ec24136ba8cb06dc0e0920ee26a",
+  "lock_sha256": "a1ce597ee3ea17042f9ba0fe46cdbd7b7087d6a5b7218fa838c0b98335ea331a",
+  "secret_generator_sha256": "ab0fbb08746c783f732cdd9cfc7beb71b0a857ce0c04e124910d65eb59989fb1",
+  "all_three_digests_verified": true,
+  "limits": {"downloads_bytes":2147483648,"additional_storage_bytes":6442450944,"setup_minutes":90,"paid_api_usd":0},
+  "existing_credentials": false,
+  "public_publishing": false,
+  "packet_modified": false
+}

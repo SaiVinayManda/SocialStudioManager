@@ -1,6 +1,6 @@
 # Milestone E implementation and acceptance boundary
 
-Status: local code and export checkpoint; **not deployed or accepted**. The existing Horror MP4 remains unchanged. Supervisor hardening remains deferred; no Telegram dispatch or account use is enabled.
+Status: original setup/local-auth grants executed; three services internally running, actual schema/seeds and SQL/API security checks passed. **Host access/full orchestration not accepted**: internal-only Docker network leaves requested ports unpublished. [A separate proxy proposal](ORCHESTRATOR_LOCAL_ACCESS_APPROVAL.md) is prepared, not activated. No workflow imported/executed or native worker started. Existing Horror MP4 unchanged; supervisor deferred; no Telegram/social/model account use.
 
 ```mermaid
 flowchart LR

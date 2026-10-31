@@ -1,5 +1,25 @@
 # Actual verification results
 
+## Milestone E actual approved deployment — 2026-10-31
+
+Original E-INFRA-SETUP-01 and E-LOCAL-AUTH-01 were explicitly granted; three frozen digests matched and receipt preceded expiry. [Evidence directory](test-evidence/milestone-e-deploy-01). No existing credentials were read. New keys/volumes/node_modules/runtime stay ignored; no secret values were printed. Existing supervisor code and completed pilot remain unchanged.
+
+| Actual command/check | Actual outcome |
+| --- | --- |
+| `node scripts/install-studio-approved.mjs` wrapping the packet's exact pulls/npm ci | Exit 0; n8n pull 79.760 s, PostgreSQL pull 12.421 s, npm ci 0.518 s. All fourteen installed versions match approved lock. Image manifests/content digests retained; Docker performs layer digest checks and npm uses lock integrity. No detached-signature verification claimed |
+| `node scripts/create-studio-local-secrets.mjs --approved=E-LOCAL-AUTH-01` | Exit 0; nine new files, no values logged. ACL metadata: inheritance disabled, two explicit owner/SYSTEM ACEs, zero inherited ACEs. Default sandbox could not enumerate protected key directory; outside inspection used ACL metadata only |
+| Approved `docker compose ... up -d --pull never` | Exit 0; only new `socialstudio` project resources created. PostgreSQL/application internally healthy; actual n8n `--version` 2.45.7 and internal readiness HTTP 200 |
+| `tests/orchestrator/constraints.sql` via actual new PostgreSQL `psql` | Exit 0; four assertions passed: cross-brand FK rejection, invalid status rejection, application cannot forge migration history, media hash change invalidates approval. Own fixture transaction rolled back; no user data deleted |
+| Actual migration/seeds/roles | Version 1 checksum `4766440a63d2e3850aa0a30aeac40bebda88218e7fd3ff1ba3b53a9c4a7f8d3c` matches local SQL; six brands/18 mock destinations. Both runtime roles non-superuser/non-createdb/non-createrole; application cannot connect to n8n database |
+| `node /studio/services/studio-runtime/in-container-checks.mjs` in actual API container | **13/13 passed** against actual API/PostgreSQL using only new keys: health, authentication/roles, malformed input/path, paid-AI refusal, durable nonce replay rejection, tampering and expiry. [Receipt](test-evidence/milestone-e-deploy-01/deployed-auth-checks.json). These are not n8n workflow executions |
+| Host port/readiness | **FAILED**: requested HostConfig mappings exist; effective NetworkSettings.Ports are empty; Windows GETs cannot connect. Internal-only network provides no default-gateway network for Docker port publication. Services remain isolated; no unapproved workaround applied |
+| Proposed fixed proxy fixture + combined Compose `config --quiet` | Two local HTTP tests passed, Compose syntax passed; no proxy/network deployment or actual host-access pass yet |
+| Full existing-video n8n/PostgreSQL workflow test | **NOT RUN**. No local owner/workflow bootstrap, no native worker, zero workflows imported/executed. Requires separately approved [E-LOCAL-ACCESS-01](ORCHESTRATOR_LOCAL_ACCESS_APPROVAL.md) |
+
+Complete image compressed payload upper bound 395,978,162 bytes; small npm closure is below the remaining download budget. PG volume 81,160 KiB, n8n volume 16 KiB observed. Whole-host free space decreased 742,957,056 bytes, with concurrent-application caveat; no 6 GiB storage increase detected. Setup began 06:13:43.085 UTC; original limit 07:43:43.085. No further original-grant setup expansion after that deadline; the access proposal separately requests a bounded extra window. Zero paid API calls/public posts. No peak RAM/GPU measurement or complete pipeline acceptance claimed.
+
+Initial port-preflight command ended nonzero because its final listener query found none; manifests succeeded. A later sandbox CIM listener query was denied and repeated outside with permission, confirming no listeners. These are recorded diagnostics, not installation or security-test passes. Historical local tests below remain separate.
+
 ## Milestone E local implementation — 2026-10-31
 
 Actual checks use existing approved tools only. **Latest run: 34/34 passed, 0 failed/skipped, exit 0** at 2026-10-31 01:14:24–01:14:25 UTC. [Receipt](test-evidence/milestone-e-local/unit-2026-10-31T01-14-24-353Z.json), [TAP](test-evidence/milestone-e-local/unit-2026-10-31T01-14-24-353Z.tap). The initial local suite passed 29/29 after fixing process cleanup. Fixtures use public fictional keys, ephemeral loopback HTTP servers and isolated new runtime files, not service credentials or PostgreSQL substitutes claimed as deployment.

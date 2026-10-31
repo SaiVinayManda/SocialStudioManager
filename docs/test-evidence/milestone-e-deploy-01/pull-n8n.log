@@ -1,0 +1,47 @@
+2.45.7: Pulling from n8nio/n8n
+746aa4544966: Pulling fs layer
+4907f4f6eb4a: Pulling fs layer
+4f4fb700ef54: Pulling fs layer
+0a79d0617314: Pulling fs layer
+091a19af52d7: Pulling fs layer
+952fd465b865: Pulling fs layer
+c6bafa27ed28: Pulling fs layer
+0cbb925e84e3: Pulling fs layer
+d7a48b146f71: Pulling fs layer
+f38fdb140cfa: Pulling fs layer
+dc0950926e9f: Pulling fs layer
+f1bdc3803423: Pulling fs layer
+4d7d4209da9c: Pulling fs layer
+d2263d9681e8: Pulling fs layer
+4f4fb700ef54: Pulling fs layer
+4f4fb700ef54: Already exists
+746aa4544966: Download complete
+0a79d0617314: Download complete
+0a79d0617314: Pull complete
+c6bafa27ed28: Download complete
+4907f4f6eb4a: Download complete
+952fd465b865: Download complete
+d7a48b146f71: Download complete
+f38fdb140cfa: Download complete
+d2263d9681e8: Download complete
+4d7d4209da9c: Download complete
+0cbb925e84e3: Download complete
+f1bdc3803423: Download complete
+091a19af52d7: Download complete
+091a19af52d7: Pull complete
+c6bafa27ed28: Pull complete
+4907f4f6eb4a: Pull complete
+952fd465b865: Pull complete
+0cbb925e84e3: Pull complete
+f38fdb140cfa: Pull complete
+4f4fb700ef54: Pull complete
+dc0950926e9f: Download complete
+dc0950926e9f: Pull complete
+d7a48b146f71: Pull complete
+4d7d4209da9c: Pull complete
+f1bdc3803423: Pull complete
+d2263d9681e8: Pull complete
+746aa4544966: Pull complete
+Digest: sha256:9a8d8dcea75667496695d7810d7e1fe018a65efb36cc499d347f3931b3957b5d
+Status: Downloaded newer image for docker.n8n.io/n8nio/n8n:2.45.7
+docker.n8n.io/n8nio/n8n:2.45.7

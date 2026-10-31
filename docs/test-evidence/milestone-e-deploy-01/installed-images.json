@@ -1,0 +1,24 @@
+[
+    {
+        "Id":  "sha256:9a8d8dcea75667496695d7810d7e1fe018a65efb36cc499d347f3931b3957b5d",
+        "RepoDigests":  [
+                            "docker.n8n.io/n8nio/n8n@sha256:9a8d8dcea75667496695d7810d7e1fe018a65efb36cc499d347f3931b3957b5d"
+                        ],
+        "Size":  278798081,
+        "Architecture":  "amd64",
+        "Os":  "linux",
+        "Version":  "2.45.7",
+        "PostgresVersion":  ""
+    },
+    {
+        "Id":  "sha256:266d3c257594e195b309ae9d1805e54c788f1d7b375f56bf6c367aac6c917e7b",
+        "RepoDigests":  [
+                            "postgres@sha256:266d3c257594e195b309ae9d1805e54c788f1d7b375f56bf6c367aac6c917e7b"
+                        ],
+        "Size":  117214490,
+        "Architecture":  "amd64",
+        "Os":  "linux",
+        "Version":  null,
+        "PostgresVersion":  "PG_VERSION=17.11"
+    }
+]

@@ -1,0 +1,30 @@
+{
+  "started_utc": "2026-10-31T06:13:43.085Z",
+  "deadline_utc": "2026-10-31T07:43:43.085Z",
+  "grant": "E-INFRA-SETUP-01",
+  "full_image_compressed_payload_bytes": 395978162,
+  "commands": [
+    {
+      "name": "pull-n8n",
+      "exit_code": 0,
+      "elapsed_seconds": 79.76,
+      "finished_utc": "2026-10-31T06:15:02.847Z"
+    },
+    {
+      "name": "pull-postgres",
+      "exit_code": 0,
+      "elapsed_seconds": 12.421,
+      "finished_utc": "2026-10-31T06:15:15.269Z"
+    },
+    {
+      "name": "npm-ci",
+      "exit_code": 0,
+      "elapsed_seconds": 0.518,
+      "finished_utc": "2026-10-31T06:15:15.788Z"
+    }
+  ],
+  "paid_api_calls": 0,
+  "complete": false,
+  "install_commands_complete": true,
+  "updated_utc": "2026-10-31T06:15:15.789Z"
+}

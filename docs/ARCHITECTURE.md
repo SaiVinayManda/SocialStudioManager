@@ -1,6 +1,6 @@
 # Social Studio architecture
 
-Current priority: **Milestone E local orchestration**, following the real completed Horror pilot. [The orchestration architecture](ORCHESTRATOR_ARCHITECTURE.md) and [operations runbook](ORCHESTRATOR_OPERATIONS.md) describe the prepared n8n/PostgreSQL/adapter implementation, which is not yet deployed or accepted. Both E installation and fresh-local-auth grants remain pending. Advanced A hardening is deferred; the historical supervisor architecture below remains preserved and live-disabled. Existing OpenMontage/FFmpeg/Piper installations and the finished video are reused; no social credentials or live publishing have been enabled.
+Current priority: **Milestone E local orchestration**, following the real completed Horror pilot. Original E installation/local-auth grants were explicitly received and executed: three internally running services, real PostgreSQL migration/seeds, four SQL assertions and thirteen deployed API checks passed. **Host access/full workflow acceptance remains blocked**, because Docker does not publish ports from the approved internal-only topology. The [fixed proxy/bridge correction](ORCHESTRATOR_LOCAL_ACCESS_APPROVAL.md) is proposed and unapproved. [Orchestration architecture](ORCHESTRATOR_ARCHITECTURE.md), [operations](ORCHESTRATOR_OPERATIONS.md) and [actual evidence](TEST_RESULTS.md) distinguish installed components from acceptance. Advanced A remains preserved/deferred/live-disabled. No social credentials or live publishing enabled.
 
 ```mermaid
 flowchart TD

@@ -1,5 +1,13 @@
 # Human actions and approval register
 
+## Current Milestone E action — 2026-10-31
+
+**E-INFRA-SETUP-01 and E-LOCAL-AUTH-01 ARE GRANTED**, by the owner's explicit message approving each exact packet. [Receipt](test-evidence/milestone-e-deploy-01/owner-approval.json) records the unchanged packet/helper/lock hashes and expiry. Images/locked dependencies/nine new keys and only the isolated three-service project are installed. Do not request these grants again or reinstall completed components. Original setup deadline is 2026-10-31T07:43:43.085Z; no further original-grant setup expansion after it.
+
+**New and separate approval needed: [E-LOCAL-ACCESS-01](ORCHESTRATOR_LOCAL_ACCESS_APPROVAL.md)**, packet SHA256 `dcc860db57fcbc0ea2e86b4a0fa6e6bf5d018bd2c00f0564e45c5e5e4465156e`. Actual Docker port mappings are absent on an internal-only network, so host access and full n8n acceptance cannot run. Proposal adds one reviewed fixed proxy, one frontend bridge, same two loopback ports, no new download/key/account/public port, and one extra 30-minute completion window. Original app/n8n/database remain internally isolated. Exact commands, hashes, risks and nondestructive rollback are in that packet. This resource/network/time expansion was not in the original approved packet and is **not yet granted or deployed**.
+
+Four actual SQL assertions and thirteen deployed API checks passed; workflows imported/executed remain zero. Older pending-E-grant entries below are historical, superseded by the explicit owner receipt; the original authored approval packet stays frozen for integrity.
+
 ## Milestone E immediate blocker — 2026-10-31
 
 Owner approval is still needed for **E-INFRA-SETUP-01** and separately **E-LOCAL-AUTH-01**, exactly as scoped in [ORCHESTRATOR_SETUP_APPROVAL.md](ORCHESTRATOR_SETUP_APPROVAL.md), SHA256 `7ae25c85329724af724b676bc69c2802a17f1ec24136ba8cb06dc0e0920ee26a`. No approval record/secret directory has been created. The prior B grants are consumed and do not authorize these operations.
