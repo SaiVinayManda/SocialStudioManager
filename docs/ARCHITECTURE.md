@@ -1,6 +1,6 @@
 # Social Studio architecture
 
-Current priority: the owner's bounded local OpenMontage Horror pilot before A acceptance. Advanced A hardening is deferred; the tested local supervisor below remains preserved and live-disabled. Existing installations are preserved; no engine runtime, service, credential connection or publishing workflow has been enabled. The local pilot follows OpenMontage's cinematic FFmpeg route after [setup approval](OPENMONTAGE_INSTALL_APPROVAL.md); it does not need n8n or a remote supervisor.
+Current priority: **Milestone E local orchestration**, following the real completed Horror pilot. [The orchestration architecture](ORCHESTRATOR_ARCHITECTURE.md) and [operations runbook](ORCHESTRATOR_OPERATIONS.md) describe the prepared n8n/PostgreSQL/adapter implementation, which is not yet deployed or accepted. Both E installation and fresh-local-auth grants remain pending. Advanced A hardening is deferred; the historical supervisor architecture below remains preserved and live-disabled. Existing OpenMontage/FFmpeg/Piper installations and the finished video are reused; no social credentials or live publishing have been enabled.
 
 ```mermaid
 flowchart TD

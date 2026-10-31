@@ -1,0 +1,16 @@
+{
+  "started_utc": "2026-10-31T01:14:24.353Z",
+  "finished_utc": "2026-10-31T01:14:25.666Z",
+  "command": "node --test --test-reporter=tap tests/orchestrator/runtime.test.mjs",
+  "exit_code": 0,
+  "error_code": null,
+  "counts": {
+    "tests": 34,
+    "pass": 34,
+    "fail": 0,
+    "skipped": 0
+  },
+  "passed": true,
+  "n8n_executed": false,
+  "postgres_executed": false
+}

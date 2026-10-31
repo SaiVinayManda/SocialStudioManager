@@ -1,5 +1,27 @@
 # Actual verification results
 
+## Milestone E local implementation — 2026-10-31
+
+Actual checks use existing approved tools only. **Latest run: 34/34 passed, 0 failed/skipped, exit 0** at 2026-10-31 01:14:24–01:14:25 UTC. [Receipt](test-evidence/milestone-e-local/unit-2026-10-31T01-14-24-353Z.json), [TAP](test-evidence/milestone-e-local/unit-2026-10-31T01-14-24-353Z.tap). The initial local suite passed 29/29 after fixing process cleanup. Fixtures use public fictional keys, ephemeral loopback HTTP servers and isolated new runtime files, not service credentials or PostgreSQL substitutes claimed as deployment.
+
+- Real adapter FFprobe + full FFmpeg decode: **passed**, 4.7819414 s; original pilot unchanged, 60 s, 1080x1920, H.264/AAC, 21,303,869 bytes, SHA256 `48fb3d02aecb4e83c43654d111194fd44870011c229a8b7387d8a83096858528`; 32 SRT cues passed structural/timing checks. [Receipt](test-evidence/milestone-e-local/pilot-validation.json). No new render or peak RAM/GPU measurement claimed.
+- HTTP role/auth/malformed JSON/health fixtures, path and schema rejection, signed-envelope content/expiry checks, stable-folder scanner, deterministic three-platform receipts, unknown-outcome handling, mock AI fallback/failure and fixed local child exit/cancellation/timeout tests: actually executed.
+- Twelve generated workflow exports passed static graph/reference/no-shell/no-embedded-credential assertions. **Import/runtime compatibility unverified.** Node syntax checks passed. Historical supervisor 77 tests were preserved, not rerun or counted here.
+- Initial process-tree tests stalled because synchronous Windows taskkill was blocked by the sandbox. Only identified test PIDs/descendants were terminated with scoped tool escalation. Async bounded cleanup now returns explicit cleanup failure; the worker stops on uncertainty. A complete outside-sandbox local rerun passed. The interrupted run is not a passing suite.
+- A subsequent Compose config check accidentally omitted `DOCKER_CONFIG`; Docker attempted its default owner config and the sandbox denied access. No values were returned; no escalation/retry against that file was made. The command was corrected to the new empty project config. This denied attempt is recorded rather than reported as credential-free success.
+
+| Requested deployed acceptance | Current evidence |
+| --- | --- |
+| Migrations/constraints, brand foreign keys and database roles | SQL fixture prepared in `tests/orchestrator/constraints.sql`; **NOT RUN** |
+| Durable intake deduplication/existing import/state transitions | Contracts/worker code and native file decode tested; actual PostgreSQL behavior **NOT RUN** |
+| Approval creation/rejection/hash-change invalidation/expiry | Control roles tested locally; real SQL/API state **NOT RUN** |
+| Scheduling + YouTube/Instagram/Facebook mock workflow dispatch + duplicate prevention | Three provider functions tested; actual n8n/PostgreSQL dispatch **NOT RUN** |
+| Retry, unavailable services, interrupted workflow/database restart persistence | Recovery code prepared; deployed outage/restart cases **NOT RUN** |
+| Missing credentials/invalid destinations/malformed webhooks/AI failure and fallback | Local negative/fixture tests executed; real nonce receipt/replay uniqueness **NOT RUN** |
+| Real 12-workflow end-to-end existing Horror MP4 test | `scripts/studio-e2e.mjs` requires real n8n webhook executions, database receipts and explicit mock test decision; **NOT RUN**, both E grants pending |
+
+No Social Studio service is running, no migration applied and no workflow imported/executed in this task. No publishing or external account integration. [Exact installation/auth scope](ORCHESTRATOR_SETUP_APPROVAL.md).
+
 ## Milestone E foundation — 2026-10-30
 
 Actual checks: tracked baseline `4fdefbb`, preserved untracked owner note; native FFprobe reconfirmed the existing Horror MP4; Docker server/Compose metadata and cached image versions inspected with a fresh empty Docker config (no saved auth access). Default sandbox denied Docker pipe access; the same read-only inspection succeeded through tool escalation. A Go-template quoting attempt failed before metadata lookup and was replaced with a labels-only query. No containers/images/host settings changed.

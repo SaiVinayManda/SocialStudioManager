@@ -22,10 +22,10 @@ CREATE TABLE studio.content_jobs (
   id uuid PRIMARY KEY, brand_id uuid NOT NULL REFERENCES studio.brands(id),
   source_type text NOT NULL CHECK(source_type IN ('existing_file','approved_openmontage')),
   source_reference jsonb NOT NULL CHECK(jsonb_typeof(source_reference)='object'), topic text,
-  script_reference text, production_settings jsonb NOT NULL DEFAULT '{}', content_metadata jsonb NOT NULL DEFAULT '{}',
+  script_reference jsonb, production_settings jsonb NOT NULL DEFAULT '{}', content_metadata jsonb NOT NULL DEFAULT '{}',
   content_version integer NOT NULL DEFAULT 1 CHECK(content_version>0),
   status text NOT NULL DEFAULT 'queued' CHECK(status IN ('queued','processing','produced','validated','awaiting_approval','approved','rejected','scheduled','published','failed','cancelled','manual_review')),
-  idempotency_key text NOT NULL CHECK(length(idempotency_key) BETWEEN 8 AND 180), source_fingerprint text NOT NULL,
+  idempotency_key text NOT NULL CHECK(length(idempotency_key) BETWEEN 8 AND 180), source_fingerprint text NOT NULL CHECK(source_fingerprint ~ '^[a-f0-9]{64}$'), request_checksum text NOT NULL CHECK(request_checksum ~ '^[a-f0-9]{64}$'),
   retry_count integer NOT NULL DEFAULT 0 CHECK(retry_count BETWEEN 0 AND 3), error_details jsonb,
   engine_job_id text, production_seconds double precision CHECK(production_seconds>=0),
   created_at timestamptz NOT NULL DEFAULT now(), updated_at timestamptz NOT NULL DEFAULT now(),
@@ -44,17 +44,18 @@ CREATE TABLE studio.media_assets (
 );
 CREATE TABLE studio.approvals (
   id uuid PRIMARY KEY, job_id uuid NOT NULL, brand_id uuid NOT NULL,
-  content_checksum text NOT NULL CHECK(content_checksum ~ '^[a-f0-9]{64}$'), content_version integer NOT NULL,
+  content_checksum text NOT NULL CHECK(content_checksum ~ '^[a-f0-9]{64}$'), content_version integer NOT NULL CHECK(content_version>0),
   reviewer_identity text, decision text NOT NULL DEFAULT 'pending' CHECK(decision IN ('pending','approved','rejected')),
   decision_timestamp timestamptz, comments text CHECK(length(comments)<=2000),
   expires_at timestamptz NOT NULL, invalidated_at timestamptz, created_at timestamptz NOT NULL DEFAULT now(),
   FOREIGN KEY(job_id,brand_id) REFERENCES studio.content_jobs(id,brand_id),
   UNIQUE(job_id,content_checksum,content_version),
+  UNIQUE(id,job_id,brand_id),
   CHECK((decision='pending' AND decision_timestamp IS NULL AND reviewer_identity IS NULL) OR (decision<>'pending' AND decision_timestamp IS NOT NULL AND reviewer_identity IS NOT NULL))
 );
 CREATE TABLE studio.publishing_jobs (
   id uuid PRIMARY KEY, content_job_id uuid NOT NULL, social_account_id uuid NOT NULL, brand_id uuid NOT NULL,
-  approval_id uuid NOT NULL REFERENCES studio.approvals(id), media_asset_id uuid NOT NULL,
+  approval_id uuid NOT NULL, media_asset_id uuid NOT NULL,
   approved_checksum text NOT NULL CHECK(approved_checksum ~ '^[a-f0-9]{64}$'), content_version integer NOT NULL,
   scheduled_at timestamptz NOT NULL,
   status text NOT NULL DEFAULT 'scheduled' CHECK(status IN ('scheduled','verifying','ready','dispatching','published','retry_wait','failed','cancelled','outcome_unknown','manual_review')),
@@ -66,6 +67,8 @@ CREATE TABLE studio.publishing_jobs (
   FOREIGN KEY(content_job_id,brand_id) REFERENCES studio.content_jobs(id,brand_id),
   FOREIGN KEY(social_account_id,brand_id) REFERENCES studio.social_accounts(id,brand_id),
   FOREIGN KEY(media_asset_id,content_job_id,brand_id) REFERENCES studio.media_assets(id,job_id,brand_id),
+  FOREIGN KEY(approval_id,content_job_id,brand_id) REFERENCES studio.approvals(id,job_id,brand_id),
+  UNIQUE(id,content_job_id),
   UNIQUE(content_job_id,social_account_id,content_version)
 );
 CREATE INDEX publishing_due ON studio.publishing_jobs(scheduled_at,next_attempt_at) WHERE status IN ('scheduled','retry_wait');
@@ -76,13 +79,13 @@ CREATE TABLE studio.job_events (
 );
 CREATE INDEX events_by_job ON studio.job_events(job_id,id);
 CREATE TABLE studio.production_tasks (
-  id uuid PRIMARY KEY, job_id uuid NOT NULL REFERENCES studio.content_jobs(id), publishing_job_id uuid REFERENCES studio.publishing_jobs(id),
+  id uuid PRIMARY KEY, job_id uuid NOT NULL REFERENCES studio.content_jobs(id), publishing_job_id uuid,
   kind text NOT NULL CHECK(kind IN ('validate','render','verify_publish')),
   status text NOT NULL DEFAULT 'queued' CHECK(status IN ('queued','running','completed','failed','cancelled','interrupted')),
   attempts integer NOT NULL DEFAULT 0 CHECK(attempts BETWEEN 0 AND 3), lease_token uuid, lease_until timestamptz,
   result jsonb, bounded_logs text CHECK(length(bounded_logs)<=65536), cancel_requested boolean NOT NULL DEFAULT false,
   created_at timestamptz NOT NULL DEFAULT now(), updated_at timestamptz NOT NULL DEFAULT now(),
-  UNIQUE(job_id,kind,publishing_job_id)
+  UNIQUE(job_id,kind,publishing_job_id), FOREIGN KEY(publishing_job_id,job_id) REFERENCES studio.publishing_jobs(id,content_job_id)
 );
 CREATE UNIQUE INDEX one_initial_task ON studio.production_tasks(job_id,kind) WHERE publishing_job_id IS NULL;
 CREATE UNIQUE INDEX one_render_at_once ON studio.production_tasks(kind) WHERE kind='render' AND status='running';
@@ -133,6 +136,7 @@ CREATE TRIGGER version_approval_guard AFTER UPDATE ON studio.content_jobs FOR EA
 GRANT USAGE ON SCHEMA studio TO studio_app;
 GRANT SELECT,INSERT,UPDATE ON ALL TABLES IN SCHEMA studio TO studio_app;
 REVOKE UPDATE ON studio.job_events,studio.schema_migrations,studio.mock_receipts,studio.webhook_receipts FROM studio_app;
+REVOKE INSERT ON studio.schema_migrations FROM studio_app;
 GRANT USAGE,SELECT ON ALL SEQUENCES IN SCHEMA studio TO studio_app;
 INSERT INTO studio.schema_migrations(version,name,checksum) VALUES(1,'foundation',:'migration_checksum');
 COMMIT;

@@ -3,3 +3,5 @@ docs/test-evidence/openmontage-setup-01/encode.stderr -text -diff
 docs/test-evidence/openmontage-tools-ready-01/*.stdout -text -diff
 docs/test-evidence/openmontage-tools-ready-01/*.stderr -text -diff
 docs/test-evidence/openmontage-pilot-assets-01/*.stderr -text -diff
+*.sh text eol=lf
+*.sql text eol=lf

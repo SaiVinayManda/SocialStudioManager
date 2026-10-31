@@ -1,0 +1,144 @@
+{
+  "id": "socialstudio0009",
+  "name": "Social Studio 09 - Facebook Mock Publishing",
+  "active": false,
+  "nodes": [
+    {
+      "id": "437b684aa269cd2eb5849cb516009e2e",
+      "name": "Subworkflow input",
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        0,
+        0
+      ],
+      "parameters": {
+        "inputSource": "passthrough"
+      }
+    },
+    {
+      "id": "6a547b023cdcf0b17538f5e0a0b65e6a",
+      "name": "Publish mock facebook",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        220,
+        0
+      ],
+      "parameters": {
+        "method": "POST",
+        "url": "={{ 'http://studio-api:8780/publishing/' + $json.id + '/publish/facebook' }}",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ {} }}",
+        "options": {
+          "timeout": 15000
+        }
+      },
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "socialstudioauth",
+          "name": "Social Studio internal API"
+        }
+      }
+    },
+    {
+      "id": "8bcfaed77c9811f9815f093cecf4df78",
+      "name": "Notification facebook",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 2,
+      "position": [
+        440,
+        0
+      ],
+      "parameters": {
+        "keepOnlySet": true,
+        "values": {
+          "string": [
+            {
+              "name": "job_id",
+              "value": "={{ $json.job_id || $json.content_job_id }}"
+            },
+            {
+              "name": "event_type",
+              "value": "publishing.succeeded"
+            },
+            {
+              "name": "idempotency_key",
+              "value": "={{ 'publishing.succeeded:' + ($json.job_id || $json.content_job_id) + ':' + ($json.id || $json.content_version || '1') }}"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "ac09d3694b559ed3c80257bcfa2138ac",
+      "name": "Deliver facebook",
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        660,
+        0
+      ],
+      "parameters": {
+        "source": "database",
+        "workflowId": {
+          "__rl": true,
+          "value": "socialstudio0010",
+          "mode": "id"
+        },
+        "mode": "each",
+        "options": {
+          "waitForSubWorkflow": false
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Subworkflow input": {
+      "main": [
+        [
+          {
+            "node": "Publish mock facebook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Publish mock facebook": {
+      "main": [
+        [
+          {
+            "node": "Notification facebook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Notification facebook": {
+      "main": [
+        [
+          {
+            "node": "Deliver facebook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "timezone": "Europe/Berlin",
+    "saveDataErrorExecution": "none",
+    "saveDataSuccessExecution": "all",
+    "saveManualExecutions": false,
+    "errorWorkflow": "socialstudio0011"
+  },
+  "tags": [],
+  "pinData": {}
+}

@@ -97,7 +97,7 @@ services:
       N8N_RUNNERS_MODE: internal
       NODES_EXCLUDE: '["n8n-nodes-base.executeCommand","n8n-nodes-base.ssh","n8n-nodes-base.readWriteFile","n8n-nodes-base.localFileTrigger"]'
       EXECUTIONS_DATA_SAVE_ON_SUCCESS: all
-      EXECUTIONS_DATA_SAVE_ON_ERROR: all
+      EXECUTIONS_DATA_SAVE_ON_ERROR: none
       EXECUTIONS_DATA_MAX_AGE: '168'
       EXECUTIONS_DATA_PRUNE: 'true'
       GENERIC_TIMEZONE: Europe/Berlin

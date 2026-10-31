@@ -1,5 +1,14 @@
 # Human actions and approval register
 
+## Milestone E immediate blocker — 2026-10-31
+
+Owner approval is still needed for **E-INFRA-SETUP-01** and separately **E-LOCAL-AUTH-01**, exactly as scoped in [ORCHESTRATOR_SETUP_APPROVAL.md](ORCHESTRATOR_SETUP_APPROVAL.md), SHA256 `7ae25c85329724af724b676bc69c2802a17f1ec24136ba8cb06dc0e0920ee26a`. No approval record/secret directory has been created. The prior B grants are consumed and do not authorize these operations.
+
+- Infrastructure: n8n 2.45.7 + PostgreSQL 17.11-alpine images and the frozen 14-package pg 8.16.3 closure; only isolated `socialstudio` Compose resources, two loopback ports and fresh databases. Maximum 2 GiB downloads / 6 GiB storage / 90-minute setup / USD 0. No Windows/Docker backend/startup changes. Nondestructive rollback stops only the new resources.
+- Local auth: exactly nine new project-local keys; owner/SYSTEM ACL on the new secret directory; fresh local PostgreSQL/n8n owner/internal interfaces and a labelled checksum-bound mock acceptance decision. No existing/social/Telegram/model credentials, external accounts or live posting. Both grants expire if not received by 2026-11-06T00:00:00Z.
+
+After setup, owner video preview/pacing review and any real publishing decision remain separate. Current platform plans are disabled; Meta's current version-specific documentation/permission checks remain incomplete (HTTP 429). Google Drive/OAuth, Hermes notifications, Windows startup, backup restore and any public media hosting need their own scope/approval. [Runbook](ORCHESTRATOR_OPERATIONS.md) lists prepared commands and partial-failure recovery.
+
 ## Current implementation authorization and next actions
 
 **Current Milestone E gates:** [E-INFRA-SETUP-01](ORCHESTRATOR_SETUP_APPROVAL.md) covers exactly the new pinned images/locked pg packages and isolated local Compose deployment. **E-LOCAL-AUTH-01 is separate**, covering nine fresh project-local secrets, the new directory's owner/SYSTEM ACL and this fresh n8n/PG instance's local auth only. Neither is granted by this checklist. No existing credentials, external account connections, new host services/startup or live publishing are included. Ordinary E coding/tests/commits are explicitly authorized by the latest owner request; A remains deferred.

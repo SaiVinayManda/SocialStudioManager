@@ -1,0 +1,137 @@
+{
+  "id": "socialstudio0012",
+  "name": "Social Studio 12 - Reporting",
+  "active": false,
+  "nodes": [
+    {
+      "id": "dfdf695df5329a3abe78118b7d89f5fa",
+      "name": "Signed reporting webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        0,
+        0
+      ],
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "social-studio/reports",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "webhookId": "socialstudio-reports"
+    },
+    {
+      "id": "03255f410d280bb419bd600af6701c4e",
+      "name": "Verify report request",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        220,
+        0
+      ],
+      "parameters": {
+        "method": "POST",
+        "url": "http://studio-api:8780/webhooks/verify",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ $json.body }}",
+        "options": {
+          "timeout": 15000
+        }
+      },
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "socialstudioauth",
+          "name": "Social Studio internal API"
+        }
+      }
+    },
+    {
+      "id": "6ea8d6df303fe1ea76ae8b73ee642775",
+      "name": "Read durable report",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        440,
+        0
+      ],
+      "parameters": {
+        "method": "GET",
+        "url": "http://studio-api:8780/reports",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "options": {
+          "timeout": 15000
+        }
+      },
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "socialstudioauth",
+          "name": "Social Studio internal API"
+        }
+      }
+    },
+    {
+      "id": "10af3deb37b9f6b262fe8cc8d42ee9af",
+      "name": "Return report",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.4,
+      "position": [
+        660,
+        0
+      ],
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ $json }}",
+        "options": {}
+      }
+    }
+  ],
+  "connections": {
+    "Signed reporting webhook": {
+      "main": [
+        [
+          {
+            "node": "Verify report request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Verify report request": {
+      "main": [
+        [
+          {
+            "node": "Read durable report",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Read durable report": {
+      "main": [
+        [
+          {
+            "node": "Return report",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "timezone": "Europe/Berlin",
+    "saveDataErrorExecution": "none",
+    "saveDataSuccessExecution": "all",
+    "saveManualExecutions": false,
+    "errorWorkflow": "socialstudio0011"
+  },
+  "tags": [],
+  "pinData": {}
+}

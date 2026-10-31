@@ -1,0 +1,6 @@
+import fs from 'node:fs';import path from 'node:path';import {spawnSync} from 'node:child_process';import {childEnvironment} from '../services/production-adapter/media.mjs';
+const root=process.cwd(),dir=path.join(root,'docs/test-evidence/milestone-e-local');fs.mkdirSync(dir,{recursive:true});
+const started=new Date().toISOString(),run=spawnSync(process.execPath,['--test','--test-reporter=tap','tests/orchestrator/runtime.test.mjs'],{cwd:root,env:childEnvironment(root),encoding:'utf8',timeout:120000,maxBuffer:2097152,windowsHide:true});
+const output=(run.stdout??'')+(run.stderr??''),counts=Object.fromEntries([...output.matchAll(/^# (tests|pass|fail|skipped) (\d+)$/gm)].map(m=>[m[1],Number(m[2])]));
+const report={started_utc:started,finished_utc:new Date().toISOString(),command:'node --test --test-reporter=tap tests/orchestrator/runtime.test.mjs',exit_code:run.status,error_code:run.error?.code??null,counts,passed:run.status===0&&counts.fail===0&&counts.tests>0,n8n_executed:false,postgres_executed:false};
+const id=started.replaceAll(/[:.]/g,'-');fs.writeFileSync(path.join(dir,'unit-'+id+'.tap'),output,{flag:'wx'});fs.writeFileSync(path.join(dir,'unit-'+id+'.json'),JSON.stringify(report,null,2)+'\n',{flag:'wx'});console.log(JSON.stringify(report));if(!report.passed)process.exitCode=1;

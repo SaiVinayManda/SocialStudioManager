@@ -1,0 +1,335 @@
+{
+  "id": "socialstudio0001",
+  "name": "Social Studio 01 - Content Intake",
+  "active": false,
+  "nodes": [
+    {
+      "id": "a285a4223307589c87b554fe0eeaded3",
+      "name": "Signed intake webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        0,
+        0
+      ],
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "social-studio/intake",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "webhookId": "socialstudio-intake"
+    },
+    {
+      "id": "984744d3a4bf102ab33c6910e3322cfb",
+      "name": "Verify signed envelope",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        220,
+        0
+      ],
+      "parameters": {
+        "method": "POST",
+        "url": "http://studio-api:8780/webhooks/verify",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ $json.body }}",
+        "options": {
+          "timeout": 15000
+        }
+      },
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "socialstudioauth",
+          "name": "Social Studio internal API"
+        }
+      }
+    },
+    {
+      "id": "bc2cb8857aaaa25045a882d4d62ee611",
+      "name": "Register and deduplicate",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        440,
+        0
+      ],
+      "parameters": {
+        "method": "POST",
+        "url": "http://studio-api:8780/intake",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ $json.payload }}",
+        "options": {
+          "timeout": 15000
+        }
+      },
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "socialstudioauth",
+          "name": "Social Studio internal API"
+        }
+      }
+    },
+    {
+      "id": "3a747f9699cb2642cdd80e37f82ad445",
+      "name": "Acknowledge durable job",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.4,
+      "position": [
+        660,
+        0
+      ],
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ {job_id: $json.job_id, status: $json.status, deduplicated: $json.deduplicated} }}",
+        "options": {
+          "responseCode": 202
+        }
+      }
+    },
+    {
+      "id": "551729301dfb0782f541e01abb731bd2",
+      "name": "AI requested",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        880,
+        0
+      ],
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ String($json.production_settings.requires_ai === true) }}",
+              "operation": "equal",
+              "value2": "true"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "492abb87235929f1247872e2ca9f535c",
+      "name": "Job still queued",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        1100,
+        0
+      ],
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $json.status }}",
+              "operation": "equal",
+              "value2": "queued"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "92c6b074f104fc7883a9646b1d07ce78",
+      "name": "Prepare AI content",
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        1320,
+        0
+      ],
+      "parameters": {
+        "source": "database",
+        "workflowId": {
+          "__rl": true,
+          "value": "socialstudio0002",
+          "mode": "id"
+        },
+        "mode": "each",
+        "options": {
+          "waitForSubWorkflow": false
+        }
+      }
+    },
+    {
+      "id": "f5628e26eda1b4333ed3ae25181ee3e4",
+      "name": "Start production",
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        1540,
+        0
+      ],
+      "parameters": {
+        "source": "database",
+        "workflowId": {
+          "__rl": true,
+          "value": "socialstudio0003",
+          "mode": "id"
+        },
+        "mode": "each",
+        "options": {
+          "waitForSubWorkflow": false
+        }
+      }
+    },
+    {
+      "id": "c02be1e2cb08be7b3d65207726ca680a",
+      "name": "Notification accepted",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 2,
+      "position": [
+        1760,
+        0
+      ],
+      "parameters": {
+        "keepOnlySet": true,
+        "values": {
+          "string": [
+            {
+              "name": "job_id",
+              "value": "={{ $json.job_id || $json.content_job_id }}"
+            },
+            {
+              "name": "event_type",
+              "value": "job.accepted"
+            },
+            {
+              "name": "idempotency_key",
+              "value": "={{ 'job.accepted:' + ($json.job_id || $json.content_job_id) + ':' + ($json.id || $json.content_version || '1') }}"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "8f3f3b189729998c642929da1e286eb4",
+      "name": "Deliver accepted",
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        1980,
+        0
+      ],
+      "parameters": {
+        "source": "database",
+        "workflowId": {
+          "__rl": true,
+          "value": "socialstudio0010",
+          "mode": "id"
+        },
+        "mode": "each",
+        "options": {
+          "waitForSubWorkflow": false
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Signed intake webhook": {
+      "main": [
+        [
+          {
+            "node": "Verify signed envelope",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Verify signed envelope": {
+      "main": [
+        [
+          {
+            "node": "Register and deduplicate",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Register and deduplicate": {
+      "main": [
+        [
+          {
+            "node": "Acknowledge durable job",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Notification accepted",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Acknowledge durable job": {
+      "main": [
+        [
+          {
+            "node": "Job still queued",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Job still queued": {
+      "main": [
+        [
+          {
+            "node": "AI requested",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI requested": {
+      "main": [
+        [
+          {
+            "node": "Prepare AI content",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Start production",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Notification accepted": {
+      "main": [
+        [
+          {
+            "node": "Deliver accepted",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "timezone": "Europe/Berlin",
+    "saveDataErrorExecution": "none",
+    "saveDataSuccessExecution": "all",
+    "saveManualExecutions": false,
+    "errorWorkflow": "socialstudio0011"
+  },
+  "tags": [],
+  "pinData": {}
+}

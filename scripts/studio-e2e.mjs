@@ -1,0 +1,33 @@
+// Requires both deployed services and E-LOCAL-AUTH-01, including its explicit mock-test decision.
+// No API-only shortcut: intake/reporting go through real n8n production webhooks.
+import fs from 'node:fs';import path from 'node:path';import crypto from 'node:crypto';import assert from 'node:assert/strict';import {spawnSync} from 'node:child_process';
+import {signWebhook} from '../services/studio-runtime/contracts.mjs';import {fileHash,childEnvironment} from '../services/production-adapter/media.mjs';import {localGrant,readLocalKey,control,until} from './studio-test-client.mjs';
+const root=localGrant();assert(process.argv.includes('--explicit-mock-test-approval'),'Requires --explicit-mock-test-approval; never grants real publishing approval');
+const runtime=path.join(root,'.runtime/orchestrator'),session=path.join(runtime,'acceptance-session.json');
+let run;if(fs.existsSync(session))run=JSON.parse(fs.readFileSync(session,'utf8'));else{run={id:crypto.randomUUID(),started_utc:new Date().toISOString()};fs.writeFileSync(session,JSON.stringify(run),{flag:'wx'});}
+const evidence={run_id:run.id,started_utc:run.started_utc,actual_n8n_required:true,public_posts:0,tests:[]};
+async function webhook(route,body){const r=await fetch('http://127.0.0.1:5678/webhook/social-studio/'+route,{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify(signWebhook(body,readLocalKey('webhook_key'))),signal:AbortSignal.timeout(15000)});assert(r.ok,'n8n signed webhook did not succeed');return r.json();}
+function metadataQuery(database,sql){const r=spawnSync('C:\\Program Files\\Docker\\Docker\\resources\\bin\\docker.exe',['compose','-p','socialstudio','-f','infrastructure/docker-compose.yml','exec','-T','postgres','psql','-v','ON_ERROR_STOP=1','-U','studio_bootstrap','-d',database,'-At','-c',sql],{cwd:root,windowsHide:true,env:{...childEnvironment(root),DOCKER_CONFIG:path.join(root,'.runtime/orchestrator-inspection/docker-empty')},encoding:'utf8',timeout:15000,maxBuffer:1048576});assert.equal(r.status,0,'read-only metadata query failed; no raw database error logged');return JSON.parse(r.stdout.trim()||'[]');}
+try{
+  const checksum=await fileHash(path.join(root,'generated-videos/horror/pilot-001/final/horror_pilot_001.mp4')),licencePath='horror/pilot-001/assets/ATTRIBUTION.md';
+  assert.equal(checksum,'48fb3d02aecb4e83c43654d111194fd44870011c229a8b7387d8a83096858528');
+  const body={brand_id:'10000000-0000-4000-8000-000000000001',source_type:'existing_file',source:{root_id:'generated',relative_path:'horror/pilot-001/final/horror_pilot_001.mp4',expected_checksum:checksum},topic:'A mysterious phone call at 3 AM',idempotency_key:'acceptance:'+run.id,production_settings:{acceptance_run_id:run.id,requires_ai:true,min_duration:58,max_duration:62,expected_width:1080,expected_height:1920,require_audio:true,platforms:['youtube','instagram','facebook'],subtitle_reference:{root_id:'generated',relative_path:'horror/pilot-001/subtitles/horror_pilot_001.srt'},licence_reference:{root_id:'generated',relative_path:licencePath,checksum:await fileHash(path.join(root,'generated-videos',licencePath))}}};
+  const accepted=await webhook('intake',body);assert(accepted.job_id);const duplicate=await webhook('intake',body);assert.equal(duplicate.job_id,accepted.job_id);evidence.job_id=accepted.job_id;evidence.tests.push('real n8n intake and durable deduplication');
+  const registered=await control('/jobs/'+accepted.job_id);assert.equal(registered.production_settings.acceptance_run_id,run.id,'Existing unrelated job cannot receive test approval');
+  const review=await until(async()=>{const r=await control('/approvals?job_id='+accepted.job_id);return r.approvals?.[0];});
+  if(review.decision==='pending'){
+    await control(`/approvals/${review.id}/decision`,{method:'POST',role:'n8n',body:{},expect:403});
+    await control(`/approvals/${review.id}/decision`,{method:'POST',body:{decision:'approved',checksum:review.content_checksum,content_version:review.content_version,test_mock_only:true,comments:'Explicit local mock acceptance test only. No social posting authorized.'}});
+  }
+  evidence.tests.push('real worker validation and checksum-bound explicit mock-test decision');
+  const publications=await until(async()=>{const r=await control('/publishing?job_id='+accepted.job_id);return r.publishing_jobs.length===3&&r.publishing_jobs.every(p=>p.status==='published')?r.publishing_jobs:null;});
+  assert.deepEqual(publications.map(p=>p.platform).sort(),['facebook','instagram','youtube']);for(const p of publications){assert.equal(p.mode,'mock');assert(p.platform_post_id.startsWith('mock-'+p.platform));assert.equal(p.attempt_count,1);}
+  evidence.publishing_results=publications.map(p=>({id:p.id,platform:p.platform,status:p.status,post_id:p.platform_post_id,attempt_count:p.attempt_count}));
+  evidence.report=await webhook('reports',{operation:'report'});evidence.tests.push('scheduled mock publication through all three n8n destination workflows');
+  const notices=await until(async()=>{const r=await control('/notifications');const n=r.notifications.filter(n=>n.job_id===accepted.job_id);return n.filter(x=>x.event_type==='publishing.succeeded').length===3?n:null;});evidence.notifications=notices.map(n=>({id:n.id,event_type:n.event_type,sink:n.sink}));
+  evidence.migrations=metadataQuery('social_studio','SELECT COALESCE(json_agg(x),\'[]\') FROM (SELECT version,name,checksum FROM studio.schema_migrations ORDER BY version) x');assert(evidence.migrations.some(m=>m.version===1));
+  const since=new Date(run.started_utc).toISOString();
+  evidence.workflow_executions=await until(async()=>{const rows=metadataQuery('n8n_internal',`SELECT COALESCE(json_agg(x),'[]') FROM (SELECT "workflowId" AS workflow_id,status,count(*)::int AS count FROM n8n.execution_entity WHERE "startedAt">='${since}'::timestamptz AND "workflowId" LIKE 'socialstudio%' GROUP BY "workflowId",status) x`);return new Set(rows.filter(x=>x.status==='success').map(x=>x.workflow_id)).size===12?rows:null;},{timeout:90000,interval:3000});
+  evidence.passed=true;
+}catch(error){evidence.passed=false;evidence.error={code:error.code??'ACCEPTANCE_FAILED',message:'See local command outcome; secrets/request headers deliberately omitted.'};process.exitCode=1;}
+evidence.finished_utc=new Date().toISOString();fs.mkdirSync(path.join(root,'docs/test-evidence/milestone-e-deployed'),{recursive:true});const file=path.join(root,'docs/test-evidence/milestone-e-deployed',run.id+'.json');fs.writeFileSync(file,JSON.stringify(evidence,null,2)+'\n');console.log(JSON.stringify({passed:evidence.passed,evidence:file,public_posts:0}));

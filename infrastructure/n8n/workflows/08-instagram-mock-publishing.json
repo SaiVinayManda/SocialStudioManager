@@ -1,0 +1,144 @@
+{
+  "id": "socialstudio0008",
+  "name": "Social Studio 08 - Instagram Mock Publishing",
+  "active": false,
+  "nodes": [
+    {
+      "id": "214be8d755ea9aa2dcf3ad87aa8c2cba",
+      "name": "Subworkflow input",
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        0,
+        0
+      ],
+      "parameters": {
+        "inputSource": "passthrough"
+      }
+    },
+    {
+      "id": "968e182575e6ac91047ee0b827ee84f1",
+      "name": "Publish mock instagram",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        220,
+        0
+      ],
+      "parameters": {
+        "method": "POST",
+        "url": "={{ 'http://studio-api:8780/publishing/' + $json.id + '/publish/instagram' }}",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ {} }}",
+        "options": {
+          "timeout": 15000
+        }
+      },
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "socialstudioauth",
+          "name": "Social Studio internal API"
+        }
+      }
+    },
+    {
+      "id": "e484ec5d75077b003a2b4ecff0e1d414",
+      "name": "Notification instagram",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 2,
+      "position": [
+        440,
+        0
+      ],
+      "parameters": {
+        "keepOnlySet": true,
+        "values": {
+          "string": [
+            {
+              "name": "job_id",
+              "value": "={{ $json.job_id || $json.content_job_id }}"
+            },
+            {
+              "name": "event_type",
+              "value": "publishing.succeeded"
+            },
+            {
+              "name": "idempotency_key",
+              "value": "={{ 'publishing.succeeded:' + ($json.job_id || $json.content_job_id) + ':' + ($json.id || $json.content_version || '1') }}"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "98b4160eb13674d4e44ecb0e5bb43d74",
+      "name": "Deliver instagram",
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        660,
+        0
+      ],
+      "parameters": {
+        "source": "database",
+        "workflowId": {
+          "__rl": true,
+          "value": "socialstudio0010",
+          "mode": "id"
+        },
+        "mode": "each",
+        "options": {
+          "waitForSubWorkflow": false
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Subworkflow input": {
+      "main": [
+        [
+          {
+            "node": "Publish mock instagram",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Publish mock instagram": {
+      "main": [
+        [
+          {
+            "node": "Notification instagram",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Notification instagram": {
+      "main": [
+        [
+          {
+            "node": "Deliver instagram",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "timezone": "Europe/Berlin",
+    "saveDataErrorExecution": "none",
+    "saveDataSuccessExecution": "all",
+    "saveManualExecutions": false,
+    "errorWorkflow": "socialstudio0011"
+  },
+  "tags": [],
+  "pinData": {}
+}

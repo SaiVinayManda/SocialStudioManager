@@ -2,16 +2,28 @@
 
 ## Current owner direction: Milestone E local orchestration
 
+Current checkpoint (2026-10-31): E application modules, native worker, folder scanner, twelve workflow exports, SQL constraint fixture, bootstrap and genuine deployed E2E scripts are prepared. Local unit/HTTP/process/media checks passed. No deployment or database execution has occurred; both installation and fresh-local-auth grants remain pending. Ordinary local implementation has reached the deployment approval boundary. Advanced Milestone A is preserved/deferred.
+
+| Remaining work after approval | Estimated engineering hours | Acceptance evidence still required |
+| --- | --- | --- |
+| Approved installation/auth/bootstrap, schema/role checks, resolve actual pinned-version incompatibilities | 2–4 | Image/version/integrity/budget receipts; healthy isolated services; SQL assertions; import and publication metadata |
+| Existing-video n8n/PostgreSQL MVP acceptance and 20-case negative/recovery matrix | 4–8 | Real webhook/worker/decision/scheduler/three destination execution records; restart persistence; no public posts |
+| Narrow OpenMontage bridge integration test on a separately approved new project | 2–4 | Actual subprocess/checkpoint/cancel/output evidence; never rerender pilot-001 |
+| Complete official authenticated upload transports after separate OAuth/network/post grants | 12–24 | Current Meta contracts, scopes, resumable/session reconciliation, sandbox/private tests; exact first live-post approval |
+| Backup/restore drill, resource/disk monitoring and retention operator controls | 3–6 | New-volume restore test and bounded cleanup review; no unattended Windows startup |
+
+Estimates exclude owner approvals and platform app-review waits. The 90-minute **setup budget** is an independent hard cap, not permission to run installations for these engineering estimates. Stage 1 local foundation is prepared; stages 2–6 are not accepted merely because code/exports exist.
+
 The owner's 2026-10-30 implementation request authorizes local Milestone E coding/tests/commits and an actual existing-video mock acceptance pipeline. It supersedes the earlier B-only infrastructure exclusion below. Preserve Milestone A unchanged and disabled. First Horror MP4 is real and reprobed; do not rerender it for acceptance. Installation, local secret provisioning, external accounts and publishing retain their distinct gates.
 
 | Stage | Acceptance | State |
 | --- | --- | --- |
 | E-1 Foundation | Inspect, versioned PostgreSQL schema/seeds, isolated Compose, exact setup/auth packet, baseline checkpoint | Prepared; Compose config passes; SQL not applied; [approvals pending](ORCHESTRATOR_SETUP_APPROVAL.md) |
-| E-2 Pipeline MVP | Existing-file intake → actual PostgreSQL/n8n → validation → explicit test approval → mock scheduling and all three destinations → persisted notifications | Implementation next; not deployed/tested |
-| E-3 Engine integration | Narrow preapproved OpenMontage project execution; unchanged existing-file route, real subprocess status/cancel/timeouts | Pending; raw topic generation still needs existing creative/asset approval gates |
-| E-4 Official adapters | Separate credential-free official API contracts for YouTube/Instagram/Facebook; mock default, live denied | Pending; account/live grants separate |
-| E-5 AI boundary | Typed AI tasks, deterministic mock/fallback; 9Router interface disabled without its own grant | Pending; no router install/model credentials |
-| E-6 Reliability | Leases/idempotency/recovery/reconciliation, negative cases, true deployed acceptance evidence | Pending; no unattended startup |
+| E-2 Pipeline MVP | Existing-file intake → actual PostgreSQL/n8n → validation → explicit test approval → mock scheduling and all three destinations → persisted notifications | Code and exports prepared; not deployed/tested |
+| E-3 Engine integration | Narrow preapproved OpenMontage project execution; unchanged existing-file route, real subprocess status/cancel/timeouts | Bridge prepared but unexecuted; raw topic generation still needs existing creative/asset approval gates |
+| E-4 Official adapters | Separate credential-free official API contracts for YouTube/Instagram/Facebook; mock default, live denied | Disabled request plans prepared; account/live grants separate |
+| E-5 AI boundary | Typed AI tasks, deterministic mock/fallback; 9Router interface disabled without its own grant | Local mock/fallback tested; no router install/model credentials |
+| E-6 Reliability | Leases/idempotency/recovery/reconciliation, negative cases, true deployed acceptance evidence | Code and local process tests prepared; deployed recovery untested; no unattended startup |
 
 Earlier plans below are preserved historical scope and evidence, not current deployment claims.
 

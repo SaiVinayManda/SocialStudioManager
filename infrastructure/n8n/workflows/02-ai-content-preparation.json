@@ -1,0 +1,175 @@
+{
+  "id": "socialstudio0002",
+  "name": "Social Studio 02 - AI Content Preparation",
+  "active": false,
+  "nodes": [
+    {
+      "id": "85a93704a46e4e330262cfc18e66fdf0",
+      "name": "Subworkflow input",
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        0,
+        0
+      ],
+      "parameters": {
+        "inputSource": "passthrough"
+      }
+    },
+    {
+      "id": "64407a81b73ebdef96ce279f192877e7",
+      "name": "Prepare deterministic metadata",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        220,
+        0
+      ],
+      "parameters": {
+        "method": "POST",
+        "url": "http://studio-api:8780/ai/tasks",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ {brand_id:$json.brand_id,job_id:$json.job_id,task_type:'title_generation',input:{topic:$json.topic || 'Local video'},provider_policy:{providers:['mock-unavailable','mock']},maximum_cost:0,timeout_ms:5000} }}",
+        "options": {
+          "timeout": 15000
+        }
+      },
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "socialstudioauth",
+          "name": "Social Studio internal API"
+        }
+      }
+    },
+    {
+      "id": "2eacbaebea2ddca51d3f7c13987e00e3",
+      "name": "AI completed",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        440,
+        0
+      ],
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $json.status }}",
+              "operation": "equal",
+              "value2": "completed"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "8c22d3cf4d846ac45a41965fb26bf19f",
+      "name": "Store structured result",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        660,
+        0
+      ],
+      "parameters": {
+        "method": "POST",
+        "url": "={{ 'http://studio-api:8780/jobs/' + $('Subworkflow input').first().json.job_id + '/ai-result' }}",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ {task_id:$json.id} }}",
+        "options": {
+          "timeout": 15000
+        }
+      },
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "socialstudioauth",
+          "name": "Social Studio internal API"
+        }
+      }
+    },
+    {
+      "id": "21fef5ed03588d2cdb8fc90d43b77cac",
+      "name": "Continue production",
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        880,
+        0
+      ],
+      "parameters": {
+        "source": "database",
+        "workflowId": {
+          "__rl": true,
+          "value": "socialstudio0003",
+          "mode": "id"
+        },
+        "mode": "each",
+        "options": {
+          "waitForSubWorkflow": false
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Subworkflow input": {
+      "main": [
+        [
+          {
+            "node": "Prepare deterministic metadata",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prepare deterministic metadata": {
+      "main": [
+        [
+          {
+            "node": "AI completed",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI completed": {
+      "main": [
+        [
+          {
+            "node": "Store structured result",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Store structured result": {
+      "main": [
+        [
+          {
+            "node": "Continue production",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "timezone": "Europe/Berlin",
+    "saveDataErrorExecution": "none",
+    "saveDataSuccessExecution": "all",
+    "saveManualExecutions": false,
+    "errorWorkflow": "socialstudio0011"
+  },
+  "tags": [],
+  "pinData": {}
+}

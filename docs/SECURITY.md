@@ -1,5 +1,13 @@
 # Supervisor security and acceptance boundary
 
+## Current Milestone E boundary (local code, not deployed)
+
+The owner authorized E implementation without resuming advanced supervisor hardening. [E architecture](ORCHESTRATOR_ARCHITECTURE.md) separates operator/n8n/worker credentials, checksum/version-bound approvals, brand-scoped SQL keys and mock-only publishing. [Setup/auth grants](ORCHESTRATOR_SETUP_APPROVAL.md) remain pending. No local secret was created or existing credential intentionally read; one Docker default-config attempt was blocked and corrected as recorded in [test results](TEST_RESULTS.md). No service activation or Windows security/power/startup change occurred. Runtime keys/receipts/media stay outside Git. Ordinary local HTTP fixtures use fictional keys; they do not establish production authentication or OS isolation.
+
+The native worker exposes no inbound listener or shell-command API. Fixed tools run with a clean project-local environment and bounded logs/timeouts; tracked process cleanup must succeed or the worker stops. This is not the unfinished A sandbox, and it does not provide hard Windows memory/GPU/network containment. Container isolation and worker guardrails must be verified after approved deployment. All external account access/public hosting/live uploading remain disabled.
+
+## Historical supervisor implementation
+
 Status: local implementation tested; live remote execution disabled. This is not an accepted production sandbox.
 
 ## Implemented local controls

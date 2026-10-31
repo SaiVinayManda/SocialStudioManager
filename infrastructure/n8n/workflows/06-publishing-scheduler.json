@@ -1,0 +1,454 @@
+{
+  "id": "socialstudio0006",
+  "name": "Social Studio 06 - Publishing Scheduler",
+  "active": false,
+  "nodes": [
+    {
+      "id": "eca254122d2a94bbf85517fa5b32e3e5",
+      "name": "Subworkflow input",
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        0,
+        0
+      ],
+      "parameters": {
+        "inputSource": "passthrough"
+      }
+    },
+    {
+      "id": "acef44f8cf7d0518eb33cbb5ac09ae92",
+      "name": "Scheduled dispatch tick",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        220,
+        0
+      ],
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "seconds",
+              "secondsInterval": 5
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "446b26f7c0959b291d68b91b67ccf535",
+      "name": "Atomically claim due work",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        440,
+        0
+      ],
+      "parameters": {
+        "method": "POST",
+        "url": "http://studio-api:8780/scheduler/tick",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ $json.job_id ? {job_id:$json.job_id} : {} }}",
+        "options": {
+          "timeout": 15000
+        }
+      },
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "socialstudioauth",
+          "name": "Social Studio internal API"
+        }
+      }
+    },
+    {
+      "id": "00cbd7de290072a95b7dc8dfa777ac87",
+      "name": "Work claimed",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        660,
+        0
+      ],
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ String($json.idle === false) }}",
+              "operation": "equal",
+              "value2": "true"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "5bf16ec1c68b5ada2d49bb117cde7abe",
+      "name": "Await fresh checksum",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        880,
+        0
+      ],
+      "parameters": {
+        "resume": "timeInterval",
+        "amount": 2,
+        "unit": "seconds"
+      }
+    },
+    {
+      "id": "2a14f0f07d6cf5bdb781da45d855e6bd",
+      "name": "Read dispatch status",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1100,
+        0
+      ],
+      "parameters": {
+        "method": "GET",
+        "url": "={{ 'http://studio-api:8780/publishing/' + $json.id }}",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "options": {
+          "timeout": 15000
+        }
+      },
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "socialstudioauth",
+          "name": "Social Studio internal API"
+        }
+      }
+    },
+    {
+      "id": "d6962a4424d3372f7671c585d55b10cb",
+      "name": "Fresh media verified",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        1320,
+        0
+      ],
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $json.status }}",
+              "operation": "equal",
+              "value2": "ready"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "6a3fe6fbb30b8d22e6f323f9b0c8f1f9",
+      "name": "Still verifying",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        1540,
+        0
+      ],
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $json.status }}",
+              "operation": "equal",
+              "value2": "verifying"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "bf6494159ecdf58181e2ef84db0bbfa0",
+      "name": "Destination youtube",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        1760,
+        0
+      ],
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $json.platform }}",
+              "operation": "equal",
+              "value2": "youtube"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "f6cbd900c00fa8f697a3e679bb3547f1",
+      "name": "Dispatch youtube",
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        1980,
+        0
+      ],
+      "parameters": {
+        "source": "database",
+        "workflowId": {
+          "__rl": true,
+          "value": "socialstudio0007",
+          "mode": "id"
+        },
+        "mode": "each",
+        "options": {
+          "waitForSubWorkflow": false
+        }
+      }
+    },
+    {
+      "id": "e93c1e8408ea9e0b7e6c883ea0f6f442",
+      "name": "Destination instagram",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        2200,
+        0
+      ],
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $json.platform }}",
+              "operation": "equal",
+              "value2": "instagram"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "1794159734d5624aa1d51c389711b632",
+      "name": "Dispatch instagram",
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        2420,
+        0
+      ],
+      "parameters": {
+        "source": "database",
+        "workflowId": {
+          "__rl": true,
+          "value": "socialstudio0008",
+          "mode": "id"
+        },
+        "mode": "each",
+        "options": {
+          "waitForSubWorkflow": false
+        }
+      }
+    },
+    {
+      "id": "e4d7b475208b21065ee289fe9a6b2a08",
+      "name": "Destination facebook",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        2640,
+        0
+      ],
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $json.platform }}",
+              "operation": "equal",
+              "value2": "facebook"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "ee50c6b9e9ed7218397c0c8bc26c07fb",
+      "name": "Dispatch facebook",
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        2860,
+        0
+      ],
+      "parameters": {
+        "source": "database",
+        "workflowId": {
+          "__rl": true,
+          "value": "socialstudio0009",
+          "mode": "id"
+        },
+        "mode": "each",
+        "options": {
+          "waitForSubWorkflow": false
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Subworkflow input": {
+      "main": [
+        [
+          {
+            "node": "Atomically claim due work",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Scheduled dispatch tick": {
+      "main": [
+        [
+          {
+            "node": "Atomically claim due work",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Atomically claim due work": {
+      "main": [
+        [
+          {
+            "node": "Work claimed",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Work claimed": {
+      "main": [
+        [
+          {
+            "node": "Await fresh checksum",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Await fresh checksum": {
+      "main": [
+        [
+          {
+            "node": "Read dispatch status",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Read dispatch status": {
+      "main": [
+        [
+          {
+            "node": "Fresh media verified",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fresh media verified": {
+      "main": [
+        [
+          {
+            "node": "Destination youtube",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Still verifying",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Still verifying": {
+      "main": [
+        [
+          {
+            "node": "Await fresh checksum",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Destination youtube": {
+      "main": [
+        [
+          {
+            "node": "Dispatch youtube",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Destination instagram",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Destination instagram": {
+      "main": [
+        [
+          {
+            "node": "Dispatch instagram",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Destination facebook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Destination facebook": {
+      "main": [
+        [
+          {
+            "node": "Dispatch facebook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "timezone": "Europe/Berlin",
+    "saveDataErrorExecution": "none",
+    "saveDataSuccessExecution": "all",
+    "saveManualExecutions": false,
+    "errorWorkflow": "socialstudio0011"
+  },
+  "tags": [],
+  "pinData": {}
+}

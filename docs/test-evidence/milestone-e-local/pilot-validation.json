@@ -1,0 +1,30 @@
+{
+  "passed": true,
+  "checksum": "48fb3d02aecb4e83c43654d111194fd44870011c229a8b7387d8a83096858528",
+  "duration": 60,
+  "width": 1080,
+  "height": 1920,
+  "bytes": 21303869,
+  "ffprobe_exit_code": 0,
+  "full_decode_exit_code": 0,
+  "elapsed_seconds": 4.7819414,
+  "output_reference": {
+    "root_id": "generated",
+    "relative_path": "horror/pilot-001/final/horror_pilot_001.mp4"
+  },
+  "audio_present": true,
+  "codecs": {
+    "video": "h264",
+    "audio": "aac"
+  },
+  "subtitles": {
+    "artifact_valid": true,
+    "cues": 32,
+    "burned_in_verification": "Requires existing digest-bound render evidence or human preview; ffprobe cannot detect rasterized words."
+  },
+  "engine_project_reference": null,
+  "captured_at_utc": "2026-10-30T20:57:08.503Z",
+  "test": "real-native-existing-pilot-validation",
+  "n8n_executed": false,
+  "postgres_executed": false
+}

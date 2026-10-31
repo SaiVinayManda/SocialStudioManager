@@ -1,0 +1,71 @@
+{
+  "id": "socialstudio0010",
+  "name": "Social Studio 10 - Local Notifications",
+  "active": false,
+  "nodes": [
+    {
+      "id": "a98b55e94857b3e848e7121ab000070c",
+      "name": "Subworkflow input",
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        0,
+        0
+      ],
+      "parameters": {
+        "inputSource": "passthrough"
+      }
+    },
+    {
+      "id": "41a6fe2de5cc5de01e043073996093ed",
+      "name": "Persist operator notification",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        220,
+        0
+      ],
+      "parameters": {
+        "method": "POST",
+        "url": "http://studio-api:8780/notifications",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ {job_id:$json.job_id,event_type:$json.event_type,idempotency_key:$json.idempotency_key} }}",
+        "options": {
+          "timeout": 15000
+        }
+      },
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "socialstudioauth",
+          "name": "Social Studio internal API"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Subworkflow input": {
+      "main": [
+        [
+          {
+            "node": "Persist operator notification",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "timezone": "Europe/Berlin",
+    "saveDataErrorExecution": "none",
+    "saveDataSuccessExecution": "all",
+    "saveManualExecutions": false,
+    "errorWorkflow": "socialstudio0011"
+  },
+  "tags": [],
+  "pinData": {}
+}

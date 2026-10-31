@@ -1,0 +1,338 @@
+{
+  "id": "socialstudio0003",
+  "name": "Social Studio 03 - OpenMontage Production",
+  "active": false,
+  "nodes": [
+    {
+      "id": "3ec6f49bdf7e5030cfd99170f4cda574",
+      "name": "Subworkflow input",
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        0,
+        0
+      ],
+      "parameters": {
+        "inputSource": "passthrough"
+      }
+    },
+    {
+      "id": "1529754270c7e42f45a3ad28143789f7",
+      "name": "Queue production",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        220,
+        0
+      ],
+      "parameters": {
+        "method": "POST",
+        "url": "http://studio-api:8780/jobs",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ {job_id:$json.job_id} }}",
+        "options": {
+          "timeout": 15000
+        }
+      },
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "socialstudioauth",
+          "name": "Social Studio internal API"
+        }
+      }
+    },
+    {
+      "id": "b31dd82959e35c476db2bd4e67e5c2a3",
+      "name": "Await native worker",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        440,
+        0
+      ],
+      "parameters": {
+        "resume": "timeInterval",
+        "amount": 2,
+        "unit": "seconds"
+      }
+    },
+    {
+      "id": "e105afbd1b6dc16410f009051b8d89b6",
+      "name": "Read production status",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        660,
+        0
+      ],
+      "parameters": {
+        "method": "GET",
+        "url": "={{ 'http://studio-api:8780/jobs/' + $json.job_id }}",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "options": {
+          "timeout": 15000
+        }
+      },
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "socialstudioauth",
+          "name": "Social Studio internal API"
+        }
+      }
+    },
+    {
+      "id": "93e6dd8fd987bf2b5d25331ad439d691",
+      "name": "Output produced",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        880,
+        0
+      ],
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $json.status }}",
+              "operation": "equal",
+              "value2": "produced"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "92b0a02bf7fd49bbdc952bca20c58189",
+      "name": "Still processing",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        1100,
+        0
+      ],
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $json.status }}",
+              "operation": "equal",
+              "value2": "processing"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "ec565871268c2f3a4140c7bfae102810",
+      "name": "Validate output",
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        1320,
+        0
+      ],
+      "parameters": {
+        "source": "database",
+        "workflowId": {
+          "__rl": true,
+          "value": "socialstudio0004",
+          "mode": "id"
+        },
+        "mode": "each",
+        "options": {
+          "waitForSubWorkflow": false
+        }
+      }
+    },
+    {
+      "id": "dc12accae1aba642cf855d4d60b60da8",
+      "name": "Production failed",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        1540,
+        0
+      ],
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $json.status }}",
+              "operation": "equal",
+              "value2": "failed"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "b8d2a34f17570370cebd908c2e93476a",
+      "name": "Notification production-failure",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 2,
+      "position": [
+        1760,
+        0
+      ],
+      "parameters": {
+        "keepOnlySet": true,
+        "values": {
+          "string": [
+            {
+              "name": "job_id",
+              "value": "={{ $json.job_id || $json.content_job_id }}"
+            },
+            {
+              "name": "event_type",
+              "value": "production.failed"
+            },
+            {
+              "name": "idempotency_key",
+              "value": "={{ 'production.failed:' + ($json.job_id || $json.content_job_id) + ':' + ($json.id || $json.content_version || '1') }}"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "d7786742cd6070eded4659b18d9f3080",
+      "name": "Deliver production-failure",
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        1980,
+        0
+      ],
+      "parameters": {
+        "source": "database",
+        "workflowId": {
+          "__rl": true,
+          "value": "socialstudio0010",
+          "mode": "id"
+        },
+        "mode": "each",
+        "options": {
+          "waitForSubWorkflow": false
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Subworkflow input": {
+      "main": [
+        [
+          {
+            "node": "Queue production",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Queue production": {
+      "main": [
+        [
+          {
+            "node": "Await native worker",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Await native worker": {
+      "main": [
+        [
+          {
+            "node": "Read production status",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Read production status": {
+      "main": [
+        [
+          {
+            "node": "Output produced",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Output produced": {
+      "main": [
+        [
+          {
+            "node": "Validate output",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Still processing",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Still processing": {
+      "main": [
+        [
+          {
+            "node": "Await native worker",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Production failed",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Production failed": {
+      "main": [
+        [
+          {
+            "node": "Notification production-failure",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Notification production-failure": {
+      "main": [
+        [
+          {
+            "node": "Deliver production-failure",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "timezone": "Europe/Berlin",
+    "saveDataErrorExecution": "none",
+    "saveDataSuccessExecution": "all",
+    "saveManualExecutions": false,
+    "errorWorkflow": "socialstudio0011"
+  },
+  "tags": [],
+  "pinData": {}
+}
