@@ -1,0 +1,120 @@
+{
+  "started_at": "2026-10-31T13:32:26.954Z",
+  "credential_access": false,
+  "inference_requests": 0,
+  "probes": [
+    {
+      "provider": "API.airforce",
+      "url": "https://api.airforce/v1/models",
+      "method": "GET",
+      "http_status": 200,
+      "catalog_model_count": 785,
+      "exact_candidates": [
+        {
+          "id": "gpt-oss-120b",
+          "present": true,
+          "metadata": {
+            "id": "gpt-oss-120b",
+            "object": "model",
+            "owned_by": "openai",
+            "supports_chat": true,
+            "status": "operational",
+            "pricepermilliontokens": 20,
+            "output_pricepermilliontokens": 78,
+            "supports_streaming": true,
+            "supports_tools": true,
+            "cache_write_5m_pricepermilliontokens": 0,
+            "cache_write_1h_pricepermilliontokens": 0,
+            "cache_read_pricepermilliontokens": 10,
+            "input_modalities": [
+              "text"
+            ],
+            "output_modalities": [
+              "text"
+            ]
+          }
+        },
+        {
+          "id": "gpt-oss-20b",
+          "present": true,
+          "metadata": {
+            "id": "gpt-oss-20b",
+            "object": "model",
+            "owned_by": "openai",
+            "supports_chat": true,
+            "status": "operational",
+            "pricepermilliontokens": 7,
+            "output_pricepermilliontokens": 21,
+            "supports_streaming": true,
+            "supports_tools": true,
+            "cache_write_5m_pricepermilliontokens": 9,
+            "cache_write_1h_pricepermilliontokens": 14,
+            "cache_read_pricepermilliontokens": 1,
+            "input_modalities": [
+              "text"
+            ],
+            "output_modalities": [
+              "text"
+            ]
+          }
+        },
+        {
+          "id": "kimi-k2.7-code",
+          "present": true,
+          "metadata": {
+            "id": "kimi-k2.7-code",
+            "object": "model",
+            "owned_by": "moonshot",
+            "supports_chat": true,
+            "status": "operational",
+            "pricepermilliontokens": 58,
+            "output_pricepermilliontokens": 238,
+            "cache_write_5m_pricepermilliontokens": 58,
+            "cache_write_1h_pricepermilliontokens": 58,
+            "cache_read_pricepermilliontokens": 6
+          }
+        },
+        {
+          "id": "gpt-oss-120b:free",
+          "present": false,
+          "metadata": null
+        },
+        {
+          "id": "gpt-oss-20b:free",
+          "present": false,
+          "metadata": null
+        },
+        {
+          "id": "kimi-k2.7-code:free",
+          "present": false,
+          "metadata": null
+        }
+      ]
+    },
+    {
+      "provider": "OpenCode",
+      "url": "https://opencode.ai/inference/v1/models",
+      "method": "GET",
+      "http_status": 200,
+      "catalog_model_count": 78,
+      "exact_candidates": [
+        {
+          "id": "union-alpha",
+          "present": false,
+          "metadata": null
+        },
+        {
+          "id": "muse-spark-1.2-contributor-free",
+          "present": false,
+          "metadata": null
+        },
+        {
+          "id": "muse-spark-1.3-contributor-free",
+          "present": false,
+          "metadata": null
+        }
+      ]
+    }
+  ],
+  "completed_at": "2026-10-31T13:32:27.982Z"
+}

@@ -1,5 +1,9 @@
 # Social Studio implementation plan
 
+## Latest E2 route gate — 2026-10-31
+
+Replacement discovery from `619c283` completed: no verified zero-charge exact-model route among the eleven current text candidates. [Candidate/route comparison](AI_TEXT_MODEL_DISCOVERY.md). Stage 3 revised packet and Stage 4 actual inference are blocked until one existing route's current free entitlement, no-paid-fallback/substitution and attempt limits are documented. A redacted Agnes 2.5 Flash free/default route export is the recommended next verification target; it is not a safe-to-run recommendation yet. No old approval reuse, model request, credential access or production change. No additional installation or unrelated supervisor work is needed for this gate.
+
 ## Current owner direction: E2 AI Brain
 
 The owner's E2 implementation request supersedes the older mock-only AI boundary for local coding, tests, additive application migrations and integration with the existing local services. It grants no new model credentials, paid calls, software/system changes, public endpoints or publishing. Advanced A remains deferred; no repeat video render.

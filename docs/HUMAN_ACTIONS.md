@@ -1,5 +1,11 @@
 # Human actions and approval register
 
+## Current E2 text-route discovery blocker — 2026-10-31
+
+Discovery/verification of the existing catalog is complete; **no candidate yet satisfies zero-charge entitlement plus exact-model/no-paid-fallback guarantees**. Do not ask for or reuse the old Jev inference approval. No new model-specific inference grant is being requested until a viable route is established. [Comparison and evidence](AI_TEXT_MODEL_DISCOVERY.md).
+
+Minimum owner action: provide one non-secret/redacted current route/account export, preferably for existing `agnes/agnes-2.5-flash`, showing the actual upstream/model/connection reference, free/default access type and model-specific free allowance, exhaustion/no-paid-pool behaviour, overrides/fallback/substitution and maximum upstream attempts. [Optional field template](AI_TEXT_ROUTE_EVIDENCE_TEMPLATE.json) has no credential fields and authorizes nothing. Do not send keys, cookies, passwords or tokens. If no existing route qualifies, a different free route needs separate review before any connection/configuration or inference approval. Production order stays Codex → agy → 9Router; no software/agent/render/publishing action occurred.
+
 ## Latest E2 conditional grant — 2026-10-31
 
 The owner **conditionally approved E2-REAL-CANARY-01**, requiring verified zero-charge routing with no paid fallback or substitution before inference. Do not ask for the same approval again as though it was never received. The condition remains unsatisfied: 9Router model listing is HTTP 200, but its pricing endpoint is HTTP 401 and protected route/account metadata was not accessed. No inference or active runtime receipt was created. [Exact preflight results](AI_BRAIN_CANARY_PREFLIGHT.md).

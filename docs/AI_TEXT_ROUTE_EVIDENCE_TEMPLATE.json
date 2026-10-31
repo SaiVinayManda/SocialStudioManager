@@ -1,0 +1,22 @@
+{
+  "purpose": "Non-secret route verification only; this file grants no approval",
+  "candidate_local_model": "agnes/agnes-2.5-flash",
+  "upstream_endpoint": null,
+  "upstream_model": null,
+  "connection_reference_without_credentials": null,
+  "account_access_type": null,
+  "exact_model_covered_by_free_entitlement": null,
+  "remaining_free_entitlement": null,
+  "input_and_output_price_usd": null,
+  "exhaustion_behaviour": null,
+  "paid_pool_and_auto_topup_disabled_for_this_route": null,
+  "other_fees": null,
+  "active_model_or_endpoint_overrides": null,
+  "combo_alias_and_capability_substitution_for_text_only_request": null,
+  "upstream_model_substitution_policy": null,
+  "maximum_upstream_inference_attempts": null,
+  "account_failover_policy": null,
+  "evidence_source_and_checked_at": null,
+  "credentials_must_not_be_included": true,
+  "inference_authorized": false
+}

@@ -1,5 +1,11 @@
 # Actual verification results
 
+## E2 replacement text-model discovery — 2026-10-31
+
+**No inference test run. Stage 2 verification blocked, not a provider success/failure.** Local `/v1/models` HTTP 200; thirteen IDs, eleven potential text candidates and two excluded Jev decision models. Alias/combo/pricing endpoints each returned 401; no auth retry. Anonymous official upstream catalogs: API.airforce HTTP 200 (785 models), OpenCode HTTP 200 (78 models). All three local Airforce candidates advertise nonzero input/output rates and their `:free` counterparts are absent from that public response. All three local OpenCode text candidates are absent upstream. Three helper syntax checks and nine public-source excerpt/hash reads completed; no router source executed, credentials accessed or configuration changed. [Per-model table and primary evidence](AI_TEXT_MODEL_DISCOVERY.md).
+
+Static source confirms qualified IDs bypass ordinary aliases/combos and pure-text requests bypass multimodal capability fallback; live overrides, account billing and upstream substitution remain unverified. MiMo's executor contains an implicit bootstrap/JWT and retry path, which was not invoked. No revised canary packet, runtime grant, n8n job, PG attempt/output, model charge, render or publishing was initiated. Existing 88-test and earlier mock canary results were not rerun or promoted to real-provider evidence.
+
 ## E2 conditional real-canary preflight — 2026-10-31 13:13 UTC
 
 **STOPPED BEFORE INFERENCE; not a real-provider pass or a live provider failure.** All 46 execution digests and both packet/manifest digests matched; absolute expiry unexpired. `GET /v1/models` on existing loopback 9Router returned HTTP 200 and lists exact `oc/jev-1.13-free`. `GET /api/pricing` returned HTTP 401; no authentication retry, secrets/config access or model test. Local route pinning, no-paid-fallback/substitution and extra-charge conditions could not be verified.
