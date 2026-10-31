@@ -2,14 +2,16 @@
 
 Current result: implementation and no-inference regression checks passed. Real model/video acceptance is **pending**. Reuse all existing services, workflow 02 and OpenMontage/native worker. Do not rerun infrastructure installers, E3 videos or advanced supervisor development.
 
+Current revision is **E4-FREE-CANARY-02**, for “A shadow appears behind a woman every time she closes her eyes.” It supersedes the ungranted reflection-topic proposal. The owner reports OpenRouter and router-Antigravity connected; [read-only verification](E4_CONNECTION_VERIFICATION.md) found no zero-charge route proof or model grant. Supply the non-secret route/settings evidence; browser control is not required. Do not infer permission to call Antigravity from its connection status.
+
 1. Review [E4_AI_APPROVAL.md](E4_AI_APPROVAL.md), [E4_AI_SCOPE.json](E4_AI_SCOPE.json) and their SHA256. The packet expires 2026-11-01T18:00:00Z; if it expires or source files change, refresh review and obtain a new exact approval. The existing E3 worker's time window is not extended by E4.
-2. Obtain the owner's explicit `E4-FREE-CANARY-01` approval. Only then inspect the supported router UI's non-secret connection/routing metadata using the approved existing session. Do not access raw credentials/cookies or activate a different model. Verify an existing OpenRouter connection and free-model eligibility, exact upstream/model, zero-price filter forwarding, no paid substitution/plugins/extra upstream retries. If unavailable, stop before inference and give the minimum owner action. No key creation or new account connection is included.
+2. Obtain the owner's explicit `E4-FREE-CANARY-02` approval and the redacted non-secret route/settings evidence. Verify the existing OpenRouter connection and free-model eligibility, exact upstream/model, zero-price filter forwarding, no paid substitution/plugins/extra upstream retries. Do not access raw credentials/cookies or activate a different model. If verification is unavailable, stop before inference and give the minimum owner action. No key creation, authentication change or new account connection is included.
 3. Preserve the actual approval reference and evidence; populate the two runtime files from the non-granted examples. Remove `example_only`; do not assert evidence you have not established. Owner receipt binds manifest SHA256, route proof SHA256, exact manifest run UUID, actual approval timestamp, and expiry within 90 minutes and packet expiry. `allow_dedicated_local_token` may be true only if explicitly approved and the exact pre-provisioned token file exists. Never export upstream tokens into those JSON files.
 4. Ensure the existing Studio API, PostgreSQL, n8n and proxy are healthy and no media production is running. The helper validates the prior native PID/executable/creation/config identity and saves its old configuration. No Windows service or startup registration is used.
 5. Run the single approved command:
 
 ```powershell
-node scripts/e4-pilot.mjs --approved=E4-FREE-CANARY-01 --complete-mock-test
+node scripts/e4-pilot.mjs --approved=E4-FREE-CANARY-02 --complete-mock-test
 ```
 
 This submits the fixed reviewed topic through the actual signed n8n intake. Workflow 02 creates the existing durable AI task. CLI preflights are unsupported, retaining Codex → agy → 9Router ordering. The narrow HTTP worker consumes one fsynced slot, invokes the exact approved route, validates the closed production schema and saves real output/attempt history through the existing Agent Manager. There is no fixture fallback or repair call in this E4 path.

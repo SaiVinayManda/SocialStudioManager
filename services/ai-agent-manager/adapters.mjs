@@ -1,6 +1,6 @@
 import {ProviderError} from './contracts.mjs';
 import {outputSchemas} from './schemas.mjs';
-import {E4_MODEL,E4_PROVIDER_PREFERENCES} from './e4-route.mjs';
+import {E4_ID,E4_MODEL,E4_PROVIDER_PREFERENCES} from './e4-route.mjs';
 import {canonical} from '../studio-runtime/contracts.mjs';
 
 export function redact(value,secrets=[]){
@@ -90,7 +90,7 @@ export class NineRouterAdapter{
     // Model names are not evidence of free service. A reviewed, pinned route and
     // conservative reservation are mandatory; unknown cost fails closed.
     if(p.endpoint!=='http://127.0.0.1:20128/v1/chat/completions'||!p.route_verified||!['none','dedicated_local_bearer'].includes(p.auth_mode)||!p.model||!Number.isFinite(p.reservation_usd)||p.reservation_usd<0)throw new ProviderError('credential_policy');
-    if(p.auth_mode==='dedicated_local_bearer'&&(p.approval_id!=='E4-FREE-CANARY-01'||typeof this.clientToken!=='string'||this.clientToken.length<16))throw new ProviderError('credential_policy');
+    if(p.auth_mode==='dedicated_local_bearer'&&(p.approval_id!==E4_ID||typeof this.clientToken!=='string'||this.clientToken.length<16))throw new ProviderError('credential_policy');
     if(!Number.isInteger(p.max_output_tokens??4000)||(p.max_output_tokens??4000)<1||(p.max_output_tokens??4000)>4000)throw new ProviderError('credential_policy');
     if(p.provider_preferences!==undefined&&(p.model!==E4_MODEL||p.reservation_usd!==0||JSON.stringify(canonical(p.provider_preferences))!==JSON.stringify(canonical(E4_PROVIDER_PREFERENCES))))throw new ProviderError('credential_policy');
     if(task&&Number(task.reserved_cost)+p.reservation_usd>Number(task.maximum_cost))throw new ProviderError('budget_exhausted');

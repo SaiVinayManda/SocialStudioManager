@@ -1,0 +1,255 @@
+{
+  "at": "2026-10-31T20:13:36.537Z",
+  "static_source_only": true,
+  "model_calls": 0,
+  "credential_access": false,
+  "records": [
+    {
+      "file": "1051.js",
+      "sha256": "17f8ace0a2f148675deea267d24be8efc3b0a21e58d8dd7fe551b86441e3120e",
+      "needle": "isActive:!0",
+      "offset": 802,
+      "excerpt": "n)continue;let a=(0,f.Dz)(d);if(null===a)continue;let h=(0,e.Og)(d.provider);a-b<Math.max(Number.isFinite(h)?h:0,g)&&c.push(d)}return c}async function n(){let{getProviderConnections:a}=await Promise.resolve().then(c.bind(c,5781));return a({isActive:!0})}async function o(a){let{checkAndRefreshToken:b}=await c.e(7828).then(c.bind(c,67828));return b(a.provider,a,{force:!0})}async function p(a={}){if(!l){l=!0;try{let b=a.loadConnections||n,c=a.refreshConnection||o,e=a.sleep||(a=>new Promise(b=>setTimeout(b,a))),f=await b(),g=m(f,Date.now());if(0===g.length)return;let i=Number(process.env.BG_REFRESH_GOOGLE_DELAY_MS)||12e3,j=Number(process.env.BG_REFRESH_DELAY_MS)||1500;for(let a=0;a<g.length;a++){let b=g[a];try{await c(b),d.info(\"BG_TOKEN_REFRESH\",\"Connection refresh finished\",{id:b.id,email:b.email||b.name||b.id,provider:b.provider})}catch(a){d.warn(\"BG_TOKEN_REFRESH\",\"Connection refresh failed (swallowed)\",{id:b?.id,email:b?.email||b?.name||b?.id,provider:b?.provider,error:a?.message??String(a)})}if(a<g.length-1){let a=h.has(b.provider),c=a?i:j,d=a?Math.floor(4e3*Math.random()):200;await e(c+d)}}}catch(a){d.warn(\"BG_TOKEN_REF"
+    },
+    {
+      "file": "1133.js",
+      "sha256": "5b0772037f6d7a4d2e007c84f8a4e807abadf9003049be7b82c02a487b523082",
+      "needle": "isActive:!0",
+      "offset": 4802,
+      "excerpt": "t.entries(D.providers)){let g=E[e];if(!g)continue;let h=d?.[f.settingsKey]?.connections||{},i=d?.[f.settingsKey]?.schedules||{};if(0!==Object.keys(h).length||0!==Object.keys(i).length)for(let j of(await a.getProviderConnections({provider:e,isActive:!0})).filter(a=>\"oauth\"===a.authType&&(!0===h[a.id]||null!==(0,o.NU)(i[a.id]))))try{let c=function(a,b,c){let d=a?.[b.settingsKey]?.schedules||{};return(0,o.NU)(d[c])}(d,f,j.id),i=!0===h[j.id];await x(j,e,f,g,a,b,c,i)}catch(a){var c;b.failureCache[c=j.id,`${e}:${c}`]=Date.now(),console.warn(`[AutoPing] ${e}:${j.id}: ${a.message}`)}}}catch(a){console.warn(\"[AutoPing] tick error:\",a.message)}finally{b.running=!1}}}function z(){!F.interval&&(console.log(\"[AutoPing] scheduler started\"),y().catch(()=>{}),F.interval=setInterval(()=>{y().catch(()=>{})},D.tickIntervalMs),F.interval.unref&&F.interval.unref())}function A(){F.interval&&(clearInterval(F.interval),F.interval=null,console.log(\"[AutoPing] scheduler stopped\"))}function B(a){return Object.values(D.providers).some(b=>{let c=a?.[b.settingsKey];return Object.values(c?.connections||{}).some(Boolean)||Object.values(c?.schedules||{})."
+    },
+    {
+      "file": "2132.js",
+      "sha256": "4f082acd2a9dd5059c8f755b6c07e08280b3e047bbb1c80cc814780280f0bdf7",
+      "needle": "cloudcode-pa.googleapis.com",
+      "offset": 7753,
+      "excerpt": "ew Map,h=new Map,i=new Set([\"SELF_SIGNED_CERT_IN_CHAIN\",\"DEPTH_ZERO_SELF_SIGNED_CERT\",\"UNABLE_TO_VERIFY_LEAF_SIGNATURE\",\"UNABLE_TO_GET_ISSUER_CERT\",\"UNABLE_TO_GET_ISSUER_CERT_LOCALLY\",\"CERT_HAS_EXPIRED\",\"ERR_TLS_CERT_ALTNAME_INVALID\"]),j=[\"cloudcode-pa.googleapis.com\",\"daily-cloudcode-pa.googleapis.com\",\"api.individual.githubcopilot.com\",\"q.us-east-1.amazonaws.com\",\"codewhisperer.us-east-1.amazonaws.com\",\"api2.cursor.sh\"],k=[\"8.8.8.8\",\"8.8.4.4\"];function l(a){return null==a?\"\":String(a).trim()}async function m(a){let b=h.get(a);if(b&&Date.now()<b.expiry)return b.ip;try{let b=await Promise.resolve().then(c.t.bind(c,14985,23)),{promisify:d}=await Promise.resolve().then(c.t.bind(c,28354,23)),f=new b.Resolver;f.setServers(k);let g=d(f.resolve4.bind(f)),i=await g(a);return h.set(a,{ip:i[0],expiry:Date.now()+e.v1.dnsCacheTtlMs}),i[0]}catch(b){return console.warn(`[ProxyFetch] DNS resolve failed for ${a}:`,b.message),null}}function n(a,b){let c,d=l(b);if(!d)return!1;try{c=new URL(a).hostname.toLowerCase()}catch{return!1}return d.split(\",\").map(a=>a.trim().toLowerCase()).filter(Boolean).some(a=>\"*\"===a||(a.startsWith(\".\")?c.endsWi"
+    },
+    {
+      "file": "238.js",
+      "sha256": "91d6a01cc1a4eeb4850495a4d4c81590e934546de446e7f273c0963f9d34bef7",
+      "needle": "isActive:!0",
+      "offset": 4712,
+      "excerpt": "tedModel||c,q=k;k=new Promise(a=>{m=a});try{let b;await q;let g=(0,h.rs)(a);if(h.IS[g]?.noAuth){let a=((await (0,d.mt)()).providerStrategies||{})[g]||{},b=a.rotateStrategy||\"none\",c=a.proxyPoolId||null;if(\"none\"!==b){let a=(await (0,d.ui)({isActive:!0})).filter(a=>a.proxyUrl).map(a=>a.id);c=(0,e.p)(a,b,g)}let f=await (0,e.B)({proxyPoolId:c||\"\"});return{id:\"noauth\",connectionName:\"Public\",isActive:!0,accessToken:\"[REDACTED]\",providerSpecificData:{connectionProxyEnabled:f.connectionProxyEnabled,connectionProxyUrl:f.connectionProxyUrl,connectionNoProxy:f.connectionNoProxy,connectionProxyPoolId:f.proxyPoolId||null,vercelRelayUrl:f.vercelRelayUrl||\"\",strictProxy:!0===f.strictProxy}}}let k=await (0,d.getProviderConnections)({provider:g,isActive:!0});if(j.debug(\"AUTH\",`${a} | total connections: ${k.length}, excludeIds: ${n.size>0?[...n].join(\",\"):\"none\"}, model: ${c||\"any\"}`),0===k.length)return j.warn(\"AUTH\",`No credentials for ${a}`),null;let l=\"antigravity\"===g,m=l&&c?(0,i.d0)():null,r=k.filter(a=>{if(n.has(a.id)||(0,f.Bl)(a,c))return!1;let b=a.providerSpecificData?.enabledModels;if(\"codex\"===g&&Array.isArray(b)&&b.length&&p&&!b.i"
+    },
+    {
+      "file": "2380.js",
+      "sha256": "43922cd71e899b168c5dd2222018c6466cb539284580a57a3ec3f8be241b0b60",
+      "needle": "response_format",
+      "offset": 22884,
+      "excerpt": "ray.isArray(b.content)&&b.content.length>0){let a=[k.R4.TEXT,k.R4.TOOL_USE,k.R4.TOOL_RESULT,k.R4.IMAGE];for(let c=b.content.length-1;c>=0;c--){let d=b.content[c];if(a.includes(d.type)){d.cache_control={type:\"ephemeral\"};break}}break}}}if(b.response_format){let a=b.response_format;if(\"json_schema\"===a.type&&a.json_schema?.schema){let b=JSON.stringify(a.json_schema.schema,null,2);o.push(`You must respond with valid JSON that strictly follows this JSON schema:\n\\`\\`\\`json\n${b}\n\\`\\`\\`\nRespond ONLY with the JSON object, no other text.`)}else\"json_object\"===a.type&&o.push(\"You must respond with valid JSON. Respond ONLY with a JSON object, no other text.\")}let p={type:k.R4.TEXT,text:f.Co};if(o.length>0){let a=o.join(\"\\n\");m.system=[p,{type:k.R4.TEXT,text:a,cache_control:{type:\"ephemeral\",ttl:\"1h\"}}]}else m.system=[p];if(b.tools&&Array.isArray(b.tools)){for(let a of(m.tools=[],b.tools)){let b=a.type;if(b&&b!==k.x4.FUNCTION){m.tools.push(a);continue}let c=a.function??a,e=c.name,f=\"\"+e;d.set(f,e),m.tools.push({name:f,description:c.description||\"\",input_schema:c.parameters||c.input_schema||{type:\"object\",properties:{},required:[]}})}m"
+    },
+    {
+      "file": "2416.js",
+      "sha256": "247912276e4eacd503e87694690a8de3cf4b5830cdb072d0e3639d5bb6186f37",
+      "needle": "requireApiKey",
+      "offset": 6441,
+      "excerpt": "=1,c.current>=j.t6&&d(!1))},[]);let aQ=async a=>{try{await k.A.getState().patchSettings({tunnelDashboardAccess:a})&&G(a)}catch(a){console.log(\"Error updating tunnelDashboardAccess:\",a)}},aR=async a=>{try{await k.A.getState().patchSettings({requireApiKey:a})&&A(a)}catch(a){console.log(\"Error updating requireApiKey:\"[REDACTED]\"/api/keys\");return a.ok&&(await a.json()).keys||[]},b=await a();if(0===b.length)try{(await fetch(\"/api/keys\",{method:\"POST\",headers:{\"Content-Type\":\"application/json\"},body:JSON.stringify({name:\"Default Key\"})})).ok&&(b=await a())}catch{}c(b)}catch(a){console.log(\"Error fetching data:\",a)}finally{g(!1)}},aT=async(...a)=>{S(!0),U(\"Waiting for tunnel ready...\");let b=a.filter(Boolean).map(a=>`${a}/api/health`),c=Date.now();for(;Date.now()-c<j.Cp;){if(await new Promise(a=>setTimeout(a,j.Hx)),await Promise.any(b.map(async a=>{if((await fetch(a,{mode:\"cors\",cache:\"no-store\"})).ok)return!0;throw Error(\"not ready\")})).catch(()=>!1))return K(!0),S(!1),U(\"\"),!0;if((Date.now()-c)%1e4<j.Hx)try{let a=await fetch(\"/api/tunnel/status\");if(a.ok){let b=await a.json();if(!"
+    },
+    {
+      "file": "2598.js",
+      "sha256": "9bf39033ba8baf8a6babe3b91acadeef45f7fcac693aa61c5fafb3a23537cadc",
+      "needle": "cloudcode-pa.googleapis.com",
+      "offset": 10311,
+      "excerpt": "tch((0,d.arch)()){case\"x64\":case\"arm64\":case\"ia32\":return;default:return(0,d.arch)()}})(),function(){switch((0,d.platform)()){case\"darwin\":case\"win32\":case\"linux\":case\"freebsd\":return;default:return(0,d.platform)()}}();let f=\"https://daily-cloudcode-pa.googleapis.com\",g=\"antigravity/hub/2.24.0 darwin/arm64\",h={id:\"antigravity\",priority:20,alias:\"ag\",uiAlias:\"ag\",display:{name:\"Antigravity\",icon:\"rocket_launch\",color:\"#F59E0B\",website:\"https://antigravity.google\",notice:{signupUrl:\"https://antigravity.google\"},deprecated:!0,deprecationNotice:\"RISK_NOTICE\"},category:\"oauth\",serviceKinds:[\"llm\",\"image\",\"webSearch\"],transport:{baseUrls:[f],format:\"antigravity\",headers:{\"User-Agent\":g},retry:{429:{attempts:3},500:{attempts:3},503:{attempts:3}},usage:{quotaApiUrl:`${f}/v1internal:fetchAvailableModels`,quotaSummaryApiUrl:`${f}/v1internal:retrieveUserQuotaSummary`,loadProjectApiUrl:\"https://cloudcode-pa.googleapis.com/v1internal:loadCodeAssist\",tokenUrl:\"https://oauth2.googleapis.com/token\"},clientId:\"1071006060591-tmhssin2h21lcre235vtolojh4g403ep.apps.googleusercontent.com\",clientSecret:\"[REDACTED]\"},mode"
+    },
+    {
+      "file": "2598.js",
+      "sha256": "9bf39033ba8baf8a6babe3b91acadeef45f7fcac693aa61c5fafb3a23537cadc",
+      "needle": "id:\"antigravity\"",
+      "offset": 10383,
+      "excerpt": "(0,d.arch)()}})(),function(){switch((0,d.platform)()){case\"darwin\":case\"win32\":case\"linux\":case\"freebsd\":return;default:return(0,d.platform)()}}();let f=\"https://daily-cloudcode-pa.googleapis.com\",g=\"antigravity/hub/2.24.0 darwin/arm64\",h={id:\"antigravity\",priority:20,alias:\"ag\",uiAlias:\"ag\",display:{name:\"Antigravity\",icon:\"rocket_launch\",color:\"#F59E0B\",website:\"https://antigravity.google\",notice:{signupUrl:\"https://antigravity.google\"},deprecated:!0,deprecationNotice:\"RISK_NOTICE\"},category:\"oauth\",serviceKinds:[\"llm\",\"image\",\"webSearch\"],transport:{baseUrls:[f],format:\"antigravity\",headers:{\"User-Agent\":g},retry:{429:{attempts:3},500:{attempts:3},503:{attempts:3}},usage:{quotaApiUrl:`${f}/v1internal:fetchAvailableModels`,quotaSummaryApiUrl:`${f}/v1internal:retrieveUserQuotaSummary`,loadProjectApiUrl:\"https://cloudcode-pa.googleapis.com/v1internal:loadCodeAssist\",tokenUrl:\"https://oauth2.googleapis.com/token\"},clientId:\"1071006060591-tmhssin2h21lcre235vtolojh4g403ep.apps.googleusercontent.com\",clientSecret:\"[REDACTED]\"},models:[{id:\"gemini-4-argon-high\",name:\"Gemini 4 Argon (High)\",upstreamModel"
+    },
+    {
+      "file": "2598.js",
+      "sha256": "9bf39033ba8baf8a6babe3b91acadeef45f7fcac693aa61c5fafb3a23537cadc",
+      "needle": "response_format",
+      "offset": 18856,
+      "excerpt": "nd:\"image\"},{id:\"gpt-6-sol-image\",name:\"GPT 6.0 Sol Image\",capabilities:[\"text2img\",\"edit\"],params:[\"size\",\"quality\",\"background\",\"image_detail\",\"output_format\"],kind:\"image\"},{id:\"transcribe\",name:\"Codex Transcription\",kind:\"stt\",params:[\"response_format\"],responseFormats:[\"json\",\"text\"]}],serviceKinds:[\"llm\",\"image\",\"stt\"],sttConfig:{baseUrl:\"https://chatgpt.com/backend-api/transcribe\",authType:\"oauth\",format:\"codex-transcribe\"},oauth:{clientId:\"app_EMoamEEZ73f0CkXaXp7hrann\",authorizeUrl:\"https://auth.openai.com/oauth/authorize\",tokenUrl:\"https://auth.openai.com/oauth/token\",scope:\"openid profile email offline_access\",codeChallengeMethod:\"S256\",fixedPort:1455,callbackPath:\"/auth/callback\",extraParams:{id_token_add_organizations:\"true\",codex_cli_simplified_flow:\"true\",originator:\"codex_cli_rs\"},refreshLeadMs:6e5,refresh:{encoding:\"form\",scope:\"openid profile email offline_access\"},maxRefreshAgeMs:6912e5,trackRefreshAt:!0},features:{usage:!0}},l={id:\"deepseek\",priority:110,alias:\"deepseek\",aliases:[\"ds\"],uiAlias:\"ds\",display:{name:\"DeepSeek\",icon:\"bolt\",color:\"#4D6BFE\",textIcon:\"DS\",website:\"https://deepseek.com\",notice:{a"
+    },
+    {
+      "file": "2822.js",
+      "sha256": "6c42019829a36a08be5278ce25a39db828dce8c95fc59801594cbdd10aa37657",
+      "needle": "response_format",
+      "offset": 11035,
+      "excerpt": "async function({baseUrl:a,apiKey:b,text:c,modelId:d,voiceId:e}){let f={\"Content-Type\":\"application/json\"};b&&(f.Authorization=`Bearer ${b}`);let g=await fetch(a,{method:\"POST\",headers:f,body:JSON.stringify({model:d,input:c,voice:e||\"alloy\",response_format:\"mp3\",speed:1})});return g.ok||await i(g),h(g,\"mp3\")},\"minimax-tts\":async function({baseUrl:a,apiKey:b,text:c,modelId:e,voiceId:f}){let g=await fetch(a,{method:\"POST\",headers:{\"Content-Type\":\"application/json\",Authorization:`Bearer ${b}`},body:JSON.stringify({model:e||\"speech-2.8-hd\",text:c,stream:!1,language_boost:\"auto\",output_format:\"hex\",voice_setting:{voice_id:f||\"English_expressive_narrator\",speed:1,vol:1,pitch:0},audio_setting:{sample_rate:32e3,bitrate:128e3,format:\"mp3\",channel:1}})}),h=await g.text(),i={};if(h)try{i=JSON.parse(h)}catch{i={}}let j=i.base_resp||i.baseResp||{},k=Number(j.status_code??j.statusCode??0),l=j.status_msg||j.statusMsg||i.message||\"\";if(!g.ok)throw Error(l||h||`MiniMax TTS error (${g.status})`);if(0!==k)throw Error(l||\"MiniMax TTS upstream error\");return{base64:function(a){let b=\"string\"==typeof a?a.trim():\"\";if(!b)throw Error(\"MiniMax TTS "
+    },
+    {
+      "file": "4279.js",
+      "sha256": "556eded500daba2078309c2680ec855bf185ac349b894236f023f0203b3e542f",
+      "needle": "cloudcode-pa.googleapis.com",
+      "offset": 972,
+      "excerpt": "Token exchange failed: ${a}`)}return await d.json()},postExchange:async a=>{let b=await fetch(`${d.LT.userInfoUrl}?alt=json`,{headers:{Authorization:`Bearer ${a.access_token}`}}),c=b.ok?await b.json():{},e=\"\";try{let b=await fetch(\"https://cloudcode-pa.googleapis.com/v1internal:loadCodeAssist\",{method:\"POST\",headers:{Authorization:`Bearer ${a.access_token}`,\"Content-Type\":\"application/json\"},body:JSON.stringify({metadata:(0,d.cD)(),mode:1})});if(b.ok){let a=await b.json();e=a.cloudaicompanionProject?.id||a.cloudaicompanionProject||\"\"}}catch(a){console.log(\"Failed to fetch project ID:\",a)}return{userInfo:c,projectId:e}},mapTokens:(a,b)=>({accessToken:a.access_token,refreshToken:a.refresh_token,expiresIn:a.expires_in,scope:a.scope,email:b?.userInfo?.email,projectId:b?.projectId})}},3198:(a,b,c)=>{\"use strict\";c.d(b,{A:()=>f});var d=c(55511),e=c.n(d);let f={config:c(92990).aV,flowType:\"device_code\",requestDeviceCode:async a=>{let{buildKimiHeaders:b}=await Promise.resolve().then(c.bind(c,75924)),d=e().randomUUID(),f={\"Content-Type\":\"application/x-www-form-urlencoded\",Accept:\"application/json\",...b(d)},g=await fetch(a.deviceCod"
+    },
+    {
+      "file": "436.js",
+      "sha256": "84a6f442c0ee4fba82290f360f6f3d470325c5d60d9306e11b072922c9a9ce8a",
+      "needle": "cloudcode-pa.googleapis.com",
+      "offset": 762,
+      "excerpt": "ew Map,h=new Map,i=new Set([\"SELF_SIGNED_CERT_IN_CHAIN\",\"DEPTH_ZERO_SELF_SIGNED_CERT\",\"UNABLE_TO_VERIFY_LEAF_SIGNATURE\",\"UNABLE_TO_GET_ISSUER_CERT\",\"UNABLE_TO_GET_ISSUER_CERT_LOCALLY\",\"CERT_HAS_EXPIRED\",\"ERR_TLS_CERT_ALTNAME_INVALID\"]),j=[\"cloudcode-pa.googleapis.com\",\"daily-cloudcode-pa.googleapis.com\",\"api.individual.githubcopilot.com\",\"q.us-east-1.amazonaws.com\",\"codewhisperer.us-east-1.amazonaws.com\",\"api2.cursor.sh\"],k=[\"8.8.8.8\",\"8.8.4.4\"];function l(a){return null==a?\"\":String(a).trim()}async function m(a){let b=h.get(a);if(b&&Date.now()<b.expiry)return b.ip;try{let b=await Promise.resolve().then(c.t.bind(c,14985,23)),{promisify:d}=await Promise.resolve().then(c.t.bind(c,28354,23)),f=new b.Resolver;f.setServers(k);let g=d(f.resolve4.bind(f)),i=await g(a);return h.set(a,{ip:i[0],expiry:Date.now()+e.v1.dnsCacheTtlMs}),i[0]}catch(b){return console.warn(`[ProxyFetch] DNS resolve failed for ${a}:`,b.message),null}}function n(a,b){let c,d=l(b);if(!d)return!1;try{c=new URL(a).hostname.toLowerCase()}catch{return!1}return d.split(\",\").map(a=>a.trim().toLowerCase()).filter(Boolean).some(a=>\"*\"===a||(a.startsWith(\".\")?c.endsWi"
+    },
+    {
+      "file": "4480.js",
+      "sha256": "dd6c068d50659dfc071e9dfb5193470cceadff1db19aa250efa98fc7377c3efd",
+      "needle": "cloudcode-pa.googleapis.com",
+      "offset": 953,
+      "excerpt": "tch((0,d.arch)()){case\"x64\":case\"arm64\":case\"ia32\":return;default:return(0,d.arch)()}})(),function(){switch((0,d.platform)()){case\"darwin\":case\"win32\":case\"linux\":case\"freebsd\":return;default:return(0,d.platform)()}}();let f=\"https://daily-cloudcode-pa.googleapis.com\",g=\"antigravity/hub/2.24.0 darwin/arm64\",h={id:\"antigravity\",priority:20,alias:\"ag\",uiAlias:\"ag\",display:{name:\"Antigravity\",icon:\"rocket_launch\",color:\"#F59E0B\",website:\"https://antigravity.google\",notice:{signupUrl:\"https://antigravity.google\"},deprecated:!0,deprecationNotice:\"RISK_NOTICE\"},category:\"oauth\",serviceKinds:[\"llm\",\"image\",\"webSearch\"],transport:{baseUrls:[f],format:\"antigravity\",headers:{\"User-Agent\":g},retry:{429:{attempts:3},500:{attempts:3},503:{attempts:3}},usage:{quotaApiUrl:`${f}/v1internal:fetchAvailableModels`,quotaSummaryApiUrl:`${f}/v1internal:retrieveUserQuotaSummary`,loadProjectApiUrl:\"https://cloudcode-pa.googleapis.com/v1internal:loadCodeAssist\",tokenUrl:\"https://oauth2.googleapis.com/token\"},clientId:\"1071006060591-tmhssin2h21lcre235vtolojh4g403ep.apps.googleusercontent.com\",clientSecret:\"[REDACTED]\"},mode"
+    },
+    {
+      "file": "4480.js",
+      "sha256": "dd6c068d50659dfc071e9dfb5193470cceadff1db19aa250efa98fc7377c3efd",
+      "needle": "id:\"antigravity\"",
+      "offset": 1025,
+      "excerpt": "(0,d.arch)()}})(),function(){switch((0,d.platform)()){case\"darwin\":case\"win32\":case\"linux\":case\"freebsd\":return;default:return(0,d.platform)()}}();let f=\"https://daily-cloudcode-pa.googleapis.com\",g=\"antigravity/hub/2.24.0 darwin/arm64\",h={id:\"antigravity\",priority:20,alias:\"ag\",uiAlias:\"ag\",display:{name:\"Antigravity\",icon:\"rocket_launch\",color:\"#F59E0B\",website:\"https://antigravity.google\",notice:{signupUrl:\"https://antigravity.google\"},deprecated:!0,deprecationNotice:\"RISK_NOTICE\"},category:\"oauth\",serviceKinds:[\"llm\",\"image\",\"webSearch\"],transport:{baseUrls:[f],format:\"antigravity\",headers:{\"User-Agent\":g},retry:{429:{attempts:3},500:{attempts:3},503:{attempts:3}},usage:{quotaApiUrl:`${f}/v1internal:fetchAvailableModels`,quotaSummaryApiUrl:`${f}/v1internal:retrieveUserQuotaSummary`,loadProjectApiUrl:\"https://cloudcode-pa.googleapis.com/v1internal:loadCodeAssist\",tokenUrl:\"https://oauth2.googleapis.com/token\"},clientId:\"1071006060591-tmhssin2h21lcre235vtolojh4g403ep.apps.googleusercontent.com\",clientSecret:\"[REDACTED]\"},models:[{id:\"gemini-4-argon-high\",name:\"Gemini 4 Argon (High)\",upstreamModel"
+    },
+    {
+      "file": "4480.js",
+      "sha256": "dd6c068d50659dfc071e9dfb5193470cceadff1db19aa250efa98fc7377c3efd",
+      "needle": "response_format",
+      "offset": 9497,
+      "excerpt": "nd:\"image\"},{id:\"gpt-6-sol-image\",name:\"GPT 6.0 Sol Image\",capabilities:[\"text2img\",\"edit\"],params:[\"size\",\"quality\",\"background\",\"image_detail\",\"output_format\"],kind:\"image\"},{id:\"transcribe\",name:\"Codex Transcription\",kind:\"stt\",params:[\"response_format\"],responseFormats:[\"json\",\"text\"]}],serviceKinds:[\"llm\",\"image\",\"stt\"],sttConfig:{baseUrl:\"https://chatgpt.com/backend-api/transcribe\",authType:\"oauth\",format:\"codex-transcribe\"},oauth:{clientId:\"app_EMoamEEZ73f0CkXaXp7hrann\",authorizeUrl:\"https://auth.openai.com/oauth/authorize\",tokenUrl:\"https://auth.openai.com/oauth/token\",scope:\"openid profile email offline_access\",codeChallengeMethod:\"S256\",fixedPort:1455,callbackPath:\"/auth/callback\",extraParams:{id_token_add_organizations:\"true\",codex_cli_simplified_flow:\"true\",originator:\"codex_cli_rs\"},refreshLeadMs:6e5,refresh:{encoding:\"form\",scope:\"openid profile email offline_access\"},maxRefreshAgeMs:6912e5,trackRefreshAt:!0},features:{usage:!0}},l={id:\"deepseek\",priority:110,alias:\"deepseek\",aliases:[\"ds\"],uiAlias:\"ds\",display:{name:\"DeepSeek\",icon:\"bolt\",color:\"#4D6BFE\",textIcon:\"DS\",website:\"https://deepseek.com\",notice:{a"
+    },
+    {
+      "file": "5299.js",
+      "sha256": "34ab609b193e1736814286af9157b2c9c3c5cdfce66c07623c303d30c86e9b98",
+      "needle": "cloudcode-pa.googleapis.com",
+      "offset": 208177,
+      "excerpt": ":\"text-xs text-text-muted truncate\",children:a.description})]})]}),(0,d.jsx)(\"span\",{className:\"material-symbols-outlined text-text-muted text-[20px]\",children:\"chevron_right\"})]})})})}},36811:a=>{a.exports={TOOL_HOSTS:{antigravity:[\"daily-cloudcode-pa.googleapis.com\",\"cloudcode-pa.googleapis.com\"],copilot:[\"api.individual.githubcopilot.com\"],kiro:[\"runtime.us-east-1.kiro.dev\",\"q.us-east-1.amazonaws.com\",\"codewhisperer.us-east-1.amazonaws.com\"],cursor:[\"api2.cursor.sh\"]}}},62911:(a,b,c)=>{c.d(b,{dM:()=>e,wn:()=>d});let d={antigravity:{id:\"antigravity\",name:\"Antigravity\",image:\"/providers/antigravity.png\",color:\"#4285F4\",description:\"Google Antigravity IDE with MITM\",configType:\"mitm\",mitmDomain:\"daily-cloudcode-pa.googleapis.com\",modelAliases:[\"gemini-3.8-flash-high\",\"gemini-3.8-flash-medium\",\"gemini-3.8-flash-low\",\"gemini-3.7-flash-high\",\"gemini-3.7-flash-medium\",\"gemini-3.7-flash-low\",\"gemini-3.6-flash-high\",\"gemini-3.6-flash-medium\",\"gemini-3.6-flash-low\",\"gemini-3.1-pro-high\",\"gemini-3.1-pro-low\",\"gemini-pro-agent\",\"claude-sonnet-5-5\",\"claude-sonnet-5-5-low\",\"claude-sonnet-5-5-medium\",\"claude-sonnet-5-5-high\",\"claude-o"
+    },
+    {
+      "file": "5299.js",
+      "sha256": "34ab609b193e1736814286af9157b2c9c3c5cdfce66c07623c303d30c86e9b98",
+      "needle": "id:\"antigravity\"",
+      "offset": 208478,
+      "excerpt": "opilot:[\"api.individual.githubcopilot.com\"],kiro:[\"runtime.us-east-1.kiro.dev\",\"q.us-east-1.amazonaws.com\",\"codewhisperer.us-east-1.amazonaws.com\"],cursor:[\"api2.cursor.sh\"]}}},62911:(a,b,c)=>{c.d(b,{dM:()=>e,wn:()=>d});let d={antigravity:{id:\"antigravity\",name:\"Antigravity\",image:\"/providers/antigravity.png\",color:\"#4285F4\",description:\"Google Antigravity IDE with MITM\",configType:\"mitm\",mitmDomain:\"daily-cloudcode-pa.googleapis.com\",modelAliases:[\"gemini-3.8-flash-high\",\"gemini-3.8-flash-medium\",\"gemini-3.8-flash-low\",\"gemini-3.7-flash-high\",\"gemini-3.7-flash-medium\",\"gemini-3.7-flash-low\",\"gemini-3.6-flash-high\",\"gemini-3.6-flash-medium\",\"gemini-3.6-flash-low\",\"gemini-3.1-pro-high\",\"gemini-3.1-pro-low\",\"gemini-pro-agent\",\"claude-sonnet-5-5\",\"claude-sonnet-5-5-low\",\"claude-sonnet-5-5-medium\",\"claude-sonnet-5-5-high\",\"claude-opus-5-5\",\"claude-opus-5-5-low\",\"claude-opus-5-5-medium\",\"claude-opus-5-5-high\",\"claude-sonnet-4-6\",\"claude-opus-4-6-thinking\",\"gpt-oss-120b-medium\"],defaultModels:[{id:\"gemini-3.8-flash-high\",name:\"Gemini 3.8 Flash (High)\",alias:\"gemini-3.8-flash-high\"},{id:\"gemini-3.8-flash-medium\",name:\"Gemini 3.8 "
+    },
+    {
+      "file": "6724.js",
+      "sha256": "01bb9490698bca9cb8c8981120e034fbdcb2ee00733677f3408ef2ca2a048bcb",
+      "needle": "isActive:!0",
+      "offset": 7172,
+      "excerpt": "ld not fetch disabled models\")}let m=(a,b)=>Array.isArray(l[a])&&l[a].includes(b),n=new Map;for(let a of h)n.has(a.provider)||n.set(a.provider,a);for(let[a,b]of Object.entries(e.IS||{}))b?.noAuth&&!n.has(a)&&n.set(a,{id:\"noauth\",provider:a,isActive:!0});let o=[],p=new Map(i.filter(a=>\"string\"==typeof a?.name).map(a=>[a.name,a])),q=Object.fromEntries(i.map(a=>[a.name,a.models]));for(let b of i){if(!function(a,b){let c=a?.kind||\"llm\";return b.includes(c)}(b,a))continue;let c={id:b.name,object:\"model\",owned_by:\"combo\"};if(\"webSearch\"===b.kind||\"webFetch\"===b.kind)c.kind=b.kind;else{let a=(0,x.aggregateComboCapabilities)(b.models,q,A);a&&(c.capabilities=a);let{contextWindow:d,maxOutput:e}=function a(b,c,d=new Set){let e=\"string\"==typeof b?.name?b.name:null;if(e){if(d.has(e))return{contextWindow:void 0,maxOutput:void 0};d.add(e)}let f=1/0,g=1/0;try{for(let e of Array.isArray(b?.models)?b.models:[]){if(\"string\"!=typeof e)continue;if(0>=e.indexOf(\"/\")){let b=c.get(e);if(b){let e=a(b,c,d);Number.isFinite(e.contextWindow)&&(f=Math.min(f,e.contextWindow)),Number.isFinite(e.maxOutput)&&(g=Math.min(g,e.maxOutput));continue}}let b=A(e)"
+    },
+    {
+      "file": "6877.js",
+      "sha256": "80ca82002864f52ea33e94abe46ca894fb0d3e7f72c38fea8225f358382db6e2",
+      "needle": "isActive:!0",
+      "offset": 4807,
+      "excerpt": "t.entries(D.providers)){let g=E[e];if(!g)continue;let h=d?.[f.settingsKey]?.connections||{},i=d?.[f.settingsKey]?.schedules||{};if(0!==Object.keys(h).length||0!==Object.keys(i).length)for(let j of(await a.getProviderConnections({provider:e,isActive:!0})).filter(a=>\"oauth\"===a.authType&&(!0===h[a.id]||null!==(0,o.NU)(i[a.id]))))try{let c=function(a,b,c){let d=a?.[b.settingsKey]?.schedules||{};return(0,o.NU)(d[c])}(d,f,j.id),i=!0===h[j.id];await x(j,e,f,g,a,b,c,i)}catch(a){var c;b.failureCache[c=j.id,`${e}:${c}`]=Date.now(),console.warn(`[AutoPing] ${e}:${j.id}: ${a.message}`)}}}catch(a){console.warn(\"[AutoPing] tick error:\",a.message)}finally{b.running=!1}}}function z(){!F.interval&&(console.log(\"[AutoPing] scheduler started\"),y().catch(()=>{}),F.interval=setInterval(()=>{y().catch(()=>{})},D.tickIntervalMs),F.interval.unref&&F.interval.unref())}function A(){F.interval&&(clearInterval(F.interval),F.interval=null,console.log(\"[AutoPing] scheduler stopped\"))}function B(a){return Object.values(D.providers).some(b=>{let c=a?.[b.settingsKey];return Object.values(c?.connections||{}).some(Boolean)||Object.values(c?.schedules||{})."
+    },
+    {
+      "file": "7373.js",
+      "sha256": "caacdd6674c1ac0fb8097800ceda5ad3945f2d91d9ff83af2c1958ca81d51510",
+      "needle": "response_format",
+      "offset": 6619,
+      "excerpt": "\",\"reasoning_details\"]},{provider:\"cerebras\",dropMessageFields:[\"reasoning_content\",\"reasoning\",\"reasoning_details\"]},{provider:\"nvidia\",renameMessageFields:{reasoning:\"reasoning_content\"}},{provider:\"opencode-go\",match:/^deepseek/i,drop:[\"response_format\"]},{provider:\"openai\",renameParams:{max_tokens:\"max_completion_tokens\"}}];function f(a,b,c){\"number\"==typeof a[b]&&Number.isFinite(a[b])&&a[b]>c&&(a[b]=c)}function g(a,b,c){if(!b||!c||\"object\"!=typeof c)return c;for(let g of e)if((!g.provider||g.provider===a)&&(!g.match||(\"function\"==typeof g.match?g.match(b):g.match.test(b)))){for(let[a,b]of Object.entries(g.renameParams||{}))void 0!==c[a]&&(void 0===c[b]&&(c[b]=c[a]),delete c[a]);for(let a of g.drop||[])void 0!==c[a]&&delete c[a];if((g.renameMessageFields||g.dropMessageFields)&&Array.isArray(c.messages)){for(let a of c.messages)if(a&&\"assistant\"===a.role){for(let[b,c]of Object.entries(g.renameMessageFields||{})){if(void 0===a[b])continue;let d=a[c];null!=d&&(\"string\"!=typeof d||d.trim())||(a[c]=a[b]),delete a[b]}for(let b of g.dropMessageFields||[])void 0!==a[b]&&delete a[b]}}if(g.flattenContent&&Array.isArray(c.message"
+    },
+    {
+      "file": "7525.js",
+      "sha256": "a12b49db3018b9d18ce456cb8090e50a671683ee2899d7057ffd8cee0131ca6b",
+      "needle": "cloudcode-pa.googleapis.com",
+      "offset": 757,
+      "excerpt": "ew Map,h=new Map,i=new Set([\"SELF_SIGNED_CERT_IN_CHAIN\",\"DEPTH_ZERO_SELF_SIGNED_CERT\",\"UNABLE_TO_VERIFY_LEAF_SIGNATURE\",\"UNABLE_TO_GET_ISSUER_CERT\",\"UNABLE_TO_GET_ISSUER_CERT_LOCALLY\",\"CERT_HAS_EXPIRED\",\"ERR_TLS_CERT_ALTNAME_INVALID\"]),j=[\"cloudcode-pa.googleapis.com\",\"daily-cloudcode-pa.googleapis.com\",\"api.individual.githubcopilot.com\",\"q.us-east-1.amazonaws.com\",\"codewhisperer.us-east-1.amazonaws.com\",\"api2.cursor.sh\"],k=[\"8.8.8.8\",\"8.8.4.4\"];function l(a){return null==a?\"\":String(a).trim()}async function m(a){let b=h.get(a);if(b&&Date.now()<b.expiry)return b.ip;try{let b=await Promise.resolve().then(c.t.bind(c,14985,23)),{promisify:d}=await Promise.resolve().then(c.t.bind(c,28354,23)),e=new b.Resolver;e.setServers(k);let f=d(e.resolve4.bind(e)),g=await f(a);return h.set(a,{ip:g[0],expiry:Date.now()+3e5}),g[0]}catch(b){return console.warn(`[ProxyFetch] DNS resolve failed for ${a}:`,b.message),null}}function n(a,b){let c,d=l(b);if(!d)return!1;try{c=new URL(a).hostname.toLowerCase()}catch{return!1}return d.split(\",\").map(a=>a.trim().toLowerCase()).filter(Boolean).some(a=>\"*\"===a||(a.startsWith(\".\")?c.endsWith(a)||c===a.sl"
+    },
+    {
+      "file": "7557.js",
+      "sha256": "f6ca4d03561255891561ee5179b54b13e7476626af48efe9ef1fdfa7cc1e4903",
+      "needle": "cloudcode-pa.googleapis.com",
+      "offset": 752,
+      "excerpt": "ew Map,h=new Map,i=new Set([\"SELF_SIGNED_CERT_IN_CHAIN\",\"DEPTH_ZERO_SELF_SIGNED_CERT\",\"UNABLE_TO_VERIFY_LEAF_SIGNATURE\",\"UNABLE_TO_GET_ISSUER_CERT\",\"UNABLE_TO_GET_ISSUER_CERT_LOCALLY\",\"CERT_HAS_EXPIRED\",\"ERR_TLS_CERT_ALTNAME_INVALID\"]),j=[\"cloudcode-pa.googleapis.com\",\"daily-cloudcode-pa.googleapis.com\",\"api.individual.githubcopilot.com\",\"q.us-east-1.amazonaws.com\",\"codewhisperer.us-east-1.amazonaws.com\",\"api2.cursor.sh\"],k=[\"8.8.8.8\",\"8.8.4.4\"];function l(a){return null==a?\"\":String(a).trim()}async function m(a){let b=h.get(a);if(b&&Date.now()<b.expiry)return b.ip;try{let b=await Promise.resolve().then(c.t.bind(c,14985,23)),{promisify:d}=await Promise.resolve().then(c.t.bind(c,28354,23)),e=new b.Resolver;e.setServers(k);let f=d(e.resolve4.bind(e)),g=await f(a);return h.set(a,{ip:g[0],expiry:Date.now()+3e5}),g[0]}catch(b){return console.warn(`[ProxyFetch] DNS resolve failed for ${a}:`,b.message),null}}function n(a,b){let c,d=l(b);if(!d)return!1;try{c=new URL(a).hostname.toLowerCase()}catch{return!1}return d.split(\",\").map(a=>a.trim().toLowerCase()).filter(Boolean).some(a=>\"*\"===a||(a.startsWith(\".\")?c.endsWith(a)||c===a.sl"
+    },
+    {
+      "file": "7911.js",
+      "sha256": "994837025ddfd88cced3f244a013d3f0f374c1b451f64e53c0069565e1600675",
+      "needle": "isActive:!0",
+      "offset": 201252,
+      "excerpt": "etTimeout(e,0),()=>{var a;return null==(a=d)?void 0:a()}});f.Provider;var g=c(62323),h=c(95696);function i(a,b){(null==b||b>a.length)&&(b=a.length);for(var c=0,d=Array(b);c<b;c++)d[c]=a[c];return d}var j={begin:0,duration:1e3,easing:\"ease\",isActive:!0,canBegin:!0,onAnimationEnd:()=>{},onAnimationStart:()=>{}};function k(a){var b,c,k,l=(0,e.e)(a,j);l.animationId;var m=l.isActive,n=(l.canBegin,l.duration,l.easing,l.begin,l.onAnimationEnd,l.onAnimationStart,l.children),o=(0,h.j)(),p=\"auto\"===m?!g.m.isSsr&&!o:m;b=l.animationController,c=(0,d.useContext)(f),(0,d.useMemo)(()=>null!=b?b:c,[b,c]);var q=function(a){if(Array.isArray(a))return a}(k=(0,d.useState)(+!p))||function(a){var b=null==a?null:\"u\">typeof Symbol&&a[Symbol.iterator]||a[\"@@iterator\"];if(null!=b){var c,d,e,f,g=[],h=!0,i=!1;try{e=(b=b.call(a)).next,!1;for(;!(h=(c=e.call(b)).done)&&(g.push(c.value),2!==g.length);h=!0);}catch(a){i=!0,d=a}finally{try{if(!h&&null!=b.return&&(f=b.return(),Object(f)!==f))return}finally{if(i)throw d}}return g}}(k)||function(a){if(a){if(\"string\"==typeof a)return i(a,2);var b=({}).toString.call(a).slice(8,-1);return\"Object\"===b&&a.construct"
+    },
+    {
+      "file": "8128.js",
+      "sha256": "04119401d02dc1b5eea74095034d64a04491e5998dd9097c5fb252424ec62913",
+      "needle": "cloudcode-pa.googleapis.com",
+      "offset": 13576,
+      "excerpt": "RM_UNSPECIFIED\",pluginType:\"GEMINI\"}});async function v(a,b,c=null){let d=\"antigravity\"===a.provider?o.YT.loadCodeAssistUserAgent||\"antigravity/hub/2.24.0 darwin/arm64\":\"google-api-nodejs-client/9.15.1 gemini-cli/0.34.0\",e=await y(\"https://cloudcode-pa.googleapis.com/v1internal:loadCodeAssist\",{method:\"POST\",headers:{Authorization:`Bearer ${b}`,\"Content-Type\":\"application/json\",\"User-Agent\":d},body:u},c);return e.ok?{valid:!0,error:null}:{valid:!1,error:function(a,b){if(!a)return b;try{let b=JSON.parse(a),c=b?.error?.message||b?.message||b?.error;if(\"string\"==typeof c&&c.trim())return c.trim();if(c)return JSON.stringify(c)}catch{}return a.trim()||b}(await e.text().catch(()=>\"\"),`API returned ${e.status}`),status:e.status}}async function w(a){let b=a.provider,c=a.refreshToken;if(!c)return null;try{if(\"gemini-cli\"===b||\"antigravity\"===b){let a=\"gemini-cli\"===b?o.LT:o.YT,d=await fetch(\"https://oauth2.googleapis.com/token\",{method:\"POST\",headers:{\"Content-Type\":\"application/x-www-form-urlencoded\"},body:new URLSearchParams({client_id:a.clientId,client_secret:a.clientSecret,grant_type:\"refresh_token\",refresh_token:c})});if(!d.ok"
+    },
+    {
+      "file": "8499.js",
+      "sha256": "a5e31fe6871c6d76163f904eb75853f33389df098846afda5f43a15cd911dcb7",
+      "needle": "cloudcode-pa.googleapis.com",
+      "offset": 2543,
+      "excerpt": "headers:{\"User-Agent\":d.Of},retry:{429:{attempts:3},500:{attempts:3},503:{attempts:3}},usage:{quotaApiUrl:`${d.w3}/v1internal:fetchAvailableModels`,quotaSummaryApiUrl:`${d.w3}/v1internal:retrieveUserQuotaSummary`,loadProjectApiUrl:\"https://cloudcode-pa.googleapis.com/v1internal:loadCodeAssist\",tokenUrl:\"https://oauth2.googleapis.com/token\"},clientId:\"1071006060591-tmhssin2h21lcre235vtolojh4g403ep.apps.googleusercontent.com\",clientSecret:\"[REDACTED]\"},models:[{id:\"gemini-4-argon-high\",name:\"Gemini 4 Argon (High)\",upstreamModelId:\"gemini-4-argon-high(high)\"},{id:\"gemini-4-argon-medium\",name:\"Gemini 4 Argon (Medium)\",upstreamModelId:\"gemini-4-argon-medium(medium)\"},{id:\"gemini-4-argon-low\",name:\"Gemini 4 Argon (Low)\",upstreamModelId:\"gemini-4-argon-low(low)\"},{id:\"gemini-3.8-flash-high\",name:\"Gemini 3.8 Flash (High)\",upstreamModelId:\"gemini-3.8-flash-high(high)\"},{id:\"gemini-3.8-flash-medium\",name:\"Gemini 3.8 Flash (Medium)\",upstreamModelId:\"gemini-3.8-flash-medium(medium)\"},{id:\"gemini-3.8-flash-low\",name:\"Gemini 3.8 Flash (Low)\",upstreamModelId:\"gemini-3.8-flash-low(low)\"},{id:\"gemini-3.8-flash\",nam"
+    },
+    {
+      "file": "8499.js",
+      "sha256": "a5e31fe6871c6d76163f904eb75853f33389df098846afda5f43a15cd911dcb7",
+      "needle": "id:\"antigravity\"",
+      "offset": 1947,
+      "excerpt": "{text:\"overloaded\",backoff:!0},{status:401,cooldownMs:12e4},{status:402,cooldownMs:12e4},{status:403,cooldownMs:12e4},{status:404,cooldownMs:12e4},{status:429,backoff:!0}]},8499:(a,b,c)=>{c.r(b),c.d(b,{default:()=>t});var d=c(74129);let e={id:\"antigravity\",priority:20,alias:\"ag\",uiAlias:\"ag\",display:{name:\"Antigravity\",icon:\"rocket_launch\",color:\"#F59E0B\",website:\"https://antigravity.google\",notice:{signupUrl:\"https://antigravity.google\"},deprecated:!0,deprecationNotice:\"RISK_NOTICE\"},category:\"oauth\",serviceKinds:[\"llm\",\"image\",\"webSearch\"],transport:{baseUrls:[d.w3],format:\"antigravity\",headers:{\"User-Agent\":d.Of},retry:{429:{attempts:3},500:{attempts:3},503:{attempts:3}},usage:{quotaApiUrl:`${d.w3}/v1internal:fetchAvailableModels`,quotaSummaryApiUrl:`${d.w3}/v1internal:retrieveUserQuotaSummary`,loadProjectApiUrl:\"https://cloudcode-pa.googleapis.com/v1internal:loadCodeAssist\",tokenUrl:\"https://oauth2.googleapis.com/token\"},clientId:\"1071006060591-tmhssin2h21lcre235vtolojh4g403ep.apps.googleusercontent.com\",clientSecret:\"[REDACTED]\"},models:[{id:\"gemini-4-argon-high\",name:\"Gemini 4 Argon (High)\",u"
+    },
+    {
+      "file": "8499.js",
+      "sha256": "a5e31fe6871c6d76163f904eb75853f33389df098846afda5f43a15cd911dcb7",
+      "needle": "response_format",
+      "offset": 18663,
+      "excerpt": "MiniMax-M3\",name:\"MiniMax M3\",targetFormat:\"claude\"},{id:\"MiniMax-M2.7\",name:\"MiniMax M2.7\"},{id:\"MiniMax-M2.5\",name:\"MiniMax M2.5\"},{id:\"MiniMax-M2.1\",name:\"MiniMax M2.1\"},{id:\"minimax-image-01\",name:\"MiniMax Image 01\",params:[\"n\",\"size\",\"response_format\"],kind:\"image\"},{id:\"speech-2.8-hd\",name:\"Speech 2.8 HD\",kind:\"tts\"},{id:\"speech-2.8-turbo\",name:\"Speech 2.8 Turbo\",kind:\"tts\"},{id:\"speech-2.6-hd\",name:\"Speech 2.6 HD\",kind:\"tts\"},{id:\"speech-2.6-turbo\",name:\"Speech 2.6 Turbo\",kind:\"tts\"},{id:\"speech-02-hd\",name:\"Speech 02 HD\",kind:\"tts\"},{id:\"speech-02-turbo\",name:\"Speech 02 Turbo\",kind:\"tts\"},{id:\"speech-01-hd\",name:\"Speech 01 HD\",kind:\"tts\"},{id:\"speech-01-turbo\",name:\"Speech 01 Turbo\",kind:\"tts\"}],serviceKinds:[\"llm\",\"image\",\"imageToText\",\"webSearch\",\"tts\"],ttsConfig:{baseUrl:\"https://api.minimax.io/v1/t2a_v2\",authType:\"apikey\",authHeader:\"bearer\",format:\"minimax-tts\"},imageConfig:{baseUrl:\"https://api.minimaxi.com/v1/images/generations\"},searchViaChat:{defaultModel:\"MiniMax-M2.7\",endpoint:\"https://api.minimaxi.com/v1/text/chatcompletion_v2\",pricingUrl:\"https://www.minimaxi.com/document/price\"},features:{usage:!0,usa"
+    },
+    {
+      "file": "8895.js",
+      "sha256": "85d39f89c80606f5f2fb0e21fd5b3656acfb82910d22e9317923cfaf5daa2c59",
+      "needle": "response_format",
+      "offset": 79999,
+      "excerpt": ",qr:()=>l});var d=c(47370),e=c(71857),f=c(73483);let g=[\"temperature\",\"top_p\",\"top_k\",\"max_tokens\",\"max_completion_tokens\",\"thinking\",\"reasoning\",\"enable_thinking\",\"presence_penalty\",\"frequency_penalty\",\"seed\",\"stop\",\"tools\",\"tool_choice\",\"response_format\",\"prediction\",\"store\",\"metadata\",\"n\",\"logprobs\",\"top_logprobs\",\"logit_bias\",\"user\",\"parallel_tool_calls\"];function h(a,b){let c={messages:a.messages||[],model:a.model,stream:b};for(let b of g)void 0!==a[b]&&(c[b]=a[b]);return c}function i(a){if(!a||\"object\"!=typeof a)return null;if(a.usage?.input_tokens!==void 0)return{prompt_tokens:a.usage.input_tokens||0,completion_tokens:a.usage.output_tokens||0,cached_tokens:a.usage.cached_tokens??a.usage.input_tokens_details?.cached_tokens,cache_read_input_tokens:a.usage.cache_read_input_tokens,cache_creation_input_tokens:a.usage.cache_creation_input_tokens};if(a.usage?.prompt_tokens!==void 0)return{prompt_tokens:a.usage.prompt_tokens||0,completion_tokens:a.usage.completion_tokens||0,cached_tokens:a.usage.cached_tokens??a.usage.prompt_tokens_details?.cached_tokens,reasoning_tokens:a.usage.completion_tokens_details?.reasoning_tokens};"
+    },
+    {
+      "file": "9100.js",
+      "sha256": "4eda7db7220cb967aca8f67562c952ed36fb849c34d73e4613a8e120bb0865a4",
+      "needle": "requireApiKey",
+      "offset": 15879,
+      "excerpt": "mit:1,comboStrategies:{},capacityAdapter:{vision:{enabled:!0,roundRobin:!1,models:[]},pdf:{enabled:!1,roundRobin:!1,models:[]},audioInput:{enabled:!0,roundRobin:!1,models:[]},videoInput:{enabled:!1,roundRobin:!1,models:[]}},requireLogin:!0,requireApiKey:!0,tunnelDashboardAccess:!0,authMode:\"password\",ssoType:\"oidc\",oidcIssuerUrl:\"\",oidcClientId:\"\",oidcClientSecret:\"[REDACTED]\",oidcScopes:\"openid profile email\",oidcLoginLabel:\"Sign in with OIDC\",samlEntryPoint:\"\",samlIssuer:\"urn:9router:sp\",samlCert:\"\",samlLoginLabel:\"Sign in with SAML SSO\",samlAttributeEmail:\"email\",samlAttributeName:\"name\",enableObservability:!1,observabilityMaxRecords:1e3,observabilityBatchSize:20,observabilityFlushIntervalMs:5e3,observabilityMaxJsonSize:5,outboundProxyEnabled:!1,outboundProxyUrl:\"\",outboundNoProxy:\"\",mitmRouterBaseUrl:\"http://localhost:20128\",dnsToolEnabled:{},rtkEnabled:!0,headroomEnabled:!1,headroomUrl:process.env.HEADROOM_URL||\"http://localhost:8787\",headroomCompressUserMessages:!1,headroomTimeoutMs:3e3,cavemanEnabled:!1,cavemanLevel:\"full\",ponytailEnabled:!1,ponytailLevel:\"full\",customPromptEnabled:!1,customPrompt:\"\",pxpipeEnabled:!1,pxpipeAu"
+    },
+    {
+      "file": "9100.js",
+      "sha256": "4eda7db7220cb967aca8f67562c952ed36fb849c34d73e4613a8e120bb0865a4",
+      "needle": "isActive:!0",
+      "offset": 19673,
+      "excerpt": "piKeys WHERE key = ?\",[a])):null}async function l(a,b){if(!b)throw Error(\"machineId is required\");let h=await (0,e.c)(),{generateApiKeyWithMachine:i}=await c.e(6844).then(c.bind(c,86844)),j=i(b),k={id:(0,d.A)(),name:a,key:j.key,machineId:b,isActive:!0,createdAt:new Date().toISOString(),access:{restricted:!1,allow:[]}},l=(0,f.aB)(g.M0);return h.run(\"INSERT INTO apiKeys(id, key, name, machineId, isActive, createdAt, accessRestricted, accessAllow) VALUES(?, ?, ?, ?, ?, ?, ?, ?)\",[k.id,k.key,k.name,k.machineId,1,k.createdAt,l.accessRestricted,l.accessAllow]),k}async function m(a,b){let c=await (0,e.c)(),d=null;return c.transaction(()=>{let e=c.get(\"SELECT * FROM apiKeys WHERE id = ?\",[a]);if(!e)return;let g={...h(e),...b},i=(0,f.aB)(g.access);c.run(\"UPDATE apiKeys SET key = ?, name = ?, machineId = ?, isActive = ?, accessRestricted = ?, accessAllow = ? WHERE id = ?\",[g.key,g.name,g.machineId,+!!g.isActive,i.accessRestricted,i.accessAllow,a]),d=h(c.get(\"SELECT * FROM apiKeys WHERE id = ?\",[a]))}),d}async function n(a){let b=(await (0,e.c)()).run(\"DELETE FROM apiKeys WHERE id = ?\",[a]);return(b?.changes??0)>0}async function o(a)"
+    },
+    {
+      "file": "9128.js",
+      "sha256": "abb6739528c58199358701421b02a3a113f539985e1ee62148c8209a84bbec9b",
+      "needle": "requireApiKey",
+      "offset": 9881,
+      "excerpt": "vider&&s(a.provider))return a.provider}let c=new URL(a.url).searchParams.get(\"provider\");return c&&s(c)?c:\"xai\"}let A=new Set([i.gx.UNAUTHORIZED,i.gx.FORBIDDEN,i.gx.RATE_LIMITED]);async function B(a){let b=(0,d.Tr)(a);if((await (0,e.mt)()).requireApiKey){if(!b)return(0,h.yj)(i.gx.UNAUTHORIZED,\"Missing API key\");if(!await (0,d.kI)(b))return(0,h.yj)(i.gx.UNAUTHORIZED,\"Invalid API key\")}return null}async function C(a){let b=a.headers.get(\"content-type\")||\"\";if(b.includes(\"application/json\")){let c,d=await a.text();try{c=JSON.parse(d)}catch{return{error:(0,h.yj)(i.gx.BAD_REQUEST,\"Invalid JSON body\")}}return{raw:d,parsed:c,contentType:b}}return{raw:Buffer.from(await a.arrayBuffer()),parsed:null,contentType:b}}async function D(a){if(!a?.model)return{provider:\"xai\",model:null};let b=String(a.model),c=await (0,f.mA)(b);return c.provider?s(c.provider)?{provider:c.provider,model:c.model}:b.includes(\"/\")?{error:(0,h.yj)(i.gx.BAD_REQUEST,`Provider '${c.provider}' does not support video generation`)}:{provider:\"xai\",model:b}:{error:(0,h.yj)(i.gx.BAD_REQUEST,\"Combos are not supported for video generation\")}}function E(a,b){if(!b)return "
+    },
+    {
+      "file": "915.js",
+      "sha256": "873839df689aca0b9fc2fc46313fdd1d33526da08a1d55b622197271756ffebb",
+      "needle": "cloudcode-pa.googleapis.com",
+      "offset": 8019,
+      "excerpt": "nerateContent\",\":streamGenerateContent\"],copilot:[\"/chat/completions\",\"/v1/messages\",\"/responses\"],kiro:[\"/generateAssistantResponse\"],cursor:[\"/BidiAppend\",\"/RunSSE\",\"/RunPoll\",\"/Run\"]};a.exports={IS_DEV:!1,LSOF_BIN:e,TARGET_HOSTS:[\"daily-cloudcode-pa.googleapis.com\",\"cloudcode-pa.googleapis.com\",\"api.individual.githubcopilot.com\",\"q.us-east-1.amazonaws.com\",\"codewhisperer.us-east-1.amazonaws.com\",\"runtime.us-east-1.kiro.dev\",\"api2.cursor.sh\"],URL_PATTERNS:f,MODEL_SYNONYMS:{antigravity:{\"gemini-default\":\"gemini-3.8-flash-medium\",\"gemini-3.5-flash-high\":\"gemini-3.8-flash-high\",\"gemini-3.5-flash-medium\":\"gemini-3.8-flash-medium\",\"gemini-3.5-flash-low\":\"gemini-3.8-flash-low\",\"gemini-3.5-flash-extra-low\":\"gemini-3.8-flash-low\",\"gemini-3.8-flash\":\"gemini-3.8-flash-medium\",\"gemini-3.8-flash-high\":\"gemini-3.8-flash-high\",\"gemini-3.8-flash-medium\":\"gemini-3.8-flash-medium\",\"gemini-3.8-flash-low\":\"gemini-3.8-flash-low\",\"gemini-3.7-flash-high\":\"gemini-3.7-flash-high\",\"gemini-3.7-flash-medium\":\"gemini-3.7-flash-medium\",\"gemini-3.7-flash-low\":\"gemini-3.7-flash-low\",\"gemini-3.6-flash-high\":\"gemini-3.6-flash-high\",\"gemini-3.6-flash-med"
+    },
+    {
+      "file": "9489.js",
+      "sha256": "f7d0f214d8ec449884bb302ede0117503d98c7c48199d09f12c844bedcf36e87",
+      "needle": "requireApiKey",
+      "offset": 13935,
+      "excerpt": "headers:b?.headers,body:c}),j=g?.sessionId||null,k=a.headers.get(\"Authorization\"),l=(0,f.Tr)(a);if(k&&l){let a=v.maskKey(l);v.debug(\"AUTH\",`API Key: ${a}`)}else v.debug(\"AUTH\",\"No API key provided (local mode)\");let m=await (0,h.mt)();if(m.requireApiKey){if(!l)return v.warn(\"AUTH\",\"Missing API key (requireApiKey=true)\"),(0,n.yj)(s.gx.UNAUTHORIZED,\"Missing API key\");if(!await (0,f.kI)(l))return v.warn(\"AUTH\",\"Invalid API key (requireApiKey=true)\"),(0,n.yj)(s.gx.UNAUTHORIZED,\"Invalid API key\")}if(!d)return v.warn(\"CHAT\",\"Missing model\"),(0,n.yj)(s.gx.BAD_REQUEST,\"Missing model\");let o=await (0,z.TM)(a),t=await (0,z.cI)(o,d);if(t)return t;let w=a?.headers?.get(\"user-agent\")||\"\",x=(0,r.c)(c,d,w,!!m.ccFilterNaming);if(x)return x.response||x;let B=(0,p.t8)(c),E=await (0,i.d_)(d);if(E){let e=m.comboStrategies||{},f=e[d]?.fallbackStrategy||m.comboStrategy||\"fallback\",g=await (0,z.Ge)(o,(0,q.R8)(E,B,m),E),h=g.filter(a=>!E.includes(a));if(\"fusion\"===f)return v.info(\"CHAT\",`Combo \"${d}\" with ${E.length} models (strategy: fusion)`),(0,p.vt)({body:c,models:E,handleSingleModel:(c,d,e)=>{let f=b;if(e&&b){let{tools:a,tool_choice:c,...d}=b"
+    },
+    {
+      "file": "9609.js",
+      "sha256": "0cce7a9e615a84f5bcb390fa91b06319075dc7de5c351b4d4660a1e9e97fbae4",
+      "needle": "cloudcode-pa.googleapis.com",
+      "offset": 2240,
+      "excerpt": "ew Map,h=new Map,i=new Set([\"SELF_SIGNED_CERT_IN_CHAIN\",\"DEPTH_ZERO_SELF_SIGNED_CERT\",\"UNABLE_TO_VERIFY_LEAF_SIGNATURE\",\"UNABLE_TO_GET_ISSUER_CERT\",\"UNABLE_TO_GET_ISSUER_CERT_LOCALLY\",\"CERT_HAS_EXPIRED\",\"ERR_TLS_CERT_ALTNAME_INVALID\"]),j=[\"cloudcode-pa.googleapis.com\",\"daily-cloudcode-pa.googleapis.com\",\"api.individual.githubcopilot.com\",\"q.us-east-1.amazonaws.com\",\"codewhisperer.us-east-1.amazonaws.com\",\"api2.cursor.sh\"],k=[\"8.8.8.8\",\"8.8.4.4\"];function l(a){return null==a?\"\":String(a).trim()}async function m(a){let b=h.get(a);if(b&&Date.now()<b.expiry)return b.ip;try{let b=await Promise.resolve().then(c.t.bind(c,14985,23)),{promisify:d}=await Promise.resolve().then(c.t.bind(c,28354,23)),f=new b.Resolver;f.setServers(k);let g=d(f.resolve4.bind(f)),i=await g(a);return h.set(a,{ip:i[0],expiry:Date.now()+e.v1.dnsCacheTtlMs}),i[0]}catch(b){return console.warn(`[ProxyFetch] DNS resolve failed for ${a}:`,b.message),null}}function n(a,b){let c,d=l(b);if(!d)return!1;try{c=new URL(a).hostname.toLowerCase()}catch{return!1}return d.split(\",\").map(a=>a.trim().toLowerCase()).filter(Boolean).some(a=>\"*\"===a||(a.startsWith(\".\")?c.endsWi"
+    },
+    {
+      "file": "9696.js",
+      "sha256": "69b2561ebe18330bdeaa529498451b7e63ffe77f6d30716b7ff8478e0a70d4a8",
+      "needle": "response_format",
+      "offset": 13738,
+      "excerpt": "(Array.isArray(a.input)||\"string\"==typeof a.input)&&!a.messages)return\"openai-responses\";if(a.request?.contents&&\"antigravity\"===a.userAgent)return\"antigravity\";if(a.contents&&Array.isArray(a.contents))return\"gemini\";if(a.stream_options||a.response_format||void 0!==a.logprobs||void 0!==a.top_logprobs||void 0!==a.n||void 0!==a.presence_penalty||void 0!==a.frequency_penalty||a.logit_bias||a.user)return\"openai\";if(a.messages&&Array.isArray(a.messages)){let b=a.messages[0];if(b?.content&&Array.isArray(b.content)){let c=b.content[0];if(c?.type===\"text\"&&!a.model?.includes(\"/\")){if(a.system||a.anthropic_version)return\"claude\";let c=b.content.some(a=>\"image\"===a.type&&a.source?.type===\"base64\"),d=b.content.some(a=>\"image_url\"===a.type&&a.image_url?.url);if(c)return\"claude\";if(d)return\"openai\";if(b.content.some(a=>\"tool_use\"===a.type||\"tool_result\"===a.type))return\"claude\"}}if(void 0!==a.system||a.anthropic_version)return\"claude\"}return\"openai\"}function l(a,b=null){return h(a)?\"responses\"===j(a,b)?\"openai-responses\":\"openai\":i(a)?\"claude\":function(a,b=null){if(h(a)){let c=j(a,b);return{...d.xq.openai,format:\"responses\"===c?\"openai"
+    }
+  ],
+  "static_oauth_constant_redacted": true,
+  "live_account_tokens_read": false
+}

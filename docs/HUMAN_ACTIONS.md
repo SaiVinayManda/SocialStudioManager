@@ -1,5 +1,11 @@
 # Human actions and approval register
 
+## E4 current action — shadow-topic revision, E4-FREE-CANARY-02
+
+Owner-reported OpenRouter/Antigravity setup was inspected through unauthenticated metadata and installed static code. The catalogue is reachable, but it does not prove upstream auth, quota or zero-charge controls. Protected alias/combo/pricing APIs returned 401 and were not bypassed. No browser control is requested for this continuation. [Exact findings](E4_CONNECTION_VERIFICATION.md).
+
+Provide the non-secret redacted OpenRouter route fields in [the template](E4_ROUTE_EVIDENCE.example.json), then approve the revised [E4-FREE-CANARY-02 packet](E4_AI_APPROVAL.md): one exact NVIDIA free-model request for the new shadow topic, USD 0 authorized, no retry/paid substitution, followed by one local video and three mock publications. Approval does not replace route evidence or authorize any charge. No raw upstream secret, new key, account connection or auth change is requested. The old E4-01 topic/packet was never granted and is superseded; older sections below are historical. Codex/agy execution and router-Antigravity credit use remain unapproved.
+
 ## E4 immediate action — one consolidated pending grant
 
 Review [E4-FREE-CANARY-01](E4_AI_APPROVAL.md) and [its digest inventory](E4_AI_SCOPE.json). **PENDING, not owner-approved.** Candidate is exactly `openrouter/nvidia/nemotron-3.5-super-vl:free` through existing local 9Router, NVIDIA-only, one real request, 4,000 output tokens, USD 0 permitted, no retry/substitution. Existing E2/E3 approvals do not cover it.

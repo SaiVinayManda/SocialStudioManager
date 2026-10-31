@@ -1,5 +1,13 @@
 # Social Studio implementation plan
 
+## Latest E4 shadow-topic continuation — 2026-10-31
+
+The owner reports OpenRouter and Antigravity connected in existing 9Router. Read-only API/source verification found 37 advertised IDs, including 27 `ag/` models and the decision-only OpenRouter Jev entry. No text-generation request was sent. [Findings and evidence](E4_CONNECTION_VERIFICATION.md).
+
+Revised the existing one-request gate for “A shadow appears behind a woman every time she closes her eyes.” Proposed **E4-FREE-CANARY-02** supersedes the ungranted previous topic/ID, which is rejected by tests. The recommended exact route remains `openrouter/nvidia/nemotron-3.5-super-vl:free`; live forwarding/entitlement/no-substitution proof is still required. [Review packet](E4_AI_APPROVAL.md).
+
+Current checks: **145 local tests, 60 deployed PostgreSQL/API assertions passed**; E4 scope mutations rolled back. Existing API process was not restarted and no real E4 n8n job, AI output or video exists. Remaining work is the non-secret route evidence plus exact grant, then the already prepared one-response/one-video acceptance (estimated 0.5–1 h once prerequisites hold). No infrastructure rebuild, authentication change, browser automation, model call or E3 regeneration in this continuation. Historical snapshots below remain evidence for their own revisions.
+
 ## E4 current result — one real-model acceptance awaiting explicit approval
 
 Continued from `d9c2692f1bea96e3e483f5ce66f25034e3d4a023`; E3 rendering and all twelve deployed workflows are preserved. Prepared a narrow one-call path around the existing Agent Manager. [Pending approval](E4_AI_APPROVAL.md), [operator procedure](E4_OPERATOR_GUIDE.md).

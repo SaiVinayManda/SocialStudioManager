@@ -1,12 +1,12 @@
 {
-  "approval_id": "E4-FREE-CANARY-01",
+  "approval_id": "E4-FREE-CANARY-02",
   "state": "REVIEWABLE_CONDITIONAL",
   "owner_approved": false,
-  "prepared_at": "2026-10-31T18:47:05.357Z",
+  "prepared_at": "2026-10-31T20:20:09.002Z",
   "expires_at": "2026-11-01T18:00:00Z",
-  "run_id": "3120e494-5c93-4c15-a0de-eb7c3859c956",
+  "run_id": "699b90e8-7ef7-498c-bd25-95ed5d832aee",
   "model": "openrouter/nvidia/nemotron-3.5-super-vl:free",
-  "topic": "At midnight, a stranger appears in the reflection of an empty room.",
+  "topic": "A shadow appears behind a woman every time she closes her eyes.",
   "maximum_calls": 1,
   "maximum_cost_usd": 0,
   "requires_owner_approval": true,
@@ -86,11 +86,11 @@
     },
     {
       "path": "docs/E4_AI_APPROVAL.md",
-      "sha256": "62a7c3b190cf4c0f0379e96a87fd53988cfb8c0d29f42c77e1ccb28454244a45"
+      "sha256": "53cb5445e67a6db71f339498780c73b4c27267242c0216bca50b06c4855c7676"
     },
     {
       "path": "docs/E4_OWNER_GRANT.example.json",
-      "sha256": "441a900db24271ae19607dc7732fe15ae81edf88e1b02f730413ce78046ecd8f"
+      "sha256": "fae06a6c227d505f8b9ec03ac41cdedf572a99976b55889500e9c14cfdeb7682"
     },
     {
       "path": "docs/E4_ROUTE_EVIDENCE.example.json",
@@ -158,7 +158,7 @@
     },
     {
       "path": "services/ai-agent-manager/adapters.mjs",
-      "sha256": "34bf158fbafc1b67be8a82f3202eac89ca0ff89f8a829474072ac9e50f389406"
+      "sha256": "5800f076691c00a85dfdf7d882a87b51ce14ecae1cd43be98b8d9c7ad2616028"
     },
     {
       "path": "services/ai-agent-manager/api-checks.mjs",
@@ -194,7 +194,7 @@
     },
     {
       "path": "services/ai-agent-manager/e4-route.mjs",
-      "sha256": "3550660267659a9b21d098f41ff47941188af1311f946771084e4af6b940cfb3"
+      "sha256": "a6f1ecb96347e0e33f9162683bffe0925e70518dcb2fc36cbabeca11944aa36b"
     },
     {
       "path": "services/ai-agent-manager/e4-worker.mjs",

@@ -1,6 +1,6 @@
 {
   "example_only": true,
-  "approval_id": "E4-FREE-CANARY-01",
+  "approval_id": "E4-FREE-CANARY-02",
   "owner_approved": false,
   "owner_approval_reference": "REPLACE_ONLY_AFTER_ACTUAL_OWNER_APPROVAL",
   "scope_sha256": "REPLACE_WITH_CURRENT_REVIEWED_MANIFEST_HASH",

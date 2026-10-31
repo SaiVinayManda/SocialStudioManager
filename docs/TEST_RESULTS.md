@@ -1,5 +1,15 @@
 # Actual verification results
 
+## E4 shadow-topic revision — 2026-10-31 20:26–20:28 UTC
+
+**145/145 local tests passed, zero skipped**, including old-topic/approval rejection and public-source secret-literal redaction (complete/truncated forms). Provider requests are simulated test responses. [Report](test-evidence/milestone-e4/regressions/2026-10-31T20-26-48-417Z/unit.json), [TAP](test-evidence/milestone-e4/regressions/2026-10-31T20-26-48-417Z/unit.tap).
+
+**60 deployed PostgreSQL/API assertions passed**: 24 AI persistence checks, 11 AI API/auth, 13 existing API security checks, and 12 revised-topic intake restrictions. E4 readiness/job changes were fictional and rolled back; no runtime approval or model output was persisted. [AI PostgreSQL](test-evidence/milestone-e4/regressions/2026-10-31T20-28-45-212Z/postgres-ai-checks.json), [AI API](test-evidence/milestone-e4/regressions/2026-10-31T20-28-45-212Z/ai-api-auth-checks.json), [existing API](test-evidence/milestone-e4/regressions/2026-10-31T20-28-45-212Z/existing-api-regression.json), [scope checks](test-evidence/milestone-e4/regressions/2026-10-31T20-28-45-212Z/e4-scoped-intake-database-checks.json). Actual deployed workflow metadata was read; this is not a real E4 n8n execution.
+
+New metadata script actually executed GET `/v1/models` (200, 37 IDs) and protected alias/combo/pricing probes (401, response bodies not read), then official public catalog and exact NVIDIA endpoint metadata. Public requests first failed with sandbox EACCES; the scoped outside-sandbox rerun succeeded. No inference, browser control or account-token access. [Actual metadata](test-evidence/milestone-e4/connections/2026-10-31T20-11-27-437Z/metadata.json). Static source was only read, not imported/executed. Its first extractor exposed a bundled application-secret literal in tool output; nine saved excerpts were immediately redacted, and focused regression now prevents that receipt issue. See [full disclosure and distinctions](E4_CONNECTION_VERIFICATION.md).
+
+Preapproval verification matched **81 source digests** and blocked actual worker startup with `E4_APPROVAL_FILE_REQUIRED` before internal-key/model access. [Receipt](test-evidence/milestone-e4/preapproval-check.json). No E4 owner grant was created. Current real inference, exact authenticated route health/quotas, generated script/storyboard, MP4/QC, E4 n8n IDs and mock publications remain **NOT RUN**. Code, tests and source inspection do not establish full E4 success. The previous reflection-topic results below are historical.
+
 ## E4 implementation verification — 2026-10-31, no real inference yet
 
 - **143/143 local tests passed, zero skipped**, including 20 new E4 tests for exact route/expiry/limits/readiness, fixture rejection, one consumed request slot, wire-body zero-price restrictions, local bearer scoping, no internal retries, reported-cost handling, public pricing/schema checks and unsupported CLI guards. All provider HTTP responses in tests were simulated. [Final report](test-evidence/milestone-e4/regressions/2026-10-31T19-09-50-804Z/unit.json), [TAP](test-evidence/milestone-e4/regressions/2026-10-31T19-09-50-804Z/unit.tap).
