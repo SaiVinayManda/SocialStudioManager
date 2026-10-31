@@ -1,0 +1,539 @@
+TAP version 13
+# Subtest: request contract retains the exact live provider priority
+ok 1 - request contract retains the exact live provider priority
+  ---
+  duration_ms: 2.7248
+  type: 'test'
+  ...
+# Subtest: task data cannot supply executables, filesystem roots or endpoint URLs
+ok 2 - task data cannot supply executables, filesystem roots or endpoint URLs
+  ---
+  duration_ms: 0.2192
+  type: 'test'
+  ...
+# Subtest: routine inputs are bounded before execution
+ok 3 - routine inputs are bounded before execution
+  ---
+  duration_ms: 0.3272
+  type: 'test'
+  ...
+# Subtest: script_generation: closed structured schema accepts fixture and rejects incomplete output
+ok 4 - script_generation: closed structured schema accepts fixture and rejects incomplete output
+  ---
+  duration_ms: 1.0721
+  type: 'test'
+  ...
+# Subtest: title_generation: closed structured schema accepts fixture and rejects incomplete output
+ok 5 - title_generation: closed structured schema accepts fixture and rejects incomplete output
+  ---
+  duration_ms: 0.4214
+  type: 'test'
+  ...
+# Subtest: caption_generation: closed structured schema accepts fixture and rejects incomplete output
+ok 6 - caption_generation: closed structured schema accepts fixture and rejects incomplete output
+  ---
+  duration_ms: 0.3938
+  type: 'test'
+  ...
+# Subtest: hashtag_generation: closed structured schema accepts fixture and rejects incomplete output
+ok 7 - hashtag_generation: closed structured schema accepts fixture and rejects incomplete output
+  ---
+  duration_ms: 0.5533
+  type: 'test'
+  ...
+# Subtest: storyboard_generation: closed structured schema accepts fixture and rejects incomplete output
+ok 8 - storyboard_generation: closed structured schema accepts fixture and rejects incomplete output
+  ---
+  duration_ms: 0.4258
+  type: 'test'
+  ...
+# Subtest: content_review: closed structured schema accepts fixture and rejects incomplete output
+ok 9 - content_review: closed structured schema accepts fixture and rejects incomplete output
+  ---
+  duration_ms: 0.3279
+  type: 'test'
+  ...
+# Subtest: content_rewriting: closed structured schema accepts fixture and rejects incomplete output
+ok 10 - content_rewriting: closed structured schema accepts fixture and rejects incomplete output
+  ---
+  duration_ms: 0.3842
+  type: 'test'
+  ...
+# Subtest: content_package: closed structured schema accepts fixture and rejects incomplete output
+ok 11 - content_package: closed structured schema accepts fixture and rejects incomplete output
+  ---
+  duration_ms: 0.4763
+  type: 'test'
+  ...
+# Subtest: storyboard semantic checks reject wrong duration, ordering and script mismatch
+ok 12 - storyboard semantic checks reject wrong duration, ordering and script mismatch
+  ---
+  duration_ms: 0.6682
+  type: 'test'
+  ...
+# Subtest: primary success ends fallback
+ok 13 - primary success ends fallback
+  ---
+  duration_ms: 1.21
+  type: 'test'
+  ...
+# Subtest: simulated Codex unavailability selects agy next
+ok 14 - simulated Codex unavailability selects agy next
+  ---
+  duration_ms: 0.3054
+  type: 'test'
+  ...
+# Subtest: simulated unsupported CLI isolation selects router after both CLIs
+ok 15 - simulated unsupported CLI isolation selects router after both CLIs
+  ---
+  duration_ms: 0.2004
+  type: 'test'
+  ...
+# Subtest: all unavailable produces terminal failure
+ok 16 - all unavailable produces terminal failure
+  ---
+  duration_ms: 0.2242
+  type: 'test'
+  ...
+# Subtest: simulated rate_limited permits bounded fallback
+ok 17 - simulated rate_limited permits bounded fallback
+  ---
+  duration_ms: 0.2335
+  type: 'test'
+  ...
+# Subtest: simulated quota_exhausted permits bounded fallback
+ok 18 - simulated quota_exhausted permits bounded fallback
+  ---
+  duration_ms: 0.092
+  type: 'test'
+  ...
+# Subtest: simulated provider_outage permits bounded fallback
+ok 19 - simulated provider_outage permits bounded fallback
+  ---
+  duration_ms: 0.0757
+  type: 'test'
+  ...
+# Subtest: simulated transport_failure permits bounded fallback
+ok 20 - simulated transport_failure permits bounded fallback
+  ---
+  duration_ms: 0.0768
+  type: 'test'
+  ...
+# Subtest: simulated timeout permits bounded fallback
+ok 21 - simulated timeout permits bounded fallback
+  ---
+  duration_ms: 0.1008
+  type: 'test'
+  ...
+# Subtest: simulated invalid_output permits bounded fallback
+ok 22 - simulated invalid_output permits bounded fallback
+  ---
+  duration_ms: 0.0822
+  type: 'test'
+  ...
+# Subtest: authorization cannot bypass controls through fallback
+ok 23 - authorization cannot bypass controls through fallback
+  ---
+  duration_ms: 0.1139
+  type: 'test'
+  ...
+# Subtest: credential_policy cannot bypass controls through fallback
+ok 24 - credential_policy cannot bypass controls through fallback
+  ---
+  duration_ms: 0.0809
+  type: 'test'
+  ...
+# Subtest: unsafe_request cannot bypass controls through fallback
+ok 25 - unsafe_request cannot bypass controls through fallback
+  ---
+  duration_ms: 0.0685
+  type: 'test'
+  ...
+# Subtest: budget_exhausted cannot bypass controls through fallback
+ok 26 - budget_exhausted cannot bypass controls through fallback
+  ---
+  duration_ms: 0.0662
+  type: 'test'
+  ...
+# Subtest: cancelled cannot bypass controls through fallback
+ok 27 - cancelled cannot bypass controls through fallback
+  ---
+  duration_ms: 0.0666
+  type: 'test'
+  ...
+# Subtest: uncertain_side_effect cannot bypass controls through fallback
+ok 28 - uncertain_side_effect cannot bypass controls through fallback
+  ---
+  duration_ms: 0.0662
+  type: 'test'
+  ...
+# Subtest: cleanup_failed cannot bypass controls through fallback
+ok 29 - cleanup_failed cannot bypass controls through fallback
+  ---
+  duration_ms: 0.0528
+  type: 'test'
+  ...
+# Subtest: total deadline and explicit cancellation beat provider selection
+ok 30 - total deadline and explicit cancellation beat provider selection
+  ---
+  duration_ms: 0.1879
+  type: 'test'
+  ...
+# Subtest: retry backoff is bounded and not a busy loop
+ok 31 - retry backoff is bounded and not a busy loop
+  ---
+  duration_ms: 0.1918
+  type: 'test'
+  ...
+# Subtest: Codex JSONL parser extracts actual-reported tokens and final JSON
+ok 32 - Codex JSONL parser extracts actual-reported tokens and final JSON
+  ---
+  duration_ms: 0.4028
+  type: 'test'
+  ...
+# Subtest: Codex tool events and malformed output are rejected
+ok 33 - Codex tool events and malformed output are rejected
+  ---
+  duration_ms: 0.212
+  type: 'test'
+  ...
+# Subtest: Codex timeout/quota categories are parsed without persisting raw provider text
+ok 34 - Codex timeout/quota categories are parsed without persisting raw provider text
+  ---
+  duration_ms: 0.1237
+  type: 'test'
+  ...
+# Subtest: agy JSON parser recognises its own independent envelope
+ok 35 - agy JSON parser recognises its own independent envelope
+  ---
+  duration_ms: 0.2104
+  type: 'test'
+  ...
+# Subtest: CLI discovery is separate from minimum unattended isolation
+ok 36 - CLI discovery is separate from minimum unattended isolation
+  ---
+  duration_ms: 0.2213
+  type: 'test'
+  ...
+# Subtest: supported Codex adapter passes fixed safe arguments to an isolated fixture executor
+ok 37 - supported Codex adapter passes fixed safe arguments to an isolated fixture executor
+  ---
+  duration_ms: 0.4058
+  type: 'test'
+  ...
+# Subtest: supported agy adapter uses print, structured output, plan and sandbox without bypass flags
+ok 38 - supported agy adapter uses print, structured output, plan and sandbox without bypass flags
+  ---
+  duration_ms: 0.3218
+  type: 'test'
+  ...
+# Subtest: router request is a bounded text-only protocol, not an agent runtime
+ok 39 - router request is a bounded text-only protocol, not an agent runtime
+  ---
+  duration_ms: 18.6626
+  type: 'test'
+  ...
+# Subtest: router endpoint, credentials, tariff and budget fail closed
+ok 40 - router endpoint, credentials, tariff and budget fail closed
+  ---
+  duration_ms: 0.5196
+  type: 'test'
+  ...
+# Subtest: router HTTP quotas, authorization and rate limits stay distinct
+ok 41 - router HTTP quotas, authorization and rate limits stay distinct
+  ---
+  duration_ms: 0.2048
+  type: 'test'
+  ...
+# Subtest: router cancellation and timeout have different terminal categories
+ok 42 - router cancellation and timeout have different terminal categories
+  ---
+  duration_ms: 0.9593
+  type: 'test'
+  ...
+# Subtest: oversized HTTP output is rejected before parsing
+ok 43 - oversized HTTP output is rejected before parsing
+  ---
+  duration_ms: 1.1174
+  type: 'test'
+  ...
+# Subtest: credential redaction covers explicit secrets and common header fields
+ok 44 - credential redaction covers explicit secrets and common header fields
+  ---
+  duration_ms: 0.3497
+  type: 'test'
+  ...
+# Subtest: credential-like task data is denied before storage and cannot trigger fallback
+ok 45 - credential-like task data is denied before storage and cannot trigger fallback
+  ---
+  duration_ms: 0.3788
+  type: 'test'
+  ...
+# Subtest: brand prompts never cross identities; injection remains inert editorial data
+ok 46 - brand prompts never cross identities; injection remains inert editorial data
+  ---
+  duration_ms: 0.8049
+  type: 'test'
+  ...
+# Subtest: OpenMontage mapping preserves duration, section identity and review boundaries
+ok 47 - OpenMontage mapping preserves duration, section identity and review boundaries
+  ---
+  duration_ms: 0.7694
+  type: 'test'
+  ...
+# Subtest: mock n8n path remains and AI-only output cannot enter production branch
+ok 48 - mock n8n path remains and AI-only output cannot enter production branch
+  ---
+  duration_ms: 0.5172
+  type: 'test'
+  ...
+# Subtest: worker reserves permitted cost before invoking an adapter
+ok 49 - worker reserves permitted cost before invoking an adapter
+  ---
+  duration_ms: 0.3528
+  type: 'test'
+  ...
+# Subtest: missing owner approval prevents real execution before credentials are read
+ok 50 - missing owner approval prevents real execution before credentials are read
+  ---
+  duration_ms: 1.1879
+  type: 'test'
+  ...
+# Subtest: approval expiry and content-digest drift stop a public, isolated grant fixture
+ok 51 - approval expiry and content-digest drift stop a public, isolated grant fixture
+  ---
+  duration_ms: 22.2632
+  type: 'test'
+  ...
+# Subtest: proposed proxy forwards only to its fixed target and strips spoofed forwarding headers
+ok 52 - proposed proxy forwards only to its fixed target and strips spoofed forwarding headers
+  ---
+  duration_ms: 69.4267
+  type: 'test'
+  ...
+# Subtest: proposed proxy rejects absolute-URL forwarding and returns a bounded unavailable response
+ok 53 - proposed proxy rejects absolute-URL forwarding and returns a bounded unavailable response
+  ---
+  duration_ms: 17.4467
+  type: 'test'
+  ...
+# Subtest: structured existing-file contract accepts the registered brand
+ok 54 - structured existing-file contract accepts the registered brand
+  ---
+  duration_ms: 3.4565
+  type: 'test'
+  ...
+# Subtest: existing-file intake requires SHA256 for durable renamed-file deduplication
+ok 55 - existing-file intake requires SHA256 for durable renamed-file deduplication
+  ---
+  duration_ms: 0.9628
+  type: 'test'
+  ...
+# Subtest: unknown request fields cannot supply a command or executable
+ok 56 - unknown request fields cannot supply a command or executable
+  ---
+  duration_ms: 0.4749
+  type: 'test'
+  ...
+# Subtest: absolute, traversal, alternate stream, URL, reserved device and wrong-brand paths rejected
+ok 57 - absolute, traversal, alternate stream, URL, reserved device and wrong-brand paths rejected
+  ---
+  duration_ms: 0.6803
+  type: 'test'
+  ...
+# Subtest: resolution, duration range, platform duplicates and unknown settings rejected
+ok 58 - resolution, duration range, platform duplicates and unknown settings rejected
+  ---
+  duration_ms: 0.5398
+  type: 'test'
+  ...
+# Subtest: render requests require a preapproved project, not an arbitrary topic command
+ok 59 - render requests require a preapproved project, not an arbitrary topic command
+  ---
+  duration_ms: 0.3182
+  type: 'test'
+  ...
+# Subtest: script references are constrained to local text within the brand
+ok 60 - script references are constrained to local text within the brand
+  ---
+  duration_ms: 0.9485
+  type: 'test'
+  ...
+# Subtest: canonical request hashes do not depend on object key insertion order
+ok 61 - canonical request hashes do not depend on object key insertion order
+  ---
+  duration_ms: 1.27
+  type: 'test'
+  ...
+# Subtest: fixture authentication separates control, n8n and worker roles
+ok 62 - fixture authentication separates control, n8n and worker roles
+  ---
+  duration_ms: 1.9604
+  type: 'test'
+  ...
+# Subtest: signed webhook content modification is rejected
+ok 63 - signed webhook content modification is rejected
+  ---
+  duration_ms: 3.3729
+  type: 'test'
+  ...
+# Subtest: expired and future webhook envelopes are rejected
+ok 64 - expired and future webhook envelopes are rejected
+  ---
+  duration_ms: 0.8206
+  type: 'test'
+  ...
+# Subtest: retry delays use bounded backoff and honor a bounded retry-after
+ok 65 - retry delays use bounded backoff and honor a bounded retry-after
+  ---
+  duration_ms: 0.289
+  type: 'test'
+  ...
+# Subtest: database transient retry helper releases and rolls back each fixture connection
+ok 66 - database transient retry helper releases and rolls back each fixture connection
+  ---
+  duration_ms: 92.6848
+  type: 'test'
+  ...
+# Subtest: database retry helper never retries a permanent error or exceeds three attempts
+ok 67 - database retry helper never retries a permanent error or exceeds three attempts
+  ---
+  duration_ms: 84.2341
+  type: 'test'
+  ...
+# Subtest: AI mock failure falls back deterministically and costs zero
+ok 68 - AI mock failure falls back deterministically and costs zero
+  ---
+  duration_ms: 0.8021
+  type: 'test'
+  ...
+# Subtest: AI exhausted providers returns a real failure
+ok 69 - AI exhausted providers returns a real failure
+  ---
+  duration_ms: 0.2577
+  type: 'test'
+  ...
+# Subtest: AI paid providers, nonzero budgets and malformed input rejected
+ok 70 - AI paid providers, nonzero budgets and malformed input rejected
+  ---
+  duration_ms: 0.2925
+  type: 'test'
+  ...
+# Subtest: all six AI task types produce structured local responses
+ok 71 - all six AI task types produce structured local responses
+  ---
+  duration_ms: 0.4096
+  type: 'test'
+  ...
+# Subtest: 9Router boundary cannot execute before separate installation/auth approval
+ok 72 - 9Router boundary cannot execute before separate installation/auth approval
+  ---
+  duration_ms: 0.2139
+  type: 'test'
+  ...
+# Subtest: youtube mock receipts are deterministic and platform-specific
+ok 73 - youtube mock receipts are deterministic and platform-specific
+  ---
+  duration_ms: 0.3096
+  type: 'test'
+  ...
+# Subtest: instagram mock receipts are deterministic and platform-specific
+ok 74 - instagram mock receipts are deterministic and platform-specific
+  ---
+  duration_ms: 0.0878
+  type: 'test'
+  ...
+# Subtest: facebook mock receipts are deterministic and platform-specific
+ok 75 - facebook mock receipts are deterministic and platform-specific
+  ---
+  duration_ms: 0.0806
+  type: 'test'
+  ...
+# Subtest: cross-brand destinations and real connections fail closed
+ok 76 - cross-brand destinations and real connections fail closed
+  ---
+  duration_ms: 0.2248
+  type: 'test'
+  ...
+# Subtest: unknown publishing outcome requests manual review and never reuploads
+ok 77 - unknown publishing outcome requests manual review and never reuploads
+  ---
+  duration_ms: 0.1136
+  type: 'test'
+  ...
+# Subtest: official plans preserve distinct platform steps and remain disabled
+ok 78 - official plans preserve distinct platform steps and remain disabled
+  ---
+  duration_ms: 0.5415
+  type: 'test'
+  ...
+# Subtest: official request plans reject malformed IDs and media URL credentials
+ok 79 - official request plans reject malformed IDs and media URL credentials
+  ---
+  duration_ms: 0.1737
+  type: 'test'
+  ...
+# Subtest: HTTP authentication and role boundaries reject unauthenticated or worker approval calls
+ok 80 - HTTP authentication and role boundaries reject unauthenticated or worker approval calls
+  ---
+  duration_ms: 55.1395
+  type: 'test'
+  ...
+# Subtest: empty migration history does not report healthy
+ok 81 - empty migration history does not report healthy
+  ---
+  duration_ms: 8.8705
+  type: 'test'
+  ...
+# Subtest: native file boundary rejects cross-brand and unsafe paths before invoking any tool
+ok 82 - native file boundary rejects cross-brand and unsafe paths before invoking any tool
+  ---
+  duration_ms: 0.7345
+  type: 'test'
+  ...
+# Subtest: stable-file scanner waits for stability and suppresses acknowledged duplicates
+ok 83 - stable-file scanner waits for stability and suppresses acknowledged duplicates
+  ---
+  duration_ms: 15.8173
+  type: 'test'
+  ...
+# Subtest: subtitle validator catches reversed timing in an isolated fixture
+ok 84 - subtitle validator catches reversed timing in an isolated fixture
+  ---
+  duration_ms: 3.0118
+  type: 'test'
+  ...
+# {"job_id":"a0000000-0000-4000-8000-000000000001","source":"local-folder"}
+# Subtest: one-shot intake waits for two actual stable observations before submitting
+ok 85 - one-shot intake waits for two actual stable observations before submitting
+  ---
+  duration_ms: 5016.3019
+  type: 'test'
+  ...
+# Subtest: real child process exits are captured and timeout kills its process tree
+ok 86 - real child process exits are captured and timeout kills its process tree
+  ---
+  duration_ms: 641.2507
+  type: 'test'
+  ...
+# Subtest: real child process cancellation is distinct from a timeout
+ok 87 - real child process cancellation is distinct from a timeout
+  ---
+  duration_ms: 496.1261
+  type: 'test'
+  ...
+# Subtest: workflow exports contain 12 connected graphs, fixed internal URLs and no shell/credential values
+ok 88 - workflow exports contain 12 connected graphs, fixed internal URLs and no shell/credential values
+  ---
+  duration_ms: 55.6731
+  type: 'test'
+  ...
+1..88
+# tests 88
+# suites 0
+# pass 88
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 6667.9366

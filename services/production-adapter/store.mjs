@@ -20,6 +20,7 @@ export async function intake(db,body){
 export async function start(db,id){return transaction(db,async c=>{
   const j=await job(c,id,true);if(['processing','produced','validated','awaiting_approval','approved','scheduled','published'].includes(j.status))return {...j,job_id:id};
   demand(j.source_type!=='ai_only','AI_ONLY_RENDER_FORBIDDEN',403);
+  if(j.production_settings.generation_template)demand(uuid(j.content_metadata?.ai_task_id)&&j.content_metadata?.ai_output,'AI_PREPARATION_REQUIRED',409);
   demand(j.status==='queued','JOB_NOT_STARTABLE',409);const kind=j.source_type==='existing_file'?'validate':'render';
   await c.query('INSERT INTO studio.production_tasks(id,job_id,kind) VALUES($1,$2,$3) ON CONFLICT DO NOTHING',[crypto.randomUUID(),id,kind]);
   const engine=j.source_reference.engine_project?'openmontage/'+j.source_reference.engine_project:'existing/'+id;

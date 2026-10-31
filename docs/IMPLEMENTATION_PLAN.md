@@ -1,5 +1,20 @@
 # Social Studio implementation plan
 
+## Current owner direction: generated-video acceptance completed — 2026-10-31
+
+The requested new five-second Horror video completed through actual n8n/OpenMontage/Piper/FFmpeg, PostgreSQL, explicit mock-test approval, scheduler, all three mock destinations, notifications and reporting. [Acceptance and reproducible commands](GENERATED_VIDEO_ACCEPTANCE.md). Reused the existing twelve workflows, installations and migrations; no new infrastructure or live AI provider was required. Advanced supervisor development remains deferred.
+
+| Backlog item | State and next action |
+| --- | --- |
+| New generated-video bridge | Accepted for fixed `horror-door-5s-v1` only; one digest-bound project, one worker, bounded timeout |
+| New video QC and three mock publications | Actual acceptance passed; no public posting |
+| Recovery/security regression | 96 local + 56 deployed PostgreSQL/API checks pass; actual pending-approval worker restart; mid-render crash policy tested with rollback fixtures |
+| Arbitrary-topic/brand generation | Future work, estimated 8–16 h; current fixed template does not promise arbitrary creative production |
+| Real AI model execution | Still blocked by documented provider route/isolation approval; exact production order unchanged |
+| Live OAuth/publishing | Separate owner approval and account setup required; disabled |
+
+No repeated installation, new credential setup or Milestone A work is required to review this result.
+
 ## Latest E2 route gate — 2026-10-31
 
 Replacement discovery from `619c283` completed: no verified zero-charge exact-model route among the eleven current text candidates. [Candidate/route comparison](AI_TEXT_MODEL_DISCOVERY.md). Stage 3 revised packet and Stage 4 actual inference are blocked until one existing route's current free entitlement, no-paid-fallback/substitution and attempt limits are documented. A redacted Agnes 2.5 Flash free/default route export is the recommended next verification target; it is not a safe-to-run recommendation yet. No old approval reuse, model request, credential access or production change. No additional installation or unrelated supervisor work is needed for this gate.

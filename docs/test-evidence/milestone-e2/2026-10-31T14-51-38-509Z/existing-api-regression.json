@@ -1,0 +1,86 @@
+{
+  "captured_utc": "2026-10-31T14:51:41.342Z",
+  "actual_deployed_api": true,
+  "checks": [
+    {
+      "name": "actual application health",
+      "status": 200,
+      "expected": 200,
+      "passed": true
+    },
+    {
+      "name": "unauthenticated control rejected",
+      "status": 401,
+      "expected": 401,
+      "passed": true
+    },
+    {
+      "name": "operator can list configured brands",
+      "status": 200,
+      "expected": 200,
+      "passed": true
+    },
+    {
+      "name": "worker cannot list brands",
+      "status": 403,
+      "expected": 403,
+      "passed": true
+    },
+    {
+      "name": "n8n cannot approve content",
+      "status": 403,
+      "expected": 403,
+      "passed": true
+    },
+    {
+      "name": "worker cannot schedule",
+      "status": 403,
+      "expected": 403,
+      "passed": true
+    },
+    {
+      "name": "malformed JSON rejected",
+      "status": 400,
+      "expected": 400,
+      "passed": true
+    },
+    {
+      "name": "unsafe source path rejected without queue mutation",
+      "status": 400,
+      "expected": 400,
+      "passed": true
+    },
+    {
+      "name": "signed envelope accepted",
+      "status": 200,
+      "expected": 200,
+      "passed": true
+    },
+    {
+      "name": "duplicate nonce rejected durably",
+      "status": 409,
+      "expected": 409,
+      "passed": true
+    },
+    {
+      "name": "tampered signed body rejected",
+      "status": 401,
+      "expected": 401,
+      "passed": true
+    },
+    {
+      "name": "expired signature rejected",
+      "status": 401,
+      "expected": 401,
+      "passed": true
+    },
+    {
+      "name": "paid AI rejected before task creation",
+      "status": 403,
+      "expected": 403,
+      "passed": true
+    }
+  ],
+  "passed": true,
+  "secret_values_logged": false
+}

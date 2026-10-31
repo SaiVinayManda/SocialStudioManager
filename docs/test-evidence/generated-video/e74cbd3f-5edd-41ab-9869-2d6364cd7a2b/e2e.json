@@ -1,0 +1,865 @@
+{
+  "run_id": "e74cbd3f-5edd-41ab-9869-2d6364cd7a2b",
+  "started_utc": "2026-10-31T14:32:26.182Z",
+  "tests": [
+    "new MP4 produced by native worker from deployed n8n generation job",
+    "Piper narration and explicit supplied-script AI fixture",
+    "FFprobe and full media decode",
+    "PostgreSQL media checksum and brand linkage",
+    "unapproved generated asset cannot be scheduled",
+    "duplicate n8n intake retains one job and three single-attempt mock publications",
+    "actual n8n approval, scheduler and three mock platform workflows completed",
+    "durable publishing results, notifications and reporting"
+  ],
+  "model_inferences": 0,
+  "public_posts": 0,
+  "job_id": "4c4e90e0-bc2a-4cba-9ef4-2303beedb710",
+  "asset": {
+    "id": "686ffee0-4047-43b5-9201-8fbb1dcf74f7",
+    "job_id": "4c4e90e0-bc2a-4cba-9ef4-2303beedb710",
+    "path": "C:\\Projects\\Manas_Flow\\SocialStudio\\generated-videos\\horror\\door-5s-e74cbd3f-5edd-41ab-9869-2d6364cd7a2b\\final\\the_door_that_opened_itself.mp4",
+    "checksum": "3c82d7ea829be6e6e537afeb4d484f190aec29fd30c11d58b6b5482923b0e718",
+    "duration": 5,
+    "width": 1080,
+    "height": 1920,
+    "bytes": "1256353",
+    "validation_report": {
+      "bytes": 1256353,
+      "width": 1080,
+      "codecs": {
+        "audio": "aac",
+        "video": "h264"
+      },
+      "engine": "OpenMontage registry video_compose",
+      "height": 1920,
+      "passed": true,
+      "checksum": "3c82d7ea829be6e6e537afeb4d484f190aec29fd30c11d58b6b5482923b0e718",
+      "duration": 5,
+      "narration": {
+        "text": "I locked the door. Then something knocked from inside.",
+        "voice": "en_US-ljspeech-medium",
+        "provider": "Piper 1.8.0",
+        "transcription": "not run; no ASR model downloaded",
+        "duration_seconds": 3.315011337868481
+      },
+      "subtitles": {
+        "cues": 2,
+        "artifact_valid": true,
+        "burned_in_verification": "Requires existing digest-bound render evidence or human preview; ffprobe cannot detect rasterized words."
+      },
+      "new_render": true,
+      "audio_present": true,
+      "script_source": "owner-supplied deterministic AI-manager fixture",
+      "source_job_id": "4c4e90e0-bc2a-4cba-9ef4-2303beedb710",
+      "elapsed_seconds": 19.905014199999975,
+      "licence_metadata": {
+        "reference": {
+          "root_id": "generated",
+          "checksum": "719a553bec677c7a7fcddf2e1d0db2635b450f82d77839a91b09b8f15a7498b4",
+          "relative_path": "horror/door-5s-e74cbd3f-5edd-41ab-9869-2d6364cd7a2b/assets/ATTRIBUTION.md"
+        },
+        "evidence_checksum": "719a553bec677c7a7fcddf2e1d0db2635b450f82d77839a91b09b8f15a7498b4",
+        "legal_verification": "Operator must review the saved licence evidence; a checksum alone does not grant usage rights."
+      },
+      "output_reference": {
+        "root_id": "generated",
+        "relative_path": "horror/door-5s-e74cbd3f-5edd-41ab-9869-2d6364cd7a2b/final/the_door_that_opened_itself.mp4",
+        "engine_project": "door-5s-e74cbd3f-5edd-41ab-9869-2d6364cd7a2b"
+      },
+      "resource_samples": 21,
+      "ffprobe_exit_code": 0,
+      "generation_seconds": 19.392873799999943,
+      "full_decode_exit_code": 0,
+      "subtitle_burn_evidence": {
+        "method": "OpenMontage successful FFmpeg subtitles filter; actual decoded preview",
+        "source": "C:\\Projects\\Manas_Flow\\SocialStudio\\generated-videos\\horror\\door-5s-e74cbd3f-5edd-41ab-9869-2d6364cd7a2b\\subtitles\\captions.srt",
+        "preview": "C:\\Projects\\Manas_Flow\\SocialStudio\\generated-videos\\horror\\door-5s-e74cbd3f-5edd-41ab-9869-2d6364cd7a2b\\previews\\frame-2s.png"
+      },
+      "engine_project_reference": "door-5s-e74cbd3f-5edd-41ab-9869-2d6364cd7a2b"
+    }
+  },
+  "ai": {
+    "id": "7dd0cdb9-4ba2-4cc3-850f-cc9e0b04ef30",
+    "content_job_id": "4c4e90e0-bc2a-4cba-9ef4-2303beedb710",
+    "brand_id": "10000000-0000-4000-8000-000000000001",
+    "task_type": "script_generation",
+    "input": {
+      "topic": "The Door That Opened Itself",
+      "script": "I locked the door. Then something knocked from inside.",
+      "language": "en",
+      "scene_count": 1,
+      "duration_seconds": 5
+    },
+    "status": "completed",
+    "provider_policy": {
+      "mode": "mock",
+      "providers": [
+        "mock"
+      ]
+    },
+    "output_schema_version": "social-studio.ai.v2",
+    "content_version": 1,
+    "provider_used": "mock",
+    "model_used": "deterministic-fixture-v2",
+    "token_usage": null,
+    "actual_cost": "0",
+    "estimated_cost": "0",
+    "reserved_cost": "0",
+    "duration_ms": 351,
+    "error_category": null,
+    "error_details": null,
+    "created_at": "2026-10-31T14:48:03.167Z",
+    "updated_at": "2026-10-31T14:48:03.518Z",
+    "started_at": "2026-10-31T14:48:03.482Z",
+    "completed_at": "2026-10-31T14:48:03.518Z",
+    "deadline_at": "2026-10-31T14:48:18.167Z",
+    "output_checksum": "fd27f00c02124c160388f5b4acdf12c37ce914d53cd00f0b180ab41f8bf28f49",
+    "artifact_reference": null,
+    "cancel_requested": false,
+    "output": {
+      "mock": true,
+      "model": "deterministic-fixture-v2",
+      "output": {
+        "pacing": "Start immediately; allow brief pauses at scene endings.",
+        "scenes": [
+          {
+            "narration": "I locked the door. Then something knocked from inside.",
+            "transition": "Brief dissolve",
+            "scene_number": 1,
+            "sound_design": "Restrained atmospheric drone under narration",
+            "duration_seconds": 5,
+            "footage_keywords": [
+              "original",
+              "local",
+              "scene"
+            ],
+            "visual_direction": "One scene illustrating The Door That Opened Itself; deterministic supplied-script fixture"
+          }
+        ],
+        "closing_line": "I locked the door. Then something knocked from inside.",
+        "opening_hook": "I locked the door. Then something knocked from inside.",
+        "narration_text": "I locked the door. Then something knocked from inside.",
+        "original_script": "I locked the door. Then something knocked from inside."
+      },
+      "provider": "mock"
+    },
+    "task_id": "7dd0cdb9-4ba2-4cc3-850f-cc9e0b04ef30",
+    "validated_output": {
+      "pacing": "Start immediately; allow brief pauses at scene endings.",
+      "scenes": [
+        {
+          "narration": "I locked the door. Then something knocked from inside.",
+          "transition": "Brief dissolve",
+          "scene_number": 1,
+          "sound_design": "Restrained atmospheric drone under narration",
+          "duration_seconds": 5,
+          "footage_keywords": [
+            "original",
+            "local",
+            "scene"
+          ],
+          "visual_direction": "One scene illustrating The Door That Opened Itself; deterministic supplied-script fixture"
+        }
+      ],
+      "closing_line": "I locked the door. Then something knocked from inside.",
+      "opening_hook": "I locked the door. Then something knocked from inside.",
+      "narration_text": "I locked the door. Then something knocked from inside.",
+      "original_script": "I locked the door. Then something knocked from inside."
+    },
+    "attempt_history": [
+      {
+        "id": "c21687c7-7726-4ece-8d2f-df8afc4d30f2",
+        "provider": "mock",
+        "model": "deterministic-fixture-v2",
+        "attempt_number": 1,
+        "status": "completed",
+        "error_category": null,
+        "duration_ms": 36,
+        "token_usage": null,
+        "actual_cost": 0,
+        "estimated_cost": 0,
+        "reserved_cost": 0,
+        "exit_code": null,
+        "simulated": true,
+        "started_at": "2026-10-31T14:48:03.482Z",
+        "completed_at": "2026-10-31T14:48:03.518Z"
+      }
+    ],
+    "cost": {
+      "actual": 0,
+      "estimated": 0,
+      "reserved": 0,
+      "currency": "USD"
+    },
+    "simulated": true
+  },
+  "ai_history": {
+    "task_id": "7dd0cdb9-4ba2-4cc3-850f-cc9e0b04ef30",
+    "attempts": [
+      {
+        "id": "c21687c7-7726-4ece-8d2f-df8afc4d30f2",
+        "provider": "mock",
+        "model": "deterministic-fixture-v2",
+        "attempt_number": 1,
+        "status": "completed",
+        "error_category": null,
+        "duration_ms": 36,
+        "token_usage": null,
+        "actual_cost": 0,
+        "estimated_cost": 0,
+        "reserved_cost": 0,
+        "exit_code": null,
+        "simulated": true,
+        "started_at": "2026-10-31T14:48:03.482Z",
+        "completed_at": "2026-10-31T14:48:03.518Z"
+      }
+    ]
+  },
+  "approval": {
+    "id": "60235dc0-c340-465f-b8d0-ef9ae8eeed54",
+    "checksum": "3c82d7ea829be6e6e537afeb4d484f190aec29fd30c11d58b6b5482923b0e718",
+    "content_version": 2
+  },
+  "updated_utc": "2026-10-31T14:50:07.269Z",
+  "full_quality": {
+    "at": "2026-10-31T14:48:56.557Z",
+    "scope": "Actual complete video/audio decode; black/freeze detectors and volume measurement. Does not replace human playback review.",
+    "output": "C:\\Projects\\Manas_Flow\\SocialStudio\\generated-videos\\horror\\door-5s-e74cbd3f-5edd-41ab-9869-2d6364cd7a2b\\final\\the_door_that_opened_itself.mp4",
+    "checksum": "3c82d7ea829be6e6e537afeb4d484f190aec29fd30c11d58b6b5482923b0e718",
+    "peak_dbfs": -3.8,
+    "mean_dbfs": -22.2,
+    "checks": {
+      "full_decode": true,
+      "no_black_intervals": true,
+      "no_frozen_intervals": true,
+      "audio_peak_headroom": true,
+      "audio_non_silent": true
+    },
+    "passed": true
+  },
+  "publishing_results": [
+    {
+      "id": "3de6b667-7897-4482-8c8d-31a9e041a7ce",
+      "platform": "facebook",
+      "mode": "mock",
+      "status": "published",
+      "post_id": "mock-facebook-2fcf36e28aaef04bcbfd4837",
+      "media_asset_id": "686ffee0-4047-43b5-9201-8fbb1dcf74f7",
+      "checksum": "3c82d7ea829be6e6e537afeb4d484f190aec29fd30c11d58b6b5482923b0e718",
+      "attempt_count": 1,
+      "completed_at": "2026-10-31T14:49:54.347Z",
+      "last_error": null
+    },
+    {
+      "id": "e1b83d45-a7f5-4699-9ec3-78927b0c498c",
+      "platform": "instagram",
+      "mode": "mock",
+      "status": "published",
+      "post_id": "mock-instagram-e8cc6c84497917902d9c7592",
+      "media_asset_id": "686ffee0-4047-43b5-9201-8fbb1dcf74f7",
+      "checksum": "3c82d7ea829be6e6e537afeb4d484f190aec29fd30c11d58b6b5482923b0e718",
+      "attempt_count": 1,
+      "completed_at": "2026-10-31T14:49:57.435Z",
+      "last_error": null
+    },
+    {
+      "id": "b2ac805a-abd6-4d2f-bdc0-9d8ac82c1db9",
+      "platform": "youtube",
+      "mode": "mock",
+      "status": "published",
+      "post_id": "mock-youtube-514a5aa519639e5203f080ad",
+      "media_asset_id": "686ffee0-4047-43b5-9201-8fbb1dcf74f7",
+      "checksum": "3c82d7ea829be6e6e537afeb4d484f190aec29fd30c11d58b6b5482923b0e718",
+      "attempt_count": 1,
+      "completed_at": "2026-10-31T14:50:01.683Z",
+      "last_error": null
+    }
+  ],
+  "report": {
+    "jobs_by_brand": [
+      {
+        "slug": "horror",
+        "total": 12,
+        "videos_completed": 4,
+        "pending_approvals": 1,
+        "failed_jobs": 0,
+        "average_production_seconds": 12.712668320000033
+      }
+    ],
+    "publishing_results": [
+      {
+        "slug": "horror",
+        "platform": "facebook",
+        "status": "published",
+        "count": 2
+      },
+      {
+        "slug": "horror",
+        "platform": "instagram",
+        "status": "published",
+        "count": 2
+      },
+      {
+        "slug": "horror",
+        "platform": "youtube",
+        "status": "cancelled",
+        "count": 1
+      },
+      {
+        "slug": "horror",
+        "platform": "youtube",
+        "status": "manual_review",
+        "count": 1
+      },
+      {
+        "slug": "horror",
+        "platform": "youtube",
+        "status": "published",
+        "count": 3
+      }
+    ],
+    "mode": "mock",
+    "public_posts": 0
+  },
+  "notifications": [
+    {
+      "id": "5f533647-ced3-4643-b367-0cd93c0b64b8",
+      "event_type": "publishing.succeeded",
+      "sink": "local"
+    },
+    {
+      "id": "cb03c878-1baf-4cd6-a369-c855dd24ab30",
+      "event_type": "publishing.succeeded",
+      "sink": "local"
+    },
+    {
+      "id": "695291bf-0ca9-48dc-a69d-9d811ecdd31d",
+      "event_type": "preview.ready",
+      "sink": "local"
+    },
+    {
+      "id": "8bac338e-5cc3-4f57-9d3c-a593921666a6",
+      "event_type": "approval.required",
+      "sink": "local"
+    },
+    {
+      "id": "d729f60b-ab9b-412d-902c-176b9f012393",
+      "event_type": "publishing.succeeded",
+      "sink": "local"
+    },
+    {
+      "id": "0e5bf579-ac11-4e83-84b8-8e24f9adc2e9",
+      "event_type": "job.accepted",
+      "sink": "local"
+    }
+  ],
+  "production_tasks": [
+    {
+      "id": "776276e1-550f-4677-a678-55e1fa2c0f4b",
+      "kind": "render",
+      "status": "completed",
+      "attempts": 1,
+      "created_at": "2026-10-31T15:48:04.344137+01:00",
+      "updated_at": "2026-10-31T15:48:23.929883+01:00"
+    },
+    {
+      "id": "663fba7d-a758-4746-9d96-e103209ab9cf",
+      "kind": "verify_publish",
+      "status": "completed",
+      "attempts": 1,
+      "created_at": "2026-10-31T15:49:54.613841+01:00",
+      "updated_at": "2026-10-31T15:49:54.901339+01:00"
+    },
+    {
+      "id": "fbfafbc9-193a-4f22-accb-951fb7a84d44",
+      "kind": "verify_publish",
+      "status": "completed",
+      "attempts": 1,
+      "created_at": "2026-10-31T15:49:55.278308+01:00",
+      "updated_at": "2026-10-31T15:49:55.8323+01:00"
+    },
+    {
+      "id": "0f018ff8-0c78-4cbd-b207-bbd4c7cb2940",
+      "kind": "verify_publish",
+      "status": "completed",
+      "attempts": 1,
+      "created_at": "2026-10-31T15:49:59.589307+01:00",
+      "updated_at": "2026-10-31T15:50:00.2758+01:00"
+    }
+  ],
+  "events": [
+    {
+      "id": 194,
+      "event_type": "job.accepted",
+      "event_payload": {
+        "brand_id": "10000000-0000-4000-8000-000000000001",
+        "source_type": "approved_openmontage"
+      },
+      "created_at": "2026-10-31T15:48:02.999314+01:00"
+    },
+    {
+      "id": 195,
+      "event_type": "ai.queued",
+      "event_payload": {
+        "mode": "mock",
+        "schema": "social-studio.ai.v2",
+        "task_id": "7dd0cdb9-4ba2-4cc3-850f-cc9e0b04ef30"
+      },
+      "created_at": "2026-10-31T15:48:03.167186+01:00"
+    },
+    {
+      "id": 196,
+      "event_type": "ai.attempt_finished",
+      "event_payload": {
+        "status": "completed",
+        "task_id": "7dd0cdb9-4ba2-4cc3-850f-cc9e0b04ef30",
+        "provider": "mock",
+        "simulated": true,
+        "attempt_id": "c21687c7-7726-4ece-8d2f-df8afc4d30f2",
+        "error_category": null,
+        "output_checksum": "fd27f00c02124c160388f5b4acdf12c37ce914d53cd00f0b180ab41f8bf28f49"
+      },
+      "created_at": "2026-10-31T15:48:03.518628+01:00"
+    },
+    {
+      "id": 197,
+      "event_type": "ai.result_attached",
+      "event_payload": {
+        "task_id": "7dd0cdb9-4ba2-4cc3-850f-cc9e0b04ef30",
+        "rendered": false,
+        "output_checksum": "fd27f00c02124c160388f5b4acdf12c37ce914d53cd00f0b180ab41f8bf28f49",
+        "openmontage_mapping_validated": true
+      },
+      "created_at": "2026-10-31T15:48:04.246085+01:00"
+    },
+    {
+      "id": 198,
+      "event_type": "production.queued",
+      "event_payload": {
+        "kind": "render",
+        "engine_job_id": "openmontage/door-5s-e74cbd3f-5edd-41ab-9869-2d6364cd7a2b"
+      },
+      "created_at": "2026-10-31T15:48:04.344137+01:00"
+    },
+    {
+      "id": 199,
+      "event_type": "worker.claimed",
+      "event_payload": {
+        "kind": "render",
+        "task_id": "776276e1-550f-4677-a678-55e1fa2c0f4b"
+      },
+      "created_at": "2026-10-31T15:48:04.784205+01:00"
+    },
+    {
+      "id": 200,
+      "event_type": "production.completed",
+      "event_payload": {
+        "task_id": "776276e1-550f-4677-a678-55e1fa2c0f4b",
+        "checksum": "3c82d7ea829be6e6e537afeb4d484f190aec29fd30c11d58b6b5482923b0e718",
+        "exit_code": 0
+      },
+      "created_at": "2026-10-31T15:48:23.929883+01:00"
+    },
+    {
+      "id": 201,
+      "event_type": "quality.passed",
+      "event_payload": {
+        "checksum": "3c82d7ea829be6e6e537afeb4d484f190aec29fd30c11d58b6b5482923b0e718"
+      },
+      "created_at": "2026-10-31T15:48:24.128181+01:00"
+    },
+    {
+      "id": 202,
+      "event_type": "approval.requested",
+      "event_payload": {
+        "checksum": "3c82d7ea829be6e6e537afeb4d484f190aec29fd30c11d58b6b5482923b0e718",
+        "approval_id": "60235dc0-c340-465f-b8d0-ef9ae8eeed54"
+      },
+      "created_at": "2026-10-31T15:48:24.212587+01:00"
+    },
+    {
+      "id": 203,
+      "event_type": "approval.approved",
+      "event_payload": {
+        "checksum": "3c82d7ea829be6e6e537afeb4d484f190aec29fd30c11d58b6b5482923b0e718",
+        "reviewer": "explicit-mock-acceptance-test",
+        "approval_id": "60235dc0-c340-465f-b8d0-ef9ae8eeed54"
+      },
+      "created_at": "2026-10-31T15:49:52.833377+01:00"
+    },
+    {
+      "id": 204,
+      "event_type": "publishing.scheduled",
+      "event_payload": {
+        "destinations": [
+          "facebook",
+          "instagram",
+          "youtube"
+        ]
+      },
+      "created_at": "2026-10-31T15:49:54.593488+01:00"
+    },
+    {
+      "id": 205,
+      "event_type": "publishing.verification_requested",
+      "event_payload": {
+        "publishing_job_id": "3de6b667-7897-4482-8c8d-31a9e041a7ce"
+      },
+      "created_at": "2026-10-31T15:49:54.613841+01:00"
+    },
+    {
+      "id": 206,
+      "event_type": "worker.claimed",
+      "event_payload": {
+        "kind": "verify_publish",
+        "task_id": "663fba7d-a758-4746-9d96-e103209ab9cf"
+      },
+      "created_at": "2026-10-31T15:49:54.828198+01:00"
+    },
+    {
+      "id": 207,
+      "event_type": "publishing.succeeded",
+      "event_payload": {
+        "mode": "mock",
+        "post_id": "mock-facebook-2fcf36e28aaef04bcbfd4837",
+        "platform": "facebook",
+        "publishing_job_id": "3de6b667-7897-4482-8c8d-31a9e041a7ce"
+      },
+      "created_at": "2026-10-31T15:49:54.347505+01:00"
+    },
+    {
+      "id": 209,
+      "event_type": "publishing.verification_requested",
+      "event_payload": {
+        "publishing_job_id": "e1b83d45-a7f5-4699-9ec3-78927b0c498c"
+      },
+      "created_at": "2026-10-31T15:49:55.278308+01:00"
+    },
+    {
+      "id": 210,
+      "event_type": "worker.claimed",
+      "event_payload": {
+        "kind": "verify_publish",
+        "task_id": "fbfafbc9-193a-4f22-accb-951fb7a84d44"
+      },
+      "created_at": "2026-10-31T15:49:55.756213+01:00"
+    },
+    {
+      "id": 211,
+      "event_type": "publishing.succeeded",
+      "event_payload": {
+        "mode": "mock",
+        "post_id": "mock-instagram-e8cc6c84497917902d9c7592",
+        "platform": "instagram",
+        "publishing_job_id": "e1b83d45-a7f5-4699-9ec3-78927b0c498c"
+      },
+      "created_at": "2026-10-31T15:49:57.435557+01:00"
+    },
+    {
+      "id": 212,
+      "event_type": "publishing.verification_requested",
+      "event_payload": {
+        "publishing_job_id": "b2ac805a-abd6-4d2f-bdc0-9d8ac82c1db9"
+      },
+      "created_at": "2026-10-31T15:49:59.589307+01:00"
+    },
+    {
+      "id": 213,
+      "event_type": "worker.claimed",
+      "event_payload": {
+        "kind": "verify_publish",
+        "task_id": "0f018ff8-0c78-4cbd-b207-bbd4c7cb2940"
+      },
+      "created_at": "2026-10-31T15:50:00.167121+01:00"
+    },
+    {
+      "id": 214,
+      "event_type": "publishing.succeeded",
+      "event_payload": {
+        "mode": "mock",
+        "post_id": "mock-youtube-514a5aa519639e5203f080ad",
+        "platform": "youtube",
+        "publishing_job_id": "b2ac805a-abd6-4d2f-bdc0-9d8ac82c1db9"
+      },
+      "created_at": "2026-10-31T15:50:01.683475+01:00"
+    }
+  ],
+  "workflow_executions": [
+    {
+      "id": 4960,
+      "workflow_id": "socialstudio0001",
+      "status": "success",
+      "started_at": "2026-10-31T15:48:02.884+01:00",
+      "stopped_at": "2026-10-31T15:48:03.185+01:00"
+    },
+    {
+      "id": 4961,
+      "workflow_id": "socialstudio0002",
+      "status": "success",
+      "started_at": "2026-10-31T15:48:03.07+01:00",
+      "stopped_at": "2026-10-31T15:48:04.308+01:00"
+    },
+    {
+      "id": 4962,
+      "workflow_id": "socialstudio0010",
+      "status": "success",
+      "started_at": "2026-10-31T15:48:03.168+01:00",
+      "stopped_at": "2026-10-31T15:48:03.301+01:00"
+    },
+    {
+      "id": 4963,
+      "workflow_id": "socialstudio0003",
+      "status": "success",
+      "started_at": "2026-10-31T15:48:04.297+01:00",
+      "stopped_at": "2026-10-31T15:48:24.086+01:00"
+    },
+    {
+      "id": 4968,
+      "workflow_id": "socialstudio0004",
+      "status": "success",
+      "started_at": "2026-10-31T15:48:24.074+01:00",
+      "stopped_at": "2026-10-31T15:48:24.174+01:00"
+    },
+    {
+      "id": 4969,
+      "workflow_id": "socialstudio0005",
+      "status": "success",
+      "started_at": "2026-10-31T15:48:24.164+01:00",
+      "stopped_at": "2026-10-31T15:49:55.324+01:00"
+    },
+    {
+      "id": 4991,
+      "workflow_id": "socialstudio0006",
+      "status": "success",
+      "started_at": "2026-10-31T15:49:54.56+01:00",
+      "stopped_at": "2026-10-31T15:49:54.305+01:00"
+    },
+    {
+      "id": 4992,
+      "workflow_id": "socialstudio0009",
+      "status": "success",
+      "started_at": "2026-10-31T15:49:54.293+01:00",
+      "stopped_at": "2026-10-31T15:49:54.501+01:00"
+    },
+    {
+      "id": 4993,
+      "workflow_id": "socialstudio0010",
+      "status": "success",
+      "started_at": "2026-10-31T15:49:54.472+01:00",
+      "stopped_at": "2026-10-31T15:49:54.583+01:00"
+    },
+    {
+      "id": 4994,
+      "workflow_id": "socialstudio0006",
+      "status": "success",
+      "started_at": "2026-10-31T15:49:55.206+01:00",
+      "stopped_at": "2026-10-31T15:49:57.403+01:00"
+    },
+    {
+      "id": 4996,
+      "workflow_id": "socialstudio0010",
+      "status": "success",
+      "started_at": "2026-10-31T15:49:55.249+01:00",
+      "stopped_at": "2026-10-31T15:49:55.415+01:00"
+    },
+    {
+      "id": 4997,
+      "workflow_id": "socialstudio0010",
+      "status": "success",
+      "started_at": "2026-10-31T15:49:55.315+01:00",
+      "stopped_at": "2026-10-31T15:49:55.386+01:00"
+    },
+    {
+      "id": 4998,
+      "workflow_id": "socialstudio0008",
+      "status": "success",
+      "started_at": "2026-10-31T15:49:57.391+01:00",
+      "stopped_at": "2026-10-31T15:49:57.483+01:00"
+    },
+    {
+      "id": 4999,
+      "workflow_id": "socialstudio0010",
+      "status": "success",
+      "started_at": "2026-10-31T15:49:57.475+01:00",
+      "stopped_at": "2026-10-31T15:49:57.52+01:00"
+    },
+    {
+      "id": 5000,
+      "workflow_id": "socialstudio0006",
+      "status": "success",
+      "started_at": "2026-10-31T15:49:59.558+01:00",
+      "stopped_at": "2026-10-31T15:50:01.649+01:00"
+    },
+    {
+      "id": 5001,
+      "workflow_id": "socialstudio0007",
+      "status": "success",
+      "started_at": "2026-10-31T15:50:01.637+01:00",
+      "stopped_at": "2026-10-31T15:50:01.728+01:00"
+    },
+    {
+      "id": 5002,
+      "workflow_id": "socialstudio0010",
+      "status": "success",
+      "started_at": "2026-10-31T15:50:01.72+01:00",
+      "stopped_at": "2026-10-31T15:50:01.767+01:00"
+    },
+    {
+      "id": 5003,
+      "workflow_id": "socialstudio0001",
+      "status": "success",
+      "started_at": "2026-10-31T15:50:02.443+01:00",
+      "stopped_at": "2026-10-31T15:50:02.534+01:00"
+    },
+    {
+      "id": 5004,
+      "workflow_id": "socialstudio0010",
+      "status": "success",
+      "started_at": "2026-10-31T15:50:02.525+01:00",
+      "stopped_at": "2026-10-31T15:50:02.57+01:00"
+    },
+    {
+      "id": 5006,
+      "workflow_id": "socialstudio0012",
+      "status": "success",
+      "started_at": "2026-10-31T15:50:05.829+01:00",
+      "stopped_at": "2026-10-31T15:50:05.892+01:00"
+    }
+  ],
+  "passed": true,
+  "services": [
+    {
+      "service": "loopback-proxy",
+      "state": "running",
+      "health": "healthy"
+    },
+    {
+      "service": "n8n",
+      "state": "running",
+      "health": "healthy"
+    },
+    {
+      "service": "postgres",
+      "state": "running",
+      "health": "healthy"
+    },
+    {
+      "service": "studio-api",
+      "state": "running",
+      "health": "healthy"
+    }
+  ],
+  "recovery_workflow": [
+    {
+      "id": 5060,
+      "workflow_id": "socialstudio0011",
+      "status": "success",
+      "started_at": "2026-10-31T15:53:57.641+01:00"
+    }
+  ],
+  "recovery_workflow_scope": "Actual scheduled global recovery execution during test interval; not a per-video processing step",
+  "worker_restarts": [
+    {
+      "previous_pid": 36468,
+      "new_pid": 1228,
+      "active_tasks": 0,
+      "at": "2026-10-31T14:32:27.876Z"
+    },
+    {
+      "previous_pid": 1228,
+      "new_pid": 34556,
+      "active_tasks": 0,
+      "at": "2026-10-31T14:49:29.725Z"
+    }
+  ],
+  "worker_restart_scope": "Actual idle worker restart while this content job awaited approval, then subsequent publish verification completed. Mid-render interruption tested as rollback database fixture/manual-review policy, not an actual crash.",
+  "resources": {
+    "samples": 21,
+    "peak_whole_host_ram_bytes": 14389129216,
+    "scope": "Whole-host RAM including Docker, IDE and other applications; not renderer process RSS",
+    "gpu_vram": "Not captured: clean-environment sampler returned no successful GPU query. No peak VRAM/GPU usage claimed.",
+    "encoding": "CPU libx264, four encoder threads; no GPU rendering API invoked"
+  },
+  "render": {
+    "exit_code": 0,
+    "elapsed_seconds": 19.392873799999943,
+    "timed_out": false,
+    "cancelled": false,
+    "cleanup_failed": false
+  },
+  "engine_review": {
+    "version": "1.0",
+    "output_path": "C:\\Projects\\Manas_Flow\\SocialStudio\\generated-videos\\horror\\door-5s-e74cbd3f-5edd-41ab-9869-2d6364cd7a2b\\final\\the_door_that_opened_itself.mp4",
+    "status": "pass",
+    "checks": {
+      "technical_probe": {
+        "valid_container": true,
+        "duration_seconds": 5,
+        "resolution": "1080x1920",
+        "fps": 30,
+        "has_audio": true,
+        "codec": "h264",
+        "file_size_bytes": 1256353,
+        "issues": [],
+        "target_duration": 5,
+        "duration_drift_pct": 0
+      },
+      "visual_spotcheck": {
+        "frames_sampled": 4,
+        "frame_paths": [
+          "C:\\Projects\\Manas_Flow\\SocialStudio\\generated-videos\\horror\\door-5s-e74cbd3f-5edd-41ab-9869-2d6364cd7a2b\\final\\.final_review_frames\\review_frame_0.png",
+          "C:\\Projects\\Manas_Flow\\SocialStudio\\generated-videos\\horror\\door-5s-e74cbd3f-5edd-41ab-9869-2d6364cd7a2b\\final\\.final_review_frames\\review_frame_1.png",
+          "C:\\Projects\\Manas_Flow\\SocialStudio\\generated-videos\\horror\\door-5s-e74cbd3f-5edd-41ab-9869-2d6364cd7a2b\\final\\.final_review_frames\\review_frame_2.png",
+          "C:\\Projects\\Manas_Flow\\SocialStudio\\generated-videos\\horror\\door-5s-e74cbd3f-5edd-41ab-9869-2d6364cd7a2b\\final\\.final_review_frames\\review_frame_3.png"
+        ],
+        "black_frames_detected": false,
+        "broken_overlays": false,
+        "missing_assets": false,
+        "unreadable_text": false,
+        "issues": []
+      },
+      "audio_spotcheck": {
+        "narration_present": true,
+        "music_present": true,
+        "unexpected_silence": false,
+        "clipping_detected": false,
+        "mix_intelligible": true,
+        "issues": []
+      },
+      "promise_preservation": {
+        "delivery_promise_honored": true,
+        "silent_downgrade_detected": false,
+        "runtime_swap_detected": false,
+        "issues": [],
+        "renderer_family_used": "cinematic-trailer",
+        "render_runtime_used": "ffmpeg",
+        "runtime_swap_check": "ok — proposal and edit agree (proposal_packet.production_plan.render_runtime)"
+      },
+      "subtitle_check": {
+        "subtitles_expected": true,
+        "subtitles_present": true,
+        "issues": [],
+        "coverage_ratio": 1
+      },
+      "transcript_comparison": {
+        "transcript_matches_script": false,
+        "word_accuracy": null,
+        "script_word_count": 0,
+        "transcript_word_count": 0,
+        "spurious_punctuation_words": [],
+        "issues": [
+          "transcript_comparison skipped: narration_transcript not provided"
+        ]
+      }
+    },
+    "issues_found": [
+      "transcript_comparison skipped: narration_transcript not provided"
+    ],
+    "recommended_action": "present_to_user"
+  },
+  "visual_review": {
+    "method": "Assistant inspected decoded two-second PNG with view_image",
+    "finding": "Visible original wooden door/hallway animation and high-contrast burned-in English subtitle; simple procedural artwork, not photorealistic footage",
+    "transcription": "No ASR model run. Piper output and final mixed audio are real; human listening review remains advisable."
+  }
+}

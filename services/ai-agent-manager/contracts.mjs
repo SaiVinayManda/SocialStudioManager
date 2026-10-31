@@ -16,7 +16,7 @@ export function validateRequest(body){
   rejectCredentialMaterial(body.input);
   for(const k of ['topic','script','genre','audience','language','tone','hook_style','instructions'])if(body.input[k]!==undefined)demand(typeof body.input[k]==='string'&&body.input[k].length<=12000,'INVALID_AI_INPUT');
   demand(Boolean(body.input.topic?.trim()||body.input.script?.trim()),'AI_TOPIC_OR_SCRIPT_REQUIRED');
-  if(body.input.duration_seconds!==undefined)demand(Number.isInteger(body.input.duration_seconds)&&body.input.duration_seconds>=10&&body.input.duration_seconds<=300,'INVALID_AI_DURATION');
+  if(body.input.duration_seconds!==undefined)demand(Number.isInteger(body.input.duration_seconds)&&body.input.duration_seconds>=1&&body.input.duration_seconds<=300,'INVALID_AI_DURATION');
   if(body.input.scene_count!==undefined)demand(Number.isInteger(body.input.scene_count)&&body.input.scene_count>=1&&body.input.scene_count<=24,'INVALID_SCENE_COUNT');
   if(body.input.platforms!==undefined)demand(Array.isArray(body.input.platforms)&&body.input.platforms.length<=3&&body.input.platforms.every(p=>['youtube','instagram','facebook'].includes(p)),'INVALID_AI_PLATFORMS');
   if(body.input.facts!==undefined)demand(Array.isArray(body.input.facts)&&body.input.facts.length<=30&&body.input.facts.every(f=>typeof f==='string'&&f.length<=1000),'INVALID_AI_FACTS');

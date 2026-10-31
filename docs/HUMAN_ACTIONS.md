@@ -1,5 +1,11 @@
 # Human actions and approval register
 
+## Latest owner-requested generated-video test — completed 2026-10-31
+
+The current instruction authorized local development/execution using existing tools plus a supplied-script fixture and a clearly labelled isolated mock-test approval. That exact test passed; [result, local video and evidence](GENERATED_VIDEO_ACCEPTANCE.md). No new software, credentials, accounts, public endpoint or paid call was needed. No further approval is needed to review the local MP4. Existing model-route blockers below remain relevant only to future real inference; they did not block this explicitly allowed fixture render. Public posting remains disabled and requires separate exact-content/account approval. Advanced Milestone A remains deferred.
+
+Owner action: play the new MP4 and review narration, pacing and the simple original animated scene. Automated QC passed; no ASR or human listening result is claimed. For arbitrary-topic generation beyond the one fixed template, define the desired creative scope before extending the bridge. No old inference approval or frozen digest manifest was reused; source changes in this implementation mean future model canaries need a fresh reviewed packet.
+
 ## Current E2 text-route discovery blocker — 2026-10-31
 
 Discovery/verification of the existing catalog is complete; **no candidate yet satisfies zero-charge entitlement plus exact-model/no-paid-fallback guarantees**. Do not ask for or reuse the old Jev inference approval. No new model-specific inference grant is being requested until a viable route is established. [Comparison and evidence](AI_TEXT_MODEL_DISCOVERY.md).

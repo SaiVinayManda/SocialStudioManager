@@ -1,0 +1,105 @@
+{
+  "passed": true,
+  "checks": 24,
+  "results": [
+    {
+      "name": "migration 002 is recorded with its checksum",
+      "passed": true
+    },
+    {
+      "name": "task creation persists queued state and brand scope",
+      "passed": true
+    },
+    {
+      "name": "same idempotency key reuses the durable task",
+      "passed": true
+    },
+    {
+      "name": "idempotency rejects changed input",
+      "passed": true
+    },
+    {
+      "name": "cross-brand submission is rejected",
+      "passed": true
+    },
+    {
+      "name": "claim records a running attempt and exclusive lease",
+      "passed": true
+    },
+    {
+      "name": "unreserved cost is blocked at the database task boundary",
+      "passed": true
+    },
+    {
+      "name": "heartbeat maintains cancellation and deadline visibility",
+      "passed": true
+    },
+    {
+      "name": "stale completion cannot replace a current task",
+      "passed": true
+    },
+    {
+      "name": "validated output and attempt history persist in separate tables",
+      "passed": true
+    },
+    {
+      "name": "late duplicate completion cannot create a second output",
+      "passed": true
+    },
+    {
+      "name": "completed task cannot be cancelled retroactively",
+      "passed": true
+    },
+    {
+      "name": "queued cancellation persists without execution",
+      "passed": true
+    },
+    {
+      "name": "running cancellation wins over a successful provider response",
+      "passed": true
+    },
+    {
+      "name": "total deadline expires durably before another provider call",
+      "passed": true
+    },
+    {
+      "name": "malformed structured output falls back and records simulated history",
+      "passed": true
+    },
+    {
+      "name": "expired simulated lease recovers with original history",
+      "passed": true
+    },
+    {
+      "name": "all providers unavailable terminates without an infinite retry",
+      "passed": true
+    },
+    {
+      "name": "credential-policy failure cannot trigger fallback",
+      "passed": true
+    },
+    {
+      "name": "application role cannot mutate immutable AI output",
+      "passed": true
+    },
+    {
+      "name": "cross-brand output foreign key rejects wrong ownership",
+      "passed": true
+    },
+    {
+      "name": "simulated interruption of live policy requires manual review without automatic re-execution",
+      "passed": true
+    },
+    {
+      "name": "live-policy claim never consumes another job grant",
+      "passed": true
+    },
+    {
+      "name": "legacy synchronous mock submission and result application remain compatible",
+      "passed": true
+    }
+  ],
+  "database": "actual PostgreSQL 17.11; studio_app role",
+  "providers": "simulated fixtures",
+  "fixtures_rolled_back": true
+}

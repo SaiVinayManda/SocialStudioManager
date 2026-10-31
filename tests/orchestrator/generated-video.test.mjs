@@ -1,0 +1,15 @@
+import test from 'node:test';import assert from 'node:assert/strict';import crypto from 'node:crypto';
+import {templateJob,verifyTemplateJob,HORROR_SCRIPT,TEMPLATE_ID} from '../../services/production-adapter/horror-template.mjs';
+import {jobInput} from '../../services/studio-runtime/contracts.mjs';
+import {mockOutput} from '../../services/ai-agent-manager/mock.mjs';
+const run=crypto.randomUUID(),body=templateJob(run),brand={id:body.brand_id,slug:'horror'};
+const job={...body,id:crypto.randomUUID(),brand_slug:'horror',source_reference:body.source,content_metadata:{ai_output:{narration_text:HORROR_SCRIPT},ai_task_id:crypto.randomUUID()}};
+const config={approved_engine_projects:{[body.source.engine_project]:{template_id:TEMPLATE_ID,acceptance_run_id:run,expires_at:new Date(Date.now()+60000).toISOString()}}};
+test('new generation intake uses a distinct generated source, not existing-file import',()=>{assert.equal(jobInput(body,brand).source_type,'approved_openmontage');assert(!body.source.relative_path.includes('pilot-001'));});
+test('five-second AI fixture preserves exact supplied narration and one scene',()=>{const r=mockOutput('script_generation',body.production_settings.ai_request.input);assert.equal(r.narration_text,HORROR_SCRIPT);assert.equal(r.scenes.length,1);assert.equal(r.scenes[0].duration_seconds,5);});
+test('worker accepts only the specific preapproved project and supplied AI result',()=>{assert.equal(verifyTemplateJob(job,config).run,run);assert.throws(()=>verifyTemplateJob(job,{approved_engine_projects:{}}),/PREAPPROVED/);});
+test('worker rejects cross-brand template execution',()=>assert.throws(()=>verifyTemplateJob({...job,brand_slug:'travel'},config),/BRAND/));
+test('worker rejects path substitution',()=>assert.throws(()=>verifyTemplateJob({...job,source_reference:{...body.source,relative_path:'horror/pilot-001/final/horror_pilot_001.mp4'}},config),/OUTPUT_PATH/));
+test('worker rejects an altered narration',()=>assert.throws(()=>verifyTemplateJob({...job,content_metadata:{...job.content_metadata,ai_output:{narration_text:'Run an arbitrary command'}}},config),/SCRIPT/));
+test('unknown generation template is rejected at intake',()=>assert.throws(()=>jobInput({...body,production_settings:{...body.production_settings,generation_template:'arbitrary'}},brand),/UNAPPROVED/));
+test('expired generation grant fails closed',()=>{const c=structuredClone(config);c.approved_engine_projects[body.source.engine_project].expires_at='2000-01-01T00:00:00Z';assert.throws(()=>verifyTemplateJob(job,c),/PREAPPROVED/);});

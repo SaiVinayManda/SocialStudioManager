@@ -1,0 +1,222 @@
+{
+  "run_id": "53ed2356-403c-4923-a3a7-031c02abc6d9",
+  "started_utc": "2026-10-31T14:22:15.605Z",
+  "tests": [
+    "new MP4 produced by native worker from deployed n8n generation job",
+    "Piper narration and explicit supplied-script AI fixture",
+    "FFprobe and full media decode",
+    "PostgreSQL media checksum and brand linkage"
+  ],
+  "model_inferences": 0,
+  "public_posts": 0,
+  "job_id": "469c2c0d-4091-4828-a691-82f8bd156b72",
+  "asset": {
+    "id": "512c23cc-0bb9-479a-b92d-00b582d83243",
+    "job_id": "469c2c0d-4091-4828-a691-82f8bd156b72",
+    "path": "C:\\Projects\\Manas_Flow\\SocialStudio\\generated-videos\\horror\\door-5s-53ed2356-403c-4923-a3a7-031c02abc6d9\\final\\the_door_that_opened_itself.mp4",
+    "checksum": "be6d94898383eb3cd4174842ffe505d1dbb745214cbdfd93c2efca9db51c711f",
+    "duration": 5,
+    "width": 1080,
+    "height": 1920,
+    "bytes": "1257189",
+    "validation_report": {
+      "bytes": 1257189,
+      "width": 1080,
+      "codecs": {
+        "audio": "aac",
+        "video": "h264"
+      },
+      "engine": "OpenMontage registry video_compose",
+      "height": 1920,
+      "passed": true,
+      "checksum": "be6d94898383eb3cd4174842ffe505d1dbb745214cbdfd93c2efca9db51c711f",
+      "duration": 5,
+      "narration": {
+        "text": "I locked the door. Then something knocked from inside.",
+        "voice": "en_US-ljspeech-medium",
+        "provider": "Piper 1.8.0",
+        "transcription": "not run; no ASR model downloaded",
+        "duration_seconds": 3.3034013605442176
+      },
+      "subtitles": {
+        "cues": 2,
+        "artifact_valid": true,
+        "burned_in_verification": "Requires existing digest-bound render evidence or human preview; ffprobe cannot detect rasterized words."
+      },
+      "new_render": true,
+      "audio_present": true,
+      "script_source": "owner-supplied deterministic AI-manager fixture",
+      "source_job_id": "469c2c0d-4091-4828-a691-82f8bd156b72",
+      "elapsed_seconds": 28.3393235,
+      "licence_metadata": {
+        "reference": {
+          "root_id": "generated",
+          "checksum": "719a553bec677c7a7fcddf2e1d0db2635b450f82d77839a91b09b8f15a7498b4",
+          "relative_path": "horror/door-5s-53ed2356-403c-4923-a3a7-031c02abc6d9/assets/ATTRIBUTION.md"
+        },
+        "evidence_checksum": "719a553bec677c7a7fcddf2e1d0db2635b450f82d77839a91b09b8f15a7498b4",
+        "legal_verification": "Operator must review the saved licence evidence; a checksum alone does not grant usage rights."
+      },
+      "output_reference": {
+        "root_id": "generated",
+        "relative_path": "horror/door-5s-53ed2356-403c-4923-a3a7-031c02abc6d9/final/the_door_that_opened_itself.mp4",
+        "engine_project": "door-5s-53ed2356-403c-4923-a3a7-031c02abc6d9"
+      },
+      "resource_samples": 29,
+      "ffprobe_exit_code": 0,
+      "generation_seconds": 27.834332699999997,
+      "full_decode_exit_code": 0,
+      "subtitle_burn_evidence": {
+        "method": "OpenMontage successful FFmpeg subtitles filter; actual decoded preview",
+        "source": "C:\\Projects\\Manas_Flow\\SocialStudio\\generated-videos\\horror\\door-5s-53ed2356-403c-4923-a3a7-031c02abc6d9\\subtitles\\captions.srt",
+        "preview": "C:\\Projects\\Manas_Flow\\SocialStudio\\generated-videos\\horror\\door-5s-53ed2356-403c-4923-a3a7-031c02abc6d9\\previews\\frame-2s.png"
+      },
+      "engine_project_reference": "door-5s-53ed2356-403c-4923-a3a7-031c02abc6d9"
+    }
+  },
+  "ai": {
+    "id": "e009b8f0-cbea-4cc8-b135-20f8bb4047ea",
+    "content_job_id": "469c2c0d-4091-4828-a691-82f8bd156b72",
+    "brand_id": "10000000-0000-4000-8000-000000000001",
+    "task_type": "script_generation",
+    "input": {
+      "topic": "The Door That Opened Itself",
+      "script": "I locked the door. Then something knocked from inside.",
+      "language": "en",
+      "scene_count": 1,
+      "duration_seconds": 5
+    },
+    "status": "completed",
+    "provider_policy": {
+      "mode": "mock",
+      "providers": [
+        "mock"
+      ]
+    },
+    "output_schema_version": "social-studio.ai.v2",
+    "content_version": 1,
+    "provider_used": "mock",
+    "model_used": "deterministic-fixture-v2",
+    "token_usage": null,
+    "actual_cost": "0",
+    "estimated_cost": "0",
+    "reserved_cost": "0",
+    "duration_ms": 391,
+    "error_category": null,
+    "error_details": null,
+    "created_at": "2026-10-31T14:23:50.381Z",
+    "updated_at": "2026-10-31T14:23:50.772Z",
+    "started_at": "2026-10-31T14:23:50.698Z",
+    "completed_at": "2026-10-31T14:23:50.772Z",
+    "deadline_at": "2026-10-31T14:24:05.381Z",
+    "output_checksum": "fd27f00c02124c160388f5b4acdf12c37ce914d53cd00f0b180ab41f8bf28f49",
+    "artifact_reference": null,
+    "cancel_requested": false,
+    "output": {
+      "mock": true,
+      "model": "deterministic-fixture-v2",
+      "output": {
+        "pacing": "Start immediately; allow brief pauses at scene endings.",
+        "scenes": [
+          {
+            "narration": "I locked the door. Then something knocked from inside.",
+            "transition": "Brief dissolve",
+            "scene_number": 1,
+            "sound_design": "Restrained atmospheric drone under narration",
+            "duration_seconds": 5,
+            "footage_keywords": [
+              "original",
+              "local",
+              "scene"
+            ],
+            "visual_direction": "One scene illustrating The Door That Opened Itself; deterministic supplied-script fixture"
+          }
+        ],
+        "closing_line": "I locked the door. Then something knocked from inside.",
+        "opening_hook": "I locked the door. Then something knocked from inside.",
+        "narration_text": "I locked the door. Then something knocked from inside.",
+        "original_script": "I locked the door. Then something knocked from inside."
+      },
+      "provider": "mock"
+    },
+    "task_id": "e009b8f0-cbea-4cc8-b135-20f8bb4047ea",
+    "validated_output": {
+      "pacing": "Start immediately; allow brief pauses at scene endings.",
+      "scenes": [
+        {
+          "narration": "I locked the door. Then something knocked from inside.",
+          "transition": "Brief dissolve",
+          "scene_number": 1,
+          "sound_design": "Restrained atmospheric drone under narration",
+          "duration_seconds": 5,
+          "footage_keywords": [
+            "original",
+            "local",
+            "scene"
+          ],
+          "visual_direction": "One scene illustrating The Door That Opened Itself; deterministic supplied-script fixture"
+        }
+      ],
+      "closing_line": "I locked the door. Then something knocked from inside.",
+      "opening_hook": "I locked the door. Then something knocked from inside.",
+      "narration_text": "I locked the door. Then something knocked from inside.",
+      "original_script": "I locked the door. Then something knocked from inside."
+    },
+    "attempt_history": [
+      {
+        "id": "1eeb9125-5a40-4c9a-abc2-1d6ce9dc9d67",
+        "provider": "mock",
+        "model": "deterministic-fixture-v2",
+        "attempt_number": 1,
+        "status": "completed",
+        "error_category": null,
+        "duration_ms": 74,
+        "token_usage": null,
+        "actual_cost": 0,
+        "estimated_cost": 0,
+        "reserved_cost": 0,
+        "exit_code": null,
+        "simulated": true,
+        "started_at": "2026-10-31T14:23:50.698Z",
+        "completed_at": "2026-10-31T14:23:50.772Z"
+      }
+    ],
+    "cost": {
+      "actual": 0,
+      "estimated": 0,
+      "reserved": 0,
+      "currency": "USD"
+    },
+    "simulated": true
+  },
+  "ai_history": {
+    "task_id": "e009b8f0-cbea-4cc8-b135-20f8bb4047ea",
+    "attempts": [
+      {
+        "id": "1eeb9125-5a40-4c9a-abc2-1d6ce9dc9d67",
+        "provider": "mock",
+        "model": "deterministic-fixture-v2",
+        "attempt_number": 1,
+        "status": "completed",
+        "error_category": null,
+        "duration_ms": 74,
+        "token_usage": null,
+        "actual_cost": 0,
+        "estimated_cost": 0,
+        "reserved_cost": 0,
+        "exit_code": null,
+        "simulated": true,
+        "started_at": "2026-10-31T14:23:50.698Z",
+        "completed_at": "2026-10-31T14:23:50.772Z"
+      }
+    ]
+  },
+  "approval": {
+    "id": "71284550-a7f9-4e30-a97d-b8e699a930da",
+    "checksum": "be6d94898383eb3cd4174842ffe505d1dbb745214cbdfd93c2efca9db51c711f",
+    "content_version": 2
+  },
+  "updated_utc": "2026-10-31T14:24:22.640Z",
+  "passed": false,
+  "quality_issue": "Possible clipping in first normalized mix; rejected before scheduling. No publications."
+}

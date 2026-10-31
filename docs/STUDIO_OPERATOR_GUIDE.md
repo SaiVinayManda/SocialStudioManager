@@ -1,5 +1,7 @@
 # Current local Studio operations
 
+**New generated-video acceptance passed, 2026-10-31.** n8n now triggers the fixed offline five-second Horror template through the existing media worker; real Piper/audio mixing/OpenMontage composition/QC, explicit mock approval, scheduler and all three mock destinations succeeded. [Exact output, execution IDs, receipts, reproduction and recovery limits](GENERATED_VIDEO_ACCEPTANCE.md). No new installation, model service or public post. This is one fixed template, not arbitrary-topic automation. Review job `4c4e90e0-bc2a-4cba-9ef4-2303beedb710` using the existing operator commands below. Do not rerun the Python renderer manually or overwrite its final MP4.
+
 **Existing-video MVP passed actual n8n/PostgreSQL acceptance.** Four services healthy, twelve workflows imported/published/executed successfully, one manually started native worker. [Primary proof](test-evidence/milestone-e-deployed/d9301e97-4f96-4492-a135-c3c71ba3a892.json), [20 deployed regressions](test-evidence/milestone-e-deployed/regression-709b64e7-3bb1-42b9-bd72-a8d79fc44a98.json). Public posts and paid API calls: zero. Do not rerun completed installers, secret generation or bootstrap.
 
 ## Review and control
