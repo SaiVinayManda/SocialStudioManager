@@ -1,5 +1,20 @@
 # Social Studio implementation plan
 
+## E4 current result — one real-model acceptance awaiting explicit approval
+
+Continued from `d9c2692f1bea96e3e483f5ce66f25034e3d4a023`; E3 rendering and all twelve deployed workflows are preserved. Prepared a narrow one-call path around the existing Agent Manager. [Pending approval](E4_AI_APPROVAL.md), [operator procedure](E4_OPERATOR_GUIDE.md).
+
+| E4 task | Actual state / remaining estimate |
+| --- | --- |
+| Inspect installed CLI help, local 9Router and public text-model/pricing metadata | Done; no protected model credentials or inference |
+| Pin candidate and zero-price request restrictions | Implemented and simulated-tested; OpenRouter `nvidia/nemotron-3.5-super-vl:free`, exact NVIDIA route only |
+| Scoped intake readiness, one-call ledger, no retries, existing renderer/mock completion helper | Implemented; 143 local tests and 60 deployed PostgreSQL/API assertions passed; activation pending |
+| Verify authenticated router connection, entitlement and forwarding | Requires `E4-FREE-CANARY-01`; approximately 0.5–1 h if the existing connection is usable |
+| One model response through workflow 02, PostgreSQL and one new video/mock pipeline | NOT RUN; approximately 0.5–1 h after verification/grant; one response serves as both canary and render input |
+| Codex / agy unattended execution and real failover | Unsupported without independently verified isolation/authorization; disabled, priority preserved |
+
+No E4 task/output/video or live failover is claimed. No new infrastructure, install, account connection, privileged runtime, public exposure or publication. Milestone A remains deferred. Earlier E3/E2 packets do not authorize this new model.
+
 ## E3 current result — dynamic rendering accepted, real AI gated
 
 Three distinct five-second Horror topics passed the actual twelve-workflow architecture using explicit script/storyboard fixtures, real OpenMontage/Piper/FFmpeg, PostgreSQL, test approval and all three mock destinations. [Evidence and status](E3_DYNAMIC_VIDEO.md). Ordinary topic CLI plus independent Travel rendering also works. No source edit/manual scene composition is required per submission. Six profiles, closed production package, local asset index/provenance fallback, measured phrase timing, QC and bounded worker policy are implemented. Old fixed-template and existing-file paths are preserved.

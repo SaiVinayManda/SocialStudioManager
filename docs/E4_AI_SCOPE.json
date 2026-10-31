@@ -1,0 +1,340 @@
+{
+  "approval_id": "E4-FREE-CANARY-01",
+  "state": "REVIEWABLE_CONDITIONAL",
+  "owner_approved": false,
+  "prepared_at": "2026-10-31T18:47:05.357Z",
+  "expires_at": "2026-11-01T18:00:00Z",
+  "run_id": "3120e494-5c93-4c15-a0de-eb7c3859c956",
+  "model": "openrouter/nvidia/nemotron-3.5-super-vl:free",
+  "topic": "At midnight, a stranger appears in the reflection of an empty room.",
+  "maximum_calls": 1,
+  "maximum_cost_usd": 0,
+  "requires_owner_approval": true,
+  "requires_verified_live_route": true,
+  "files": [
+    {
+      "path": "brands/business-insights/config/ai.json",
+      "sha256": "3666f8ee1639fd51e61c0ce64e1587a5474dd22b76dc3f1c62b7075c6db3fdf8"
+    },
+    {
+      "path": "brands/business-insights/config/asset-catalog.json",
+      "sha256": "2433092383a07bf195c48f2414b263b58931a5648c27724168be0a5687a6b269"
+    },
+    {
+      "path": "brands/business-insights/config/production.json",
+      "sha256": "f39347cb02b3fc3ca58429e525d98be5657f76b2fce34c312f6fda3b949dc26c"
+    },
+    {
+      "path": "brands/company/config/ai.json",
+      "sha256": "fe61415a546b8d97c080d23f4bb8e3d21e2d95e812e8f597a600d412fd331595"
+    },
+    {
+      "path": "brands/company/config/asset-catalog.json",
+      "sha256": "2433092383a07bf195c48f2414b263b58931a5648c27724168be0a5687a6b269"
+    },
+    {
+      "path": "brands/company/config/production.json",
+      "sha256": "1f9251927ebd941515c84c2d08f427e2fd68b224eda941fa0156b7d98831e21c"
+    },
+    {
+      "path": "brands/horror/config/ai.json",
+      "sha256": "f147c380d061fa4c25ef4c0e1814e8aeb34de944af744571195da9435fe53f60"
+    },
+    {
+      "path": "brands/horror/config/asset-catalog.json",
+      "sha256": "2433092383a07bf195c48f2414b263b58931a5648c27724168be0a5687a6b269"
+    },
+    {
+      "path": "brands/horror/config/production.json",
+      "sha256": "e486ba55a8173c71c12062f51847f7f39f0d69b74a89cc69d46c11fb74a50576"
+    },
+    {
+      "path": "brands/motivation/config/ai.json",
+      "sha256": "b360fc5dd4a654c57715c3b4f0f271d36ea65210af111ae4a91d2775d1f1b9ac"
+    },
+    {
+      "path": "brands/motivation/config/asset-catalog.json",
+      "sha256": "2433092383a07bf195c48f2414b263b58931a5648c27724168be0a5687a6b269"
+    },
+    {
+      "path": "brands/motivation/config/production.json",
+      "sha256": "568ecdf4ff7ab4059680fa34997bf5718e307327f0243f67e795001dde00681a"
+    },
+    {
+      "path": "brands/storytelling/config/ai.json",
+      "sha256": "bb0fcb3641a1020455d2d959159de07dddabb60117d3cfc4a822df2a7294e70a"
+    },
+    {
+      "path": "brands/storytelling/config/asset-catalog.json",
+      "sha256": "2433092383a07bf195c48f2414b263b58931a5648c27724168be0a5687a6b269"
+    },
+    {
+      "path": "brands/storytelling/config/production.json",
+      "sha256": "e98a37d010d00e36f2d8180c7da4d8167b5bc911cc655451b16c9d76cddfb323"
+    },
+    {
+      "path": "brands/travel/config/ai.json",
+      "sha256": "aa033016db33a98371227e116f414ddd2e11b0e75090d93dbf6d31c21546bf3b"
+    },
+    {
+      "path": "brands/travel/config/asset-catalog.json",
+      "sha256": "2433092383a07bf195c48f2414b263b58931a5648c27724168be0a5687a6b269"
+    },
+    {
+      "path": "brands/travel/config/production.json",
+      "sha256": "edaea623709b35ed227dc7ff19c658300750610ad119d0d5a286649756b8d2ca"
+    },
+    {
+      "path": "docs/E4_AI_APPROVAL.md",
+      "sha256": "62a7c3b190cf4c0f0379e96a87fd53988cfb8c0d29f42c77e1ccb28454244a45"
+    },
+    {
+      "path": "docs/E4_OWNER_GRANT.example.json",
+      "sha256": "441a900db24271ae19607dc7732fe15ae81edf88e1b02f730413ce78046ecd8f"
+    },
+    {
+      "path": "docs/E4_ROUTE_EVIDENCE.example.json",
+      "sha256": "8f239b9ba764ddc0695769b1b86ccf99078f473fd04a924cffb66f0cd2600c6e"
+    },
+    {
+      "path": "infrastructure/n8n/workflows/01-content-intake.json",
+      "sha256": "efacd3800a531b6600b3c0f8bf6893620bbc79468e643b9c9b0ac0bf201d45fa"
+    },
+    {
+      "path": "infrastructure/n8n/workflows/02-ai-content-preparation.json",
+      "sha256": "f3b9151aa98333880a3c6bd921b963eeee49b064f3a2b29a7fc44a1421d1d3ea"
+    },
+    {
+      "path": "infrastructure/n8n/workflows/03-openmontage-production.json",
+      "sha256": "4603534856760eb07de56baa254f5e05cb302b7a019d39878fe86d81cd9f4e19"
+    },
+    {
+      "path": "infrastructure/n8n/workflows/04-media-quality-validation.json",
+      "sha256": "8d890b27bff4d1bf6c5139b83322843431fdfd45454534613ac7272aaf1111e0"
+    },
+    {
+      "path": "infrastructure/n8n/workflows/05-human-approval.json",
+      "sha256": "29ada9ea7dce2fdc4afc4129c748088587454fadec66608fc6acc38041f19f71"
+    },
+    {
+      "path": "infrastructure/n8n/workflows/06-publishing-scheduler.json",
+      "sha256": "9b745b1de70d68d34621a152938da3f18086b1102a52a52b1d86ccb6cd840c1d"
+    },
+    {
+      "path": "infrastructure/n8n/workflows/07-youtube-mock-publishing.json",
+      "sha256": "e2b62f913320f2f21a61a710b6535f38d14cfd7f967eb50be483d06efa3b9891"
+    },
+    {
+      "path": "infrastructure/n8n/workflows/08-instagram-mock-publishing.json",
+      "sha256": "2df5135b0c88d5626b443bbba1080e48c20e03a2bf9e546a5ed87997c0325087"
+    },
+    {
+      "path": "infrastructure/n8n/workflows/09-facebook-mock-publishing.json",
+      "sha256": "ab8ab2e7d1fab21cf9c67dc390b42b1f1869531dd53ae65fb7464dbeae6ede41"
+    },
+    {
+      "path": "infrastructure/n8n/workflows/10-local-notifications.json",
+      "sha256": "da94cdd7f256c30999cc61c19f5d27abcd5cb76c4981076b897f488cc4a91bd1"
+    },
+    {
+      "path": "infrastructure/n8n/workflows/11-failure-recovery.json",
+      "sha256": "dfae4f47463bcc249d161aa5a725ace6b834849cf1b6a4d2c9d4c978d086cf34"
+    },
+    {
+      "path": "infrastructure/n8n/workflows/12-reporting.json",
+      "sha256": "e0f1c7870508917833c944ef1a82d1c16ef17856313ce3ecc22c92ac79021e15"
+    },
+    {
+      "path": "scripts/e3-common.mjs",
+      "sha256": "0e1c31525a05fded7d57c6084f3c0161354e6291e5bc4c96a6e0a326393c060c"
+    },
+    {
+      "path": "scripts/e4-pilot.mjs",
+      "sha256": "5616df991fcf0f95c4de4c8cdd6a6e65b4c88e3ea411bc75e1aa9db54931c4d0"
+    },
+    {
+      "path": "scripts/studio-test-client.mjs",
+      "sha256": "27289a840b61baee5e9650817d0f101c3016809966b699d6273410552c7e407b"
+    },
+    {
+      "path": "services/ai-agent-manager/adapters.mjs",
+      "sha256": "34bf158fbafc1b67be8a82f3202eac89ca0ff89f8a829474072ac9e50f389406"
+    },
+    {
+      "path": "services/ai-agent-manager/api-checks.mjs",
+      "sha256": "3ed655f264b0517114150f9e828ce2b5faa1b63e5f8d2bc4d608ec10b5642b53"
+    },
+    {
+      "path": "services/ai-agent-manager/approval.mjs",
+      "sha256": "e162904e4fda93169bd9849e7515ae11f5bb90245d7345a0f745b8c04899076f"
+    },
+    {
+      "path": "services/ai-agent-manager/contracts.mjs",
+      "sha256": "abcf8b3ee359b5c1236d27a613cd632f8535f5572dcc6f0ec200c7a39fa27a87"
+    },
+    {
+      "path": "services/ai-agent-manager/e3-worker.mjs",
+      "sha256": "4366b81ffcecbdb0237c3d9308790af12a26d7fb7e2bd23f756b3b97af3cb3ee"
+    },
+    {
+      "path": "services/ai-agent-manager/e4-database-tests.mjs",
+      "sha256": "9a9efb45636ae475637a6493e8ee7dcc77e0c2667c337f59299844156560447a"
+    },
+    {
+      "path": "services/ai-agent-manager/e4-policy.mjs",
+      "sha256": "17f3f51863cc52b758a2e644a5cf17d8a8e7b2286319b5e76a7160afa35358c0"
+    },
+    {
+      "path": "services/ai-agent-manager/e4-public-preflight.mjs",
+      "sha256": "1631b213cdfe36adb21d4aab24af4b9ef02b7efd5b8a99cdf295811031d178dc"
+    },
+    {
+      "path": "services/ai-agent-manager/e4-readiness.mjs",
+      "sha256": "b4be626c162ade5f85e51eae76b73d393c670f10e6590ccc4ff2d321f68b363e"
+    },
+    {
+      "path": "services/ai-agent-manager/e4-route.mjs",
+      "sha256": "3550660267659a9b21d098f41ff47941188af1311f946771084e4af6b940cfb3"
+    },
+    {
+      "path": "services/ai-agent-manager/e4-worker.mjs",
+      "sha256": "bfec2ac2103d9f2ea5d0eb1911688e383df3ea3e9dff5114357e3e914b65bdc1"
+    },
+    {
+      "path": "services/ai-agent-manager/in-container-tests.mjs",
+      "sha256": "63b4a1ca1ac4b03996315f482cce7b1212e5f3cc6c1a93a7200e8769434d1baf"
+    },
+    {
+      "path": "services/ai-agent-manager/intake.mjs",
+      "sha256": "e2759fc72bddcb622e2f503db17c0c7b93317d5ea9ee8b1f8cdc38639bc11b98"
+    },
+    {
+      "path": "services/ai-agent-manager/mock.mjs",
+      "sha256": "ffa945805ff6117bd5dd2cb8655159e9f0a8eed915c4a95f9b4a2584221442f4"
+    },
+    {
+      "path": "services/ai-agent-manager/openmontage.mjs",
+      "sha256": "5a23f931c49efdb8d80bc72cfc3ffa39a8160708c525bb5bbb07438a2d7bd2eb"
+    },
+    {
+      "path": "services/ai-agent-manager/production-fixtures.mjs",
+      "sha256": "7bbefb806abc90d7161b9e6991354d0e919ae8590766e563a81539cac67af791"
+    },
+    {
+      "path": "services/ai-agent-manager/production-schema.mjs",
+      "sha256": "e5aef576491f245c440a2ab6aa0663175495bbee253d2245e79d2961264b0ce9"
+    },
+    {
+      "path": "services/ai-agent-manager/prompts.mjs",
+      "sha256": "ef4b8e71b42727e441bc89caea2c7bfc11e430eddd121e376880f5ef2b31f421"
+    },
+    {
+      "path": "services/ai-agent-manager/providers.mjs",
+      "sha256": "b2cc624388391a1a84e9f961abdb8c12ff41be5a304c3180278b49da880e783c"
+    },
+    {
+      "path": "services/ai-agent-manager/record-discovery.mjs",
+      "sha256": "a689172a2b238e17b96dc6b773bb2e1bd6373be6df9a906d0f0c594368cf030c"
+    },
+    {
+      "path": "services/ai-agent-manager/safety.mjs",
+      "sha256": "9044fdfd29141638d749195133c89d09343c6b7eafa98d801e0c212d64451326"
+    },
+    {
+      "path": "services/ai-agent-manager/schemas.mjs",
+      "sha256": "cf2fb0ac04e28c1b9526faae8534878bbeb9a00a2e210aa3366906ef2458d950"
+    },
+    {
+      "path": "services/ai-agent-manager/store.mjs",
+      "sha256": "08fcb283745f8f4396d3cc77a272d6ce8fc012b3d95128473e7985489008427c"
+    },
+    {
+      "path": "services/ai-agent-manager/worker.mjs",
+      "sha256": "dd776ed1a7dbe0378464668cdbc5af7cd231db8b2489732e63161d50f09aeabf"
+    },
+    {
+      "path": "services/production-adapter/assets.mjs",
+      "sha256": "6e36347cafc19cf0f3a7e7914b80997d64745161d9f648ee0e062d5fc293052a"
+    },
+    {
+      "path": "services/production-adapter/dynamic-contract.mjs",
+      "sha256": "f8464fdf1dcf6a6dd3cfe098cd34892f5651da031ba87be557aeee1950682a94"
+    },
+    {
+      "path": "services/production-adapter/dynamic-render.mjs",
+      "sha256": "724a1d359277bae5d7529f5de4d0dd86abd98004222aebad8ff2613a45a15015"
+    },
+    {
+      "path": "services/production-adapter/dynamic_runner.py",
+      "sha256": "5195e9a2469727d811169431bd5650257a5560561efea96489bb567f19672ad1"
+    },
+    {
+      "path": "services/production-adapter/folder-intake.mjs",
+      "sha256": "65fe142f44ef06fbbea7b3601a9ba3aebb4395bb8ec21b5d5ec37ed949239960"
+    },
+    {
+      "path": "services/production-adapter/generate-horror-template.py",
+      "sha256": "66ad3a654def6c36cce0bcd9fc5821e42a0b15105ec4fad3320b417fddc2af05"
+    },
+    {
+      "path": "services/production-adapter/horror-template.mjs",
+      "sha256": "b843537a0f0926935093a0eb6c800e4e5511fdeccde6c61347ae0543397e72a7"
+    },
+    {
+      "path": "services/production-adapter/in-container-dynamic-tests.mjs",
+      "sha256": "2132d4210c2f96565f0c47916af53651ea1aaa2aa7c7869d13f337c9e7547b98"
+    },
+    {
+      "path": "services/production-adapter/in-container-generation-tests.mjs",
+      "sha256": "ce80252813dad2ece84e7a2abe743b9bab196afcc0094569398568706d7a1be7"
+    },
+    {
+      "path": "services/production-adapter/media.mjs",
+      "sha256": "cb9a6de079e7112c146dca6bf48cbbd34796702c766ed01483e380e2e43a8442"
+    },
+    {
+      "path": "services/production-adapter/pipeline_support.py",
+      "sha256": "2407ba8e327dc70aea570506c34493384bf0d0d1d8c9828c0280e5fefd3b15d3"
+    },
+    {
+      "path": "services/production-adapter/render-approved.py",
+      "sha256": "63a970d62c080fb5a02d0d42e0902d4dcbcc8cc4982afb1c4cdfb03af2fd01a5"
+    },
+    {
+      "path": "services/production-adapter/scene_components.py",
+      "sha256": "bbc60a16abd8e844e5b81a57fabf8801546ab4ff1a542f6407c5ea18e4559296"
+    },
+    {
+      "path": "services/production-adapter/store.mjs",
+      "sha256": "4b3a255f7de33b0e6158ada3cce9ec030d8b43cc6e7ecfab4ac1bc1f883ae927"
+    },
+    {
+      "path": "services/production-adapter/topic-intake.mjs",
+      "sha256": "8fc37e9dfff005ca49109b36b1e0c22dcfddf273c6751ce6ca3534b7d1adf557"
+    },
+    {
+      "path": "services/production-adapter/worker.mjs",
+      "sha256": "51536af33883d45690b2e1cf2de19fb70f847f551b56b5db9ff20729185648d6"
+    },
+    {
+      "path": "services/studio-runtime/contracts.mjs",
+      "sha256": "2bff8c1d96ab36d198246f978d999d85b272c12e9893bd8748da9b51a34189c9"
+    },
+    {
+      "path": "services/studio-runtime/db.mjs",
+      "sha256": "211dbbd51366c034fceddd16bd8911bd6eda6e07c1d411dea9c9d42cf0afca97"
+    },
+    {
+      "path": "services/studio-runtime/in-container-checks.mjs",
+      "sha256": "7be85e980cde0378580beda431ee5dd3b270f3084f326738ae708c4b1da241f9"
+    },
+    {
+      "path": "services/studio-runtime/operations.mjs",
+      "sha256": "d5ed3218afdb4a4938ed27233e0052b519184141e8cff2da67258fdf7440a5c1"
+    },
+    {
+      "path": "services/studio-runtime/server.mjs",
+      "sha256": "425eaedba330e6096d49bb33c59de0152d5c54039435f3244d5fd2027a34e152"
+    }
+  ]
+}

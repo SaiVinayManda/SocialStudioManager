@@ -1,0 +1,17 @@
+{
+  "at": "2026-10-31T19:13:56.156Z",
+  "passed": true,
+  "state": "REVIEWABLE_CONDITIONAL",
+  "scope_sha256": "befe819b4fe962fafa2caa486651a34b1d955ea850b12a172ef1b0d4a4b83882",
+  "source_digests_matched": 81,
+  "blocked_start": {
+    "exit_code": 1,
+    "error": "E4_APPROVAL_FILE_REQUIRED"
+  },
+  "owner_grant_created": false,
+  "route_proof_created": false,
+  "real_model_calls": 0,
+  "new_video_renders": 0,
+  "public_posts": 0,
+  "credential_access": false
+}

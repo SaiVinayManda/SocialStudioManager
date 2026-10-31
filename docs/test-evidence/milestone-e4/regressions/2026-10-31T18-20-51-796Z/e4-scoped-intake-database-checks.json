@@ -1,0 +1,56 @@
+{
+  "passed": true,
+  "actual_postgres": true,
+  "rolled_back": true,
+  "model_calls": 0,
+  "checks": [
+    {
+      "name": "uncleared new live topic fails before task creation",
+      "passed": true
+    },
+    {
+      "name": "scoped readiness permits only the approved live new-video job",
+      "passed": true
+    },
+    {
+      "name": "readiness does not falsely label the provider available",
+      "passed": true
+    },
+    {
+      "name": "duplicate approved intake reuses exactly one durable job",
+      "passed": true
+    },
+    {
+      "name": "readiness rejects changed topic",
+      "passed": true
+    },
+    {
+      "name": "readiness rejects changed brand",
+      "passed": true
+    },
+    {
+      "name": "readiness rejects changed duration",
+      "passed": true
+    },
+    {
+      "name": "readiness rejects changed fixture_script",
+      "passed": true
+    },
+    {
+      "name": "readiness rejects changed production_override",
+      "passed": true
+    },
+    {
+      "name": "readiness rejects changed run",
+      "passed": true
+    },
+    {
+      "name": "readiness rejects changed idempotency",
+      "passed": true
+    },
+    {
+      "name": "expired readiness cannot authorize another live intake",
+      "passed": true
+    }
+  ]
+}

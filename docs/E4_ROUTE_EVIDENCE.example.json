@@ -1,0 +1,21 @@
+{
+  "example_only": true,
+  "local_model": "openrouter/nvidia/nemotron-3.5-super-vl:free",
+  "upstream_model": "nvidia/nemotron-3.5-super-vl:free",
+  "endpoint": "http://127.0.0.1:20128/v1/chat/completions",
+  "upstream_endpoint": "https://openrouter.ai/api/v1/chat/completions",
+  "upstream_provider": "nvidia",
+  "nonsecret_connection_reference": "REPLACE_WITH_VERIFIED_EXISTING_CONNECTION_LABEL",
+  "connection_enabled": false,
+  "free_variant_eligible": false,
+  "paid_model_substitution": "UNVERIFIED",
+  "extra_upstream_retries": "UNVERIFIED",
+  "provider_preferences_forwarded": false,
+  "server_plugins_disabled": false,
+  "verified_zero_charge": false,
+  "prompt_price": 0,
+  "completion_price": 0,
+  "auth_mode": "UNVERIFIED",
+  "valid_until": "REPLACE_AFTER_VERIFICATION",
+  "evidence_references": []
+}

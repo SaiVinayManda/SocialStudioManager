@@ -1,0 +1,55 @@
+{
+  "at": "2026-10-31T18:05:38.496Z",
+  "url": "https://openrouter.ai/api/v1/models/nvidia/nemotron-3.5-super-vl:free/endpoints",
+  "model": "nvidia/nemotron-3.5-super-vl:free",
+  "endpoints": [
+    {
+      "name": "Nvidia | nvidia/nemotron-3.5-super-vl-20261015:free",
+      "model_id": "nvidia/nemotron-3.5-super-vl:free",
+      "provider_name": "Nvidia",
+      "tag": "nvidia",
+      "pricing": {
+        "prompt": "0",
+        "completion": "0",
+        "discount": 0
+      },
+      "supported_parameters": [
+        "reasoning",
+        "include_reasoning",
+        "temperature",
+        "max_tokens",
+        "seed",
+        "top_p",
+        "tools",
+        "tool_choice",
+        "response_format",
+        "structured_outputs"
+      ],
+      "status": 0
+    }
+  ],
+  "public_installed_source": [
+    {
+      "file": "2598.js",
+      "sha256": "9bf39033ba8baf8a6babe3b91acadeef45f7fcac693aa61c5fafb3a23537cadc",
+      "offset": 130544,
+      "excerpt": "id:\"openrouter\",priority:10,hasFree:!0,alias:\"openrouter\",display:{name:\"OpenRouter\",icon:\"router\",color:\"#F97316\",textIcon:\"OR\",website:\"https://openrouter.ai\",notice:{text:\"Free tier: 27+ free models, no credit card needed, 200 req/day. After  0 credit: 1,000 req/day.\",apiKeyUrl:\"https://openrouter.ai/settings/keys\"}},category:\"freeTier\",authType:\"apikey\",authModes:[\"apikey\"],transport:{baseUrl:\"https://openrouter.ai/api/v1/chat/completions\",thinkingFormat:\"openai\",headers:{\"HTTP-Referer\":\"https://endpoint-proxy.local\",\"X-Title\":\"Endpoint Proxy\"}},models:[{id:\"openai/text-embedding-3-large\",name:\"OpenAI Text Embedding 3 Large\",kind:\"embedding\"},{id:\"openai/text-embedding-3-small\",name:\"OpenAI Text Embedding 3 Small\",kind:\"embedding\"},{id:\"openai/text-embedding-ada-002\",name:\"OpenAI Text Embedding Ada 002\",kind:\"embedding\"},{id:\"qwen/qwen3-embedding-8b\",name:\"Qwen3 Embedding 8B\",kind:\"embedding\"},{id:\"perplexity/pplx-embed-v1-4b\",name:\"Perplexity Embed V1 4B\",kind:\"embedding\"},{id:\"perplexity/pplx-embed-v1-0.6b\",name:\"Perplexity Embed V1 0.6B\",kind:\"embedding\"},{id:\"nvidia/llama-nemotron-embed-vl-1b-v2:free\",name:\"NVIDIA Nemotron Embed VL 1B V2 (Free)\",kind:\"embedding\"},{id:\"openai/gpt-4o-mini-tts\",name:\"GPT-4o Mini TTS\",kind:\"tts\"},{id:\"openai/tts-1-hd\",name:\"TTS-1 HD\",kind:\"tts\"},{id:\"openai/tts-1\",name:\"TTS-1\",kind:\"tts\"},{id:\"openai/dall-e-3\",name:\"DALL-E 3 (via OpenRouter)\",params:[\"size\",\"quality\",\"style\",\"response_format\"],kind:\"image\"},{id:\"openai/gpt-image-1\",name:\"GPT Image 1 (via OpenRouter)\",params:[\"n\",\"size\",\"quality\",\"response_format\"],kind:\"image\"},{id:\"goo"
+    },
+    {
+      "file": "9604.js",
+      "sha256": "8759edcc782ef1d5598baef4d7a67e464ae8cab928f0810aa70298ec46d1a651",
+      "offset": 4323,
+      "excerpt": "38775:(a,b,c)=>{c.d(b,{d_:()=>j,mA:()=>i});var d=c(89718),e=c(40669),f=c(8499);let g={xmtp:\"xiaomi-tokenplan\",\"xiaomi-tokenplan\":\"xiaomi-tokenplan\"},h=new Set(Object.keys(g));for(let a of f.default)for(let b of(h.add(a.id),a.alias&&h.add(a.alias),a.aliases||[]))h.add(b);async function i(a){let b,c=(b=(0,e.Xh)(a),b?.providerAlias&&g[b.providerAlias]?{...b,provider:g[b.providerAlias]}:b);if(!c.isAlias){if(!h.has(c.providerAlias)){let a=(await (0,d.Fh)({type:\"openai-compatible\"})).find(a=>a.prefix===c.providerAlias);if(a)return{provider:a.id,model:c.model};let b=(await (0,d.Fh)({type:\"anthropic-compatible\"})).find(a=>a.prefix===c.providerAlias);if(b)return{provider:b.id,model:c.model};let e=(await (0,d.Fh)({type:\"custom-embedding\"})).find(a=>a.prefix===c.providerAlias);if(e)return{provider:e.id,model:c.model}}return{provider:c.provider,model:c.model}}return await (0,d.Dj)(c.model)?{provider:null,model:c.model}:(0,e.js)(a,d.OM)}async function j(a){if(a.includes(\"/\"))return null;let b=await (0,d.Dj)(a);return b&&b.models&&b.models.length>0?b.models:null}},39006:a=>{a.exports={rE:\"0.5.112\"}},40615:(a,b,c)=>{c.d(b,{AI_PROVIDERS:()=>s,js:()=>w,DI:()=>n,fg:()=>k,Pd:()=>o,IS:()=>h,nJ:()=>i,zN:()=>j,JH:()=>m,jO:()=>y,wb:()=>x,br:()=>l,wG:()=>v,zt:()=>t,gb:()=>q,gC:()=>r,mq:()=>p,rs:()=>u});var d=c(8499);let e=\"⚠️ Risk Notice: This provider uses a subscription"
+    },
+    {
+      "file": "9489.js",
+      "sha256": "f7d0f214d8ec449884bb302ede0117503d98c7c48199d09f12c844bedcf36e87",
+      "offset": 5147,
+      "excerpt": "capacityAdapter?.[a])?{enabled:!0,roundRobin:!1,models:c.map(a=>h(a?.model||a)).filter(Boolean)}:c&&\"object\"==typeof c?{enabled:!1!==c.enabled,roundRobin:!!c.roundRobin,models:Array.isArray(c.models)?c.models.map(h).filter(Boolean):[]}:{enabled:!1,roundRobin:!1,models:[]};return d.enabled&&0===d.models.length?{...d,models:[g]}:d}function j(a,b){for(let c of[...a||[]].filter(a=>f.has(a))){let{enabled:a,models:d}=i(c,b);if(a&&0!==d.length)return function(a,b){let{enabled:c,roundRobin:d}=i(a,b);return c&&d?\"round-robin\":\"fallback\"}(c,b)}return\"fallback\"}function k(a,b){let c=a.indexOf(\"/\"),e=c>0?a.slice(0,c):\"\",f=c>0?a.slice(c+1):a,g=(0,d.getCapabilitiesForModel)(e,f);return b.every(a=>!0===g[a])}function l(a,b,c){let d=[...b||[]].filter(a=>f.has(a));if(0===d.length||!Array.isArray(a)||0===a.length||a.some(a=>k(a,d)))return a;let g=(function(a){let b=new Set,c=[];for(let d of e){let{enabled:e,models:f}=i(d,a);if(e)for(let a of f)b.has(a)||(b.add(a),c.push(a))}return c})(c).filter(b=>!a.includes(b)&&k(b,d));return 0===g.length?a:[...g,...a]}function m(a){return\"string\"==typeof a?a.length:Array.isArray(a)?a.reduce((a,b)=>a+(\"string\"==typeof b?.text?b.text.length:50),0):0}function n(a,b){let c=new Set(b);return 0===c.size?a:(b,e,...f)=>{if(c.has(e)){let a=e.indexOf(\"/\"),c=a>0?e.slice(0,a):\"\",f=a>0?e.slice(a+1):e,{contextWindow:g}=(0,d.getCapabilitiesForModel)(c,f);b=function(a,b){let c=Array.isArray(a.messages)?\"messages\":Array.isArray(a.input)?\"input\":Array.isArray(a.contents)?\"contents\":null;if(!c)return a;let d=a[c];if(!d||0===d.length)return a;let e=a=>\"system\"===a||\"developer\"===a,f=d.filter(a=>e(a?.role)),g=d.filter(a=>!e(a?.role));if(0===g.length)return a;let h=a=>\"assistant\"===a||\"model\"===a,i=g.length-1;for(;i>=0&&!h(g[i]?.role);)i--;let j=g.slice(i+1),k=g.slice(0,i+1);if(0===k.length)return a;let l=a=>a.content??a.parts,n=.8*(b||2e5)*4,o=k.slice(0,6),p=f.concat(o,"
+    }
+  ],
+  "live_connection_entitlement_verified": false,
+  "router_preference_forwarding_verified": false,
+  "inference_calls": 0,
+  "credentials_accessed": false
+}

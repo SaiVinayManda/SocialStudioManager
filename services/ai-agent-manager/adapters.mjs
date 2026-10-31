@@ -1,5 +1,7 @@
 import {ProviderError} from './contracts.mjs';
 import {outputSchemas} from './schemas.mjs';
+import {E4_MODEL,E4_PROVIDER_PREFERENCES} from './e4-route.mjs';
+import {canonical} from '../studio-runtime/contracts.mjs';
 
 export function redact(value,secrets=[]){
   let result=String(value);for(const s of secrets)if(s)result=result.replaceAll(s,'[REDACTED]');
@@ -82,22 +84,28 @@ function checkProcess(result){
   if(result.exit_code!==0)throw new ProviderError(result.error_category??'provider_outage');
 }
 export class NineRouterAdapter{
-  constructor({policy,fetchImpl=fetch}={}){this.policy=policy;this.fetch=fetchImpl;}
+  constructor({policy,fetchImpl=fetch,clientToken}={}){this.policy=policy;this.fetch=fetchImpl;this.clientToken=clientToken;}
   async preflight(task){
     const p=this.policy;if(!p?.authorized||Date.now()>=Date.parse(p.expires_at))throw new ProviderError('credential_policy');
     // Model names are not evidence of free service. A reviewed, pinned route and
     // conservative reservation are mandatory; unknown cost fails closed.
-    if(p.endpoint!=='http://127.0.0.1:20128/v1/chat/completions'||!p.route_verified||p.auth_mode!=='none'||!p.model||!Number.isFinite(p.reservation_usd)||p.reservation_usd<0)throw new ProviderError('credential_policy');
+    if(p.endpoint!=='http://127.0.0.1:20128/v1/chat/completions'||!p.route_verified||!['none','dedicated_local_bearer'].includes(p.auth_mode)||!p.model||!Number.isFinite(p.reservation_usd)||p.reservation_usd<0)throw new ProviderError('credential_policy');
+    if(p.auth_mode==='dedicated_local_bearer'&&(p.approval_id!=='E4-FREE-CANARY-01'||typeof this.clientToken!=='string'||this.clientToken.length<16))throw new ProviderError('credential_policy');
     if(!Number.isInteger(p.max_output_tokens??4000)||(p.max_output_tokens??4000)<1||(p.max_output_tokens??4000)>4000)throw new ProviderError('credential_policy');
+    if(p.provider_preferences!==undefined&&(p.model!==E4_MODEL||p.reservation_usd!==0||JSON.stringify(canonical(p.provider_preferences))!==JSON.stringify(canonical(E4_PROVIDER_PREFERENCES))))throw new ProviderError('credential_policy');
     if(task&&Number(task.reserved_cost)+p.reservation_usd>Number(task.maximum_cost))throw new ProviderError('budget_exhausted');
     return {status:'available',simulated:false,reserved_cost:p.reservation_usd};
   }
   async execute(task,{prompt,signal}={}){
     await this.preflight(task);const p=this.policy;
     const body={model:p.model,messages:[{role:'system',content:prompt.system},{role:'user',content:prompt.user}],stream:false,max_tokens:p.max_output_tokens??4000,temperature:0.6,response_format:{type:'json_schema',json_schema:{name:'social_studio_'+task.task_type,strict:true,schema:outputSchemas[task.task_type]}}};
-    let response;try{response=await this.fetch(p.endpoint,{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify(body),signal,redirect:'error'});}catch(e){if(signal?.aborted)throw new ProviderError(signal.reason?.category??'cancelled');throw new ProviderError('transport_failure');}
+    if(p.provider_preferences!==undefined)Object.assign(body,{provider:structuredClone(E4_PROVIDER_PREFERENCES),reasoning:{enabled:false},plugins:[]});
+    let response;try{response=await this.fetch(p.endpoint,{method:'POST',headers:{'content-type':'application/json',...(p.auth_mode==='dedicated_local_bearer'?{authorization:'Bearer '+this.clientToken}:{})},body:JSON.stringify(body),signal,redirect:'error'});}catch(e){if(signal?.aborted)throw new ProviderError(signal.reason?.category??'cancelled');throw new ProviderError('transport_failure');}
     let data;try{data=await boundedJsonResponse(response);}catch(e){if(signal?.aborted)throw new ProviderError(signal.reason?.category??'cancelled');if(!response.ok)throw httpFailure(response.status);throw e;}
+    const safeId=v=>typeof v==='string'&&/^[A-Za-z0-9._:/-]{1,180}$/.test(v)?v:null;
+    this.lastEvidence={http_status:response.status,response_id:safeId(data.id),response_model:safeId(data.model),reported_provider:safeId(data.provider),token_usage:numericUsage(data.usage),reported_cost_usd:Number.isFinite(data.usage?.cost)?data.usage.cost:null,cost_kind:'Provider-reported metadata, not an independently verified invoice'};
     if(!response.ok)throw httpFailure(response.status,data);
+    if(p.provider_preferences!==undefined&&Number(data.usage?.cost??0)>0)throw new ProviderError('credential_policy');
     if(data.model&&p.allowed_response_models&&!p.allowed_response_models.includes(data.model))throw new ProviderError('credential_policy');
     if(data.choices?.length!==1||data.choices[0].finish_reason!=='stop'||data.choices[0].message?.tool_calls?.length)throw new ProviderError('invalid_output');
     let output;try{output=JSON.parse(data.choices[0].message.content);}catch{throw new ProviderError('invalid_output');}

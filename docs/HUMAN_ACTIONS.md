@@ -1,5 +1,13 @@
 # Human actions and approval register
 
+## E4 immediate action — one consolidated pending grant
+
+Review [E4-FREE-CANARY-01](E4_AI_APPROVAL.md) and [its digest inventory](E4_AI_SCOPE.json). **PENDING, not owner-approved.** Candidate is exactly `openrouter/nvidia/nemotron-3.5-super-vl:free` through existing local 9Router, NVIDIA-only, one real request, 4,000 output tokens, USD 0 permitted, no retry/substitution. Existing E2/E3 approvals do not cover it.
+
+The minimum new authorization is to inspect non-secret connection/routing metadata in the existing supported owner session, then allow 9Router itself to reuse its existing OpenRouter credential only if the exact free entitlement and forwarded provider-side zero-price restrictions are verified. No raw upstream key or saved CLI auth is requested. A dedicated local-only client token may be read only from the exact packet path if already owner-provisioned and explicitly included in the grant; no automatic key creation or auth change. If the connection/metadata cannot establish the conditions, inference remains prohibited.
+
+The same single model response will drive one local E4 video through existing workflows and checksum-bound mock-test approval/three mock destinations. Codex/agy remain unsupported, not activated. Maximum 90-minute supervised window after approval, no later than 2026-11-01T18:00:00Z. Review required by repository credential/external-integration rules and the owner's E4 billing boundaries. No public posting or broader future model usage is requested. Owner note `implementationsoofar.md` is preserved untouched.
+
 ## E3 latest — rendering complete; real-model evidence outstanding
 
 The owner authorised dynamic local implementation and three real five-second fixture render tests with isolated mock-test decisions. Those tests passed, including nine mock results; [review the finished MP4s](E3_DYNAMIC_VIDEO.md). An ordinary Travel CLI draft remains awaiting operator review; no publishing job or automatic test approval was created for it. No new installation or credential/account access was required. Existing media/history are preserved.
