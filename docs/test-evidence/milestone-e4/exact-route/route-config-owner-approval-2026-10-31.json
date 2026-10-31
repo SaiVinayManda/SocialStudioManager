@@ -1,0 +1,21 @@
+{
+  "approval_id": "E4-ROUTE-CONFIG-01",
+  "owner_approved": true,
+  "owner_approval_reference": "Explicit owner message 2026-10-31T22:45:58Z: I approve E4-ROUTE-CONFIG-01 for configuration only, subject to the exact scope documented in docs/E4_ROUTE_CONFIGURATION_APPROVAL.md.",
+  "scope_manifest_sha256": "49cfb41830334afed53b91585c0536625709eb6d623ffa448f41e8b8bb446143",
+  "scope_expires_at": "2026-11-01T18:00:00Z",
+  "scope_still_valid_at_approval": true,
+  "model": "nvidia/nemotron-3.5-super-vl:free",
+  "qualified_model": "openrouter/nvidia/nemotron-3.5-super-vl:free",
+  "maximum_new_model_entries": 1,
+  "inference_authorized": false,
+  "maximum_inference_calls": 0,
+  "maximum_cost_usd": 0,
+  "rendering_authorized": false,
+  "credentials_access_authorized": false,
+  "public_publishing_authorized": false,
+  "files_verified": 9,
+  "all_scope_digests_match": true,
+  "api_401_not_bypassed": true,
+  "note": "Registration requires owner browser dashboard steps at http://localhost:20128/dashboard/providers/openrouter. Raw authenticated shell POST is expressly excluded by the approval doc. Receipt written by agent after 401 confirmed; operator must complete the 7 dashboard steps."
+}
