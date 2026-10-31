@@ -1,0 +1,121 @@
+{
+  "run_id": "709b64e7-3bb1-42b9-bd72-a8d79fc44a98",
+  "started_utc": "2026-10-31T09:16:47.180Z",
+  "finished_utc": "2026-10-31T09:17:48.897Z",
+  "results": [
+    {
+      "name": "01 real migration and four SQL constraints",
+      "passed": true,
+      "elapsed_seconds": 0.35553250000000003
+    },
+    {
+      "name": "02 brand isolation rejects cross-brand source paths",
+      "passed": true,
+      "elapsed_seconds": 0.013776700000000005
+    },
+    {
+      "name": "03 existing-video import persisted one real validated asset",
+      "passed": true,
+      "elapsed_seconds": 0.17558680000000004
+    },
+    {
+      "name": "04 actual production transitions are durable events",
+      "passed": true,
+      "elapsed_seconds": 0.21452210000000002
+    },
+    {
+      "name": "05 real FFprobe/full-decode evidence retained",
+      "passed": true,
+      "elapsed_seconds": 0.1847000999999999
+    },
+    {
+      "name": "06 approval rejection prevents scheduling",
+      "passed": true,
+      "elapsed_seconds": 0.41381430000000013
+    },
+    {
+      "name": "07 wrong checksum and expired decisions rejected",
+      "passed": true,
+      "elapsed_seconds": 0.5950381
+    },
+    {
+      "name": "08 actual copied-file modification invalidates approval before dispatch",
+      "passed": true,
+      "elapsed_seconds": 1.4846355999999998
+    },
+    {
+      "name": "09 future schedule remains undispatched",
+      "passed": true,
+      "elapsed_seconds": 0.5364920000000002
+    },
+    {
+      "name": "10 actual persisted youtube mock receipt",
+      "passed": true,
+      "elapsed_seconds": 0.2051547999999998
+    },
+    {
+      "name": "11 actual persisted instagram mock receipt",
+      "passed": true,
+      "elapsed_seconds": 0.1831839999999993
+    },
+    {
+      "name": "12 actual persisted facebook mock receipt",
+      "passed": true,
+      "elapsed_seconds": 0.1929336000000003
+    },
+    {
+      "name": "13 duplicate mock dispatch does not upload again",
+      "passed": true,
+      "elapsed_seconds": 0.023119800000000395
+    },
+    {
+      "name": "14 expired worker lease recovers with bounded retry",
+      "passed": true,
+      "elapsed_seconds": 8.1597452
+    },
+    {
+      "name": "15 missing credentials refused",
+      "passed": true,
+      "elapsed_seconds": 0.007048099999999976
+    },
+    {
+      "name": "16 invalid platform destination refused",
+      "passed": true,
+      "elapsed_seconds": 0.013183800000000702
+    },
+    {
+      "name": "17 malformed n8n webhook cannot create a job",
+      "passed": true,
+      "elapsed_seconds": 0.7291405000000013
+    },
+    {
+      "name": "18 actual AI fallback, failure and concurrent-task deduplication",
+      "passed": true,
+      "elapsed_seconds": 0.31059540000000013
+    },
+    {
+      "name": "19 interrupted n8n approval workflow resumes business state after restart",
+      "passed": true,
+      "elapsed_seconds": 44.775704100000006
+    },
+    {
+      "name": "20 PostgreSQL restart persistence and actual n8n redelivery deduplication",
+      "passed": true,
+      "elapsed_seconds": 3.104179000000004
+    }
+  ],
+  "passed": true,
+  "fixture_job_ids": [
+    "214a0771-ea24-4ac7-930b-3aa69f6a8ce6",
+    "52cfb1dd-3e62-41cb-8d01-719166a8e083",
+    "0e1dcfd8-886f-431b-82b5-9d613be78b62",
+    "e5500e49-2136-4f38-9fa4-af3555c5c849",
+    "91e35faf-e4c3-4250-888c-270725cbdf37",
+    "01ff9d43-c3ed-48f0-8bd2-a279585b3cdc",
+    "017b0bfb-8ac6-4566-8d04-1bee8a097d04"
+  ],
+  "primary_job_id": "b41d29ed-db4b-44a5-899e-1a8769c727cd",
+  "primary_video_sha256": "48fb3d02aecb4e83c43654d111194fd44870011c229a8b7387d8a83096858528",
+  "actual_deployed_tests": true,
+  "public_posts": 0
+}

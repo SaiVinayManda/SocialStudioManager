@@ -1,0 +1,14 @@
+{
+  "workspace": "C:\\Projects\\Manas_Flow\\SocialStudio",
+  "webhook_url": "http://127.0.0.1:5678/webhook/social-studio/intake",
+  "webhook_key_file": "C:\\Projects\\Manas_Flow\\SocialStudio\\.runtime\\orchestrator\\secrets\\webhook_key",
+  "stableMs": 5000,
+  "brands": [
+    {"id":"10000000-0000-4000-8000-000000000001","slug":"horror"},
+    {"id":"10000000-0000-4000-8000-000000000002","slug":"storytelling"},
+    {"id":"10000000-0000-4000-8000-000000000003","slug":"motivation"},
+    {"id":"10000000-0000-4000-8000-000000000004","slug":"travel"},
+    {"id":"10000000-0000-4000-8000-000000000005","slug":"business-insights"},
+    {"id":"10000000-0000-4000-8000-000000000006","slug":"company"}
+  ]
+}

@@ -2,9 +2,9 @@
 
 ## Current owner direction: Milestone E local orchestration
 
-Latest actual state (2026-10-31): both original E grants received; pinned images/14 packages/nine fresh local keys/three isolated services installed. PostgreSQL migration 001 and six-brand/mock seeds applied; four real SQL assertions and thirteen deployed API checks passed. n8n 2.45.7 is internally ready. Host ports do not publish on the original internal-only network; the reviewed [E-LOCAL-ACCESS-01](ORCHESTRATOR_LOCAL_ACCESS_APPROVAL.md) proxy/network/time correction is pending. Stage 1 installation/database validation achieved; host-access/bootstrap and Stage 2 actual n8n acceptance remain blocked. No workflow import, render, publishing or supervisor activation claimed.
+Latest actual state (2026-10-31): all three E grants received and executed within scope. Four services healthy, loopback access working, native worker running. PostgreSQL migration 001/six-brand/mock seeds applied; twelve workflows actually imported/published/executed successfully. **Stage 1 and Stage 2 existing-video automated MVP acceptance passed**, plus twenty deployed regression scenarios and local 34+2 checks. First real Horror import-to-three-mock-destinations test took 20.841 s; no rerender/public posting. [Proof](test-evidence/milestone-e-deployed/d9301e97-4f96-4492-a135-c3c71ba3a892.json), [regressions](test-evidence/milestone-e-deployed/regression-709b64e7-3bb1-42b9-bd72-a8d79fc44a98.json). A remains deferred. New render, official credentialed transports, backup/retention and continuous ingestion activation remain unfinished; full Milestone E is not accepted merely from this MVP.
 
-Current checkpoint (2026-10-31): E application modules, native worker, folder scanner, twelve workflow exports, SQL constraint fixture, bootstrap and genuine deployed E2E scripts are prepared. Local unit/HTTP/process/media checks passed. No deployment or database execution has occurred; both installation and fresh-local-auth grants remain pending. Ordinary local implementation has reached the deployment approval boundary. Advanced Milestone A is preserved/deferred.
+The earlier preparation-only checkpoints are preserved in Git/test history. Do not repeat completed setup. Current remaining backlog follows.
 
 | Remaining work after approval | Estimated engineering hours | Acceptance evidence still required |
 | --- | --- | --- |
@@ -20,12 +20,12 @@ The owner's 2026-10-30 implementation request authorizes local Milestone E codin
 
 | Stage | Acceptance | State |
 | --- | --- | --- |
-| E-1 Foundation | Inspect, versioned PostgreSQL schema/seeds, isolated Compose, exact setup/auth packet, baseline checkpoint | Prepared; Compose config passes; SQL not applied; [approvals pending](ORCHESTRATOR_SETUP_APPROVAL.md) |
-| E-2 Pipeline MVP | Existing-file intake → actual PostgreSQL/n8n → validation → explicit test approval → mock scheduling and all three destinations → persisted notifications | Code and exports prepared; not deployed/tested |
+| E-1 Foundation | Inspect, versioned PostgreSQL schema/seeds, isolated Compose, exact setup/auth packet, baseline checkpoint | Complete; actual migration/seeds/roles tested; three grants executed |
+| E-2 Pipeline MVP | Existing-file intake → actual PostgreSQL/n8n → validation → explicit test approval → mock scheduling and all three destinations → persisted notifications | Automated existing-video MVP passed; twelve successful workflow IDs and twenty deployed scenarios |
 | E-3 Engine integration | Narrow preapproved OpenMontage project execution; unchanged existing-file route, real subprocess status/cancel/timeouts | Bridge prepared but unexecuted; raw topic generation still needs existing creative/asset approval gates |
 | E-4 Official adapters | Separate credential-free official API contracts for YouTube/Instagram/Facebook; mock default, live denied | Disabled request plans prepared; account/live grants separate |
 | E-5 AI boundary | Typed AI tasks, deterministic mock/fallback; 9Router interface disabled without its own grant | Local mock/fallback tested; no router install/model credentials |
-| E-6 Reliability | Leases/idempotency/recovery/reconciliation, negative cases, true deployed acceptance evidence | Code and local process tests prepared; deployed recovery untested; no unattended startup |
+| E-6 Reliability | Leases/idempotency/recovery/reconciliation, negative cases, true deployed acceptance evidence | MVP recovery/restarts tested; backup/retention/power-loss drills pending; no unattended Windows startup |
 
 Earlier plans below are preserved historical scope and evidence, not current deployment claims.
 

@@ -12,3 +12,5 @@ scripts/create-studio-local-secrets.mjs text eol=lf
 services/studio-runtime/package-lock.json text eol=lf
 services/loopback-proxy/server.mjs text eol=lf
 infrastructure/docker-compose.local-access.yml text eol=lf
+# Preserve raw access/setup stdout and stderr, including native line endings.
+docs/test-evidence/milestone-e-access-01/*/*.log -text -diff

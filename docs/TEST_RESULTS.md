@@ -1,5 +1,28 @@
 # Actual verification results
 
+## Milestone E actual loopback/workflow acceptance — 2026-10-31
+
+**First existing-file MVP passed against actual running n8n/PostgreSQL.** [Primary end-to-end record](test-evidence/milestone-e-deployed/d9301e97-4f96-4492-a135-c3c71ba3a892.json), [20-scenario deployed regression](test-evidence/milestone-e-deployed/regression-709b64e7-3bb1-42b9-bd72-a8d79fc44a98.json), [window/health/resource snapshot](test-evidence/milestone-e-access-01/final-state.json). These supersede earlier zero-import/blocked snapshots below.
+
+| Actual result | Evidence/limit |
+| --- | --- |
+| Access approval | Explicit E-LOCAL-ACCESS-01 owner response; all three frozen hashes matched. Window 08:49:39.719–09:19:39.720 UTC; no new download/key/account/public posting |
+| Services/network | Four running healthy services; proxy publishes exactly 127.0.0.1:5678/8780. Actual inspect: app/n8n/PostgreSQL only socialstudio_internal, gateway empty. Proxy alone has frontend routing |
+| n8n | Twelve actual imported/published workflow IDs; every ID has successful database execution records. This is not a function-only/mock-graph substitute |
+| Primary existing-video job | b41d29ed-db4b-44a5-899e-1a8769c727cd. Real signed intake twice → same job; real native FFprobe/full decode/SRT/licence-reference hash → explicit mock-test decision → three scheduler/platform workflows → persisted mock IDs + six local notification entries (accepted, preview, review and three mock outcomes) |
+| Runtime | First E2E interval 08:58:56.958–08:59:17.799 = **20.841 s** (outer process 20.9327715 s). Native existing-video validation **4.9772965 s**. Rendering skipped; no new render time or peak RAM/GPU claimed |
+| Primary publication | Exactly one attempt/receipt per YouTube, Instagram, Facebook; IDs start mock-. Zero public URLs/posts/API charges |
+| Deployed regressions | **20/20 passed**: schema/constraints; brand path isolation; import/state/probe evidence; rejection/expiry/wrong-checksum; actual copied-file modification invalidates approval before dispatch; future scheduling; three distinct mock receipts; duplicate publication; worker lease retry; missing auth; wrong platform; malformed actual n8n webhook; AI fallback/failure/concurrent dedupe; restart during pending approval; PostgreSQL restart + actual signed redelivery |
+| Restart semantics | Verified business-state recovery after restarting n8n during pending review: no timeout approval, exact later test decision, DB-driven scheduler recovery, one mock dispatch. Does not claim every original n8n execution resumes with the same ID. A hard power-loss/new-render restart drill remains outstanding |
+| Local regression rerun | **35/35 passed**, exit 0; [latest receipt](test-evidence/milestone-e-local/unit-2026-10-31T09-44-39-811Z.json). Includes a real five-second/two-observation one-shot intake regression using a fictional HTTP sink. Proxy **2/2 passed**, 196.9795 ms. Those fixture checks remain distinct from deployed results |
+| Resource observation | Single post-test Docker snapshot: n8n 375.4 MiB, API 22.27 MiB, PostgreSQL 36.16 MiB, proxy 21.68 MiB. These are not peak measurements; configured caps unchanged |
+
+Failed attempts were preserved: clean child environment could not locate Compose plugin (exit 125, no container change); direct installed plugin fixed it. Owner setup initially rejected the generated 68-character file format; actual installed n8n schema confirmed maximum 64, no owner had been created, and bootstrap used the file's 64-character prefix without altering any key file. A regression run immediately after API restart failed on transient empty 502 response; adding a readiness wait yielded the complete 20/20 run. Primary first trace included concurrent duplicate mock AI preparation; atomic task deduplication/idempotent metadata and durable approved-job discovery were fixed and tested. Historical execution errors are not erased or described as zero errors.
+
+Negative fixtures explicitly reuse prior digest-validated media/database states; they are not newly produced videos. Actual modified-file test touches only a new copied fixture; restart test remuxes a separate local fixture without re-encoding. Original pilot remains SHA256 48fb3d02aecb4e83c43654d111194fd44870011c229a8b7387d8a83096858528. No deletion/reset or unrelated-container action. New generation/live transports/continuous watcher/backups are still unverified or gated.
+
+Final read-only operator client status passed. Artifact safety scan read only the nine approved fresh keys (including the owner's derived prefix), found **zero plaintext values** in changed code/evidence, and reconfirmed frozen packets/proxy/override and original-video hashes. [Scan](test-evidence/milestone-e-access-01/artifact-safety.json). Continuous folder intake was not started; its one-shot initial-scan omission was fixed locally and covered by the added test. No further deployment configuration changed after the approved completion window.
+
 ## Milestone E actual approved deployment — 2026-10-31
 
 Original E-INFRA-SETUP-01 and E-LOCAL-AUTH-01 were explicitly granted; three frozen digests matched and receipt preceded expiry. [Evidence directory](test-evidence/milestone-e-deploy-01). No existing credentials were read. New keys/volumes/node_modules/runtime stay ignored; no secret values were printed. Existing supervisor code and completed pilot remain unchanged.

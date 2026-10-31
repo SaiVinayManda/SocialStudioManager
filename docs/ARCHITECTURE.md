@@ -1,6 +1,6 @@
 # Social Studio architecture
 
-Current priority: **Milestone E local orchestration**, following the real completed Horror pilot. Original E installation/local-auth grants were explicitly received and executed: three internally running services, real PostgreSQL migration/seeds, four SQL assertions and thirteen deployed API checks passed. **Host access/full workflow acceptance remains blocked**, because Docker does not publish ports from the approved internal-only topology. The [fixed proxy/bridge correction](ORCHESTRATOR_LOCAL_ACCESS_APPROVAL.md) is proposed and unapproved. [Orchestration architecture](ORCHESTRATOR_ARCHITECTURE.md), [operations](ORCHESTRATOR_OPERATIONS.md) and [actual evidence](TEST_RESULTS.md) distinguish installed components from acceptance. Advanced A remains preserved/deferred/live-disabled. No social credentials or live publishing enabled.
+Current result: **Milestone E existing-video MVP automated acceptance passed** after all three explicit E grants. Four services healthy; fixed proxy provides only loopback access, while n8n/application/PostgreSQL retain internal-only networking. Twelve workflows actually imported/published/executed; twenty deployed regression scenarios passed. [Orchestration architecture](ORCHESTRATOR_ARCHITECTURE.md), [operations](ORCHESTRATOR_OPERATIONS.md) and [actual evidence](TEST_RESULTS.md) identify remaining stages. Advanced A stays preserved/deferred/live-disabled. No new render, social account connection or live publishing enabled.
 
 ```mermaid
 flowchart TD

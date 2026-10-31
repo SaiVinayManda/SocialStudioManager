@@ -1,5 +1,9 @@
 # Local orchestration operator runbook
 
+**Current operations have moved to [STUDIO_OPERATOR_GUIDE.md](STUDIO_OPERATOR_GUIDE.md).** All three grants were executed, loopback access works, twelve workflows ran successfully and twenty deployed regressions passed. Use the current guide's two-file lifecycle commands; do not rerun setup/generation/bootstrap. Everything below is a preserved **historical setup reference**, not the current blocked state or a renewed grant.
+
+## Historical setup snapshot (superseded)
+
 Original setup/local-auth grants explicitly received and executed. Three services run internally, migration/seeds and real SQL/API checks passed. **Do not repeat the installs or secret generator.** Host access remains blocked by internal-only Docker port publication; [E-LOCAL-ACCESS-01](ORCHESTRATOR_LOCAL_ACCESS_APPROVAL.md) is a separate unapproved proxy/network/time correction. No n8n owner/workflow bootstrap or native worker/full acceptance has run. The original packet remains frozen; its PENDING label is historical, superseded by the [owner receipt](test-evidence/milestone-e-deploy-01/owner-approval.json). Milestone A stays deferred.
 
 ## Original setup recipe (steps 1–4 done; do not repeat; steps 5–7 blocked)

@@ -19,3 +19,5 @@ outputs/
 !/brands/*/projects/.gitkeep
 !/brands/*/outputs/.gitkeep
 !/brands/*/assets/.gitkeep
+/infrastructure/postgres/backups/*
+!/infrastructure/postgres/backups/.gitkeep

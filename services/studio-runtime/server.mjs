@@ -49,7 +49,7 @@ export function createServer({db,secrets,webhookKey,mediaRoot='/studio/media'}){
       if(req.method==='POST'&&route==='/worker/claim'){allow('worker');return send(res,200,await production.claim(db));}
       if((m=route.match(/^\/worker\/tasks\/([a-f0-9-]+)\/heartbeat$/))&&req.method==='POST'){allow('worker');return send(res,200,await production.heartbeat(db,m[1],data));}
       if((m=route.match(/^\/worker\/tasks\/([a-f0-9-]+)\/complete$/))&&req.method==='POST'){allow('worker');return send(res,200,await production.complete(db,m[1],data));}
-      if(req.method==='POST'&&route==='/scheduler/tick'){allow('n8n');exact(data,['job_id']);if(data.job_id)await publishing.schedule(db,data.job_id);return send(res,200,await publishing.claimDue(db));}
+      if(req.method==='POST'&&route==='/scheduler/tick'){allow('n8n');exact(data,['job_id']);if(data.job_id)await publishing.schedule(db,data.job_id);else await publishing.scheduleNextApproved(db);return send(res,200,await publishing.claimDue(db));}
       if(req.method==='GET'&&route==='/publishing'){allow('control','n8n');const jobId=url.searchParams.get('job_id');demand(uuid(jobId),'INVALID_JOB_ID');return send(res,200,{publishing_jobs:(await db.query('SELECT p.*,a.platform FROM studio.publishing_jobs p JOIN studio.social_accounts a ON a.id=p.social_account_id WHERE content_job_id=$1 ORDER BY a.platform',[jobId])).rows});}
       if((m=route.match(/^\/publishing\/([a-f0-9-]+)$/))&&req.method==='GET'){allow('n8n','control');return send(res,200,await publishing.publishingJob(db,m[1]));}
       if((m=route.match(/^\/publishing\/([a-f0-9-]+)\/publish\/(youtube|instagram|facebook)$/))&&req.method==='POST'){allow('n8n');return send(res,200,await publishing.publish(db,m[1],m[2]));}

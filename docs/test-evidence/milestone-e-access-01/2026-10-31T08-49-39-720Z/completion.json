@@ -1,0 +1,18 @@
+{
+  "started_utc": "2026-10-31T08:49:39.719Z",
+  "deadline_utc": "2026-10-31T09:19:39.720Z",
+  "grant": "E-LOCAL-ACCESS-01",
+  "steps": [
+    {
+      "name": "compose-up",
+      "exit_code": 125,
+      "elapsed_seconds": 0.06849809999999999,
+      "timed_out": false,
+      "cleanup_failed": false,
+      "finished_utc": "2026-10-31T08:49:39.795Z"
+    }
+  ],
+  "complete": false,
+  "error_code": "COMPLETION_STEP_FAILED_compose-up",
+  "failed_utc": "2026-10-31T08:49:39.798Z"
+}

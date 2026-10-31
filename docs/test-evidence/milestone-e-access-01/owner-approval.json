@@ -1,0 +1,17 @@
+{
+  "grant": "E-LOCAL-ACCESS-01",
+  "observed_utc": "2026-10-31T08:44:23.342Z",
+  "source": "Owner response to the exact pending local-access approval request",
+  "owner_statement": "Please approve E-LOCAL-ACCESS-01 under the reviewable packet (docs/ORCHESTRATOR_LOCAL_ACCESS_APPROVAL.md). It adds one fixed proxy and frontend bridge, retains application isolation and the same loopback ports, and requests one additional 30-minute completion window.",
+  "received_before_expiry": true,
+  "packet_sha256": "dcc860db57fcbc0ea2e86b4a0fa6e6bf5d018bd2c00f0564e45c5e5e4465156e",
+  "override_sha256": "4ce3adb9f0cd9c1ee757eb1816dff2ca831594ba8b707a81ed8008b248ff4a07",
+  "proxy_sha256": "39cb42a4ba4f1df48f65d13631a4e9930749ec93dbeab2a810b522fbb6178b67",
+  "all_digests_matched": true,
+  "additional_completion_window_minutes": 30,
+  "new_downloads_allowed": false,
+  "cumulative_download_limit_bytes": 2147483648,
+  "cumulative_additional_storage_limit_bytes": 6442450944,
+  "paid_api_budget_usd": 0,
+  "public_publishing": false
+}

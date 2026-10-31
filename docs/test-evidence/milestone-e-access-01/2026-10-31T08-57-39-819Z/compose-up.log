@@ -1,0 +1,15 @@
+
+ Container socialstudio-postgres-1  Running
+ Container socialstudio-studio-api-1  Running
+ Container socialstudio-n8n-1  Running
+ Container socialstudio-loopback-proxy-1  Running
+ Container socialstudio-postgres-1  Waiting
+ Container socialstudio-postgres-1  Healthy
+ Container socialstudio-postgres-1  Waiting
+ Container socialstudio-studio-api-1  Waiting
+ Container socialstudio-postgres-1  Healthy
+ Container socialstudio-studio-api-1  Healthy
+ Container socialstudio-n8n-1  Waiting
+ Container socialstudio-studio-api-1  Waiting
+ Container socialstudio-n8n-1  Healthy
+ Container socialstudio-studio-api-1  Healthy

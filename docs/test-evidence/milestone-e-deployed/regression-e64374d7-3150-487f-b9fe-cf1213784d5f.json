@@ -1,0 +1,23 @@
+{
+  "run_id": "e64374d7-3150-487f-b9fe-cf1213784d5f",
+  "started_utc": "2026-10-31T09:12:54.184Z",
+  "finished_utc": "2026-10-31T09:12:54.650Z",
+  "results": [
+    {
+      "name": "01 real migration and four SQL constraints",
+      "passed": true,
+      "elapsed_seconds": 0.40881579999999995
+    },
+    {
+      "name": "regression suite interrupted",
+      "passed": false,
+      "code": "Unexpected end of JSON input"
+    }
+  ],
+  "passed": false,
+  "fixture_job_ids": [],
+  "primary_job_id": "b41d29ed-db4b-44a5-899e-1a8769c727cd",
+  "primary_video_sha256": "48fb3d02aecb4e83c43654d111194fd44870011c229a8b7387d8a83096858528",
+  "actual_deployed_tests": true,
+  "public_posts": 0
+}

@@ -1,0 +1,194 @@
+{
+  "run_id": "d9301e97-4f96-4492-a135-c3c71ba3a892",
+  "started_utc": "2026-10-31T08:58:56.958Z",
+  "actual_n8n_required": true,
+  "public_posts": 0,
+  "tests": [
+    "real n8n intake and durable deduplication",
+    "real worker validation and checksum-bound explicit mock-test decision",
+    "scheduled mock publication through all three n8n destination workflows"
+  ],
+  "job_id": "b41d29ed-db4b-44a5-899e-1a8769c727cd",
+  "publishing_results": [
+    {
+      "id": "4bc8b72b-c041-4012-9001-73272ad10394",
+      "platform": "facebook",
+      "status": "published",
+      "post_id": "mock-facebook-122fd09a2925ef994f5c9506",
+      "attempt_count": 1
+    },
+    {
+      "id": "beda844e-319d-4dee-9b8d-d7c67c74bed9",
+      "platform": "instagram",
+      "status": "published",
+      "post_id": "mock-instagram-80fc87c8f32c9362fbfc4add",
+      "attempt_count": 1
+    },
+    {
+      "id": "f3958915-9035-48fb-a624-2803fb9b4a94",
+      "platform": "youtube",
+      "status": "published",
+      "post_id": "mock-youtube-d27b027c14baf3c781b3fb5d",
+      "attempt_count": 1
+    }
+  ],
+  "report": {
+    "jobs_by_brand": [
+      {
+        "slug": "horror",
+        "total": 8,
+        "videos_completed": 3,
+        "pending_approvals": 1,
+        "failed_jobs": 0,
+        "average_production_seconds": 5.106334633333396
+      }
+    ],
+    "publishing_results": [
+      {
+        "slug": "horror",
+        "platform": "facebook",
+        "status": "published",
+        "count": 1
+      },
+      {
+        "slug": "horror",
+        "platform": "instagram",
+        "status": "published",
+        "count": 1
+      },
+      {
+        "slug": "horror",
+        "platform": "youtube",
+        "status": "cancelled",
+        "count": 1
+      },
+      {
+        "slug": "horror",
+        "platform": "youtube",
+        "status": "manual_review",
+        "count": 1
+      },
+      {
+        "slug": "horror",
+        "platform": "youtube",
+        "status": "published",
+        "count": 2
+      }
+    ],
+    "mode": "mock",
+    "public_posts": 0
+  },
+  "notifications": [
+    {
+      "id": "1940a3ea-28e2-4bd5-ae3f-6895e861727e",
+      "event_type": "publishing.succeeded",
+      "sink": "local"
+    },
+    {
+      "id": "39cc082d-3750-4e43-a703-c99b43e5de61",
+      "event_type": "publishing.succeeded",
+      "sink": "local"
+    },
+    {
+      "id": "a4d8e31f-db78-41f2-befe-286c892f9e6d",
+      "event_type": "publishing.succeeded",
+      "sink": "local"
+    },
+    {
+      "id": "5fdb7395-41e8-4f95-8c81-7815c48cc384",
+      "event_type": "preview.ready",
+      "sink": "local"
+    },
+    {
+      "id": "619658ef-649d-4974-b790-89be601008ba",
+      "event_type": "approval.required",
+      "sink": "local"
+    },
+    {
+      "id": "f9844e6a-98b5-4aea-844f-685b4f8e5e44",
+      "event_type": "job.accepted",
+      "sink": "local"
+    }
+  ],
+  "migrations": [
+    {
+      "version": 1,
+      "name": "foundation",
+      "checksum": "4766440a63d2e3850aa0a30aeac40bebda88218e7fd3ff1ba3b53a9c4a7f8d3c"
+    }
+  ],
+  "workflow_executions": [
+    {
+      "workflow_id": "socialstudio0004",
+      "status": "success",
+      "count": 2
+    },
+    {
+      "workflow_id": "socialstudio0007",
+      "status": "success",
+      "count": 2
+    },
+    {
+      "workflow_id": "socialstudio0012",
+      "status": "success",
+      "count": 2
+    },
+    {
+      "workflow_id": "socialstudio0002",
+      "status": "success",
+      "count": 1
+    },
+    {
+      "workflow_id": "socialstudio0008",
+      "status": "success",
+      "count": 1
+    },
+    {
+      "workflow_id": "socialstudio0001",
+      "status": "success",
+      "count": 5
+    },
+    {
+      "workflow_id": "socialstudio0006",
+      "status": "success",
+      "count": 228
+    },
+    {
+      "workflow_id": "socialstudio0010",
+      "status": "success",
+      "count": 11
+    },
+    {
+      "workflow_id": "socialstudio0001",
+      "status": "running",
+      "count": 1
+    },
+    {
+      "workflow_id": "socialstudio0005",
+      "status": "crashed",
+      "count": 1
+    },
+    {
+      "workflow_id": "socialstudio0003",
+      "status": "success",
+      "count": 2
+    },
+    {
+      "workflow_id": "socialstudio0009",
+      "status": "success",
+      "count": 1
+    },
+    {
+      "workflow_id": "socialstudio0005",
+      "status": "success",
+      "count": 1
+    },
+    {
+      "workflow_id": "socialstudio0011",
+      "status": "success",
+      "count": 39
+    }
+  ],
+  "passed": true,
+  "finished_utc": "2026-10-31T09:17:48.876Z"
+}

@@ -4,6 +4,8 @@ import {transaction,event} from '../studio-runtime/db.mjs';
 import {job} from '../production-adapter/store.mjs';
 import {adapters,validateDestination} from './providers.mjs';
 export async function publishingJob(db,id,lock=false){demand(uuid(id),'INVALID_PUBLISHING_ID');const r=await db.query('SELECT p.*,a.platform,a.external_account_id,a.connection_status,a.account_label FROM studio.publishing_jobs p JOIN studio.social_accounts a ON a.id=p.social_account_id WHERE p.id=$1'+(lock?' FOR UPDATE OF p':''),[id]);demand(r.rowCount,'PUBLISHING_JOB_NOT_FOUND',404);return r.rows[0];}
+// A durable approved job must not depend on a particular in-memory n8n Wait surviving.
+export async function scheduleNextApproved(db){const row=(await db.query(`SELECT j.id FROM studio.content_jobs j WHERE j.status='approved' AND EXISTS(SELECT 1 FROM studio.approvals a JOIN studio.media_assets m ON m.job_id=j.id AND m.media_type='video' WHERE a.job_id=j.id AND a.decision='approved' AND a.invalidated_at IS NULL AND a.expires_at>now() AND a.content_version=j.content_version AND a.content_checksum=m.checksum AND m.validation_status='passed') ORDER BY j.updated_at LIMIT 1`)).rows[0];if(row)await schedule(db,row.id);}
 export async function schedule(db,id){return transaction(db,async c=>{
   const j=await job(c,id,true);demand(['approved','scheduled','published'].includes(j.status),'APPROVAL_REQUIRED',409);
   const asset=(await c.query("SELECT * FROM studio.media_assets WHERE job_id=$1 AND media_type='video' AND validation_status='passed'",[id])).rows[0];demand(asset,'VALIDATED_ASSET_REQUIRED',409);

@@ -1,0 +1,14 @@
+
+file:///C:/Projects/Manas_Flow/SocialStudio/services/studio-runtime/contracts.mjs:5
+export const demand=(condition,code,status=400)=>{if(!condition)throw new StudioError(code,status);};
+                                                                      ^
+
+StudioError: FRESH_OWNER_SETUP_FAILED_REVIEW_PARTIAL_STATE
+    at demand (file:///C:/Projects/Manas_Flow/SocialStudio/services/studio-runtime/contracts.mjs:5:71)
+    at file:///C:/Projects/Manas_Flow/SocialStudio/scripts/bootstrap-studio-n8n.mjs:16:1
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5) {
+  code: 'FRESH_OWNER_SETUP_FAILED_REVIEW_PARTIAL_STATE',
+  status: 400
+}
+
+Node.js v22.19.0

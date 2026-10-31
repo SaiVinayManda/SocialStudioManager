@@ -5,15 +5,18 @@ import {demand} from '../services/studio-runtime/contracts.mjs';import {childEnv
 const root=localGrant(),runtime=path.join(root,'.runtime/orchestrator'),ledger=JSON.parse(fs.readFileSync(path.join(runtime,'approvals.json'),'utf8'));
 demand(ledger.infra_setup===true,'E_INFRA_SETUP_APPROVAL_REQUIRED');demand(process.argv.includes('--fresh-local-instance'),'FRESH_INSTANCE_CONFIRMATION_REQUIRED');
 const receipt=path.join(runtime,'n8n-bootstrap.json');demand(!fs.existsSync(receipt),'EXISTING_BOOTSTRAP_PRESERVED');
-const docker='C:\\Program Files\\Docker\\Docker\\resources\\bin\\docker.exe',prefix=['compose','-p','socialstudio','-f','infrastructure/docker-compose.yml'];
+const docker='C:\\Program Files\\Docker\\Docker\\resources\\cli-plugins\\docker-compose.exe',prefix=['-p','socialstudio','-f','infrastructure/docker-compose.yml'];
 if(ledger.local_access===true)prefix.push('-f','infrastructure/docker-compose.local-access.yml');
 const env={...childEnvironment(root),DOCKER_CONFIG:path.join(root,'.runtime/orchestrator-inspection/docker-empty')};
 function command(args,input){const r=spawnSync(docker,[...prefix,...args],{cwd:root,env,windowsHide:true,input,encoding:'utf8',timeout:120000,maxBuffer:1048576});demand(r.status===0,'LOCAL_N8N_COMMAND_FAILED');return r.stdout;}
 function sql(query){return command(['exec','-T','postgres','psql','-v','ON_ERROR_STOP=1','-U','studio_bootstrap','-d','n8n_internal','-At','-c',query]).trim();}
 const existing=Number(sql('SELECT count(*) FROM n8n.credentials_entity'));demand(existing===0,'NONEMPTY_INSTANCE_PRESERVED');
-const password=fs.readFileSync(path.join(runtime,'secrets/n8n_owner_password'),'utf8').trim();
+// Installed n8n schema limits passwords to 64 characters. Use the approved fresh
+// file's 64-character prefix; preserve the original file and generator digest.
+const password=fs.readFileSync(path.join(runtime,'secrets/n8n_owner_password'),'utf8').trim().slice(0,64);
 const response=await fetch('http://127.0.0.1:5678/rest/owner/setup',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({email:'owner@social-studio.local',firstName:'Social',lastName:'Studio',password}),signal:AbortSignal.timeout(15000)});
 demand(response.ok,'FRESH_OWNER_SETUP_FAILED_REVIEW_PARTIAL_STATE');const publicOwner=await response.json();demand(publicOwner.data?.id,'FRESH_OWNER_ID_MISSING');
+fs.writeFileSync(path.join(runtime,'n8n-bootstrap-progress.json'),JSON.stringify({owner_id:publicOwner.data.id,owner_created_utc:new Date().toISOString(),password_format:'first 64 characters of approved fresh n8n_owner_password file',credential_imported:false},null,2),{flag:'wx'});
 // Set-Cookie is intentionally neither read nor persisted. CLI uses the new instance's own database.
 const credential=[{id:'socialstudioauth',name:'Social Studio internal API',type:'httpHeaderAuth',data:{name:'Authorization',value:'Bearer '+readLocalKey('n8n_token')}}];
 command(['exec','-T','n8n','n8n','import:credentials','--input=/dev/stdin','--userId='+publicOwner.data.id],JSON.stringify(credential));
@@ -25,5 +28,5 @@ for(const id of workflows)command(['exec','-T','n8n','n8n','publish:workflow','-
 command(['restart','n8n']); // CLI publication requires this restart; no other service is restarted.
 const ffmpeg=path.join(root,'.runtime/openmontage-pilot/ffmpeg/ffmpeg-9.0.2-essentials_build/bin'),workerConfig=path.join(runtime,'worker.json');
 fs.writeFileSync(workerConfig,JSON.stringify({workspace:root,api_url:'http://127.0.0.1:8780',worker_token_file:path.join(runtime,'secrets/worker_token'),ffmpeg_bin:ffmpeg,approved_engine_projects:{}},null,2),{flag:'wx'});
-fs.writeFileSync(receipt,JSON.stringify({created_at_utc:new Date().toISOString(),instance:'socialstudio',owner_id:publicOwner.data.id,workflow_ids:workflows,credential_id:'socialstudioauth',values_logged:false,live_publishing:false,worker_config:workerConfig,acceptance_passed:false},null,2),{flag:'wx'});
+fs.writeFileSync(receipt,JSON.stringify({created_at_utc:new Date().toISOString(),instance:'socialstudio',owner_id:publicOwner.data.id,password_format:'first 64 characters of approved fresh n8n_owner_password file',workflow_ids:workflows,credential_id:'socialstudioauth',values_logged:false,live_publishing:false,worker_config:workerConfig,acceptance_passed:false},null,2),{flag:'wx'});
 console.log(JSON.stringify({local_import_prepared:true,workflows:12,acceptance_passed:false,worker_config:workerConfig}));

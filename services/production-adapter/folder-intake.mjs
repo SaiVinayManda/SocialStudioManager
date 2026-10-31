@@ -2,7 +2,7 @@ import fs from 'node:fs';import path from 'node:path';import {fileURLToPath} fro
 import {demand,signWebhook} from '../studio-runtime/contracts.mjs';
 import {mediaPath,fileHash} from './media.mjs';
 export class StableScanner {
-  constructor({workspace,brands,stableMs=5000}){this.workspace=workspace;this.brands=brands;this.stableMs=stableMs;this.observed=new Map();this.delivered=new Set();}
+  constructor({workspace,brands,stableMs=5000}){demand(Number.isInteger(stableMs)&&stableMs>=5000&&stableMs<=60000,'INVALID_STABILITY_WINDOW');this.workspace=workspace;this.brands=brands;this.stableMs=stableMs;this.observed=new Map();this.delivered=new Set();}
   async scan(now=Date.now()){
     const ready=[];
     for(const brand of this.brands){
@@ -26,6 +26,9 @@ export async function runIntake(config,{once=false,signal}={}){
   const url=new URL(config.webhook_url);demand(url.protocol==='http:'&&url.hostname==='127.0.0.1'&&url.port==='5678'&&url.pathname==='/webhook/social-studio/intake','LOCAL_INTAKE_WEBHOOK_REQUIRED');
   const key=fs.readFileSync(config.webhook_key_file,'utf8').trim();demand(key.length>=32,'LOCAL_WEBHOOK_SECRET_REQUIRED');
   const scanner=new StableScanner(config);
+  // A one-shot run still needs two observations; an initial scan alone never
+  // yields a stable file and used to exit without submitting anything.
+  if(once){await scanner.scan();await new Promise(r=>setTimeout(r,scanner.stableMs+1));}
   do{for(const item of await scanner.scan()){try{const r=await fetch(url,{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify(signWebhook(item.job,key)),signal:AbortSignal.timeout(12000)});if(r.ok){const result=await r.json();demand(result.job_id,'MISSING_DURABLE_ACK');scanner.acknowledge(item.key);console.log(JSON.stringify({job_id:result.job_id,source:'local-folder'}));}}catch{console.error(JSON.stringify({error:'INTAKE_RETRY_PENDING'}));}}
     if(once)return;await new Promise(r=>setTimeout(r,2000));
   }while(!signal?.aborted);

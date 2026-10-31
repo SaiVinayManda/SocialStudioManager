@@ -6,7 +6,7 @@ import {youtubePlan,instagramPlan,facebookPlan,executeOfficialPlan} from '../../
 import {createServer} from '../../services/studio-runtime/server.mjs';
 import {transaction} from '../../services/studio-runtime/db.mjs';
 import {mediaPath,subtitleCheck,runProcess} from '../../services/production-adapter/media.mjs';
-import {StableScanner} from '../../services/production-adapter/folder-intake.mjs';
+import {StableScanner,runIntake} from '../../services/production-adapter/folder-intake.mjs';
 const brand={id:'10000000-0000-4000-8000-000000000001',slug:'horror'},id='a0000000-0000-4000-8000-000000000001';
 const source={root_id:'generated',relative_path:'horror/pilot-001/final/horror_pilot_001.mp4',expected_checksum:'a'.repeat(64)};
 const input=()=>({brand_id:brand.id,source_type:'existing_file',source:{...source},idempotency_key:'fixture:001',production_settings:{}});
@@ -82,6 +82,11 @@ test('stable-file scanner waits for stability and suppresses acknowledged duplic
 });
 test('subtitle validator catches reversed timing in an isolated fixture',()=>{
   const file=path.join(process.cwd(),'.runtime/orchestrator/tests',crypto.randomUUID()+'.srt');fs.mkdirSync(path.dirname(file),{recursive:true});fs.writeFileSync(file,'1\n00:00:02,000 --> 00:00:01,000\nBad time\n');assert.throws(()=>subtitleCheck(file,60),/TIMING_INVALID/);
+});
+test('one-shot intake waits for two actual stable observations before submitting',async()=>{
+  const root=path.join(process.cwd(),'.runtime/orchestrator/tests',crypto.randomUUID()),dir=path.join(root,'brands/horror/inputs');fs.mkdirSync(dir,{recursive:true});fs.mkdirSync(path.join(root,'generated-videos'));fs.writeFileSync(path.join(dir,'fixture.mp4'),'public intake transport fixture; not media validation');const key=path.join(root,'public-fixture-key.txt');fs.writeFileSync(key,'public-fixture-signing-key-not-a-service-credential');
+  const originalFetch=globalThis.fetch;let calls=0;const begin=performance.now();globalThis.fetch=async()=>{calls++;assert(performance.now()-begin>=5000);return new Response(JSON.stringify({job_id:id}),{status:202,headers:{'content-type':'application/json'}});};
+  try{await runIntake({workspace:root,brands:[brand],stableMs:5000,webhook_url:'http://127.0.0.1:5678/webhook/social-studio/intake',webhook_key_file:key},{once:true});assert.equal(calls,1);}finally{globalThis.fetch=originalFetch;}
 });
 test('real child process exits are captured and timeout kills its process tree',async()=>{
   const one=await runProcess(process.execPath,['-e','process.exit(7)'],{workspace:process.cwd()});assert.equal(one.exit_code,7);

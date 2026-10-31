@@ -1,5 +1,9 @@
 # Local Social Studio deployment
 
+**Current: existing-video MVP is running and passed automated acceptance.** All three E grants executed; four healthy services, real PostgreSQL migration/seeds, twelve imported/published/successfully executed n8n workflows, manually running native worker. Twenty deployed regressions passed; no real publishing. Use [the current operator guide](../docs/STUDIO_OPERATOR_GUIDE.md). The earlier installation/blocked snapshot below is historical; do not rerun completed installers or bootstrap.
+
+## Historical deployment notes (superseded)
+
 Actual update 2026-10-31: original setup and local-auth grants received; three services run internally and migration/seeds/SQL + deployed API checks passed. **Host access/full pipeline not working yet**: Docker does not publish the requested ports from an exclusively internal network. The extra [fixed proxy/bridge proposal](../docs/ORCHESTRATOR_LOCAL_ACCESS_APPROVAL.md) is unapproved; `docker-compose.local-access.yml` is a proposal only. No workflows imported/executed yet. The older prepared-only paragraph below is historical, not a statement that approved installation remains pending.
 
 Prepared for the owner's Milestone E request. **Not deployed or accepted yet.** Installation and fresh local credential provisioning require the separate grants in [the approval packet](../docs/ORCHESTRATOR_SETUP_APPROVAL.md). Existing Docker Desktop 4.40.0 / engine 28.0.4 / Compose 2.34.0 are operational; do not reinstall or change their WSL backend. Other containers/volumes are out of scope.

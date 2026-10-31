@@ -1,5 +1,13 @@
 # Human actions and approval register
 
+## Current owner actions after automated MVP acceptance — 2026-10-31
+
+**E-INFRA-SETUP-01, E-LOCAL-AUTH-01 and E-LOCAL-ACCESS-01 were explicitly granted and completed. Do not ask again or rerun their installers/generator/bootstrap.** [Access receipt](test-evidence/milestone-e-access-01/owner-approval.json); both frozen packets retain their historical authored labels. Real existing-video n8n/PostgreSQL acceptance passed, all twelve workflows executed successfully, twenty deployed regressions passed. Four services and one manually started native media worker are running. [Current runbook](ORCHESTRATOR_OPERATIONS.md).
+
+Owner can review n8n at **http://localhost:5678** and the local Horror MP4. Fresh owner email is `owner@social-studio.local`; its password uses the first **64 characters** of the protected `.runtime/orchestrator/secrets/n8n_owner_password` file, matching installed n8n validation. Do not paste its contents into chat/logs. The original file/generator are unchanged. `node scripts/studio-operator.mjs status` and `review <job UUID>` use the protected local control key internally; no key in command arguments.
+
+Approval in acceptance was explicitly **mock-test-only**, not owner creative acceptance or permission to post publicly. Future new-render project gates, external account/OAuth/live-network/upload activation, public media hosting/publishing, Windows startup/settings and destructive retention remain separate approvals. No approval is needed to repeat ordinary authorized local coding/tests/docs; credential-reading helpers retain the recorded local-auth expiry check. Backup/restore and continuous watcher activation are not claimed complete. Test fixtures remain labelled by acceptance_run_id; reporting currently includes these test jobs. Older blocked snapshots below are historical.
+
 ## Current Milestone E action — 2026-10-31
 
 **E-INFRA-SETUP-01 and E-LOCAL-AUTH-01 ARE GRANTED**, by the owner's explicit message approving each exact packet. [Receipt](test-evidence/milestone-e-deploy-01/owner-approval.json) records the unchanged packet/helper/lock hashes and expiry. Images/locked dependencies/nine new keys and only the isolated three-service project are installed. Do not request these grants again or reinstall completed components. Original setup deadline is 2026-10-31T07:43:43.085Z; no further original-grant setup expansion after it.

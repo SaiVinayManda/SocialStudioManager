@@ -1,0 +1,10 @@
+// Read-only leak check: only the nine explicitly approved fresh local keys.
+import fs from 'node:fs';import path from 'node:path';import crypto from 'node:crypto';import {spawnSync} from 'node:child_process';import {localGrant} from './studio-test-client.mjs';
+const root=localGrant(),names=['pg_bootstrap','pg_app','pg_n8n','control_token','n8n_token','worker_token','webhook_key','n8n_encryption','n8n_owner_password'];
+const keys=names.map(n=>fs.readFileSync(path.join(root,'.runtime/orchestrator/secrets',n),'utf8').trim());keys.push(keys.at(-1).slice(0,64));
+const list=args=>{const r=spawnSync('C:\\Program Files\\Git\\cmd\\git.exe',args,{cwd:root,encoding:'utf8',windowsHide:true});if(r.status!==0)throw Error('ARTIFACT_FILE_LIST_FAILED');return r.stdout.trim().split(/\r?\n/).filter(Boolean);};
+const files=[...new Set([...list(['diff','--name-only','HEAD']),...list(['ls-files','--others','--exclude-standard'])])].filter(p=>/^(docs\/|infrastructure\/|scripts\/|services\/|tests\/|\.gitignore$)/.test(p));
+const hits=[];for(const file of files){const bytes=fs.readFileSync(path.join(root,file));if(keys.some(k=>bytes.includes(Buffer.from(k))))hits.push(file);}
+const digest=p=>crypto.createHash('sha256').update(fs.readFileSync(path.join(root,p))).digest('hex');
+const report={captured_utc:new Date().toISOString(),files_scanned:files.length,plaintext_secret_hits:hits.length,hit_files:hits,values_printed:false,original_video_sha256:digest('generated-videos/horror/pilot-001/final/horror_pilot_001.mp4'),original_setup_packet_sha256:digest('docs/ORCHESTRATOR_SETUP_APPROVAL.md'),access_packet_sha256:digest('docs/ORCHESTRATOR_LOCAL_ACCESS_APPROVAL.md'),proxy_sha256:digest('services/loopback-proxy/server.mjs'),override_sha256:digest('infrastructure/docker-compose.local-access.yml')};
+fs.writeFileSync(path.join(root,'docs/test-evidence/milestone-e-access-01/artifact-safety.json'),JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report));if(hits.length)process.exitCode=1;
