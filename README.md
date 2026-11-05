@@ -11,6 +11,7 @@ The project has progressed from architecture and engine evaluation to actual ren
 ## Contents
 
 - [Business purpose and goals](#business-purpose-and-goals)
+- [How it works from your phone](#how-it-works-from-your-phone)
 - [Scope and current capability](#scope-and-current-capability)
 - [Solution architecture](#solution-architecture)
 - [Automation process](#automation-process)
@@ -55,6 +56,25 @@ These are delivery objectives. Revenue, audience growth, conversion improvements
 | Automation engineering | Implement signed intake, workflow transitions, validation, scheduling, deduplication and failure handling |
 | Project management | Track scope, dependencies, approvals, acceptance evidence, unresolved risks and the next achievable release |
 
+## How it works from your phone
+
+**The owner confirms the current operating setup: Hermes runs on the laptop and is connected to Telegram on the owner's phone.** Telegram is the remote interaction channel, so the owner can communicate with the laptop-hosted assistant and manage already configured, authorized operations while away from the laptop. The phone sends requests and receives replies; the laptop hosts the assistant and performs the local work.
+
+```mermaid
+flowchart LR
+    Phone[Owner using Telegram on phone] <--> Telegram[Telegram messaging]
+    Telegram <--> Hermes[Hermes running on laptop]
+    Hermes -. Studio control bridge awaiting acceptance .-> Studio[Studio API and n8n]
+    Studio --> Worker[Local media worker and OpenMontage]
+    Studio --> State[(PostgreSQL job and result records)]
+```
+
+In practice, the owner opens the existing Telegram conversation from wherever they are, sends a request and follows the assistant's replies. Operations already available through that Hermes setup remain subject to their existing permissions. Telegram connectivity alone does not establish that every Studio production, approval, scheduling or publishing command has been wired into it.
+
+The complete Studio management flow is intended to carry an authorized request from Hermes through a validated control interface to the Studio API/n8n workflows, execute the job on the laptop and return sanitized progress/results through the existing Telegram conversation. The dedicated typed Studio bridge, supervisor enforcement and end-to-end production controls still require their recorded integration and acceptance work. The solid lines above describe the owner-confirmed messaging setup; the dashed line identifies that remaining Studio integration boundary.
+
+Remote use depends on the laptop staying powered on, awake and connected to the Internet, with Hermes and the services needed for the requested operation running. A sleeping, shut-down or disconnected laptop cannot carry out new local work. Automatic startup, unattended recovery and power-management changes remain separate delivery items; this documentation does not activate them or expose the local Studio services publicly.
+
 ## Scope and current capability
 
 “Demonstrated” means saved execution evidence exists for the stated scope. “Implemented” means code/configuration exists; acceptance may still be pending. “Planned” means the capability is not a delivered operating feature.
@@ -73,6 +93,7 @@ These are delivery objectives. Revenue, audience growth, conversion improvements
 | Local folder intake | Stability, hashing and deduplication logic implemented/tested | Continuous monitoring is not activated |
 | Google Drive intake | Design requirement | No connected Drive intake acceptance |
 | Long-form video to reels | Separate FFmpeg route preserved as an architectural requirement | Automated highlight selection/end-to-end clipping acceptance is not demonstrated |
+| Phone access through Hermes | Owner confirms laptop-hosted Hermes is connected to Telegram on the phone | Dedicated typed Studio controls and end-to-end remote production acceptance remain pending |
 | Remote development supervisor | Local controller and fixture tests implemented | Advanced hardening deferred; Milestone A unaccepted and live dispatch disabled |
 | Home operation | Local/manual operation demonstrated | Backup/restore, retention, full power-loss recovery and approved startup remain open |
 
@@ -150,7 +171,7 @@ Brand-aware database relationships prevent mismatched content/account references
 
 `src/supervisor/` contains the restricted-development controller: typed commands, immutable task/grant checks, queue/audit journals, pause/cancel/timeouts, restart reconciliation and a durable notification outbox. Its fixed local fixture exercises a real Node child process with fictional identities and an in-memory notification sink.
 
-The proposed Hermes/Telegram-to-Codex integration is a separate development-control concern. It is not the production scheduler. Live Telegram enrollment, isolated unattended Codex execution and Milestone A acceptance are unfinished. Advanced supervisor work remains deferred under the owner's local-pilot priority change.
+The proposed restricted Hermes-to-Codex integration is a separate development-control concern. It is not the production scheduler. The owner confirms existing Hermes/Telegram messaging; formal supervisor owner/private-chat enrollment, isolated unattended Codex execution and Milestone A acceptance are unfinished. Advanced supervisor work remains deferred under the owner's local-pilot priority change.
 
 ## Automation process
 
@@ -208,7 +229,7 @@ The phases below reconcile the original A–H roadmap with later E2/E3/E4 and F1
 | E3 — Dynamic video production | Extended the package/renderer; rendered three distinct Horror topics through the full local pipeline | Media/QC and nine mock deliveries passed; live AI remains separate |
 | E4 — Real-model acceptance preparation | Added route/grant/source checks, one-call ledger, request restrictions and offline compatibility evidence | No real inference; exact routing/retry conditions and a fresh final grant remain open |
 | F1 — Instagram pilot | Added migration 004, dedicated credential vault, setup checks, Unified Login and callback isolation | Unified connection-only mode; account verification, appropriate publishing transport and first public Reel acceptance remain pending |
-| G — Telegram production management | Defined future typed controls and the bridge boundary | Not connected or accepted |
+| G — Telegram production management | Existing Hermes/Telegram messaging confirmed by owner; future typed Studio controls and bridge boundary defined | Dedicated Studio production controls are not connected/accepted |
 | H — Reliable home operation | Exercised selected restart/recovery scenarios and manual local operation | Backup/restore, retention, power-loss drills and approved startup remain pending |
 
 ### Measured delivery results
