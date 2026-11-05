@@ -1,0 +1,40 @@
+{
+  "at": "2026-11-04T21:48:00.457Z",
+  "origin": "https://built-wizard-salvador-employers.trycloudflare.com",
+  "tls_verified": true,
+  "checks": [
+    {
+      "route": "/",
+      "status": 400,
+      "no_secret_form": true
+    },
+    {
+      "route": "/configure",
+      "status": 400,
+      "no_secret_form": true
+    },
+    {
+      "route": "/select",
+      "status": 400,
+      "no_secret_form": true
+    },
+    {
+      "route": "/jobs",
+      "status": 400,
+      "no_secret_form": true
+    },
+    {
+      "route": "/videos",
+      "status": 400,
+      "no_secret_form": true
+    },
+    {
+      "route": "/instagram/callback",
+      "status": 400,
+      "no_secret_form": true
+    }
+  ],
+  "oauth_codes_sent": 0,
+  "uploaded": false,
+  "published": false
+}

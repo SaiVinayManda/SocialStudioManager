@@ -1,0 +1,142 @@
+TAP version 13
+# Subtest: Instagram authorize uses Instagram app credentials/scopes and no Facebook config ID
+ok 1 - Instagram authorize uses Instagram app credentials/scopes and no Facebook config ID
+  ---
+  duration_ms: 3.3831
+  type: 'test'
+  ...
+# Subtest: callback must use HTTPS and the exact isolated callback path
+ok 2 - callback must use HTTPS and the exact isolated callback path
+  ---
+  duration_ms: 1.3222
+  type: 'test'
+  ...
+# Subtest: large Instagram IDs are preserved without floating point rounding
+ok 3 - large Instagram IDs are preserved without floating point rounding
+  ---
+  duration_ms: 0.531
+  type: 'test'
+  ...
+# Subtest: identity and both granted permissions are verified with GET only on Instagram Graph
+ok 4 - identity and both granted permissions are verified with GET only on Instagram Graph
+  ---
+  duration_ms: 3.3795
+  type: 'test'
+  ...
+# Subtest: missing publishing permission or a personal account cannot be marked connected
+ok 5 - missing publishing permission or a personal account cannot be marked connected
+  ---
+  duration_ms: 1.7759
+  type: 'test'
+  ...
+# Subtest: read-only client refuses media uploads, publishing and arbitrary endpoints
+ok 6 - read-only client refuses media uploads, publishing and arbitrary endpoints
+  ---
+  duration_ms: 0.904
+  type: 'test'
+  ...
+# Subtest: code exchange uses Instagram token endpoints and checks username and permissions
+ok 7 - code exchange uses Instagram token endpoints and checks username and permissions
+  ---
+  duration_ms: 6.2436
+  type: 'test'
+  ...
+# Subtest: callback backend exposes no local setup or secret-entry routes
+ok 8 - callback backend exposes no local setup or secret-entry routes
+  ---
+  duration_ms: 127.6627
+  type: 'test'
+  ...
+# Subtest: OAuth local form has no configuration ID or Facebook credential fields
+ok 9 - OAuth local form has no configuration ID or Facebook credential fields
+  ---
+  duration_ms: 32.7997
+  type: 'test'
+  ...
+# Subtest: callback consumes state once, strips code on redirect and never saves before local confirmation
+ok 10 - callback consumes state once, strips code on redirect and never saves before local confirmation
+  ---
+  duration_ms: 35.662
+  type: 'test'
+  ...
+# Subtest: connection discovery and preflight issue GET requests only; tokens stay in headers
+ok 11 - connection discovery and preflight issue GET requests only; tokens stay in headers
+  ---
+  duration_ms: 7.7707
+  type: 'test'
+  ...
+# Subtest: discovery refuses missing publishing permissions
+ok 12 - discovery refuses missing publishing permissions
+  ---
+  duration_ms: 2.3597
+  type: 'test'
+  ...
+# Subtest: Graph endpoints cannot redirect bearer credentials to arbitrary hosts
+ok 13 - Graph endpoints cannot redirect bearer credentials to arbitrary hosts
+  ---
+  duration_ms: 1.6521
+  type: 'test'
+  ...
+# Subtest: returned upload URI must exactly match official host, version and container
+ok 14 - returned upload URI must exactly match official host, version and container
+  ---
+  duration_ms: 1.4104
+  type: 'test'
+  ...
+# Subtest: official transport creates resumable container, uploads identical bytes, publishes, returns permalink
+ok 15 - official transport creates resumable container, uploads identical bytes, publishes, returns permalink
+  ---
+  duration_ms: 2.704
+  type: 'test'
+  ...
+# Subtest: provider errors and uncertain mutations are sanitized and never retried
+ok 16 - provider errors and uncertain mutations are sanitized and never retried
+  ---
+  duration_ms: 1.1789
+  type: 'test'
+  ...
+# Subtest: vault encrypts credentials and rejects tampering/wrong keys
+ok 17 - vault encrypts credentials and rejects tampering/wrong keys
+  ---
+  duration_ms: 2.982
+  type: 'test'
+  ...
+# Subtest: scope binds exact Horror brand, Instagram account, existing file, checksum, caption and expiry
+ok 18 - scope binds exact Horror brand, Instagram account, existing file, checksum, caption and expiry
+  ---
+  duration_ms: 4.5477
+  type: 'test'
+  ...
+# Subtest: publication refuses missing or already consumed approval before any Meta mutation
+ok 19 - publication refuses missing or already consumed approval before any Meta mutation
+  ---
+  duration_ms: 4.8965
+  type: 'test'
+  ...
+# Subtest: review rejects an incomplete approval without database or network use
+ok 20 - review rejects an incomplete approval without database or network use
+  ---
+  duration_ms: 1.9858
+  type: 'test'
+  ...
+# Subtest: a persisted media ID recovers its permalink without any Meta mutation
+ok 21 - a persisted media ID recovers its permalink without any Meta mutation
+  ---
+  duration_ms: 1.4065
+  type: 'test'
+  ...
+# Subtest: YouTube and Facebook workflows remain mock; Instagram uses the same authenticated API route
+ok 22 - YouTube and Facebook workflows remain mock; Instagram uses the same authenticated API route
+  ---
+  duration_ms: 5.6227
+  type: 'test'
+  ...
+1..22
+# tests 22
+# suites 0
+# pass 22
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 503.5011

@@ -60,6 +60,9 @@ const flows=[];
 }
 for(const [no,platform]of [[7,'youtube'],[8,'instagram'],[9,'facebook']]){
   const w=workflow(no,platform[0].toUpperCase()+platform.slice(1)+' Mock Publishing'),entry=trigger(w),publish=api(w,'Publish mock '+platform,`={{ 'http://studio-api:8780/publishing/' + $json.id + '/publish/${platform}' }}`);link(w,entry,publish);notify(w,publish,'publishing.succeeded',platform);flows.push(w);
+  // The Instagram API route retains mock behavior unless an exact one-use pilot
+  // approval exists. Allow its bounded upload/processing call to finish.
+  if(platform==='instagram')publish.parameters.options.timeout=360000;
 }
 {
   const w=workflow(10,'Local Notifications'),entry=trigger(w),sink=api(w,'Persist operator notification','/notifications','POST','={{ {job_id:$json.job_id,event_type:$json.event_type,idempotency_key:$json.idempotency_key} }}');link(w,entry,sink);flows.push(w);

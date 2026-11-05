@@ -1,0 +1,13 @@
+# Optional local Instagram pilot; no image pulls, public ports, worker mounts,
+# YouTube/Facebook activation or automated publishing approval.
+services:
+  studio-api:
+    environment:
+      INSTAGRAM_PILOT_ENABLED: 'true'
+      INSTAGRAM_VAULT_FILE: /run/secrets/instagram_vault
+      INSTAGRAM_VAULT_KEY_FILE: /run/secrets/instagram_vault_key
+    secrets: [instagram_vault, instagram_vault_key]
+    networks: [studio_internal, studio_frontend]
+secrets:
+  instagram_vault: {file: ../.runtime/orchestrator/instagram/credential.enc}
+  instagram_vault_key: {file: ../.runtime/orchestrator/instagram/vault.key}

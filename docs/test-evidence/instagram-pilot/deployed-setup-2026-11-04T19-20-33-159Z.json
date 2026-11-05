@@ -1,0 +1,33 @@
+{
+  "at": "2026-11-04T19:20:33.159Z",
+  "passed": true,
+  "checks": [
+    "Existing migrations preserved; Instagram is additive version 004",
+    "No exact-post approval or consumed live pilot",
+    "No live publishing job has been scheduled",
+    "Existing validated MP4 and caption match PostgreSQL",
+    "Rollback fixture: one-use grant, exact video digest, live-mode restriction and application grants",
+    "Unauthenticated API refused; live configuration remains disabled until OAuth",
+    "Deployed workflow 08 retains internal authenticated route and no retry-on-fail"
+  ],
+  "content": {
+    "id": "ede518d3-e3c3-42b2-9eb9-b4af0965b536",
+    "caption": "The Last Message. An original fictional short.",
+    "checksum": "499b3adda87757b164423a77ce5cd3071c5bd5b05cb8f823ac4b85b0736cc335",
+    "file_reference": {
+      "root_id": "generated",
+      "relative_path": "horror/topic-6135ef9b54a8828f41231d84d849ec1c/final/video.mp4",
+      "engine_project": "topic-6135ef9b54a8828f41231d84d849ec1c"
+    },
+    "validation_status": "passed",
+    "duration": 5,
+    "width": 1080,
+    "height": 1920
+  },
+  "live_configuration_enabled": false,
+  "oauth_complete": false,
+  "meta_requests": 0,
+  "uploads": 0,
+  "publications": 0,
+  "fixture_rolled_back": true
+}

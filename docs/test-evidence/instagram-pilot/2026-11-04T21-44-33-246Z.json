@@ -1,0 +1,18 @@
+{
+  "at": "2026-11-04T21:44:33.246Z",
+  "command": "node --test --test-reporter=tap test/instagram-pilot.test.mjs test/instagram-login.test.mjs test/meta-unified-login.test.mjs",
+  "exit_code": 0,
+  "counts": {
+    "tests": 26,
+    "pass": 26,
+    "fail": 0,
+    "skipped": 0
+  },
+  "passed": true,
+  "external_network_requests": 0,
+  "loopback_http_tests": true,
+  "credentials_read": false,
+  "video_uploads": 0,
+  "publications": 0,
+  "scope": "Fixture transport/approval/vault/OAuth tests only; actual Instagram login and HTTPS endpoint acceptance not run"
+}

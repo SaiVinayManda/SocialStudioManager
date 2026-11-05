@@ -34,7 +34,7 @@
         "specifyBody": "json",
         "jsonBody": "={{ {} }}",
         "options": {
-          "timeout": 15000
+          "timeout": 360000
         }
       },
       "credentials": {

@@ -9,6 +9,8 @@ import {providerHealth} from '../ai-agent-manager/providers.mjs';
 import * as ai from '../ai-agent-manager/store.mjs';
 import * as aiIntake from '../ai-agent-manager/intake.mjs';
 import {intakeTopic} from '../production-adapter/topic-intake.mjs';
+import {makePilot} from '../publishing-adapter/instagram-pilot.mjs';
+import {readInstagramCredential} from '../publishing-adapter/instagram-vault.mjs';
 const send=(res,status,data)=>{res.writeHead(status,{'content-type':'application/json','cache-control':'no-store','x-content-type-options':'nosniff'});res.end(JSON.stringify(data));};
 async function body(req){let bytes=0;const chunks=[];for await(const chunk of req){bytes+=chunk.length;demand(bytes<=262144,'REQUEST_TOO_LARGE',413);chunks.push(chunk);}if(!bytes)return {};try{return JSON.parse(Buffer.concat(chunks).toString('utf8'));}catch{throw new StudioError('INVALID_JSON');}}
 function restrictedPath(root,reference,slug){
@@ -18,13 +20,19 @@ function restrictedPath(root,reference,slug){
   let current=base;demand(!fs.lstatSync(current).isSymbolicLink(),'LINK_FORBIDDEN',403);for(const part of parts){current=path.join(current,part);demand(!fs.lstatSync(current).isSymbolicLink(),'LINK_FORBIDDEN',403);}
   const stat=fs.statSync(target);demand(stat.isFile()&&stat.nlink===1&&stat.size<=1073741824,'UNSAFE_OUTPUT_FILE',403);return target;
 }
-export function createServer({db,secrets,webhookKey,mediaRoot='/studio/media',aiEnabled=false}){
+export function createServer({db,secrets,webhookKey,mediaRoot='/studio/media',aiEnabled=false,instagramPilot=null}){
   const server=http.createServer({maxHeaderSize:8192},async(req,res)=>{
     try{
       const url=new URL(req.url,'http://localhost');const route=url.pathname;
       if(req.method==='GET'&&route==='/health'){const r=await db.query('SELECT version FROM studio.schema_migrations WHERE version=1');demand(r.rowCount===1,'SCHEMA_NOT_READY',503);return send(res,200,{status:'ok',database:'ready',mode:'mock'});}
       const role=authenticate(req.headers.authorization,secrets),allow=(...roles)=>demand(roles.includes(role),'FORBIDDEN',403);
       let m;const data=['POST','PUT','PATCH'].includes(req.method)?await body(req):null;
+      if(route.startsWith('/instagram/')){
+        allow('control');demand(instagramPilot,'INSTAGRAM_NOT_CONFIGURED',503);
+        if(req.method==='GET'&&route==='/instagram/preview')return send(res,200,await instagramPilot.preview());
+        if(req.method==='POST'&&route==='/instagram/connect'){exact(data,[]);return send(res,200,await instagramPilot.connectAccount());}
+        if(req.method==='POST'&&route==='/instagram/approve')return send(res,201,await instagramPilot.approve(data));
+      }
       if(req.method==='GET'&&route==='/brands'){allow('control','n8n');return send(res,200,{brands:(await db.query('SELECT id,name,slug,default_language FROM studio.brands ORDER BY slug')).rows});}
       if(req.method==='POST'&&route==='/webhooks/verify'){allow('n8n');return send(res,200,await operations.webhook(db,data,webhookKey));}
       if(req.method==='POST'&&route==='/intake'){allow('control','n8n');if(data?.source_type==='topic'){demand(aiEnabled,'AI_SCHEMA_NOT_READY',503);return send(res,201,await intakeTopic(db,data,mediaRoot));}if(data?.source_type==='ai_only'){demand(aiEnabled,'AI_SCHEMA_NOT_READY',503);return send(res,201,await aiIntake.intake(db,data));}return send(res,201,await production.intake(db,data));}
@@ -55,7 +63,7 @@ export function createServer({db,secrets,webhookKey,mediaRoot='/studio/media',ai
       if(req.method==='POST'&&route==='/scheduler/tick'){allow('n8n');exact(data,['job_id']);if(data.job_id)await publishing.schedule(db,data.job_id);else await publishing.scheduleNextApproved(db);return send(res,200,await publishing.claimDue(db));}
       if(req.method==='GET'&&route==='/publishing'){allow('control','n8n');const jobId=url.searchParams.get('job_id');demand(uuid(jobId),'INVALID_JOB_ID');return send(res,200,{publishing_jobs:(await db.query('SELECT p.*,a.platform FROM studio.publishing_jobs p JOIN studio.social_accounts a ON a.id=p.social_account_id WHERE content_job_id=$1 ORDER BY a.platform',[jobId])).rows});}
       if((m=route.match(/^\/publishing\/([a-f0-9-]+)$/))&&req.method==='GET'){allow('n8n','control');return send(res,200,await publishing.publishingJob(db,m[1]));}
-      if((m=route.match(/^\/publishing\/([a-f0-9-]+)\/publish\/(youtube|instagram|facebook)$/))&&req.method==='POST'){allow('n8n');return send(res,200,await publishing.publish(db,m[1],m[2]));}
+      if((m=route.match(/^\/publishing\/([a-f0-9-]+)\/publish\/(youtube|instagram|facebook)$/))&&req.method==='POST'){allow('n8n');const p=await publishing.publishingJob(db,m[1]);if(p.mode==='instagram_live'){demand(m[2]==='instagram'&&instagramPilot,'INSTAGRAM_NOT_CONFIGURED',403);return send(res,200,await instagramPilot.publish(m[1]));}return send(res,200,await publishing.publish(db,m[1],m[2]));}
       if((m=route.match(/^\/publishing\/([a-f0-9-]+)\/reconcile$/))&&req.method==='POST'){allow('control','n8n');return send(res,200,await publishing.reconcile(db,m[1]));}
       if(req.method==='POST'&&route==='/ai/tasks'){allow('n8n','control');if(data?.output_schema_version){demand(aiEnabled,'AI_SCHEMA_NOT_READY',503);return send(res,202,await ai.submit(db,data));}return send(res,201,await operations.aiTask(db,data));}
       if((m=route.match(/^\/ai\/tasks\/([a-f0-9-]+)$/))&&req.method==='GET'){allow('control','n8n');demand(uuid(m[1]),'INVALID_AI_ID');if(aiEnabled)return send(res,200,await ai.getTask(db,m[1]));const r=await db.query('SELECT * FROM studio.ai_tasks WHERE id=$1',[m[1]]);demand(r.rowCount,'AI_TASK_NOT_FOUND',404);return send(res,200,r.rows[0]);}
@@ -82,8 +90,11 @@ export async function main(){
   const secrets={control:read('CONTROL_TOKEN_FILE'),n8n:read('N8N_TOKEN_FILE'),worker:read('WORKER_TOKEN_FILE')},webhookKey=read('WEBHOOK_KEY_FILE'),db=await database();
   await db.query('SELECT version FROM studio.schema_migrations WHERE version=1');
   const aiEnabled=(await db.query('SELECT version FROM studio.schema_migrations WHERE version=2')).rowCount===1;
+  const instagramEnabled=process.env.INSTAGRAM_PILOT_ENABLED==='true';
+  if(instagramEnabled)demand((await db.query("SELECT version FROM studio.schema_migrations WHERE version=4 AND name='instagram-pilot'")).rowCount===1,'INSTAGRAM_SCHEMA_REQUIRED');
+  const instagramPilot=instagramEnabled?makePilot({db,credential:readInstagramCredential}):null;
   let ticking=false;const timer=aiEnabled?setInterval(async()=>{if(ticking)return;ticking=true;try{await ai.tickMock(db);}catch{}finally{ticking=false;}},500):null;
-  const server=createServer({db,secrets,webhookKey,aiEnabled});server.listen(Number(process.env.PORT??8780),process.env.BIND_HOST??'127.0.0.1',()=>console.log(JSON.stringify({service:'studio-api',ready:true,mode:'mock',ai_schema:aiEnabled?2:1})));
+  const server=createServer({db,secrets,webhookKey,aiEnabled,instagramPilot});server.listen(Number(process.env.PORT??8780),process.env.BIND_HOST??'127.0.0.1',()=>console.log(JSON.stringify({service:'studio-api',ready:true,mode:'mock',ai_schema:aiEnabled?2:1,instagram_pilot:instagramEnabled})));
   const stop=()=>{clearInterval(timer);server.close(()=>db.end().finally(()=>process.exit(0)));};process.on('SIGINT',stop);process.on('SIGTERM',stop);
 }
 if(process.argv[1]&&path.resolve(process.argv[1])===fileURLToPath(import.meta.url))main().catch(()=>{console.error(JSON.stringify({service:'studio-api',ready:false,error:'STARTUP_FAILED_NO_SECRET_VALUES_LOGGED'}));process.exitCode=1;});

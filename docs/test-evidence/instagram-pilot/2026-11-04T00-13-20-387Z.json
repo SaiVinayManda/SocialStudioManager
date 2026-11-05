@@ -1,0 +1,17 @@
+{
+  "at": "2026-11-04T00:13:20.387Z",
+  "command": "node --test --test-reporter=tap test/instagram-pilot.test.mjs",
+  "exit_code": 0,
+  "counts": {
+    "tests": 12,
+    "pass": 12,
+    "fail": 0,
+    "skipped": 0
+  },
+  "passed": true,
+  "network_requests": 0,
+  "credentials_read": false,
+  "video_uploads": 0,
+  "publications": 0,
+  "scope": "Fixture transport/approval/vault tests only; deployed PostgreSQL/n8n/Meta acceptance not run"
+}
